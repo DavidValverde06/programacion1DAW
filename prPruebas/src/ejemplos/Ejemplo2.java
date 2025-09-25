@@ -9,7 +9,11 @@ public class Ejemplo2 {
 		
 		int suma = num1+num2;
 		
+		System.out.println("Ejemplo de suma de valores");
+		
 		System.out.println("El resultado de la suma de " + num1 + " y " + num2 + " es igual a " + suma + ".");
+		
+		System.out.println("Final del programa");
 	}
 
 }

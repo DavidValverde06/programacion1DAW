@@ -50,7 +50,9 @@ public class Ejercicio7 {
 		System.out.println("\nVenta total de naranjas: " + totalNaranjas + " €.");
 		
 		totalLimones=resultadoSemestre1Limones+resultadoSemestre2Limones;
-		System.out.print("Venta total de limones: " + totalLimones  + " €.");
+		System.out.println("Venta total de limones: " + totalLimones  + " €.");
+		
+		System.out.println("TOTAL: " + (totalLimones+totalNaranjas) + " €.");
 
 		sc.close();
 	}
