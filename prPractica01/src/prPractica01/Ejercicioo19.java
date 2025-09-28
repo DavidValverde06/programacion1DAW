@@ -21,7 +21,7 @@ public class Ejercicioo19 {
 		segundos=sc.nextInt();
 		
 		horas=segundos/3600;
-		minutos=horas/60;
+		minutos = (segundos % 3600) / 60;
 		segundos=segundos%60;
 		
 		System.out.println(horas + " horas " + minutos + " minutos " + segundos + " segundos");

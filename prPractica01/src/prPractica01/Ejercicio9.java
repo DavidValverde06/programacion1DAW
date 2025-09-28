@@ -22,12 +22,19 @@ public class Ejercicio9 {
 		double sueldoTotalJuan=sueldoBase+complementos+30;
 		double sueldoTotalPedro=sueldoBase+complementos+100;
 		
-		double porcentajeJuan,porcentajePedro;
+		final float SS = 0.09f;
+		final float IRPF = 0.15f;
 		
-		porcentajeJuan=
+		double porcentajeIRPFJuan,porcentajeSSJuan,porcentajeIRPFPedro,porcentajeSSPedro;
 		
-		System.out.println("El sueldo real del empleado de " + edadJuan +" años es: " + sueldoTotalJuan+ " euros.");
-		System.out.println("El sueldo real del empleado de " + edadPedro +" años es: " + sueldoTotalPedro + " euros.");
+		porcentajeIRPFJuan = sueldoTotalJuan*IRPF;
+		porcentajeSSJuan = sueldoTotalJuan*SS;
+		
+		porcentajeIRPFPedro = sueldoTotalPedro*IRPF;
+		porcentajeSSPedro = sueldoTotalPedro*SS;
+		
+		System.out.println("El sueldo real del empleado de " + edadJuan +" años es: " + (sueldoTotalJuan-(porcentajeIRPFJuan+porcentajeSSJuan)) + " euros.");
+		System.out.println("El sueldo real del empleado de " + edadPedro +" años es: " + (sueldoTotalPedro-(porcentajeIRPFPedro+porcentajeSSPedro)) + " euros.");
 
 	}
 

@@ -45,6 +45,12 @@ public class Ejemplo4 {
 		valorDouble=sc.nextDouble();
 		System.out.println("Valor double: " + valorDouble);
 		
+		System.out.println("\n" + num1);
+		System.out.println(num2);
+		System.out.println(edad);
+		System.out.println(sueldo);
+		System.out.println(poblacionMundial);
+		
 		// Cerrar objeto Scanner
 		sc.close();
 	}
