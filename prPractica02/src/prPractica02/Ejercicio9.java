@@ -21,12 +21,14 @@ public class Ejercicio9 {
 		System.out.print("Introduce el código de 4 dígitos: ");
 		codigo=sc.nextInt();
 		
-		
-		
-		System.out.println("PROVINCIA: " + codigo/1000 +
-						 "\nTIPO DE OPERACION: " + codigo/100%10 + 
-						 "\nNUMERO DE OPERACION: " + codigo%100);
-		
+		if (codigo<9999&&codigo>=1111) {
+			System.out.println("PROVINCIA: " + codigo/1000 +
+					 "\nTIPO DE OPERACION: " + codigo/100%10 + 
+					 "\nNUMERO DE OPERACION: " + codigo%100);
+		}
+		else {
+			System.out.println("ERRROR. CÓDIGO INVÁLIDO");
+		}
 		
 		sc.close();
 	}

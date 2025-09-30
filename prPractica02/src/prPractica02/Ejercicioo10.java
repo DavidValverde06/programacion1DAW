@@ -4,6 +4,8 @@ import java.util.Scanner;
 
 /**
  * 10. Realizar un algoritmo para deducir el mayor de tres valores introducidos por teclado.
+ * 
+ * CORREGIR
  */
 
 public class Ejercicioo10 {
@@ -12,7 +14,7 @@ public class Ejercicioo10 {
 
 		Scanner sc = new Scanner(System.in);
 		
-		int num1,num2,num3;
+		int num1,num2,num3 // PONER PUNTO Y COMA
 		
 		System.out.print("Introduce el primer número: ");
 		num1=sc.nextInt();
