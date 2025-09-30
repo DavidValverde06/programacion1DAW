@@ -8,7 +8,6 @@ public class Ejercicio8a {
 		System.out.println("El argumento de entrada 2 es: " + args[1]);
 		System.out.println("El argumento de entrada 3 es: " + args[2]);
 		System.out.println("El argumento de entrada 4 es: " + args[3]);
-
 	}
 
 }

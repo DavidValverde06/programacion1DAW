@@ -19,6 +19,7 @@ public class Ejercicio8b {
 		 a = N * a;
 		 
 		 System.out.println(a);
+		 
 		}
 
 	}
