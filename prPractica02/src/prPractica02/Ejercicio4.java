@@ -1,0 +1,33 @@
+package prPractica02;
+
+import java.util.Scanner;
+
+/**
+ * 4. Realizar un algoritmo que permita saber si un número es mayor, menor o igual a cero
+ */
+
+public class Ejercicio4 {
+
+	public static void main(String[] args) {
+
+		Scanner sc = new Scanner(System.in);
+		
+		int num;
+		
+		System.out.print("Introduce un número: ");
+		num=sc.nextInt();
+		
+		if (num>0) {
+			System.out.print(num + " es mayor a 0.");
+		}
+		else if (num<0) {
+			System.out.print(num + " es menor a 0.");
+		}
+		else if (num==0) {
+			System.out.print(num + " es igual a 0.");
+		}
+		
+		sc.close();
+	}
+
+}
