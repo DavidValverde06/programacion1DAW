@@ -15,10 +15,11 @@ public class Ejercicioo13 {
 
 		Scanner sc = new Scanner(System.in);
 		
-		int num,valor;
+		float num;
+		int valor;
 		
 		System.out.print("Introduce un número: ");
-		num=sc.nextInt();
+		num=sc.nextFloat();
 		System.out.print("Introduce un valor entre 1 y 3: ");
 		valor=sc.nextInt();
 		if (valor!=1 && valor!=2 && valor!=3) {
