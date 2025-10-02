@@ -10,9 +10,11 @@ public class Ejercicioo15 {
 
 	public static void main(String[] args) {
 
+		sin hacer
+		
 		Scanner sc = new Scanner(System.in);
 		
-		int num1,num2,num3,primero=0,segundo=0,tercero=0; ayuda
+		int num1,num2,num3,primero=0,segundo=0,tercero=0;
 		
 		System.out.print("Introduce el primer número: ");
 		num1=sc.nextInt();

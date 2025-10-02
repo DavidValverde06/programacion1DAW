@@ -12,10 +12,10 @@ public class Ejercicio4 {
 
 		Scanner sc = new Scanner(System.in);
 		
-		int num;
+		float num;
 		
 		System.out.print("Introduce un número: ");
-		num=sc.nextInt();
+		num=sc.nextFloat();
 		
 		if (num>0) {
 			System.out.print(num + " es mayor a 0.");

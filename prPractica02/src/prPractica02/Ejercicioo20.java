@@ -1,5 +1,7 @@
 package prPractica02;
 
+import java.util.Scanner;
+
 /**
  * 20. Desarrolla un programa que resuelva la siguiente serie matemática:
 			s(n) = 1 + 1/2 + 1/3 + ... + 1/n
@@ -8,12 +10,22 @@ package prPractica02;
 public class Ejercicioo20 {
 
 	public static void main(String[] args) {
-
-		int num=1;
 		
-		for (int cont=2;cont>0;cont++) {
-			System.out.println((num+1)/cont);
+		Scanner sc = new Scanner(System.in);
+		
+		int num=0;
+		double resultado=0;
+		
+		System.out.print("Introduce un número: ");
+		num=sc.nextInt();
+		
+		for (int cont=2;cont<=num;cont++) {
+			resultado+=1.0/cont;
 		}
+		
+		System.out.println("Resultado: " + resultado);
+		
+		sc.close();
 	}
 
 }

@@ -18,9 +18,13 @@ public class Ejercicioo17 {
 		
 		System.out.println("Introduce los valores de a, b, c y d: ");
 		
+		System.out.print("Valor de a: ");
 		a=sc.nextDouble();
+		System.out.print("Valor de b: ");
 		b=sc.nextDouble();
+		System.out.print("Valor de c: ");
 		c=sc.nextDouble();
+		System.out.print("Valor de d: ");
 		d=sc.nextDouble();
 
 		resultado = (Math.pow(a, b) + Math.pow(c, d)) * (Math.pow(a, c) + Math.pow(b, d));

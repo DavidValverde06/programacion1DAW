@@ -9,13 +9,15 @@ package prPractica02;
 public class Ejercicioo18 {
 
 	public static void main(String[] args) {
+
+		sin hacer
 		
 		int M=2,N=3,K=4;
 		
 		for (int cont1=0; cont1<M; cont1++) {
 			for (int cont2=0; cont2<N; cont2++) {
 				for (int cont3=0; cont3<K; cont3++) {
-					no se
+
 				}
 			}
 		}
