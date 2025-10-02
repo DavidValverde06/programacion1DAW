@@ -13,19 +13,21 @@ public class Ejercicioo30 {
 
 		Scanner sc = new Scanner(System.in);
 		
-		int num1,num2,suma=0;
+		int num1,num2;
 		
 		System.out.print("Introduce el primer número: ");
 		num1=sc.nextInt();
 		System.out.print("Introduce el segundo número: ");
 		num2=sc.nextInt();
 		
-		for (int cont=num1;cont<=num2;cont++) {
-			suma+=cont;
-			System.out.print(cont + " ");
-		}
+		System.out.println("\nMultiplos de 3 entre el número " + num1 + " y el " + num2);
 		
-		System.out.println("\nSuma de los números: " + suma);
+		for (int cont=num1;cont<=num2;cont++) {
+//			System.out.print(cont + " ");
+			if (cont%3==0) {
+				System.out.print(cont + " | ");
+			}
+		}
 		
 		sc.close();
 		
