@@ -11,6 +11,8 @@ public class Ejercicioo25 {
 
 	public static void main(String[] args) {
 
+		sin hacer
+		
 		Scanner sc = new Scanner(System.in);
 		
 		int num1,num2,resultado=0;
@@ -23,7 +25,9 @@ public class Ejercicioo25 {
 		System.out.println("\nCociente usando '/': " + (num1/num2));
 		System.out.println("Resto usando '%': " + (num1%num2));
 		
-		
+		for (int cont=num2;cont<1;cont--) {
+			num1-=num1-num2;
+		}
 		
 		System.out.println("\nCociente sin usar '/': " + resultado);
 		System.out.println("Resto sin usar '%': " + resultado);
