@@ -11,6 +11,8 @@ public class Ejercicioo26 {
 
 	public static void main(String[] args) {
 
+		sin hacer
+		
 		Scanner sc = new Scanner(System.in);
 		
 		int num,suma=0;
