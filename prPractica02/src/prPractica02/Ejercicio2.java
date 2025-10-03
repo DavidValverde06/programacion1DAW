@@ -15,7 +15,19 @@ public class Ejercicio2 {
 
 	public static void main(String[] args) {
 
+		boolean b=true,x;
 		
+//		if (b==true) {
+//			x=true;
+//		}
+//		else {
+//			x=false;
+//		}
+		
+		x=b;
+		
+		System.out.println(b);
+		System.out.println(x);
 	}
 
 }

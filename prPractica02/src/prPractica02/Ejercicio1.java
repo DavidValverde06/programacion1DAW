@@ -23,7 +23,16 @@ public class Ejercicio1 {
 		}
 		else {
 			System.out.println("Hola");
-			num=num-1;
+			num = num-1;
+		}
+		
+		// Versión optimizada
+		System.out.println("Hola");
+		if (num>0) {
+			num = num+1;
+		}
+		else {
+			num = num-1;
 		}
 	}
 

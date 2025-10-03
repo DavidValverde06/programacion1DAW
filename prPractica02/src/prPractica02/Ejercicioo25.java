@@ -10,8 +10,6 @@ import java.util.Scanner;
 public class Ejercicioo25 {
 
 	public static void main(String[] args) {
-
-		sin hacer
 		
 		Scanner sc = new Scanner(System.in);
 		
