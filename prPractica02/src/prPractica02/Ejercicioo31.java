@@ -11,30 +11,37 @@ import java.util.Scanner;
 public class Ejercicioo31 {
 
 	public static void main(String[] args) {
-
-		asi no es
 		
 		Scanner sc = new Scanner(System.in);
 		
-		int numLista,valorMaximo=0,valorMinimo;
+		int numLista,num,valorMaximo,valorMinimo;
 		
 		System.out.print("Indica cuantos números tendrá la lista: ");
 		numLista=sc.nextInt();
 		
-		valorMinimo=numLista;
+		System.out.print("Introduce el número 1: "); // Lectura adelantada :)
+		num=sc.nextInt();
 		
-		for (int cont=1;cont<=numLista;cont++) {
-			System.out.print(cont + " | ");
-			if (cont>valorMaximo) {
-				valorMaximo=cont;
+		valorMaximo=num;
+		valorMinimo=num;
+		
+		for (int cont=2;cont<=numLista;cont++) {
+			System.out.print("Introduce el número " + cont + ": ");
+			num=sc.nextInt();
+			
+			if (num>valorMaximo) {
+				valorMaximo=num;
 			}
-			if (cont<valorMinimo) {
-				valorMinimo=cont;
+			if (num<valorMinimo) {
+				valorMinimo=num;
 			}
+			
 		}
 		
 		System.out.println("\nValor máximo: " + valorMaximo);
 		System.out.println("Valor mínimo: " + valorMinimo);
+		
+		sc.close();
 
 	}
 
