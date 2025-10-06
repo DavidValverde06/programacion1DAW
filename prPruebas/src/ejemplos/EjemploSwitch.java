@@ -66,9 +66,9 @@ public class EjemploSwitch {
 								if (diaSemana==7) {
 									System.out.println("Domingo");
 								}
-		
+
 		System.out.println("---------");
-		
+
 		// 3º solución con switch clasico
 		switch (diaSemana) {
 		case 1:
@@ -97,6 +97,32 @@ public class EjemploSwitch {
 		default:
 			System.out.println("Día no válido");
 			break;
+		}
+
+		System.out.println("---------");
+		
+		// 4º solución switch ("ultimas versiones")
+		switch (diaSemana) {
+		case 1 ->
+		System.out.println("Lunes");
+		case 2 ->
+		System.out.println("Martes");
+		case 3 ->
+		System.out.println("Miercoles");
+		case 4 ->
+		System.out.println("Jueves");
+		case 5 -> {
+			System.out.println("Viernes");
+			System.out.println("Por fin");
+		}
+		case 6 -> {
+			System.out.println("Sabado");
+			System.out.println("Fiesta");
+		}
+		case 7 ->
+		System.out.println("Domingo");
+		default ->
+		System.out.println("Día no válido");
 		}
 	}
 
