@@ -13,13 +13,13 @@ public class Ejercicioo20 {
 		
 		Scanner sc = new Scanner(System.in);
 		
-		int num=0;
+		int num;
 		double resultado=0;
 		
 		System.out.print("Introduce un número: ");
 		num=sc.nextInt();
 		
-		for (int cont=2;cont<=num;cont++) {
+		for (int cont=1;cont<=num;cont++) {
 			resultado+=1.0/cont;
 		}
 		

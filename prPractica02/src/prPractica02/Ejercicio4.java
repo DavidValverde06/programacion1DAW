@@ -27,6 +27,10 @@ public class Ejercicio4 {
 			System.out.print(num + " es igual a 0.");
 		}
 		
+		System.out.println();
+		System.out.println("\nIntroduce un número: " + num);
+		
+		System.out.println((num>0)?"Mayor a 0":(num<0)?"Menor a 0":"Es igual a 0");
 		sc.close();
 	}
 

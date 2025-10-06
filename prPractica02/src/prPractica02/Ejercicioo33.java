@@ -21,7 +21,7 @@ public class Ejercicioo33 {
 		
 		System.out.println();
 		
-		for (int cont=0;cont<exponente;cont++) {
+		for (int cont=0;cont<=exponente;cont++) {
 			System.out.println(base + " elevado a " + cont + ": " + (int)Math.pow(base, cont));
 		}
 		

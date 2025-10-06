@@ -11,33 +11,35 @@ public class Ejercicioo36 {
 
 	public static void main(String[] args) {
 
+		sin hacer, creo que esta mal
+		
 		Scanner sc = new Scanner(System.in);
-		
+
 		int num=1,contadorPositivos=0,contadorNegativos=0;
-		
+
 		System.out.println("Introduce un número positivo o negativo: ");
 		num=sc.nextInt();
-		
+
 		do {
 			System.out.println("Introduce un número positivo o negativo: ");
 			num=sc.nextInt();
-			
-			if (num>0) {
-				for (int cont=0;num!=0;cont++) {
-					contadorPositivos=cont;
-				}
+
+
+			for (int cont=0;num>0;cont++) {
+				contadorPositivos=cont;
+
 			}
-			if (num<0) {
-				for (int cont=0;num!=0;cont++) {
-					contadorNegativos=cont;
-				}
+
+			for (int cont=0;num<0;cont++) {
+				contadorNegativos=cont;
+
 			}
 		}
 		while (num!=0);
-		
+
 		System.out.println("Contador de números positivos: " + contadorPositivos);
 		System.out.println("Contador de números negativos: " + contadorNegativos);
-		
+
 		sc.close();
 	}
 
