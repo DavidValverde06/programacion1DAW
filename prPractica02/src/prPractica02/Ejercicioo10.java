@@ -12,7 +12,9 @@ public class Ejercicioo10 {
 
 		Scanner sc = new Scanner(System.in);
 		
-		sin hacer
+		int num1,num2,num3;
+		
+		System.out.println("Introduce el primer número: ");
 		
 		sc.close();
 	}

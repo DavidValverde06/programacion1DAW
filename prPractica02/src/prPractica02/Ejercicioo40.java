@@ -10,6 +10,7 @@ public class Ejercicioo40 {
 	public static void main(String[] args) {
 
 		
+		
 	}
 
 }
