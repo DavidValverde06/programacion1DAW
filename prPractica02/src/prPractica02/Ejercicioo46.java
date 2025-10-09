@@ -19,7 +19,7 @@ public class Ejercicioo46 {
 		boolean lanzarOtraVez=true;
 
 
-		for (int cont=0;lanzarOtraVez;cont++) {
+		while (lanzarOtraVez) {
 
 			moneda=(int)(Math.random()*2)+1;
 
