@@ -10,8 +10,6 @@ import java.util.Scanner;
 public class Ejercicioo26 {
 
 	public static void main(String[] args) {
-
-		sin hacer
 		
 		Scanner sc = new Scanner(System.in);
 		
@@ -20,9 +18,12 @@ public class Ejercicioo26 {
 		System.out.print("Introduce un número: ");
 		num=sc.nextInt();
 		
-		for (int cont=0;cont<=num;cont++) {
-			
+		for (int cont=2;cont<=num;cont+=2) {
+			suma+=cont;
+			System.out.print(cont + " ");
 		}
+		
+		System.out.println("\nSuma: " + suma);
 		
 		sc.close();
 	}

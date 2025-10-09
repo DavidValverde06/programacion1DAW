@@ -8,9 +8,8 @@ package prPractica02;
 public class Ejercicioo40 {
 
 	public static void main(String[] args) {
-
 		
-		
+		sin hacer
 	}
 
 }

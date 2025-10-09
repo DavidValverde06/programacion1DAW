@@ -21,7 +21,7 @@ public class Ejercicioo38 {
 
 		Scanner sc = new Scanner(System.in);
 
-		sin hacer
+		sin hacer que pereza
 		
 		char opciones;
 
