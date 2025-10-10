@@ -10,28 +10,28 @@ import java.util.Scanner;
 public class Ejercicioo25 {
 
 	public static void main(String[] args) {
-				
+
 		Scanner sc = new Scanner(System.in);
-		
+
 		int dividendo,divisor,cociente=0,resto=0;
-		
+
 		System.out.print("Introduce el dividendo: ");
 		dividendo=sc.nextInt();
 		System.out.print("Introduce el divisor: ");
 		divisor=sc.nextInt();
-		
+
 		System.out.println("\nCociente usando '/': " + (dividendo/divisor));
 		System.out.println("Resto usando '%': " + (dividendo%divisor));
-		
+
 		while(dividendo>=divisor) {
 			dividendo-=divisor;
 			cociente++;
 			resto=dividendo;
 		}
-		
+
 		System.out.println("\nCociente sin usar '/': " + cociente);
 		System.out.println("Resto sin usar '%': " + resto);
-		
+
 		sc.close();
 	}
 

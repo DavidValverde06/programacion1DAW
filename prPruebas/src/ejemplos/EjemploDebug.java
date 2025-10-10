@@ -2,6 +2,8 @@ package ejemplos;
 
 import java.util.Scanner;
 
+// 		---EJEMPLO DE ROSI---
+
 public class EjemploDebug {
 
 	public static void main(String[] args) {

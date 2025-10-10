@@ -10,14 +10,12 @@ import java.util.Scanner;
 public class Ejercicioo42 {
 
 	public static void main(String[] args) {
-
-		sin hacer
 		
 		Scanner sc = new Scanner(System.in);
 
-		int num,contDivisores=0,cont=0;
+		int num,contDivisores=0;
 
-		System.out.println("Introduce un número natural: ");
+		System.out.print("Introduce un número natural: ");
 		num=sc.nextInt();
 
 		if (num<1) {
@@ -25,16 +23,21 @@ public class Ejercicioo42 {
 
 		}
 		else {
-			while (contDivisores<3) {
+			for (int cont=2;cont<num;cont++) {
 				if (num%cont==0) {
-					
+					contDivisores++;
 				}
-				cont++;
 			}
 			
+			if (contDivisores>=1) {
+				System.out.println(num + " no es primo.");
+			}
+			else {
+				System.out.println(num + " si es primo.");
+			}
 		}
 
-		System.out.println("FIN DE PROGRAMA");
+		System.out.println("\nFIN DE PROGRAMA");
 
 
 		sc.close();
