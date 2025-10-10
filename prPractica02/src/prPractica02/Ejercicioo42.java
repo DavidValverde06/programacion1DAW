@@ -11,25 +11,30 @@ public class Ejercicioo42 {
 
 	public static void main(String[] args) {
 
-		sin hacer
-		
 		Scanner sc = new Scanner(System.in);
-		
-		int num;
-		
+
+		int num,contDivisores=0,cont=0;
+
 		System.out.println("Introduce un número natural: ");
 		num=sc.nextInt();
-		
+
 		if (num<1) {
 			System.out.println("El número debe ser un número natural");
-		}
-		else if () {
-			System.out.println(num + " es primo");
+
 		}
 		else {
-			System.out.println(num + " no es primo");
+			while (contDivisores<3) {
+				if (num%cont==0) {
+					
+				}
+				cont++;
+			}
+			
 		}
-		
+
+		System.out.println("FIN DE PROGRAMA");
+
+
 		sc.close();
 	}
 

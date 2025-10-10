@@ -11,7 +11,7 @@ import java.util.Scanner;
 
 public class Ejercicioo49 {
 
-	public static void main(String[] args) /*throws InterruptedException*/ {
+	public static void main(String[] args) throws InterruptedException {
 
 		Scanner sc = new Scanner(System.in);
 
@@ -29,8 +29,22 @@ public class Ejercicioo49 {
 			segundos=sc.nextInt();
 			
 			for(int cont=0;cont>=0;cont++) {
-				//Thread.sleep(10);
-				System.out.println(horas+":"+minutos+":"+segundos);
+				Thread.sleep(500);
+		        System.out.printf("%02d:%02d:%02d%n", horas, minutos, segundos);
+				segundos++;
+				
+				if (segundos>59) {
+					minutos++;
+					segundos=0;
+
+					if (minutos>59) {
+						minutos=0;
+						horas++;
+						if (horas>23) {
+							horas=0;
+						}
+					}
+				}
 			}
 		}
 		else if (validacion=='n') {
@@ -39,9 +53,8 @@ public class Ejercicioo49 {
 			segundos=00;
 			
 			for(int cont=0;cont>=0;cont++) {
-				//Thread.sleep(500);
-				System.out.println(horas +":"+minutos +":"+segundos);
-
+				Thread.sleep(500);
+		        System.out.printf("%02d:%02d:%02d%n", horas, minutos, segundos);
 				segundos++;
 				
 				if (segundos>59) {
