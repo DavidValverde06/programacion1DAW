@@ -19,19 +19,35 @@ public class Ejercicioo38 {
 
 	public static void main(String[] args) {
 
+		sin hacer
+		
 		Scanner sc = new Scanner(System.in);
 
-		sin hacer que pereza
-		
+		int num,resultado=0;
 		char opciones;
 
 		System.out.print("Introduce la opción: ");
 		opciones=sc.next().charAt(0);
 
 		switch (opciones) {
+//		FACTORIAL
 		case 'F':
+			
+			System.out.print("Introduce un número entero positivo: ");
+			num=sc.nextInt();
 
+			if (num<0) {
+				System.out.println("El número es negativo, no tiene factorial.");
+			}
+			else {
+				for (int cont=num;cont>0;cont--) {
+					resultado=resultado*cont;
+				}
+
+				System.out.println("El factorial de " + num + " es: " + resultado);
+			}
 			break;
+			
 		case 'R':
 
 			break;
