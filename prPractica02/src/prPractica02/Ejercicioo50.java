@@ -10,7 +10,7 @@ import java.util.Scanner;
 public class Ejercicioo50 {
 
 	public static void main(String[] args) {
-
+		
 		sin hacer
 		
 		Scanner sc = new Scanner(System.in);
