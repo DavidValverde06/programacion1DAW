@@ -16,12 +16,12 @@ public class Ejercicioo18 {
 		
 		double S1,S2,S3,T,area;
 		
-		int p1x=6;
-		int p1y=8;
+		int p1x=12;
+		int p1y=10;
 		int p2x=9;
-		int p2y=4;
-		int p3x=3;
-		int p3y=7;
+		int p2y=15;
+		int p3x=5;
+		int p3y=2;
 		
 		S1= (Math.sqrt( Math.pow(p1x-p2x,2) + Math.pow(p1y-p2y,2)));
 		S2= (Math.sqrt( Math.pow(p2x-p3x,2) + Math.pow(p2y-p3y,2)));
