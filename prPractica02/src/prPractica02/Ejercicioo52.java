@@ -36,9 +36,11 @@ public class Ejercicioo52 {
 				contCruces++;
 			}
 			
-			esta mal esta parte
-			
-			if (moneda1==moneda2) {
+			if (moneda1==0 && moneda2==0) {
+				contConsecutivas++;
+				totalConsecutivas = contConsecutivas;
+			}
+			else if (moneda1==1 && moneda2==0) {
 				contConsecutivas++;
 				totalConsecutivas = contConsecutivas;
 			}

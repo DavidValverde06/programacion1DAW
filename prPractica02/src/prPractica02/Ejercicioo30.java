@@ -24,7 +24,7 @@ public class Ejercicioo30 {
 		
 		for (int cont=num1;cont<=num2;cont++) {
 //			System.out.print(cont + " ");
-			if (cont%3==0) {
+			if (cont%3==0 && cont%2!=0) {
 				System.out.print(cont + " | ");
 			}
 		}
