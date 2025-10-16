@@ -11,8 +11,6 @@ public class Ejercicioo45 {
 
 	public static void main(String[] args) {
 
-		sin hacer
-
 		Scanner sc = new Scanner(System.in);
 
 		int nota;
@@ -20,27 +18,22 @@ public class Ejercicioo45 {
 		System.out.print("Introduce la nota: ");
 		nota=sc.nextInt();
 
-		if (nota<0||nota>10) {
-			System.out.println("ERROR. Nota no válida");
+		while (nota!=0) {
+
+			switch (key) {
+			case value ->
+			
+			
+			
+			default ->
+			throw new IllegalArgumentException("Unexpected value: " + key);
+			}
+			
+			System.out.print("\nIntroduce la nota: ");
+			nota=sc.nextInt();
 		}
-		else if (nota>=0&&nota<3) {
-			System.out.println("Muy deficiente");
-		}
-		else if (nota>=3&&nota<5) {
-			System.out.println("Insuficiente");
-		}
-		else if (nota>=5&&nota<6) {
-			System.out.println("Suficiente");
-		}
-		else if (nota>=6&&nota<7) {
-			System.out.println("Bien");
-		}
-		else if (nota>=7&&nota<9) {
-			System.out.println("Notable");
-		}
-		else {
-			System.out.println("Sobresaliente");
-		}
+		
+		System.out.println("FIN DE PROGRAMA");
 
 		sc.close();
 	}
