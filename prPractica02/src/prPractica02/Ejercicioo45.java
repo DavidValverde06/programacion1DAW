@@ -13,27 +13,56 @@ public class Ejercicioo45 {
 
 		Scanner sc = new Scanner(System.in);
 
-		int nota;
+		float nota,contTotal=0,contDeficiente=0,contSuficiente=0,contBien=0,contNotable=0,contSobresaliente=0;
 
 		System.out.print("Introduce la nota: ");
-		nota=sc.nextInt();
+		nota=sc.nextFloat();
 
 		while (nota!=0) {
 
-			switch (key) {
-			case value ->
-			
-			
-			
-			default ->
-			throw new IllegalArgumentException("Unexpected value: " + key);
+			if (nota<1||nota>10) {
+				System.out.println("Introduce una nota válida");
 			}
-			
-			System.out.print("\nIntroduce la nota: ");
+			else if (nota<5) { // Deficiente
+				contDeficiente++;
+				contTotal++;
+			}
+			else if (nota<6) { // Suficiente
+				contSuficiente++;
+				contTotal++;
+			}
+			else if (nota<7) { // Bien
+				contBien++;
+				contTotal++;
+			}
+			else if (nota<9) { // Notable
+				contNotable++;
+				contTotal++;
+			}
+			else { // Sobresaliente
+				contSobresaliente++;
+				contTotal++;
+			}
+
+			System.out.print("Introduce la nota: ");
 			nota=sc.nextInt();
 		}
-		
-		System.out.println("FIN DE PROGRAMA");
+
+		if (contDeficiente!=0) {
+			System.out.println("\n" + (contDeficiente * 100 / contTotal) + " % de deficientes");
+		}
+		if (contSuficiente!=0) {
+			System.out.println((contSuficiente * 100 / contTotal) + " % de suficientes");	
+		}
+		if (contBien!=0) {
+			System.out.println((contBien * 100 / contTotal) + " % de bien");
+		}
+		if (contNotable!=0) {
+			System.out.println((contNotable * 100 / contTotal) + " % de notables");	
+		}
+		if (contSobresaliente!=0) {
+			System.out.println((contSobresaliente * 100 / contTotal) + " % de sobresalientes");
+		}
 
 		sc.close();
 	}
