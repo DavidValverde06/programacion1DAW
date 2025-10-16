@@ -10,27 +10,36 @@ import java.util.Scanner;
 public class Ejercicioo50 {
 
 	public static void main(String[] args) {
-		
-		sin hacer
-		
+				
 		Scanner sc = new Scanner(System.in);
 
-		int moneda,cont=0;
-		boolean lanzarOtraVez=true;
+		int moneda,contCruz=0,contCara=0;
 		
-		while (lanzarOtraVez) {
+		while (contCara!=3 && contCruz!=3) {
 			moneda=(int)(Math.random()*2)+1;
 
 			if (moneda==1) {
-				System.out.println("Ha salido --> Cruz");
-				cont++;
+				System.out.println("Ha salido --> Cruz\n");
+				contCruz++;
+				contCara=0;
 			}
 			else {
-				System.out.println("Ha salido --> Cara");
-				cont++;
+				System.out.println("Ha salido --> Cara\n");
+				contCara++;
+				contCruz=0;
 			}
 			
 		}
+		
+		if (contCara==3) {
+			System.out.println("Ha salido cara " + contCara + " veces consecutivas.");
+		}
+		else {
+			System.out.println("Ha salido cruz " + contCruz + " veces consecutivas.");
+
+		}
+		
+		System.out.println("\nFIN DE PROGRAMA");
 		
 		sc.close();
 	}
