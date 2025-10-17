@@ -14,10 +14,10 @@ public class Ejercicioo13 {
 	public static void main(String[] args) {
 
 		Scanner sc = new Scanner(System.in);
-		
+
 		float num;
 		int valor;
-		
+
 		System.out.print("Introduce un número: ");
 		num=sc.nextFloat();
 		System.out.print("Introduce un valor entre 1 y 3: ");
@@ -29,22 +29,27 @@ public class Ejercicioo13 {
 			switch (valor) {
 			case 1:
 				System.out.println("\nCUADRADO DE UN NÚMERO" +
-							"\nResultado: " + Math.pow(num, 2));
+						"\nResultado: " + Math.pow(num, 2));
 				break;
 			case 2:
 				System.out.println("\nCUBO DE UN NÚMERO" + 
-							"\nResultado: " + Math.pow(num, 3));
+						"\nResultado: " + Math.pow(num, 3));
 				break;
 			case 3:
-				System.out.println("\nRAÍZ CUADRADA DE UN NÚMERO" + 
+				if (num<0) {
+					System.out.println("No se puede calcular la raíz cuadrada de un número negativo");
+				}
+				else {
+					System.out.println("\nRAÍZ CUADRADA DE UN NÚMERO" + 
 							"\nResultado: " + Math.sqrt(num));
+				}
 				break;
 			default:
 				System.out.println("ERROR");
 				break;
 			}
 		}
-		
+
 		sc.close();
 	}
 

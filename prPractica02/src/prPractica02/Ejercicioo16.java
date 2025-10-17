@@ -18,7 +18,10 @@ public class Ejercicioo16 {
 
 //		No se ejecuta ni una sola vez.
 		
-		for (int cont=0;cont<10;cont++) {
+		int cont=0;
+		
+		while (cont<10) {
+			cont+=1;
 			if (cont==10) {
 				System.out.println("Acción 1");
 			}
