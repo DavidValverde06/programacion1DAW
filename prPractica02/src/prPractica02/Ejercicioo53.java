@@ -12,22 +12,26 @@ public class Ejercicioo53 {
 
 	public static void main(String[] args) {
 
+		sin hacer
+		
 		Scanner sc = new Scanner(System.in);
 
 		char caracter;
+		String cadena="";
 
 		System.out.print("Teclee un carácter: ");
 		caracter=sc.next().charAt(0);
 
-		while(caracter!='c') {
+		while (caracter!='.') {
+
+			cadena+=caracter;
+			
+			System.out.println(cadena);
+
 			System.out.print("Teclee un carácter: ");
 			caracter=sc.next().charAt(0);
-
-			if () {
-				
-			}
+		}
 
 		sc.close();
 	}
-
 }
