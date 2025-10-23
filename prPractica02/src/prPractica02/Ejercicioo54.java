@@ -1,5 +1,7 @@
 package prPractica02;
 
+import java.util.Scanner;
+
 /**
  * 54. Diseñar un algoritmo que lee una lista de números enteros terminada en 0, y que encuentre y escriba en
 		pantalla la posición de la primera y última ocurrencia del número 12 dentro de la lista. Si el número 12
@@ -12,6 +14,37 @@ public class Ejercicioo54 {
 	public static void main(String[] args) {
 
 		sin hacer
+		
+		Scanner sc = new Scanner(System.in);
+		
+		int num,posicion=0,cont=0;
+		
+		System.out.print("Introduce un número: ");
+		num=sc.nextInt();
+		
+		while (num!=0) {
+			
+			if (num<0) {
+				System.out.print("Introduce un número entero");
+			}
+			else {
+				if (num==12) {
+					posicion=cont;
+				}
+				else {
+					posicion=0;
+				}
+			}
+			
+			cont++;
+			
+			System.out.print("Introduce un número: ");
+			num=sc.nextInt();
+		}
+		
+		System.out.println("\nPosición: " + posicion);
+		
+		sc.close();
 	}
 
 }
