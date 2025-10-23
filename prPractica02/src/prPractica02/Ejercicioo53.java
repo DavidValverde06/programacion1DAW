@@ -11,8 +11,6 @@ import java.util.Scanner;
 public class Ejercicioo53 {
 
 	public static void main(String[] args) {
-
-		sin hacer
 		
 		Scanner sc = new Scanner(System.in);
 
@@ -25,13 +23,18 @@ public class Ejercicioo53 {
 		while (caracter!='.') {
 
 			cadena+=caracter;
-			
-			System.out.println(cadena);
 
 			System.out.print("Teclee un carácter: ");
 			caracter=sc.next().charAt(0);
 		}
 
+		if (cadena.contains("abc")) {
+			System.out.println("Se ha encontrado la cadena abc");
+		}
+		else {
+			System.out.println("No se ha encontrado la cadena abc");
+		}
+		
 		sc.close();
 	}
 }

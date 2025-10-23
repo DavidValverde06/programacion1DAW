@@ -26,15 +26,10 @@ public class Ejercicioo23 {
 			aux=num1;
 			num1=num2;
 			num2=aux;
-			
-			for (int cont=num1; cont<=num2; cont++) {
-				suma=suma+cont;
-			}
 		}
-		else {
-			for (int cont=num1; cont<=num2; cont++) {
-				suma=suma+cont;
-			}
+		
+		for (int cont=num1; cont<=num2; cont++) {
+			suma=suma+cont;
 		}
 		
 		System.out.println("Suma: " + suma);

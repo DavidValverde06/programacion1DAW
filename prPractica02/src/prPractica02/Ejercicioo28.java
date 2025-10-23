@@ -22,6 +22,12 @@ public class Ejercicioo28 {
 		
 		System.out.println();
 		
+		if (num1>num2) {
+			int aux = num1;
+			num1=num2;
+			num2=aux;
+		}
+		
 		for (int cont=num1;cont<=num2;cont++) {
 			if (cont%2==0) {
 				System.out.print(cont + " ");

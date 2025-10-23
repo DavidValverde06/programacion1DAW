@@ -20,18 +20,22 @@ public class Ejercicioo25 {
 		System.out.print("Introduce el divisor: ");
 		divisor=sc.nextInt();
 
-		System.out.println("\nCociente usando '/': " + (dividendo/divisor));
-		System.out.println("Resto usando '%': " + (dividendo%divisor));
-
-		while(dividendo>=divisor) {
-			dividendo-=divisor;
-			cociente++;
-			resto=dividendo;
+		if (divisor==0) {
+			System.out.println("No se puede dividir entre 0");
 		}
+		else {
+			System.out.println("\nCociente usando '/': " + (dividendo/divisor));
+			System.out.println("Resto usando '%': " + (dividendo%divisor));
 
-		System.out.println("\nCociente sin usar '/': " + cociente);
-		System.out.println("Resto sin usar '%': " + resto);
+			while(dividendo>=divisor) {
+				dividendo-=divisor;
+				cociente++;
+				resto=dividendo;
+			}
 
+			System.out.println("\nCociente sin usar '/': " + cociente);
+			System.out.println("Resto sin usar '%': " + resto);
+		}
 		sc.close();
 	}
 
