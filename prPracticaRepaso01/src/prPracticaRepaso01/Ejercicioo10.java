@@ -11,6 +11,8 @@ public class Ejercicioo10 {
 
 	public static void main(String[] args) {
 
+		sin hacer
+		
 		int altura;
 		
 		Scanner sc = new Scanner(System.in);
