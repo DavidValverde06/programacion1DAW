@@ -12,14 +12,12 @@ import java.util.Scanner;
 public class Ejercicioo54 {
 
 	public static void main(String[] args) {
-
-		sin hacer
 		
 		Scanner sc = new Scanner(System.in);
 		
 		int num,posicion=0,cont=0;
 		
-		System.out.print("Introduce un número: ");
+		System.out.print(cont + " - Introduce un número: ");
 		num=sc.nextInt();
 		
 		while (num!=0) {
@@ -27,18 +25,15 @@ public class Ejercicioo54 {
 			if (num<0) {
 				System.out.print("Introduce un número entero");
 			}
-			else {
+			else {	
+				cont++;
+			
 				if (num==12) {
 					posicion=cont;
 				}
-				else {
-					posicion=0;
-				}
 			}
 			
-			cont++;
-			
-			System.out.print("Introduce un número: ");
+			System.out.print(cont + " - Introduce un número: ");
 			num=sc.nextInt();
 		}
 		
