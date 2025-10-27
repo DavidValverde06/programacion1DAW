@@ -11,52 +11,59 @@ public class Ejercicioo52 {
 
 	public static void main(String[] args) {
 
-		tiene un fallo revisar
-		
 		Scanner sc = new Scanner(System.in);
+
+		revisar
 		
-		int numTiradas,moneda1,moneda2,contCruces=0,contCaras=0,contConsecutivas=0,totalConsecutivas=0;
-		
+		int numTiradas,moneda1,moneda2,contCruces=0,contCaras=0,contConsecutivasCara=0,
+			totalConsecutivasCara=0,contConsecutivasCruz=0,totalConsecutivasCruz=0;
+
 		System.out.print("Cuántas tiradas va a realizar: ");
 		numTiradas=sc.nextInt();
-		
+
 		for (int cont=0;cont<numTiradas;cont++) {
 			moneda1=(int)(Math.random()*2); // LOS 0 REPRESENTAN CARAS
 			moneda2=(int)(Math.random()*2); // LOS 1 REPRESENTAN CRUZ
-			
+
 			if (moneda1==0) {
 				contCaras++;
 			}
 			else {
 				contCruces++;
 			}
-			
+
 			if (moneda2==0) {
 				contCaras++;
 			}
 			else {
 				contCruces++;
 			}
-			
+
+			System.out.println(moneda1 + " " + moneda2);
+
 			if (moneda1==0 && moneda2==0) {
-				contConsecutivas++;
-				totalConsecutivas = contConsecutivas;
+				contConsecutivasCara++;
+				totalConsecutivasCara = contConsecutivasCara;
 			}
-			else if (moneda1==1 && moneda2==0) {
-				contConsecutivas++;
-				totalConsecutivas = contConsecutivas;
+			else if (moneda1==1 && moneda2==1) {
+				contConsecutivasCruz++;
+				totalConsecutivasCruz = contConsecutivasCruz;
 			}
 			else {
-				contConsecutivas=0;
+				contConsecutivasCara=0;
+				contConsecutivasCruz=0;
 			}
-			
-			System.out.println(moneda1 + " " + moneda2);
+
 		}
-		
+
 		System.out.println("\nCaras: " + contCaras);
 		System.out.println("Cruces: " + contCruces);
-		System.out.println("Máximo de caras consecutivas: " + totalConsecutivas);
-		
+		if (totalConsecutivasCara>totalConsecutivasCruz) {
+			System.out.println("Máximo de caras consecutivas: " + totalConsecutivasCara);
+		}
+		else {
+			System.out.println("Máximo de caras consecutivas: " + totalConsecutivasCruz);
+		}
 		sc.close();
 	}
 

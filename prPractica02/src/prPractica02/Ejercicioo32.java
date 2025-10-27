@@ -22,7 +22,7 @@ public class Ejercicioo32 {
 		valorMaximo=num;
 		valorMinimo=num;
 
-		do {
+		while (num!=0) {
 			if (num>valorMaximo) {
 				valorMaximo=num;
 			}
@@ -32,7 +32,6 @@ public class Ejercicioo32 {
 			System.out.print("Introduce un número: ");
 			num=sc.nextInt();
 		}
-		while (num!=0);
 
 		System.out.println("\nValor máximo: " + valorMaximo);
 		System.out.println("Valor mínimo: " + valorMinimo);
