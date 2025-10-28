@@ -9,19 +9,20 @@ import java.util.Scanner;
 public class Ejercicio4 {
 
 	public static void main(String[] args) {
-
-		sin hacer
 		
 		Scanner sc = new Scanner(System.in);
 		
-		double num,cuadrado;
+		int num,cuadrado;
 		
-		System.out.println("Introduce un número: ");
-		num=sc.nextDouble();
-		cuadrado = Math.pow(num, 2);
+		System.out.print("Introduce un número: ");
+		num=sc.nextInt();
+		
+		cuadrado = (int)(Math.pow(num, 2));
+		
 		System.out.println("Cuadrado de " + num + ": " + cuadrado);
 		
-		
+		System.out.println("\nÚltima cifra: " + cuadrado%10);
+		System.out.println("Número de cifras: " + String.valueOf(cuadrado).length());
 		
 		sc.close();
 	}
