@@ -12,16 +12,27 @@ public class Ejercicio3 {
 	public static void main(String[] args) {
 
 		Scanner sc = new Scanner(System.in);
-		
-		int num;
-		
-		System.out.print("Introduce un número: ");
-		num=sc.nextInt();
-		
-		if () {
+
+		long num;
+
+		System.out.print("Introduce un número (0 para salir): ");
+		num=sc.nextLong();
+
+		while (num!=0) {
+
+			if (num<0) {
+				System.out.println("ERROR - Introduce un número positivo\n");
+			}
 			
+			System.out.println("Tiene " + String.valueOf(num).length() + " cifras");
+			
+			System.out.print("Introduce un número (0 para salir): ");
+			num=sc.nextInt();
+
 		}
-		
+
+		System.out.println("\nFIN DE PROGRAMA");
+
 		sc.close();
 	}
 
