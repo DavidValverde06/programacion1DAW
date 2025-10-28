@@ -22,7 +22,7 @@ public class Ejercicio4 {
 		System.out.println("Cuadrado de " + num + ": " + cuadrado);
 		
 		System.out.println("\nÚltima cifra: " + cuadrado%10);
-		System.out.println("Número de cifras: " + String.valueOf(cuadrado).length());
+		System.out.println("Número de cifras: " + String.valueOf(cuadrado).length()); // Método para saber las cifras de un número
 		
 		sc.close();
 	}
