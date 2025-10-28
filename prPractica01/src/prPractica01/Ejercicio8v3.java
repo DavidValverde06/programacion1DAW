@@ -1,6 +1,6 @@
 package prPractica01;
 
-public class Ejercicio8c {
+public class Ejercicio8v3 {
 
 	public static void main(String[] args) {
 
