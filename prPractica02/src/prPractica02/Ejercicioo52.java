@@ -13,10 +13,8 @@ public class Ejercicioo52 {
 
 		Scanner sc = new Scanner(System.in);
 
-		revisar
-		
 		int numTiradas,moneda1,moneda2,contCruces=0,contCaras=0,contConsecutivasCara=0,
-			totalConsecutivasCara=0,contConsecutivasCruz=0,totalConsecutivasCruz=0;
+				totalConsecutivasCara=0,contConsecutivasCruz=0,totalConsecutivasCruz=0;
 
 		System.out.print("Cuántas tiradas va a realizar: ");
 		numTiradas=sc.nextInt();
@@ -43,11 +41,15 @@ public class Ejercicioo52 {
 
 			if (moneda1==0 && moneda2==0) {
 				contConsecutivasCara++;
-				totalConsecutivasCara = contConsecutivasCara;
+				if (contConsecutivasCara>totalConsecutivasCara) {
+					totalConsecutivasCara = contConsecutivasCara;
+				}
 			}
 			else if (moneda1==1 && moneda2==1) {
 				contConsecutivasCruz++;
-				totalConsecutivasCruz = contConsecutivasCruz;
+				if (contConsecutivasCruz>totalConsecutivasCruz) {
+					totalConsecutivasCruz = contConsecutivasCruz;
+				}
 			}
 			else {
 				contConsecutivasCara=0;
