@@ -13,13 +13,13 @@ public class Ejercicioo40 {
 
 		Scanner sc = new Scanner(System.in);
 
-		float cantidad;
+		double cantidad;
 		int euros,centimos;
 		int cont500=0,cont200=0,cont100=0,cont50=0,cont20=0,cont10=0,cont5=0,cont2=0,cont1=0;
 		int contCent50=0,contCent20=0,contCent10=0,contCent5=0,contCent2=0,contCent1=0;
 
 		System.out.print("Introduce la cantidad a desglosar: ");
-		cantidad=sc.nextFloat();
+		cantidad=sc.nextDouble();
 
 		euros=(int)cantidad;
 		centimos=(int) Math.round((cantidad - euros) * 100);

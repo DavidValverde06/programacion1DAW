@@ -10,18 +10,28 @@ import java.util.Scanner;
 public class Ejercicioo10 {
 
 	public static void main(String[] args) {
-
-		sin hacer
+		
+		pensar mejor
 		
 		int altura;
-		
+		String cadena="";
 		Scanner sc = new Scanner(System.in);
 		
 		System.out.print("Introduce la altura del triángulo: ");
 		altura=sc.nextInt();
 		
-		for (int cont=0;cont<4;cont++) {
-			System.out.println("*");
+		System.out.println();
+		
+		for (int cont=0;cont<altura;cont++) {
+			System.out.println(cadena+='*');
+		}
+		
+		System.out.println(); // SALTO DE LÍNEA
+		
+		cadena="";
+		
+		for (int cont=0;cont<altura;cont++) {
+			System.out.println(cadena+=' ');
 		}
 		
 		sc.close();
