@@ -13,6 +13,8 @@ public class Ejercicioo54 {
 
 	public static void main(String[] args) {
 		
+		revisar
+		
 		Scanner sc = new Scanner(System.in);
 		
 		int num,posicion=0,cont=0;
