@@ -19,6 +19,8 @@ public class Ejercicioo11 {
 
 	public static void main(String[] args) {
 
+		sin hacer
+		
 		final int TAMANIONORMAL=25;
 		final int TAMANIOMEDIANA=30;
 		final int TAMANIOGRANDE=40;

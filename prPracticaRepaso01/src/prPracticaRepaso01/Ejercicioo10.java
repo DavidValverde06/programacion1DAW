@@ -63,8 +63,6 @@ public class Ejercicioo10 {
 		//		Línea 4: 1 espacio + 7 asteriscos
 		//		Línea 5: 0 espacios + 9 asteriscos
 
-		cadena="";
-
 		System.out.println("Tercer triángulo\n");
 
 		for (int cont=0;cont<altura;cont++) {
@@ -90,8 +88,6 @@ public class Ejercicioo10 {
 		// CUARTO TRIÁNGULO
 
 		// TRIÁNGULO DE ARRIBA
-
-		cadena="";
 
 		System.out.println("Cuarto triángulo\n");
 
@@ -134,14 +130,23 @@ public class Ejercicioo10 {
 
 		// ---------------------------------------------------------------------------------------------
 		// QUINTO TRIÁNGULO
-		System.out.println("\nQuinto triángulo\n");
+		System.out.println("Quinto triángulo\n");
 
-		falta este
-		
-		cadena="";
-		
-		for (int cont=0;cont<altura;cont++) {
-			System.out.println(cadena+=cont);
+		for (int cont=1;cont<=altura;cont++) {
+			cadena="";
+			espacios=altura-cont;
+			asteriscos=2*cont-1;
+			for (int cont2=0;cont2<espacios;cont2++) {
+				cadena+=' ';
+			}
+			for (int cont3=1;cont3<=cont;cont3++) {
+				cadena+=cont3;
+			}
+			for (int cont4=cont-1;cont4>=1;cont4--) {
+				cadena+=cont4;
+			}
+
+			System.out.println(cadena);
 		}
 
 		System.out.println("\n----------------");
