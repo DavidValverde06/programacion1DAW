@@ -168,8 +168,10 @@ public class LibreriaMatematica {
 
 		int contEuler=0;
 
-		for (int cont=0;cont<num;cont++) {
-			revisar
+		for (int cont=1;cont<num;cont++) {
+			if (primosEntreSi(cont, num)) {
+				contEuler++;
+			}
 		}
 		return contEuler;
 	}
@@ -197,7 +199,18 @@ public class LibreriaMatematica {
 		}
 	}
 
-
+	
+	/**
+	 * i) Hacer otro método que calcule el MCD pero de forma recursiva.
+	 * @param numA
+	 * @param numB
+	 * @return
+	 */
+	public static int maximoComunDivisorRecursivo(int numA, int numB) {
+		
+	}
+	
+	
 	/**
 	 * j) Escribir dos métodos, uno iterativo y otro recursivo para calcular la serie de Fibonacci para un término n,
 	 * sabiendo que:
