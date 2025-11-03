@@ -7,7 +7,7 @@ public class LibreriaMatematica {
 	 * @param num
 	 * @return
 	 */
-	public static boolean esPrimo (int num) {
+	public static boolean esPrimo(int num) {
 
 		int contDivisores=0;
 
@@ -20,12 +20,11 @@ public class LibreriaMatematica {
 					contDivisores++;
 				}
 			}
-
 			if (contDivisores>=1) {
-				return true;
+				return false;
 			}
 			else {
-				return false;
+				return true;
 			}
 		}
 	}
@@ -63,6 +62,12 @@ public class LibreriaMatematica {
 
 		int numAB,resultado;
 
+		if (numA<numB) {
+			int aux;
+			aux=numA;
+			numA=numB;
+			numB=aux;
+		}
 		if (numA>=numB && numA>=0 && numB>=0) {
 			numAB=numA-numB;
 
@@ -81,7 +86,7 @@ public class LibreriaMatematica {
 	 * @param num
 	 * @return
 	 */
-	private static int sumaDivisores (int num) {
+	private static int sumaDivisores(int num) {
 
 		int contDivisores=0;
 
@@ -90,7 +95,6 @@ public class LibreriaMatematica {
 				contDivisores+=cont;
 			}
 		}
-
 		return contDivisores;
 	}
 
@@ -104,7 +108,7 @@ public class LibreriaMatematica {
 	 * @param num
 	 * @return
 	 */
-	public static boolean esPerfecto (int num) {
+	public static boolean esPerfecto(int num) {
 
 		if (num==sumaDivisores(num)) {
 			return true;
@@ -123,7 +127,7 @@ public class LibreriaMatematica {
 	 * @param numB
 	 * @return
 	 */
-	public static boolean sonAmigos (int numA, int numB) {
+	public static boolean sonAmigos(int numA, int numB) {
 
 		if (sumaDivisores(numA)==numB) {
 			return true;
@@ -133,17 +137,86 @@ public class LibreriaMatematica {
 		}
 	}
 
+
 	/**
 	 * f) Método al que se le pasen dos números enteros y nos devuelva el valor verdadero, si ambos números son
 	 * primos entre sí, y el valor falso en caso contrario. Dos números son primos entre si cuando el único
-	 * divisor común de los dos es la unidad. Por ejemplo, son primos entre sí, el 5 y 18, 20 y 9, etc…
+	 * divisor común de los dos es uno. Por ejemplo, son primos entre sí, el 5 y 18, 20 y 9, etc…
 	 * @param numA
 	 * @param numB
 	 * @return
 	 */
-	public static boolean primosEntreSi (int numA, int numB) {
-		
-		
+	public static boolean primosEntreSi(int numA, int numB) {
+
+		if (LibreriaMatematica.maximoComunDivisor(numA, numB)==1) {
+			return true;
+		}
+		else {
+			return false;
+		}
+	}
+
+
+	/**
+	 * g) Método que calcule la función de Euler. La función de euler es el número de enteros positivos inferiores
+	 * a dicho número y que son primos con él. Por ejemplo, el euler de 6 es 2, ya que los únicos números
+	 * inferiores a él y primos con el son el 1 y el 5; euler(4)=2, euler(8)=4, euler(19)=18, euler(20)=8, …
+	 * @param num
+	 * @return
+	 */
+	public static int funcionEuler(int num) {
+
+		int contEuler=0;
+
+		for (int cont=0;cont<num;cont++) {
+			revisar
+		}
+		return contEuler;
+	}
+
+
+	/**
+	 * h) Construir un método que calcule el máximo común divisor (MCD) de dos números a y b de tipo entero, sabiendo que:
+	 * MCD (a, b) = a 				si a = b
+	 * MCD (a, b) = MCD (a-b, b) 	si a > b
+	 * MCD (a, b) = MCD (a, b-a) 	si b > a
+	 * @param numA
+	 * @param numB
+	 * @return
+	 */
+	public static int maximoComunDivisor(int numA, int numB) {
+
+		if (numA==numB) {
+			return numA;
+		}
+		else if (numA>numB) {
+			return maximoComunDivisor(numA-numB, numB);
+		}
+		else {
+			return maximoComunDivisor(numA, numB-numA);
+		}
+	}
+
+
+	/**
+	 * j) Escribir dos métodos, uno iterativo y otro recursivo para calcular la serie de Fibonacci para un término n,
+	 * sabiendo que:
+	 * Fib(0)= 1
+	 * Fib(1)= 1
+	 * aFib(N)= Fib(N-1) + Fib(N-2)
+	 * @param num
+	 * @return
+	 */
+	public static int fibonacciIterativo(int num) {
+
+		int aux1=1,aux2=1,fibo=2;
+
+		for (int cont=0;cont<num;cont++) {
+			aux1=aux2;
+			aux2=fibo;
+			fibo=aux1+aux2;
+		}
+		return aux1;
 	}
 
 }
