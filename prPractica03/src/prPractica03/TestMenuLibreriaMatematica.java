@@ -24,7 +24,7 @@ public class TestMenuLibreriaMatematica {
 
 		Scanner sc = new Scanner(System.in);
 
-		do { // // Inicio del bucle do... while
+		do { // Inicio del bucle do... while
 			System.out.println("\n=== MENÚ LIBRERÍA MATEMÁTICA ===");
 			System.out.println("1. Calcular el factorial de un número.");
 			System.out.println("2. Mostrar el combinatorio de dos números dados.");
