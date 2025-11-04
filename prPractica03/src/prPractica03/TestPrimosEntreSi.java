@@ -14,7 +14,7 @@ public class TestPrimosEntreSi {
 		System.out.println(LibreriaMatematica.primosEntreSi(7, 10));
 
 		System.out.print("\nMétodo que calcula si dos números son primos entre sí: ");
-		System.out.println(LibreriaMatematica.primosEntreSi(6, 2));
+		System.out.println(LibreriaMatematica.primosEntreSi(6, 0));
 
 		System.out.print("\nMétodo que calcula si dos números son primos entre sí: ");
 		System.out.println(LibreriaMatematica.primosEntreSi(-6, -2));

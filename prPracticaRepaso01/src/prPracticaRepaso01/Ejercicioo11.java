@@ -1,7 +1,5 @@
 package prPracticaRepaso01;
 
-import java.util.Scanner;
-
 /**
  * 11. Una pizzería vende pizzas de 3 tamaños. Normal (25 cm. de diámetro). Mediana (30 cm. de
 		diámetro) y Grande (40 cm. de diámetro). A su vez, una pizza puede ser sencilla (con sólo queso y
@@ -19,26 +17,26 @@ public class Ejercicioo11 {
 
 	public static void main(String[] args) {
 
-		sin hacer
+		// Sin hacer
 		
-		final int TAMANIONORMAL=25;
-		final int TAMANIOMEDIANA=30;
-		final int TAMANIOGRANDE=40;
-		final int COSTEPREPARACION=3;
-		
-		int tamaniopizza;
-		
-		Scanner sc = new Scanner(System.in);
-		
-		System.out.println("--- PIZZERIA ---");
-		System.out.println("1. NORMAL");
-		System.out.println("2. MEDIANA");
-		System.out.println("3. GRANDE");
-		System.out.print("Introduce el tamaño de la pizza: ");
-		
-		tamaniopizza=sc.nextInt();
-		
-		sc.close();
+//		final int TAMANIONORMAL=25;
+//		final int TAMANIOMEDIANA=30;
+//		final int TAMANIOGRANDE=40;
+//		final int COSTEPREPARACION=3;
+//		
+//		int tamaniopizza;
+//		
+//		Scanner sc = new Scanner(System.in);
+//		
+//		System.out.println("--- PIZZERIA ---");
+//		System.out.println("1. NORMAL");
+//		System.out.println("2. MEDIANA");
+//		System.out.println("3. GRANDE");
+//		System.out.print("Introduce el tamaño de la pizza: ");
+//		
+//		tamaniopizza=sc.nextInt();
+//		
+//		sc.close();
 		
 	}
 

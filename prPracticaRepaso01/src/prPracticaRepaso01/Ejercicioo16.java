@@ -12,7 +12,7 @@ public class Ejercicioo16 {
 
 	public static void main(String[] args) {
 
-		hacer año bisiesto
+		// Falta hacer el año bisiesto
 		
 		Scanner sc = new Scanner(System.in);
 

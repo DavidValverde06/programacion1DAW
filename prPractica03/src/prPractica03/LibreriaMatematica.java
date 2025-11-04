@@ -148,7 +148,7 @@ public class LibreriaMatematica {
 	 */
 	public static boolean primosEntreSi(int numA, int numB) {
 
-		if (numA<0||numB<0) {
+		if (numA<=0||numB<=0) {
 			return false;
 		}
 

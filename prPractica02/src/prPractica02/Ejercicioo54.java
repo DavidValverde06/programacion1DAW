@@ -12,35 +12,37 @@ import java.util.Scanner;
 public class Ejercicioo54 {
 
 	public static void main(String[] args) {
-		
-		revisar
-		
+
 		Scanner sc = new Scanner(System.in);
-		
-		int num,posicion=0,cont=0;
-		
-		System.out.print(cont + " - Introduce un número: ");
+
+		int num,posicionPrimera=0,posicionUltima=0,contPosiciones=1;
+
+		System.out.print(contPosiciones + " - Introduce un número: ");
 		num=sc.nextInt();
 		
 		while (num!=0) {
-			
+
 			if (num<0) {
 				System.out.print("Introduce un número entero");
 			}
 			else {	
-				cont++;
-			
+				contPosiciones++;
+
+				if (num==12 && posicionUltima==0) {
+					posicionPrimera=contPosiciones;
+				}
 				if (num==12) {
-					posicion=cont;
+					posicionUltima=contPosiciones;
 				}
 			}
-			
-			System.out.print(cont + " - Introduce un número: ");
+
+			System.out.print(contPosiciones + " - Introduce un número: ");
 			num=sc.nextInt();
 		}
-		
-		System.out.println("\nPosición: " + posicion);
-		
+
+		System.out.println("\nPrimera posición: " + (posicionPrimera-1));
+		System.out.println("Última posición: " + (posicionUltima-1));
+
 		sc.close();
 	}
 

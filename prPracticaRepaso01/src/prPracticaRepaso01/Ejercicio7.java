@@ -1,7 +1,5 @@
 package prPracticaRepaso01;
 
-import java.util.Scanner;
-
 /**
  * 7. El recibo de la electricidad se elabora de la siguiente forma:
 		- 6 euros de gastos fijos.
@@ -17,24 +15,24 @@ public class Ejercicio7 {
 
 	public static void main(String[] args) {
 
-		ni idea
+		// Sin hacer
 		
-		Scanner sc = new Scanner(System.in);
-		
-		int valorContador;
-		final int GASTOSFIJOS=6;
-		
-		System.out.print("Introduce los dos últimos valores del contador: ");
-		valorContador=sc.nextInt();
-		
-		if (valorContador<10||valorContador>99) {
-			System.out.println("Introduce solo dos cifras");
-		}
-		else {
-			
-		}
-		
-		sc.close();
+//		Scanner sc = new Scanner(System.in);
+//		
+//		int valorContador;
+//		final int GASTOSFIJOS=6;
+//		
+//		System.out.print("Introduce los dos últimos valores del contador: ");
+//		valorContador=sc.nextInt();
+//		
+//		if (valorContador<10||valorContador>99) {
+//			System.out.println("Introduce solo dos cifras");
+//		}
+//		else {
+//			
+//		}
+//		
+//		sc.close();
 	}
 
 }

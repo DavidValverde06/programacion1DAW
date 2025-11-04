@@ -13,7 +13,7 @@ public class Ejercicio9 {
 
 	public static void main(String[] args) {
 
-		sin hacer
+		// Sin hacer
 	}
 
 }
