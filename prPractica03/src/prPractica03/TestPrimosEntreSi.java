@@ -6,16 +6,19 @@ public class TestPrimosEntreSi {
 
 		System.out.print("Método que calcula si dos números son primos entre sí: ");
 		System.out.println(LibreriaMatematica.primosEntreSi(5, 18));
-		
+
 		System.out.print("\nMétodo que calcula si dos números son primos entre sí: ");
 		System.out.println(LibreriaMatematica.primosEntreSi(20, 9));
-		
+
 		System.out.print("\nMétodo que calcula si dos números son primos entre sí: ");
 		System.out.println(LibreriaMatematica.primosEntreSi(7, 10));
-		
+
 		System.out.print("\nMétodo que calcula si dos números son primos entre sí: ");
 		System.out.println(LibreriaMatematica.primosEntreSi(6, 2));
-		
+
+		System.out.print("\nMétodo que calcula si dos números son primos entre sí: ");
+		System.out.println(LibreriaMatematica.primosEntreSi(-6, -2));
+
 	}
 
 }

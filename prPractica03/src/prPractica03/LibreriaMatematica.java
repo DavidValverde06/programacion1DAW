@@ -11,7 +11,7 @@ public class LibreriaMatematica {
 
 		int contDivisores=0;
 
-		if (num<1) {
+		if (num<=1) {
 			return false;
 		}
 		else {
@@ -129,7 +129,7 @@ public class LibreriaMatematica {
 	 */
 	public static boolean sonAmigos(int numA, int numB) {
 
-		if (sumaDivisores(numA)==numB) {
+		if (sumaDivisores(numA)==numB && sumaDivisores(numB)==numA) {
 			return true;
 		}
 		else {
@@ -147,6 +147,10 @@ public class LibreriaMatematica {
 	 * @return
 	 */
 	public static boolean primosEntreSi(int numA, int numB) {
+
+		if (numA<0||numB<0) {
+			return false;
+		}
 
 		if (LibreriaMatematica.maximoComunDivisor(numA, numB)==1) {
 			return true;
@@ -167,6 +171,10 @@ public class LibreriaMatematica {
 	public static int funcionEuler(int num) {
 
 		int contEuler=0;
+
+		if (num<0) {
+			return contEuler=-1;
+		}
 
 		for (int cont=1;cont<num;cont++) {
 			if (primosEntreSi(cont, num)) {
@@ -199,7 +207,7 @@ public class LibreriaMatematica {
 		}
 	}
 
-	
+
 	/**
 	 * i) Hacer otro método que calcule el MCD pero de forma recursiva.
 	 * @param numA
@@ -207,10 +215,10 @@ public class LibreriaMatematica {
 	 * @return
 	 */
 	public static int maximoComunDivisorRecursivo(int numA, int numB) {
-		
+
 	}
-	
-	
+
+
 	/**
 	 * j) Escribir dos métodos, uno iterativo y otro recursivo para calcular la serie de Fibonacci para un término n,
 	 * sabiendo que:
@@ -232,4 +240,24 @@ public class LibreriaMatematica {
 		return aux1;
 	}
 
+
+	/**
+	 * k) Método recursivo que calcula la potencia de un número A elevado a n, se deben tener en cuenta los
+	 * exponentes negativos.
+	 * @param num
+	 * @return
+	 */
+	public static int potenciaNumero(int num) {
+
+	}
+
+
+	/**
+	 * l) Método que calcular la suma de la serie de Fibonacci para un término n de forma recursiva.
+	 * @param num
+	 * @return
+	 */
+	public static int fibonacciRecursivo(int num) {
+
+	}
 }

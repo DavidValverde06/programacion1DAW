@@ -45,10 +45,10 @@ public class TestMenuLibreriaMatematica {
 
 			switch (opcion) {
 			case 1 -> { // Calcular el factorial de un número.
-				System.out.print("\nIntroduce un número positivo para calcular el factorial: ");
+				System.out.print("Introduce un número positivo para calcular el factorial: ");
 				numA=sc.nextInt();
 
-				System.out.println("Factorial de " + numA + ": " + LibreriaMatematica.calcularFactorial(numA));
+				System.out.println("\n\tFactorial de " + numA + " es: " + LibreriaMatematica.calcularFactorial(numA));
 			}
 
 			case 2 -> { // Mostrar el combinatorio de dos números dados.
@@ -58,7 +58,7 @@ public class TestMenuLibreriaMatematica {
 				System.out.print("Introduce el segundo número para calcular el combinatorio: ");
 				numB=sc.nextInt();
 
-				System.out.println(LibreriaMatematica.calcularCombinatorio(numA, numB));
+				System.out.println("\n\tCombinatorio de " + numA + " y " + numB + " es: " + LibreriaMatematica.calcularCombinatorio(numA, numB));
 			}
 
 			case 3 -> { // Visualizar los números primos entre dos números dados.
@@ -68,11 +68,14 @@ public class TestMenuLibreriaMatematica {
 				System.out.print("Introduce el segundo número: ");
 				numB=sc.nextInt();
 
+				System.out.println("\nNúmeros primos entre " + numA + " y " + numB + ": ");
+
 				for (int cont=numA;cont<numB;cont++) {
 					if (LibreriaMatematica.esPrimo(cont)==true) {
 						System.out.print(cont + " ");
 					}
 				}
+
 				System.out.println();
 			}
 
@@ -83,11 +86,14 @@ public class TestMenuLibreriaMatematica {
 				System.out.print("Introduce el segundo número: ");
 				numB=sc.nextInt();
 
+				System.out.println("\nNúmeros perfectos entre " + numA + " y " + numB + ": ");
+
 				for (int cont=numA;cont<numB;cont++) {
 					if (LibreriaMatematica.esPerfecto(cont)==true) {
 						System.out.print(cont + " ");
 					}
 				}
+
 				System.out.println();
 			}
 
@@ -98,12 +104,15 @@ public class TestMenuLibreriaMatematica {
 				System.out.print("Introduce el segundo número: ");
 				numB=sc.nextInt();
 
+				System.out.println("\nParejas de números amigos entre " + numA + " y " + numB + ": ");
+
 				for (int cont=numA;cont<numB;cont++) {
-					if (LibreriaMatematica.sonAmigos(numA, numB)) {
-						System.out.print(cont + " ");
+					for (int cont2=cont+1;cont2<numB;cont2++) {
+						if (LibreriaMatematica.sonAmigos(cont, cont2)) {
+							System.out.println(cont + " y " + cont2);
+						}
 					}
 				}
-				System.out.println();
 			}
 
 			case 6 -> { // Comprobar si dos números son primos entre sí.
@@ -113,6 +122,8 @@ public class TestMenuLibreriaMatematica {
 				System.out.print("Introduce el segundo número: ");
 				numB=sc.nextInt();
 
+				System.out.print("\n¿Son " + numA + " y " + numB + " números primos entre sí?: ");
+
 				System.out.println(LibreriaMatematica.primosEntreSi(numA, numB));
 
 			}
@@ -120,6 +131,8 @@ public class TestMenuLibreriaMatematica {
 			case 7 -> { // Calcular la función de Euler de un número.
 				System.out.print("Introduce un número para calcular su funcion de Euler: ");
 				numA=sc.nextInt();
+
+				System.out.print("\n\tLa función de Euler del número " + numA + " es: ");
 
 				System.out.println(LibreriaMatematica.funcionEuler(numA));
 			}
@@ -129,7 +142,7 @@ public class TestMenuLibreriaMatematica {
 				System.out.println("Saliendo...");
 			}
 
-			default -> System.out.println("Introduce una opción válida");
+			default -> System.out.println("\nIntroduce una opción válida");
 			}
 		}
 		while (validacion==true);
