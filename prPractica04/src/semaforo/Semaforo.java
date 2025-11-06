@@ -16,7 +16,6 @@ package semaforo;
  * Modificar la clase Semaforo y añadirle un constructor que inicialice el estado del semáforo al color que se
  * especifique al crear un objeto de esa clase. Hacer otra clase de prueba, para comprobar el buen
  * funcionamiento de la nueva clase semáforo.
-
  */
 
 public class Semaforo {
