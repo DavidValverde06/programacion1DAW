@@ -11,10 +11,10 @@ public class TestCalcularCombinatorio {
 		System.out.println(LibreriaMatematica.calcularCombinatorio(5, 7));
 		
 		System.out.print("\nMétodo que calcula el combinatorio de dos números: ");
-		System.out.println(LibreriaMatematica.calcularCombinatorio(4, 5));
+		System.out.println(LibreriaMatematica.calcularCombinatorio(6, 3));
 		
 		System.out.print("\nMétodo que calcula el combinatorio de dos números: ");
-		System.out.println(LibreriaMatematica.calcularCombinatorio(-10, 6));
+		System.out.println(LibreriaMatematica.calcularCombinatorio(7, 2));
 		
 	}
 
