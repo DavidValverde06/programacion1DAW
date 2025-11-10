@@ -28,6 +28,7 @@ public class Ejercicio3 {
 
 			else {
 
+				// En el escribe faltaria usar las constantes
 				System.out.println("\n=== Tipos de combustible ===");
 				System.out.println("1. Gasolina 95 (1.45 €/L)");
 				System.out.println("2. Gasolina 98 (1.65 €/L)");
@@ -50,6 +51,11 @@ public class Ejercicio3 {
 					totalLitrosVendidos+=litrosRepostar;
 					totalRecaudado+=importePagar;
 				}
+				
+				// Este if mejor así:
+				// if (tipoCombustible>=1 && tipoCombustible<=4) {
+				//
+				// }
 
 			}
 
@@ -67,6 +73,14 @@ public class Ejercicio3 {
 		} 
 
 		while(atenderVehiculo==true); // Fin del bucle do... while
+		
+		// No es necesaria la variable boolean, se puede poner así:
+		
+		// 'validacion' es la variable tipo 'char'
+		
+		// while(validacion=='s') {
+		//
+		// }
 
 		System.out.println("Fin del servicio.");
 		System.out.println("Total de litros vendidos: " + totalLitrosVendidos + " L");

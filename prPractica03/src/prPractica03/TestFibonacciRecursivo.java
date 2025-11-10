@@ -4,7 +4,7 @@ public class TestFibonacciRecursivo {
 
 	public static void main(String[] args) {
 
-		sin hacerº
+		System.out.println(LibreriaMatematica.fibonacciRecursivo(4));
 	}
 
 }

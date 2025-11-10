@@ -197,15 +197,7 @@ public class LibreriaMatematica {
 	 */
 	public static int maximoComunDivisor(int numA, int numB) {
 
-		if (numA==numB) {
-			return numA;
-		}
-		else if (numA>numB) {
-			return maximoComunDivisor(numA-numB, numB);
-		}
-		else {
-			return maximoComunDivisor(numA, numB-numA);
-		}
+		
 	}
 
 
@@ -217,6 +209,15 @@ public class LibreriaMatematica {
 	 */
 	public static int maximoComunDivisorRecursivo(int numA, int numB) {
 
+		if (numA==numB) {
+			return numA;
+		}
+		else if (numA>numB) {
+			return maximoComunDivisor(numA-numB, numB);
+		}
+		else {
+			return maximoComunDivisor(numA, numB-numA);
+		}
 	}
 
 
@@ -260,5 +261,6 @@ public class LibreriaMatematica {
 	 */
 	public static int fibonacciRecursivo(int num) {
 
+		
 	}
 }
