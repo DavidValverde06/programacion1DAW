@@ -25,7 +25,16 @@ public class TestMenuLibreriaMatematica {
 		Scanner sc = new Scanner(System.in);
 
 		do { // Inicio del bucle do... while
-			LibreriaMatematica.menu();
+
+			System.out.println("\n=== MENÚ LIBRERÍA MATEMÁTICA ===");
+			System.out.println("1. Calcular el factorial de un número.");
+			System.out.println("2. Mostrar el combinatorio de dos números dados.");
+			System.out.println("3. Visualizar los números primos entre dos números dados.");
+			System.out.println("4. Visualizar por pantalla los números perfectos que hay entre 2 números dados.");
+			System.out.println("5. Visualizar por pantalla las parejas de números amigos que hay entre 2 números dados.");
+			System.out.println("6. Comprobar si dos números son primos entre sí.");
+			System.out.println("7. Calcular la función de Euler de un número.");
+			System.out.println("8. Salir.");
 
 			try {
 				System.out.print("\nIntroduce una opción del menú: ");
