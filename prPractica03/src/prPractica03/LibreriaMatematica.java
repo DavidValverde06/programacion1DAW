@@ -121,6 +121,10 @@ public class LibreriaMatematica {
 	 */
 	public static boolean esPerfecto(int num) {
 
+		if (num <= 1) {
+	        return false;
+	    }
+		
 		if (num==sumaDivisores(num)) {
 			return true;
 		}

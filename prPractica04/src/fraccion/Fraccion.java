@@ -7,24 +7,26 @@ package fraccion;
 
 public class Fraccion {
 
+	sin hacer
+
 	/*
 	 * Variables de instancia
 	 */
 	private int numerador;
 	private int denominador;
-	
+
 	/*
 	 * Método invierte
 	 */
-	
+
 	/*
 	 * Método simplifica
 	 */
-	
+
 	/*
 	 * Método multiplica
 	 */
-	
+
 	/*
 	 * Método divide
 	 */
