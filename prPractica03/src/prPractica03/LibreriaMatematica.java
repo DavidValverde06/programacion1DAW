@@ -6,6 +6,8 @@ public class LibreriaMatematica {
 	 * a) Método al que pasándole un número nos devuelva un valor lógico, el cual indicará si el número es primo o no.
 	 * @param num
 	 * @return
+	 * 
+	 * COMPROBADO
 	 */
 	public static boolean esPrimo(int num) {
 
@@ -34,10 +36,12 @@ public class LibreriaMatematica {
 	 * b) Método que calcule el factorial de un número, en caso de números negativos debe devolver -1.
 	 * @param num
 	 * @return
+	 * 
+	 * COMPROBADO
 	 */
-	public static int calcularFactorial(int num) {
+	public static long calcularFactorial(int num) {
 
-		int resultado=1;
+		long resultado=1;
 
 		if (num<0) {
 			return -1;
@@ -54,26 +58,28 @@ public class LibreriaMatematica {
 	/**
 	 * c) Método que calcule el combinatorio de dos números dados, se debe tener en cuenta que para poder calcular
 	 * el combinatorio de dos números se debe cumplir que a ≥ b, a ≥ 0 y b ≥ 0.
-	 * @param numA
-	 * @param numB
+	 * @param num1
+	 * @param num2
 	 * @return
+	 * 
+	 * COMPROBADO
 	 */
-	public static double calcularCombinatorio(int numA, int numB) {
+	public static long calcularCombinatorio(int num1, int num2) {
 
 		int numAB;
-		double resultado;
+		long resultado;
 
-		if (numA<numB) {
+		if (num1<num2) {
 			int aux;
-			aux=numA;
-			numA=numB;
-			numB=aux;
+			aux=num1;
+			num1=num2;
+			num2=aux;
 		}
-		if (numA>=numB && numA>=0 && numB>=0) {
-			numAB=numA-numB;
+		if (num1>=num2 && num1>=0 && num2>=0) {
+			numAB=num1-num2;
 
 			// (a b) = a! / b!*(a-b)!
-			resultado = (double)calcularFactorial(numA) / (calcularFactorial(numB) * calcularFactorial(numAB));
+			resultado = calcularFactorial(num1) / (calcularFactorial(num2) * calcularFactorial(numAB));
 			return resultado;
 		}
 		else {
@@ -86,6 +92,8 @@ public class LibreriaMatematica {
 	 * Método privado que calcula la suma de los divisores de un número	
 	 * @param num
 	 * @return
+	 * 
+	 * COMPROBADO
 	 */
 	private static int sumaDivisores(int num) {
 
@@ -108,6 +116,8 @@ public class LibreriaMatematica {
 	 * números amigos. 
 	 * @param num
 	 * @return
+	 * 
+	 * COMPROBADO
 	 */
 	public static boolean esPerfecto(int num) {
 
@@ -127,6 +137,8 @@ public class LibreriaMatematica {
 	 * @param numA
 	 * @param numB
 	 * @return
+	 * 
+	 * COMPROBADO
 	 */
 	public static boolean sonAmigos(int numA, int numB) {
 
@@ -146,6 +158,8 @@ public class LibreriaMatematica {
 	 * @param numA
 	 * @param numB
 	 * @return
+	 * 
+	 * COMPROBADO
 	 */
 	public static boolean primosEntreSi(int numA, int numB) {
 
@@ -153,7 +167,7 @@ public class LibreriaMatematica {
 			return false;
 		}
 
-		if (LibreriaMatematica.maximoComunDivisor(numA, numB)==1) {
+		if (LibreriaMatematica.maximoComunDivisorRecursivo(numA, numB)==1) {
 			return true;
 		}
 		else {
@@ -168,6 +182,8 @@ public class LibreriaMatematica {
 	 * inferiores a él y primos con el son el 1 y el 5; euler(4)=2, euler(8)=4, euler(19)=18, euler(20)=8, …
 	 * @param num
 	 * @return
+	 * 
+	 * COMPROBADO
 	 */
 	public static int funcionEuler(int num) {
 
@@ -195,10 +211,10 @@ public class LibreriaMatematica {
 	 * @param numB
 	 * @return
 	 */
-	public static int maximoComunDivisor(int numA, int numB) {
-
-		
-	}
+//	public static int maximoComunDivisor(int numA, int numB) {
+//
+//		
+//	}
 
 
 	/**
@@ -213,10 +229,10 @@ public class LibreriaMatematica {
 			return numA;
 		}
 		else if (numA>numB) {
-			return maximoComunDivisor(numA-numB, numB);
+			return maximoComunDivisorRecursivo(numA-numB, numB);
 		}
 		else {
-			return maximoComunDivisor(numA, numB-numA);
+			return maximoComunDivisorRecursivo(numA, numB-numA);
 		}
 	}
 
@@ -229,6 +245,8 @@ public class LibreriaMatematica {
 	 * aFib(N)= Fib(N-1) + Fib(N-2)
 	 * @param num
 	 * @return
+	 * 
+	 * COMPROBADO
 	 */
 	public static int fibonacciIterativo(int num) {
 
@@ -249,9 +267,9 @@ public class LibreriaMatematica {
 	 * @param num
 	 * @return
 	 */
-	public static int potenciaNumero(int num) {
-
-	}
+//	public static int potenciaNumero(int num) {
+//
+//	}
 
 
 	/**
@@ -259,8 +277,8 @@ public class LibreriaMatematica {
 	 * @param num
 	 * @return
 	 */
-	public static int fibonacciRecursivo(int num) {
-
-		
-	}
+//	public static int fibonacciRecursivo(int num) {
+//
+//		
+//	}
 }

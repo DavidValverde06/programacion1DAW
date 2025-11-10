@@ -1,21 +1,23 @@
 package prPractica03;
 
+import java.util.Scanner;
+
 public class TestEsPrimo {
 
 	public static void main(String[] args) {
 
-		System.out.print("Método que indica si un número es primo o no: ");
-		System.out.println(LibreriaMatematica.esPrimo(3));
-
-		System.out.print("\nMétodo que indica si un número es primo o no: ");
-		System.out.println(LibreriaMatematica.esPrimo(2));
+		Scanner sc = new Scanner(System.in);
 		
-		System.out.print("\nMétodo que indica si un número es primo o no: ");
-		System.out.println(LibreriaMatematica.esPrimo(6));
+		int num;
 		
-		System.out.print("\nMétodo que indica si un número es primo o no: ");
-		System.out.println(LibreriaMatematica.esPrimo(10));
+		do {
+			System.out.print("Introduce un número: ");
+			num=sc.nextInt();
+			System.out.println(LibreriaMatematica.esPrimo(num)?"Es primo\n":"No es primo\n");
+		}
+		while(num>=0);
 		
+		sc.close();
 	}
 
 }

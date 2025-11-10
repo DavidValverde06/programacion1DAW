@@ -26,6 +26,8 @@ public class TestCalcularFactorial {
 
 		System.out.println(); // Salto de línea
 		
+		
+		System.out.println("=== Factorial del 0 al 10 ===");
 		for (int cont=0;cont<=10;cont++) {
 			if (resultado==-1) {
 				System.out.println("No existe el factorial de números negativos");

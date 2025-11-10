@@ -16,6 +16,8 @@ public class TestFuncionEuler {
 		System.out.print("\nMétodo que calcula la función de Euler: ");
 		System.out.println(LibreriaMatematica.funcionEuler(19));
 		
+		System.out.print("\nMétodo que calcula la función de Euler: ");
+		System.out.println(LibreriaMatematica.funcionEuler(-19));
 	}
 
 }
