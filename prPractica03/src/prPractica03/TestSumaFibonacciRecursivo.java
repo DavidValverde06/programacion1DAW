@@ -4,7 +4,9 @@ public class TestSumaFibonacciRecursivo {
 
 	public static void main(String[] args) {
 
-		System.out.println(LibreriaMatematica.sumaFibonacciRecursivo(5));
+		for (int cont=0;cont<=10;cont++) {
+			System.out.println("Suma Fib("+cont+"): " + LibreriaMatematica.sumaFibonacciRecursivo(cont));
+		}
 	}
 
 }

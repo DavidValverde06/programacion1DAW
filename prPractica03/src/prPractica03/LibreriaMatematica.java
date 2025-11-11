@@ -301,12 +301,13 @@ public class LibreriaMatematica {
 	 */
 	public static int potenciaNumero(int base, int exponente) {
 
-		if () {
-			
+		if (exponente<0) {
+			return -1;
 		}
-		if () {
-			
+		if (exponente==0) {
+			return 1;
 		}
+		return base * potenciaNumero(base, exponente-1);
 	}
 
 
@@ -314,16 +315,15 @@ public class LibreriaMatematica {
 	 * l) Método que calcular la suma de la serie de Fibonacci para un término n de forma recursiva.
 	 * @param num
 	 * @return
+	 * 
+	 * COMPROBADO
 	 */
 	public static int sumaFibonacciRecursivo(int num) {
 
-		if (num==1) {
-			return 1;
-		}
 		if (num==0) {
-			return 1;
+			return 0;
 		}
-		return
+		return fibonacciRecursivo(num) + sumaFibonacciRecursivo(num-1);
 	}
 
 }

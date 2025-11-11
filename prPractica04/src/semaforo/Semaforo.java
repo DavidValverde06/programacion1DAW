@@ -53,7 +53,7 @@ public class Semaforo {
 	 * @return
 	 */
 	public boolean puedoPasar() {
-		if (this.colorSemaforo=="Rojo") {
+		if (this.colorSemaforo.equals("Rojo")) {
 			return false;
 		}
 		else {

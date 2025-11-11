@@ -62,9 +62,10 @@ public class Libro {
 	 */
 	@Override
 	public String toString() {
+		String estadoTexto = estado?"Disponible":"Prestado";
 		return "Título del libro: " + this.titulo +
 				"\nAutor: " + this.autor +
-				"\nEstado: " + this.estado;
+				"\nEstado: " + estadoTexto;
 	}
 
 	/**

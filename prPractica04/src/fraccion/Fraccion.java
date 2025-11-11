@@ -7,8 +7,6 @@ package fraccion;
 
 public class Fraccion {
 
-	sin hacer
-
 	/*
 	 * Variables de instancia
 	 */
@@ -16,18 +14,107 @@ public class Fraccion {
 	private int denominador;
 
 	/*
-	 * Método invierte
+	 * Constructor
 	 */
+	public Fraccion(int numerador, int denominador) {
+		this.numerador = numerador;
+		this.denominador = denominador;
+	}
 
 	/*
-	 * Método simplifica
+	 * Métodos getter's y setter's
 	 */
+	public int getNumerador() {
+		return numerador;
+	}
+	public void setNumerador(int numerador) {
+		this.numerador = numerador;
+	}
+	public int getDenominador() {
+		return denominador;
+	}
+	public void setDenominador(int denominador) {
+		this.denominador = denominador;
+	}
+
+	/*
+	 * Método toString 
+	 */
+	@Override
+	public String toString() {
+		return this.numerador + "/" + this.denominador;
+	}
+
+	/*
+	 * Método equals
+	 */
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Fraccion other = (Fraccion) obj;
+		return denominador == other.denominador && numerador == other.numerador;
+	}
+
+	/*
+	 * Método invierte
+	 */
+	public void invierte() {
+		int aux = this.denominador;
+		this.denominador = numerador;
+		this.numerador = aux;
+		System.out.println("Fracción invertida");
+	}
+
+	/*
+	 * Método privado para el calculo del MCD para el método simplifica()
+	 */
+	private static int maximoComunDivisorRecursivo(int numA, int numB) {
+
+		if (numA==numB) {
+			return numA;
+		}
+		if (numA>numB) {
+			return maximoComunDivisorRecursivo(numA-numB, numB);
+		}
+		else {
+			return maximoComunDivisorRecursivo(numA, numB-numA);
+		}
+	}
+
+	/*
+	 * Método simplifica MEJORAR
+	 */
+	public void simplifica() {
+		int mcd = maximoComunDivisorRecursivo(numerador, denominador);
+		if (mcd > 1) {
+			numerador = numerador/mcd;
+			denominador = denominador/mcd;
+		}
+		else {
+			System.out.println("La fracción ya está simplificada o no se puede simplificar más.");
+		}
+	}
 
 	/*
 	 * Método multiplica
 	 */
+	public Fraccion multiplica(Fraccion fraccionMultiplicar) {
+		int nuevoNumerador = this.numerador * fraccionMultiplicar.numerador;
+		int nuevoDenominador = this.denominador * fraccionMultiplicar.denominador;
+		return new Fraccion(nuevoNumerador, nuevoDenominador);
+	}
 
 	/*
 	 * Método divide
 	 */
+	public Fraccion divide(Fraccion fraccionDividir) {
+		int nuevoNumerador = this.numerador * fraccionDividir.denominador;
+		int nuevoDenominador = this.denominador * fraccionDividir.numerador;
+		return new Fraccion(nuevoNumerador, nuevoDenominador);
+	}
 }
