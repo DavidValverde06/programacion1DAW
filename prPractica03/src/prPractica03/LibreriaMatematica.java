@@ -70,8 +70,7 @@ public class LibreriaMatematica {
 		long resultado;
 
 		if (num1<num2) {
-			int aux;
-			aux=num1;
+			int aux=num1;
 			num1=num2;
 			num2=aux;
 		}
@@ -122,9 +121,9 @@ public class LibreriaMatematica {
 	public static boolean esPerfecto(int num) {
 
 		if (num <= 1) {
-	        return false;
-	    }
-		
+			return false;
+		}
+
 		if (num==sumaDivisores(num)) {
 			return true;
 		}
@@ -214,11 +213,20 @@ public class LibreriaMatematica {
 	 * @param numA
 	 * @param numB
 	 * @return
+	 * 
+	 * COMPROBADO
 	 */
-//	public static int maximoComunDivisor(int numA, int numB) {
-//
-//		
-//	}
+	public static int maximoComunDivisor(int numA, int numB) {
+
+		int temporal;
+
+		while(numB != 0) {
+			temporal = numB;
+			numB = numA % numB;
+			numA = temporal;
+		}
+		return numA;
+	}
 
 
 	/**
@@ -226,13 +234,15 @@ public class LibreriaMatematica {
 	 * @param numA
 	 * @param numB
 	 * @return
+	 * 
+	 * COMPROBADO
 	 */
 	public static int maximoComunDivisorRecursivo(int numA, int numB) {
 
 		if (numA==numB) {
 			return numA;
 		}
-		else if (numA>numB) {
+		if (numA>numB) {
 			return maximoComunDivisorRecursivo(numA-numB, numB);
 		}
 		else {
@@ -242,11 +252,7 @@ public class LibreriaMatematica {
 
 
 	/**
-	 * j) Escribir dos métodos, uno iterativo y otro recursivo para calcular la serie de Fibonacci para un término n,
-	 * sabiendo que:
-	 * Fib(0)= 1
-	 * Fib(1)= 1
-	 * aFib(N)= Fib(N-1) + Fib(N-2)
+	 * j) Escribir dos métodos, uno iterativo y otro recursivo para calcular la serie de Fibonacci para un término n
 	 * @param num
 	 * @return
 	 * 
@@ -264,16 +270,44 @@ public class LibreriaMatematica {
 		return aux1;
 	}
 
+	/**
+	 * j) Escribir dos métodos, uno iterativo y otro recursivo para calcular la serie de Fibonacci para un término n,
+	 * sabiendo que:
+	 * Fib(0)= 1
+	 * Fib(1)= 1
+	 * aFib(N)= Fib(N-1) + Fib(N-2)
+	 * @param num
+	 * @return
+	 * 
+	 * COMPROBADO
+	 */
+	public static int fibonacciRecursivo(int num) {
+
+		if (num==1) {
+			return 1;
+		}
+		if (num==0) {
+			return 1;
+		}
+		return fibonacciRecursivo(num-1)+fibonacciRecursivo(num-2);
+	}
 
 	/**
 	 * k) Método recursivo que calcula la potencia de un número A elevado a n, se deben tener en cuenta los
 	 * exponentes negativos.
-	 * @param num
+	 * @param base
+	 * @param exponente
 	 * @return
 	 */
-//	public static int potenciaNumero(int num) {
-//
-//	}
+	public static int potenciaNumero(int base, int exponente) {
+
+		if () {
+			
+		}
+		if () {
+			
+		}
+	}
 
 
 	/**
@@ -281,8 +315,15 @@ public class LibreriaMatematica {
 	 * @param num
 	 * @return
 	 */
-//	public static int fibonacciRecursivo(int num) {
-//
-//		
-//	}
+	public static int sumaFibonacciRecursivo(int num) {
+
+		if (num==1) {
+			return 1;
+		}
+		if (num==0) {
+			return 1;
+		}
+		return
+	}
+
 }
