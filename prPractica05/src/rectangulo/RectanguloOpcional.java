@@ -8,8 +8,6 @@ package rectangulo;
 
 public class RectanguloOpcional {
 
-	validar con control de excepciones
-	
 	/*
 	 * Variables de instancia
 	 */
@@ -20,11 +18,17 @@ public class RectanguloOpcional {
 	 * Constructores
 	 */
 	public RectanguloOpcional(int ancho, int alto) {
+		if (ancho<0 || alto<0) {
+			throw new IllegalArgumentException("El ancho y alto deben ser positivos");
+		}
 		this.ancho = ancho;
 		this.alto = alto;
 	}
 
 	public RectanguloOpcional(int lado) {
+		if (lado<0) {
+			throw new IllegalArgumentException("El lado debe ser positivo");
+		}
 		this.ancho = lado;
 		this.alto = lado;
 	}
@@ -52,32 +56,32 @@ public class RectanguloOpcional {
 	 * agrandar(int factor). Aumentará el alto y el ancho por el factor que nos indiquen, este deberá ser
 	 * positivo
 	 */
-	public Rectangulo agrandar(int factorAgrandar) {
+	public RectanguloOpcional agrandar(int factorAgrandar) {
 
 		if (factorAgrandar<0) {
-			return null;
+			throw new IllegalArgumentException("El factor debe ser positivo");
 		}
 
 		this.alto*=factorAgrandar;
 		this.ancho*=factorAgrandar;
 
-		return new Rectangulo(this.alto, this.ancho);
+		return new RectanguloOpcional(this.ancho, this.alto);
 	}
 
 	/*
 	 * ✓ agrandar(int ancho, int alto). Aumentará el alto y el ancho en los valores indicados, estos no podrán
 	 * ser negativos.
 	 */
-	public Rectangulo agrandar(int ancho, int alto) {
+	public RectanguloOpcional agrandar(int ancho, int alto) {
 
 		if (ancho<0 || alto<0) {
-			return null;
+			throw new IllegalArgumentException("El ancho y alto deben ser positivos");
 		}
 
 		this.alto+=alto;
 		this.ancho+=ancho;
 
-		return new Rectangulo(this.alto, this.ancho);
+		return new RectanguloOpcional(this.alto, this.ancho);
 	}
 
 	/*
@@ -89,7 +93,7 @@ public class RectanguloOpcional {
 
 	public void setAncho(int ancho) {
 		if (ancho<0) {
-			System.out.println("No introduzcas valores negativos");
+			throw new IllegalArgumentException("El ancho debe ser positivo");
 		}
 		else {
 			this.ancho = ancho;	
@@ -102,7 +106,7 @@ public class RectanguloOpcional {
 
 	public void setAlto(int alto) {
 		if (alto<0) {
-			System.out.println("No introduzcas valores negativos");
+			throw new IllegalArgumentException("El alto debe ser positivo");
 		}
 		else {
 			this.alto = alto;	

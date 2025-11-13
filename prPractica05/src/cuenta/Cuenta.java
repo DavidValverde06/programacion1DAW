@@ -26,5 +26,4 @@ package cuenta;
 
 public class Cuenta {
 	
-	sin hacer
 }
