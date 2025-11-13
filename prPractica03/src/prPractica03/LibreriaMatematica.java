@@ -321,7 +321,7 @@ public class LibreriaMatematica {
 	public static int sumaFibonacciRecursivo(int num) {
 
 		if (num==0) {
-			return 0;
+			return 1;
 		}
 		return fibonacciRecursivo(num) + sumaFibonacciRecursivo(num-1);
 	}
