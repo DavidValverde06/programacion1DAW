@@ -76,7 +76,7 @@ public class TestMenuLibreriaMatematica {
 			System.out.println("\tNo existe el factorial de números negativos.");
 		}
 		else {
-			System.out.println("\tFactorial de " + num + " es: " + LibreriaMatematica.calcularFactorial(num));
+			System.out.println("\tFactorial(" + num + ") = " + LibreriaMatematica.calcularFactorial(num));
 		}
 
 	}
@@ -95,7 +95,7 @@ public class TestMenuLibreriaMatematica {
 			System.out.println("\tNo se puede calcular el combinatorio de un número negativo.");
 		}
 		else {
-			System.out.println("\tCombinatorio de " + num1 + " y " + num2 + " es: " + LibreriaMatematica.calcularCombinatorio(num1, num2));
+			System.out.println("\tCombinatorio de " + num1 + " sobre " + num2 + " = " + LibreriaMatematica.calcularCombinatorio(num1, num2));
 		}
 	}
 
@@ -140,6 +140,9 @@ public class TestMenuLibreriaMatematica {
 	}
 
 	// Visualizar por pantalla las parejas de números amigos que hay entre 2 números dados.
+	// Si pruebas rangos de números muy altos tarda muchisimo en realizar los calculos.
+	// Ejemplo: Parejas de números amigos entre 0 y 10.000.
+	// Mejor probar solo hasta el 2000.
 	public static void opcion5(Scanner sc) {
 		int num1,num2;
 		System.out.print("Introduce el primer número: ");
@@ -187,7 +190,7 @@ public class TestMenuLibreriaMatematica {
 			System.out.println("\tNo se puede calcular la función de Euler de un número negativo.");
 		}
 		else {
-			System.out.print("\tLa función de Euler del número " + num + " es: " + LibreriaMatematica.funcionEuler(num) + "\n");	
+			System.out.print("\tEuler(" + num + ") = " + LibreriaMatematica.funcionEuler(num) + "\n");	
 		}
 	}
 
