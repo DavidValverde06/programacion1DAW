@@ -31,9 +31,9 @@ public class Semaforo {
 	public Semaforo(String colorSemaforo) {
 		this.colorSemaforo = colorSemaforo;
 	}
-	
+
 	public Semaforo() {
-		
+
 	}
 
 	/*
@@ -66,7 +66,16 @@ public class Semaforo {
 	 */
 	@Override
 	public String toString() {
-		return "Semaforo en: " + this.colorSemaforo;
+		String cadena;
+		cadena = switch (this.colorSemaforo) {
+		case "Rojo" -> {yield "No puedo pasar";}
+		case "Amarillo" -> {yield "Pase con precaucion";}
+		case "Verde" -> {yield"Puedes pasar";}
+		default -> {yield "Semáforo averiado";}
+		};
+
+		return "Semaforo en: " + this.colorSemaforo +
+				"\n" + cadena;
 	}
 
 

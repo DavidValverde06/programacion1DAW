@@ -1,7 +1,5 @@
 package libro;
 
-import java.util.Objects;
-
 /**
  * 2. Definir la clase Libro que guardará la siguiente información sobre los libros de una biblioteca:
  * 	autor: String
@@ -73,13 +71,13 @@ public class Libro {
 	 */
 	@Override
 	public boolean equals(Object obj) {
-		if (this == obj)
+		Libro obLibro = (Libro)obj;
+		
+		if (this.titulo.equalsIgnoreCase(obLibro.getTitulo()) && this.autor.equalsIgnoreCase(obLibro.getAutor())) {
 			return true;
-		if (obj == null)
+		}
+		else {
 			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Libro other = (Libro) obj;
-		return Objects.equals(autor, other.autor) && Objects.equals(titulo, other.titulo);
+		}
 	}
 }
