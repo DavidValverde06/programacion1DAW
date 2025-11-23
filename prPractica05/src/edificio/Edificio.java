@@ -2,6 +2,9 @@ package edificio;
 
 public class Edificio {
 
+	//	Edificio: almacena información sobre su domicilio, el número de habitaciones, 
+	//	el número de plantas y el área total de un determinado edificio.
+
 	/**
 	 * Variables de instancia
 	 */
@@ -20,7 +23,7 @@ public class Edificio {
 		this.numPlantas = numPlantas;
 		this.areaEdificio = areaEdificio;
 	}
-	
+
 	/*
 	 * Constructor que recibe todos los datos del edificio, pero en caso de la direccion nos llegan
 	 * los datos del objeto el cual creamos en el propio constructor
@@ -28,14 +31,14 @@ public class Edificio {
 	public Edificio(String nombreCalle, int numero, int codPostal,
 			int numHabitaciones, int numPlantas, float areaEdificio) {
 		this(new Direccion(nombreCalle, numero, codPostal), numHabitaciones, numPlantas, areaEdificio);
-//		System.out.println("Estoy en el constructor de edificios");
-		
+		//	System.out.println("Estoy en el constructor de edificios");
+
 		/*this.dirEdificio = new Direccion(nombreCalle, numero, codPostal);
 		this.numHabitaciones = numHabitaciones;
 		this.numPlantas = numPlantas;
 		this.areaEdificio = areaEdificio;*/
 	}
-	
+
 	/**
 	 * Getter's y setter's
 	 */
@@ -70,14 +73,22 @@ public class Edificio {
 	public void setAreaEdificio(float areaEdificio) {
 		this.areaEdificio = areaEdificio;
 	}
-	
+
 	/**
-	 * Calcula IBI de un edificio
+	 * Método que calcula el IBI
+	 * 
+	 * Tendremos un método que nos calcule el IBI de cada tipo de edificio, el cual se calcula sumando el
+	 * área del edificio multiplicado por 1.2 y el número de plantas multiplicado por 100.
+	 * 
+	 * En el caso de las casas el IBI se ve incrementado en 10€ por cada baño, los colegios por su parte tienen un descuento de
+	 * 500€, y por último las guarderías no pagan nada.
+	 * 
+	 * @return
 	 */
 	public float calculaIBI() {
 		return this.areaEdificio*1.2f + this.numPlantas*100;
 	}
-	
+
 	/*
 	 * toString redefinido (redefinimos toString de la clase Object)
 	 */
@@ -88,8 +99,6 @@ public class Edificio {
 				"\n\tImpuesto de IBI: " + this.calculaIBI() + "€" +
 				"\n\tNúmero de habitaciones: " + this.numHabitaciones +
 				"\n\tNúmero de plantas: " + this.numPlantas + 
-				"\n\tArea edificio: " + this.areaEdificio;
+				"\n\tÁrea edificio: " + this.areaEdificio;
 	}
-	
-
 }
