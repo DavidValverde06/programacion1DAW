@@ -21,6 +21,15 @@ public class Casa extends Edificio {
 		this.numDormitorios = numDormitorios;
 		this.numBanios = numBanios;
 	}
+	
+	public Casa(String nomCalle, int numero, int codPostal,
+			int numHabitaciones, int numPlantas, float areaEdificio,
+			int numDormitorios, int numBanios) {
+		
+		this(new Direccion(nomCalle,numero,codPostal),
+				numHabitaciones,numPlantas,areaEdificio,
+				numDormitorios,numBanios);
+	}
 
 	/*
 	 * Getter's y setter's
