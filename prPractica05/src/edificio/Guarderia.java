@@ -1,6 +1,6 @@
 package edificio;
 
-public class Guarderia extends Colegio{
+public class Guarderia extends Colegio {
 
 	//	Guardería: contendrá la misma información que un colegio,
 	//	pero también necesitaremos conocer la superficie dedicada al área de juegos.

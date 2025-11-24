@@ -86,7 +86,7 @@ public class Edificio {
 	 * @return
 	 */
 	public float calculaIBI() {
-		return this.areaEdificio*1.2f + this.numPlantas*100;
+		return this.areaEdificio * 1.2f + this.numPlantas*100;
 	}
 
 	/*
@@ -94,9 +94,9 @@ public class Edificio {
 	 */
 	@Override
 	public String toString() {
-		return this.getClass().getSimpleName() + // Obtener el nombre de la clase
+		return this.getClass().getSimpleName() + ": " + // Obtener el nombre de la clase
 				"\n\tDirección: " + this.dirEdificio.toString() +
-				"\n\tImpuesto de IBI: " + this.calculaIBI() + "€" +
+				"\n\tImpuesto de IBI: " + (this.calculaIBI()<0?"El impuesto IBI es negativo":this.calculaIBI() + "€") +
 				"\n\tNúmero de habitaciones: " + this.numHabitaciones +
 				"\n\tNúmero de plantas: " + this.numPlantas + 
 				"\n\tÁrea edificio: " + this.areaEdificio;

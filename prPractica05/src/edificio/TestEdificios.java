@@ -10,7 +10,7 @@ public class TestEdificios {
 	public static void main(String[] args) {
 
 		// Test dirección
-		System.out.println("Direcciones");
+		System.out.println("Direcciones:");
 		Direccion dir1 = new Direccion("Avda. Europa", 126, 29210);
 		Direccion dir2 = new Direccion("Calle alameda", 2, 29200);
 
