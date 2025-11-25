@@ -60,28 +60,49 @@ public class Cuenta {
 	/**
 	 * Constructor
 	 */
-	public Cuenta(int numCuenta, String nombreTitular, float saldo) {
+	public Cuenta(int numCuenta, String nombreTitular, float cantidad) {
 		this.numCuenta = numCuenta;
 		this.nombreTitular = nombreTitular;
-		this.saldo = saldo;
+		this.saldo = cantidad;
+		Cuenta.acumulador += saldo; // añadir saldo inicial al acumulador
 	}
-	
+
 	/**
 	 * Método Ingreso
 	 * 
 	 * Ingresa la cantidad indicada en la cuenta que se especifique.
 	 */
-	public float ingreso(float saldo, int numCuenta) {
-		return this.saldo+=saldo;
+	public void ingreso(float cantidad) {
+		if (saldo>0) {
+			this.saldo+=cantidad;
+			Cuenta.acumulador+=saldo;
+		}
+		else {
+			System.out.println("La cantidad a ingresar debe ser positiva");
+		}
 	}
-	
+
 	/**
 	 * Método Reintegro
 	 * 
 	 * Saca la cantidad indicada de la cuenta que se especifique, siempre y cuando haya saldo
 	 */
-	
-	
+	public void reintegro(float saldo) {
+
+		if (saldo>0) {
+			if (this.saldo>=saldo) {
+				this.saldo-=saldo;
+				Cuenta.acumulador-=saldo;
+			}	
+			else {
+				System.out.println("Saldo insuficiente");
+			}
+		}
+		else {
+			System.out.println("La cantidad a retirar debe ser positiva");
+		}
+	}
+
 	/**
 	 * reseteaAcumuladorBanco()
 	 * 
@@ -90,7 +111,7 @@ public class Cuenta {
 	public int reseteaAcumuladorBanco() {
 		return Cuenta.acumulador=0;
 	}
-	
+
 	/**
 	 * calcularIntereses()
 	 * 
@@ -98,9 +119,9 @@ public class Cuenta {
 	 * y el interés que mantiene fijo el banco.
 	 */
 	public float calcularIntereses() {
-		
+		return this.saldo * INTERES/100.0f;
 	}
-	
+
 	/**
 	 * Getter's y setter's
 	 */
@@ -112,7 +133,7 @@ public class Cuenta {
 		return nombreTitular;
 	}
 
-	public int getSaldo() {
+	public float getSaldo() {
 		return saldo;
 	}
 
@@ -132,7 +153,7 @@ public class Cuenta {
 		this.nombreTitular = nombreTitular;
 	}
 
-	public void setSaldo(int saldo) {
+	public void setSaldo(float saldo) {
 		this.saldo = saldo;
 	}
 
@@ -147,6 +168,7 @@ public class Cuenta {
 	public int hashCode() {
 		return Objects.hash(nombreTitular, numCuenta, saldo);
 	}
+	
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -175,16 +197,16 @@ public class Cuenta {
 				"\n\tNº de cuenta: " + this.numCuenta +
 				"\n\tTitular: " + this.nombreTitular +
 				"\n\tSaldo: " + this.saldo +
-				"\n\tInterés obtenido: " + ;
+				"\n\tInterés obtenido: " + calcularIntereses();
 	}
 
 	/**
-	 * Finalizador
+	 * Finalizador (Deprecated)
 	 */
-	@Override
-	protected void finalize() throws Throwable {
-	    System.out.println("Objeto destruido");
-	    super.finalize();
-	}
+//	@Override
+//	protected void finalize() throws Throwable {
+//		System.out.println("Objeto destruido");
+//		super.finalize();
+//	}
 
 }
