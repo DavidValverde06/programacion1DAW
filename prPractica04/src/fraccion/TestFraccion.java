@@ -5,11 +5,12 @@ public class TestFraccion {
 	public static void main(String[] args) {
 
 		// Crear fracciones
+		try {
 		Fraccion f1 = new Fraccion(8, 12);
 		Fraccion f2 = new Fraccion(3, 4);
 		Fraccion f3 = new Fraccion(5, 2);
 		Fraccion f4 = new Fraccion(10, 15);
-
+		
 		// Mostrar fracciones originales
 		System.out.println("Fracción f1: " + f1);
 		System.out.println("Fracción f2: " + f2);
@@ -56,6 +57,10 @@ public class TestFraccion {
 		System.out.println("f4 modificada: " + f4);
 		f4.simplifica();
 		System.out.println("f4 simplificada: " + f4);
+		}
+		catch(Exception e) {
+			System.out.println(e.getMessage());
+		}
 	}
 
 }

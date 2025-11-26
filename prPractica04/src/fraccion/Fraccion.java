@@ -10,15 +10,27 @@ public class Fraccion {
 	/*
 	 * Variables de instancia
 	 */
+	private int signo;
 	private int numerador;
 	private int denominador;
 
 	/*
 	 * Constructor
 	 */
-	public Fraccion(int numerador, int denominador) {
-		this.numerador = numerador;
-		this.denominador = denominador;
+	public Fraccion(int numerador, int denominador) throws Exception {
+		if (denominador==0) {
+			throw new Exception("Error, el denominador no puede ser 0");
+		}
+
+		if (numerador*denominador<0) {
+			this.signo = -1;
+		}
+		else {
+			this.signo = 1;
+		}
+
+		this.numerador = Math.abs(numerador);
+		this.denominador = Math.abs(denominador);
 	}
 
 	/*
@@ -42,7 +54,12 @@ public class Fraccion {
 	 */
 	@Override
 	public String toString() {
-		return this.numerador + "/" + this.denominador;
+		if(signo == -1) {
+			return "-" + this.numerador + "/" + this.denominador;
+		}
+		else {
+			return this.numerador + "/" + this.denominador;
+		}
 	}
 
 	/*
@@ -103,7 +120,7 @@ public class Fraccion {
 	/*
 	 * Método multiplica
 	 */
-	public Fraccion multiplica(Fraccion fraccionMultiplicar) {
+	public Fraccion multiplica(Fraccion fraccionMultiplicar) throws Exception {
 		int nuevoNumerador = this.numerador * fraccionMultiplicar.numerador;
 		int nuevoDenominador = this.denominador * fraccionMultiplicar.denominador;
 		return new Fraccion(nuevoNumerador, nuevoDenominador);
@@ -112,7 +129,7 @@ public class Fraccion {
 	/*
 	 * Método divide
 	 */
-	public Fraccion divide(Fraccion fraccionDividir) {
+	public Fraccion divide(Fraccion fraccionDividir) throws Exception {
 		int nuevoNumerador = this.numerador * fraccionDividir.denominador;
 		int nuevoDenominador = this.denominador * fraccionDividir.numerador;
 		return new Fraccion(nuevoNumerador, nuevoDenominador);
