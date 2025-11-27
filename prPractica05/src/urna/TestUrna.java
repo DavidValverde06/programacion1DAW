@@ -16,43 +16,59 @@ package urna;
 public class TestUrna {
 
 	public static void main(String[] args) {
-		
+
 		char bola1,bola2;
-		
-		Urna urnaPrueba = new Urna(5, 4);
-		
+
+		Urna urnaPrueba = new Urna(2, 2);
+
 		while (urnaPrueba.quedaMasDeUnaBola()) {
+
+			System.out.println(urnaPrueba);
+
 			bola1=urnaPrueba.sacaBola();
 			bola2=urnaPrueba.sacaBola();
+
+			System.out.println("Se han sacado de la urna una bola " + bola1 + " y una bola " + bola2);
+
 			if (bola1==bola2) {
+				System.out.println("Las bolas son del mismo color, se ha introducido una bola negra.");
 				urnaPrueba.meteBola('N');
 			}
 			else {
+				System.out.println("Las bolas son de distinto color, se ha introducido una bola blanca.");
 				urnaPrueba.meteBola('B');
 			}
-			
-			System.out.println(urnaPrueba);
 		}
+
+		System.out.println(urnaPrueba);
 		
-//		Urna miUrna = new Urna(10, 10);
-//		
-//		System.out.println("Urna creada con 10 bolas blancas y 10 bolas negras");
-//		System.out.println(miUrna);
-//		
-//		miUrna.sacaBola();
-//		
-//		System.out.println("Quitamos una bola al azar");
-//		System.out.println(miUrna);
-//		
-//		miUrna.meteBola('N');
-//		
-//		System.out.println("Metemos una bola negra");
-//		System.out.println(miUrna);
-//		
-//		miUrna.meteBola('B');
-//		
-//		System.out.println("Metemos una bola blanca");
-//		System.out.println(miUrna);
+		if (urnaPrueba.getBolasBlancas()==1) {
+			System.out.println("Queda una bola blanca");
+		}
+		else {
+			System.out.println("Queda una negra en bolas");
+		}
+
+		
+		//		Urna miUrna = new Urna(10, 10);
+		//		
+		//		System.out.println("Urna creada con 10 bolas blancas y 10 bolas negras");
+		//		System.out.println(miUrna);
+		//		
+		//		miUrna.sacaBola();
+		//		
+		//		System.out.println("Quitamos una bola al azar");
+		//		System.out.println(miUrna);
+		//		
+		//		miUrna.meteBola('N');
+		//		
+		//		System.out.println("Metemos una bola negra");
+		//		System.out.println(miUrna);
+		//		
+		//		miUrna.meteBola('B');
+		//		
+		//		System.out.println("Metemos una bola blanca");
+		//		System.out.println(miUrna);
 	}
 
 }

@@ -47,10 +47,16 @@ public class Urna {
 		int bolaSacada=(int)(Math.random()*2);
 		if (bolaSacada==0) {
 			this.bolasNegras--;
+			if (this.bolasNegras<=0) {
+				this.bolasNegras=0;
+			}
 			return 'N';
 		}
 		else {
 			this.bolasBlancas--;
+			if (this.bolasBlancas<=0) {
+				this.bolasBlancas=0;
+			}
 			return 'B';	
 		}
 	}
