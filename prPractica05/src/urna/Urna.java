@@ -1,5 +1,7 @@
 package urna;
 
+TERMINAR
+
 /**
  * 4.- a) Crear la clase Urna, la cual contiene inicialmente un número determinado de bolas blancas y un
  * número determinado de bolas negras, y presenta como interfaz los siguientes métodos:
