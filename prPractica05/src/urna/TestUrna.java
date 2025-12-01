@@ -19,7 +19,7 @@ public class TestUrna {
 
 		char bola1,bola2;
 
-		Urna urnaPrueba = new Urna(2, 2);
+		Urna urnaPrueba = new Urna(1, 4);
 
 		while (urnaPrueba.quedaMasDeUnaBola()) {
 
@@ -41,15 +41,15 @@ public class TestUrna {
 		}
 
 		System.out.println(urnaPrueba);
-		
+
 		if (urnaPrueba.getBolasBlancas()==1) {
 			System.out.println("Queda una bola blanca");
 		}
 		else {
-			System.out.println("Queda una negra en bolas");
+			System.out.println("Queda una bola negra");
 		}
 
-		
+
 		//		Urna miUrna = new Urna(10, 10);
 		//		
 		//		System.out.println("Urna creada con 10 bolas blancas y 10 bolas negras");

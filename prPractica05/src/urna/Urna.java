@@ -1,7 +1,5 @@
 package urna;
 
-TERMINAR
-
 /**
  * 4.- a) Crear la clase Urna, la cual contiene inicialmente un número determinado de bolas blancas y un
  * número determinado de bolas negras, y presenta como interfaz los siguientes métodos:
@@ -29,8 +27,8 @@ public class Urna {
 	/**
 	 * Variables de instancia
 	 */
-	private int bolasNegras;
-	private int bolasBlancas;
+	protected int bolasNegras;
+	protected int bolasBlancas;
 
 	/**
 	 * Constructor
@@ -46,8 +44,9 @@ public class Urna {
 	 * Devolverá el color de la bola sacada. Decrementa en 1 el nº de bolas de ese color.
 	 */
 	public char sacaBola() {
-		int bolaSacada=(int)(Math.random()*2);
-		if (bolaSacada==0) {
+		int total = this.bolasBlancas+this.bolasNegras;
+		int bolaSacada=(int)(Math.random()*total);
+		if (bolaSacada<this.bolasNegras) {
 			this.bolasNegras--;
 			if (this.bolasNegras<=0) {
 				this.bolasNegras=0;
@@ -59,7 +58,7 @@ public class Urna {
 			if (this.bolasBlancas<=0) {
 				this.bolasBlancas=0;
 			}
-			return 'B';	
+			return 'B';
 		}
 	}
 
@@ -83,7 +82,7 @@ public class Urna {
 	 * Devuelve cierto si hay bolas en la urna.
 	 */
 	public boolean quedanBolas() {
-		return this.bolasBlancas + this.bolasNegras > 0;
+		return totalBolas()>0;
 
 		//		if (this.bolasBlancas>0 && this.bolasNegras>0) {
 		//			return true;
@@ -97,7 +96,7 @@ public class Urna {
 	 * Devuelve cierto si hay más de una bola en la urna.
 	 */
 	public boolean quedaMasDeUnaBola() {
-		return this.bolasBlancas + this.bolasNegras>1;
+		return totalBolas()>1;
 	}
 
 	/**
