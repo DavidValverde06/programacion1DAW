@@ -82,7 +82,7 @@ public class Urna {
 	 * Devuelve cierto si hay bolas en la urna.
 	 */
 	public boolean quedanBolas() {
-		return totalBolas()>0;
+		return this.totalBolas()>0;
 
 		//		if (this.bolasBlancas>0 && this.bolasNegras>0) {
 		//			return true;
@@ -96,7 +96,7 @@ public class Urna {
 	 * Devuelve cierto si hay más de una bola en la urna.
 	 */
 	public boolean quedaMasDeUnaBola() {
-		return totalBolas()>1;
+		return this.totalBolas()>1;
 	}
 
 	/**
@@ -135,5 +135,4 @@ public class Urna {
 				"\nNúmero de bolas negras: " + this.bolasNegras +
 				"\nNúmero total de bolas: " + this.totalBolas() + "\n";
 	}
-
 }

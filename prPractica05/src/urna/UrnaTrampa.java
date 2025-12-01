@@ -8,11 +8,18 @@ package urna;
 
 public class UrnaTrampa extends Urna {
 
+	/**
+	 * Constructor
+	 * @param bolasNegras
+	 * @param bolasBlancas
+	 */
 	public UrnaTrampa(int bolasNegras, int bolasBlancas) {
 		super(bolasNegras, bolasBlancas);
-
 	}
 
+	/**
+	 * Método sacaBola redefinido
+	 */
 	@Override
 	public char sacaBola() {
 		int cambiarBola;
