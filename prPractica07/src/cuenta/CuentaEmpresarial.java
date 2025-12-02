@@ -12,4 +12,12 @@ package cuenta;
 
 public class CuentaEmpresarial extends Cuenta {
 
+	/**
+	 * Variables de instancia
+	 */
+	private String nombreEmpresa;
+	
+	/**
+	 * Constructor
+	 */
 }

@@ -42,10 +42,10 @@ public class CuentaJoven extends Cuenta {
 	 */
 	@Override
 	public float reintegro(float cantidad) {
-		if (getSaldoActual()>0) {
-		return this.saldoActual-=cantidad;
+		if (this.saldoActual-cantidad<0) {
+			return this.saldoActual;
 		}
-		return this.saldoActual;
+		return this.saldoActual-=cantidad;
 	}
 	
 	/**
