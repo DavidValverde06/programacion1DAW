@@ -52,10 +52,16 @@ public class TestCuenta {
 		
 		
 		System.out.println("=== CAJERO ===");
-		Cajero cajero1 = new Cajero(1, 1, 1, 1);
+		Cajero cajero1 = new Cajero(1000, 1000, 1000, 1000);
 		System.out.println(cajero1);
 		
 		System.out.println(cajero1.disponible() + " €");
+
+		System.out.println();
+		
+		cajero1.sacar(cuenta3, 6767, 5000);
+		
+		System.out.println("\n"+cajero1);
 	}
 
 

@@ -46,20 +46,57 @@ public class Cajero implements InterfazCajero {
 	 * disponible.
 	 */
 	@Override
-	public float sacar(Cuenta cuentaCliente, int numeroSecreto, int cantidad) {
+	public void sacar(Cuenta cuentaCliente, int numeroSecreto, int cantidad) {
+		int contBilletes10=0,contBilletes20=0,contBilletes50=0,contBilletes100=0,cantidadRestante = cantidad;
+
 		if (!cuentaCliente.validar(numeroSecreto)) {
 			System.out.println("PIN incorrecto.");
-			return 0;
+			return;
 		}
 		if (cuentaCliente.saldoActual<cantidad) {
-			System.out.println("No hay suficiente dinero para sacar de la cuenta.");
-			return 0;
+			System.out.println("No hay suficiente dinero en la cuenta.");
+			return;
 		}
 		if (disponible()<cantidad) {
-			System.out.println("No hay suficiente dinero en el cajero para sacar.");
-			return 0;
+			System.out.println("No hay suficiente dinero en el cajero.");
+			return;
 		}
-		return 
+
+		while (cantidadRestante>0) {
+			if (cantidadRestante>=100 && this.billete100>0) {
+				cantidadRestante-=100;
+				this.billete100--;
+				contBilletes100++;
+			}
+			else if (cantidadRestante>=50 && this.billete50>0) {
+				cantidadRestante-=50;
+				this.billete50--;
+				contBilletes50++;
+			}
+			else if (cantidadRestante>=20 && this.billete20>0) {
+				cantidadRestante-=20;
+				this.billete20--;
+				contBilletes20++;
+			}
+			else if (cantidadRestante>=10 && this.billete10>0) {
+				cantidadRestante-=10;
+				this.billete10--;
+				contBilletes10++;
+			}
+			else {
+				System.out.println("El cajero no puede dispensar el importe solicitado con los billetes disponibles.");
+				return;
+			}
+		}
+
+		cuentaCliente.saldoActual -= cantidad;
+
+		System.out.println("Operación realizada con éxito.");
+		System.out.println("Desglose de billetes entregados:" +
+				"\n" + contBilletes10 + " billetes de 10 €" +
+				"\n" + contBilletes20 + " billetes de 20 €" +
+				"\n" + contBilletes50 + " billetes de 50 €" +
+				"\n" + contBilletes100 + " billetes de 100 €");
 	}
 
 	/**

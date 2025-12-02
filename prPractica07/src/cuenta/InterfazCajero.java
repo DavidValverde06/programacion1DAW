@@ -42,5 +42,5 @@ public interface InterfazCajero {
 	 * desglose de billetes suministrados al cliente. Asimismo deberá actualizar el cajero con su nuevo
 	 * disponible.
 	 */
-	public float sacar(Cuenta ob,int numeroSecreto,int Cantidad);
+	public void sacar(Cuenta ob,int numeroSecreto,int Cantidad);
 }
