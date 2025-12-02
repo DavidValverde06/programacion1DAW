@@ -6,7 +6,7 @@ package cuenta;
  */
 
 public class Cajero implements InterfazCajero {
-	
+
 	/**
 	 * Variables de instancia
 	 */
@@ -14,7 +14,7 @@ public class Cajero implements InterfazCajero {
 	private int billete20;
 	private int billete50;
 	private int billete100;
-	
+
 	/**
 	 * Constructor
 	 */
@@ -24,7 +24,7 @@ public class Cajero implements InterfazCajero {
 		this.billete50 = billete50;
 		this.billete100 = billete100;
 	}
-	
+
 	/**
 	 * disponible(). Devuelve el dinero que en ese momento tiene disponible el cajero.
 	 */
@@ -32,7 +32,7 @@ public class Cajero implements InterfazCajero {
 	public float disponible() {
 		return (this.billete10*10 + this.billete20*20 + this.billete50*50 + this.billete100*100);
 	}
-	
+
 	/**
 	 * sacar(Cuenta ob, int numeroSecreto, int cantidad).
 	 * 
@@ -61,7 +61,7 @@ public class Cajero implements InterfazCajero {
 		}
 		return 
 	}
-	
+
 	/**
 	 * toString redefinido con el siguiente formato:
 	 * 
@@ -77,6 +77,6 @@ public class Cajero implements InterfazCajero {
 				"\n\t" + this.billete10 + " billetes de 10 €" +
 				"\n\t" + this.billete20 + " billetes de 20 €" +
 				"\n\t" + this.billete50 + " billetes de 50 €" +
-			   "\n\t" + this.billete100 + " billetes de 100 €";
+				"\n\t" + this.billete100 + " billetes de 100 €";
 	}
 }
