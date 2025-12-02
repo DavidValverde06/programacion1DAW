@@ -20,7 +20,7 @@ public class Jarra {
 	/**
 	 * Variables de instancia
 	 */
-	private int capacidadJarra;
+	private final int CAPACIDADJARRA=2;
 	private int cantidadAgua;
 
 	/**
