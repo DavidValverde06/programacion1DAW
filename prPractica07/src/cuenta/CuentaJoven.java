@@ -41,11 +41,11 @@ public class CuentaJoven extends Cuenta {
 	 * cuenta, es decir, no podrá estar en números rojos.
 	 */
 	@Override
-	public float reintegro(float cantidad) {
+	public void reintegro(float cantidad) {
 		if (this.saldoActual-cantidad<0) {
-			return this.saldoActual;
+			System.out.println("No se puede sacar más dinero. La cuenta no puede estar en números rojos");
 		}
-		return this.saldoActual-=cantidad;
+		this.saldoActual-=cantidad;
 	}
 	
 	/**

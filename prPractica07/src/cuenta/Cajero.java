@@ -34,17 +34,32 @@ public class Cajero implements InterfazCajero {
 	}
 	
 	/**
-	 * sacar(Cuenta ob, int numeroSecreto, int cantidad). 
+	 * sacar(Cuenta ob, int numeroSecreto, int cantidad).
+	 * 
 	 * Permitirá a un cliente (de cualquiera de los tres tipos de cuentas) poder sacar 
-	 * dinero del cajero, para ello deberá verificarse que la contraseña sea
-	 * correcta, que el cliente disponga del dinero que pretende sacar, y que el cajero tenga la cantidad y
-	 * los billetes necesarios para el reintegro. Este método deberá mostrar un mensaje indicando el
+	 * dinero del cajero, para ello deberá verificarse que la contraseña sea correcta,
+	 * que el cliente disponga del dinero que pretende sacar, y que el cajero tenga la cantidad y
+	 * los billetes necesarios para el reintegro.
+	 * 
+	 * Este método deberá mostrar un mensaje indicando el
 	 * desglose de billetes suministrados al cliente. Asimismo deberá actualizar el cajero con su nuevo
 	 * disponible.
 	 */
 	@Override
-	public float sacar(Cuenta ob, int numeroSecreto, int Cantidad) {
-		return 0;
+	public float sacar(Cuenta cuentaCliente, int numeroSecreto, int cantidad) {
+		if (!cuentaCliente.validar(numeroSecreto)) {
+			System.out.println("PIN incorrecto.");
+			return 0;
+		}
+		if (cuentaCliente.saldoActual<cantidad) {
+			System.out.println("No hay suficiente dinero para sacar de la cuenta.");
+			return 0;
+		}
+		if (disponible()<cantidad) {
+			System.out.println("No hay suficiente dinero en el cajero para sacar.");
+			return 0;
+		}
+		return 
 	}
 	
 	/**
@@ -62,7 +77,6 @@ public class Cajero implements InterfazCajero {
 				"\n\t" + this.billete10 + " billetes de 10 €" +
 				"\n\t" + this.billete20 + " billetes de 20 €" +
 				"\n\t" + this.billete50 + " billetes de 50 €" +
-				"\n\t" + this.billete100 + " billetes de 100 €";
+			   "\n\t" + this.billete100 + " billetes de 100 €";
 	}
-
 }

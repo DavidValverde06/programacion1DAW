@@ -70,15 +70,15 @@ public class Cuenta {
 	/**
 	 * imposicion(real cantidad). Ingresa cantidad en la cuenta.
 	 */
-	public float imposicion(float cantidad) {
-		return this.saldoActual+=cantidad;
+	public void imposicion(float cantidad) {
+		this.saldoActual+=cantidad;
 	}
 	
 	/**
 	 * reintegro(real cantidad). Saca cantidad de la cuenta.
 	 */
-	public float reintegro(float cantidad) {
-		return this.saldoActual-=cantidad;
+	public void reintegro(float cantidad) {
+		this.saldoActual-=cantidad;
 	}
 	
 	/**
@@ -89,8 +89,7 @@ public class Cuenta {
 		return getClass().getSimpleName() +
 				"\nNúmero de la cuenta: " + this.numCuenta +
 				"\nNombre del titular de la cuenta: " + this.nombreTitular +
-				"\nSaldo actual de la cuenta: " + this.saldoActual +
-				"\nNúmero PIN de la cuenta: " + this.numSecreto;
+				"\nSaldo actual de la cuenta: " + this.saldoActual + " €";
 	}
 	
 	/**
