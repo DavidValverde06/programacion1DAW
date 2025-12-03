@@ -38,20 +38,18 @@ public class Jarra {
 	 * Las jarras inicialmente estarán vacías. Si el valor recibido como parámetro es menor o igual a
 	 * cero, entonces lanzará la excepción RuntimeException.
 	 */
-	public Jarra(int capacidadJarra,int cantidadAgua) {
-		this.capacidadJarra = capacidadJarra;
-		this.cantidadAgua = cantidadAgua;
-	}
-	
 	public Jarra(int cantidadAgua) {
+		sin hacer
 		this.cantidadAgua = cantidadAgua;
 	}
 
 	/**
 	 * • Métodos get.
-	 * • Método toString, devuelve un String con la representación textual del objeto jarra en el formato
-	 * J(cap,cnt).
+	 * 
+	 * • Método toString, devuelve un String con la representación textual del objeto jarra en el formato J(cap,cnt).
+	 * 
 	 * • Método equals, consideraremos que dos jarras son iguales si coincide su capacidad.
+	 * 
 	 * • Método llena, este método lo sobrecargaremos:
 	 * o llena(): Llena el contenido del objeto jarra al máximo de su capacidad.
 	 * o llena (int cantidad): añade al contenido del objeto jarra, la cantidad indicada, solo en el caso de
@@ -61,8 +59,11 @@ public class Jarra {
 	 * que la jarra emisora se vacíe por completo. Si el objeto actual (this) es el mismo objeto que el
 	 * objeto recibido como parámetro, entonces este método no realizará ninguna acción y lanzará la
 	 * excepción RuntimeException.
+	 * 
 	 * • Método vacia. Vacía el contenido del objeto jarra completamente.
+	 * 
 	 * • Método estaLlena. Comprueba si una jarra está completamente llena.
+	 * 
 	 * • Método estaVacia. Comprueba si una jarra está completamente vacia.
 	 */
 }

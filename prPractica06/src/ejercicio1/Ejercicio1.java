@@ -37,7 +37,7 @@ public class Ejercicio1 {
 
 	// Programa principal
 	public static void main(String[] args) {
-		Ejercicio1 ob = new Ejercicio1(Integer.parseInt(args[0]));
+		Ejercicio1 ob = new Ejercicio1(5);
 
 		ob.cuentaDivisores();
 
