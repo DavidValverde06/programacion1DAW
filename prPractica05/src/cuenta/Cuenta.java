@@ -46,13 +46,14 @@ public class Cuenta {
 	/**
 	 * Variables de clase
 	 */
-	final static int INTERES=3;
+	final static int INTERES;
 	static int acumulador;
 
 	/**
 	 * Inicializador
 	 */
 	static {
+		INTERES=3;
 		acumulador=0;
 		System.out.println("Inicializador estático ejecutado");
 	}
@@ -108,7 +109,7 @@ public class Cuenta {
 	 * 
 	 * Método que pone a 0 el acumulador del banco.
 	 */
-	public int reseteaAcumuladorBanco() {
+	public static int reseteaAcumuladorBanco() {
 		return Cuenta.acumulador=0;
 	}
 
@@ -163,23 +164,12 @@ public class Cuenta {
 
 	/**
 	 * Método equals redefinido
-	 */
-	@Override
-	public int hashCode() {
-		return Objects.hash(nombreTitular, numCuenta, saldo);
-	}
-	
+	 */	
 	@Override
 	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Cuenta other = (Cuenta) obj;
-		return Objects.equals(nombreTitular, other.nombreTitular) && numCuenta == other.numCuenta
-				&& saldo == other.saldo;
+		Cuenta otraCuenta = (Cuenta) obj;
+		return Objects.equals(nombreTitular, otraCuenta.nombreTitular) && numCuenta == otraCuenta.numCuenta
+				&& saldo == otraCuenta.saldo;
 	}
 
 	/**
@@ -202,11 +192,11 @@ public class Cuenta {
 
 	/**
 	 * Finalizador (Deprecated)
+	 * @throws Throwable
 	 */
-//	@Override
-//	protected void finalize() throws Throwable {
-//		System.out.println("Objeto destruido");
-//		super.finalize();
-//	}
+	@Override
+	protected void finalize() throws Throwable {
+		System.out.println("Objeto destruido. Número de cuenta: " + this.getNumCuenta());
+	}
 
 }

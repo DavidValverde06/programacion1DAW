@@ -152,13 +152,7 @@ public class Rectangulo {
 	 */
 	@Override
 	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Rectangulo other = (Rectangulo) obj;
-		return alto == other.alto && ancho == other.ancho;
+		Rectangulo otroRectangulo = (Rectangulo) obj;
+		return alto == otroRectangulo.alto && ancho == otroRectangulo.ancho;
 	}
 }

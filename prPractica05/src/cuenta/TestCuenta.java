@@ -29,7 +29,7 @@ public class TestCuenta {
 
         // Probar reseteaAcumuladorBanco
         System.out.println("Acumulador antes de reset: " + Cuenta.getAcumulador());
-        c1.reseteaAcumuladorBanco();
+        Cuenta.reseteaAcumuladorBanco();
         System.out.println("Acumulador después de reset: " + Cuenta.getAcumulador());
 
         // Probar setters
@@ -37,6 +37,12 @@ public class TestCuenta {
         c2.setSaldo(7000);
         System.out.println("\nCuenta modificada con setters:");
         System.out.println(c2);
+        
+        c1=null;
+        c2=null;
+        
+        System.gc();
+//        System.runFinalization();
 	}
 
 }
