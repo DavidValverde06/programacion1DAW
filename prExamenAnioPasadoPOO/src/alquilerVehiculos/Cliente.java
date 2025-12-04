@@ -88,7 +88,7 @@ public class Cliente {
 	@Override
 	public String toString() {
 		return getClass().getSimpleName() + ": " + this.nombreCompleto +
-				"(DNI: " + this.dni + ", Tlf.: " + this.numTlf + " - " + (this.vip?"VIP":"NO VIP");
+				" (DNI: " + this.dni + ", Tlf.: " + this.numTlf + " - " + (this.vip?"VIP":"NO VIP");
 	}
 	
 	/**

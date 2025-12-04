@@ -118,17 +118,17 @@ public class Vino {
 	 * 		incrementa en 50 céntimos.
 	 * 		o También habrá que sumar un 3% de la minuta por hora que cobra el enólogo responsable.
 	 */
-	public float precioBruto() {
-
-	}
+//	public float precioBruto() {
+//
+//	}
 
 	/**
 	 * - Método que calcule el precio de venta del vino, es decir, tras aplicarle los impuestos anteriormente
 	 * explicados.
 	 */
-	public float precioVenta() {
-
-	}
+//	public float precioVenta() {
+//
+//	}
 
 	/**
 	 * - Método toString redefindo
@@ -141,14 +141,14 @@ public class Vino {
 	 * 		Precio bruto: 4 euros y 7 céntimos
 	 * 		Precio venta: 5 euros y 31 céntimos
 	 */
-	@Override
-	public String toString() {
-		return getClass().getSimpleName().toUpperCase() + ": " + this.nombreVino + " - " + this.tipoVino +
-				"\n\tCosecha: " + this.cosecha +
-				"\n\tEnologo: " + this.enologo +
-				"\n\tMaduración: " + this.maduracionMeses +
-				"\n\tGraduación: " + this.graduacionAlcholica +
-				"\n\tPrecio bruto: " + precioBruto() +
-				"\n\tPrecio venta: " + precioVenta();
-	}
+//	@Override
+//	public String toString() {
+//		return getClass().getSimpleName().toUpperCase() + ": " + this.nombreVino + " - " + this.tipoVino +
+//				"\n\tCosecha: " + this.cosecha +
+//				"\n\tEnologo: " + this.enologo +
+//				"\n\tMaduración: " + this.maduracionMeses +
+//				"\n\tGraduación: " + this.graduacionAlcholica +
+//				"\n\tPrecio bruto: " + precioBruto() +
+//				"\n\tPrecio venta: " + precioVenta();
+//	}
 }
