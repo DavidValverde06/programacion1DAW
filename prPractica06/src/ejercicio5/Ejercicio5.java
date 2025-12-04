@@ -20,5 +20,5 @@ package ejercicio5;
 
 public class Ejercicio5 {
 
-	SIN HACER
+//	SIN HACER
 }

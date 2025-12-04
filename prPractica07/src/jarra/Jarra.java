@@ -17,11 +17,12 @@ package jarra;
 
 public class Jarra {
 
+	// SIN HACER
+	
 	/**
 	 * Variables de instancia
 	 */
-	private final int CAPACIDADJARRA=2;
-	private int cantidadAgua;
+
 
 	/**
 	 * Desarrollaremos los siguientes constructores y métodos en nuestra clase, para poder llevar a cabo las
@@ -38,10 +39,7 @@ public class Jarra {
 	 * Las jarras inicialmente estarán vacías. Si el valor recibido como parámetro es menor o igual a
 	 * cero, entonces lanzará la excepción RuntimeException.
 	 */
-	public Jarra(int cantidadAgua) {
-		sin hacer
-		this.cantidadAgua = cantidadAgua;
-	}
+
 
 	/**
 	 * • Métodos get.

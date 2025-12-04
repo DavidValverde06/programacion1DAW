@@ -11,5 +11,5 @@ package ejercicio2;
 
 public class Ejercicio2 {
 
-	SIN HACER
+//	SIN HACER
 }
