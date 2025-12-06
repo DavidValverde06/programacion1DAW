@@ -66,12 +66,12 @@ public class ObrasDeTeatro extends Espectaculo {
 			total+=10;
 		}
 
-		//		switch (this.genero) {
-		//		case "Musical" -> total+=12;
-		//		case "Drama" -> total+=3;
-		//		case "Comedia" -> total+=5;
-		//		default -> total+=10;
-		//		}
+//				switch (this.genero.toLowerCase()) {
+//				case "musical" -> total+=12;
+//				case "drama" -> total+=3;
+//				case "comedia" -> total+=5;
+//				default -> total+=10;
+//				}
 
 		return total;
 	}
