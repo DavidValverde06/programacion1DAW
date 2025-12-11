@@ -13,21 +13,22 @@ public class Ejercicio4 {
 
 		Scanner sc = new Scanner(System.in);
 
-		int [] array = new int[8];
+		final int TAMANIO=8;
+		int [] miArray = new int[TAMANIO];
 
-		for (int cont=0;cont<array.length;cont++) {
+		for (int cont=0;cont<miArray.length;cont++) {
 			System.out.print("Introduce un número entero: ");
-			array[cont] = sc.nextInt();
+			miArray[cont] = sc.nextInt();
 		}
 
 		System.out.println("\nArray: ");
-		for (int cont=0;cont<array.length;cont++) {
-			System.out.print(array[cont] + " ");
+		for (int cont=0;cont<miArray.length;cont++) {
+			System.out.print(miArray[cont] + " ");
 		}
 		
 		System.out.println("\nArray inverso: ");
-		for (int cont=array.length-1;cont>=0;cont--) {
-			System.out.print(array[cont] + " ");
+		for (int cont=miArray.length-1;cont>=0;cont--) {
+			System.out.print(miArray[cont] + " ");
 		}
 		
 		sc.close();

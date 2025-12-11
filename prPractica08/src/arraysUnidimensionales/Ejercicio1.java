@@ -14,18 +14,18 @@ public class Ejercicio1 {
 		Scanner sc = new Scanner(System.in);
 
 		int suma=0;
-		int [] array = new int[10];
+		int [] miArray = new int[10];
 
-		for (int cont=0;cont<array.length;cont++) {
+		for (int cont=0;cont<miArray.length;cont++) {
 			System.out.print("Introduce un número entero: ");
-			array[cont] = sc.nextInt();
+			miArray[cont] = sc.nextInt();
 		}
 
 		System.out.println("\nMi primer Array: ");
-		for (int cont=0;cont<array.length;cont++) {
+		for (int cont=0;cont<miArray.length;cont++) {
 			if (cont%2!=0) { // Posición impar en el array (Par para el usuario)
-				System.out.print(array[cont] + " ");
-				suma+=array[cont];
+				System.out.print(miArray[cont] + " ");
+				suma+=miArray[cont];
 			}
 		}
 		

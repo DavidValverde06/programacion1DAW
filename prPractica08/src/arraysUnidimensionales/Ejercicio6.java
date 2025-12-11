@@ -11,16 +11,48 @@ import java.util.Scanner;
 
 public class Ejercicio6 {
 
+	revisar que las notas sean entre 0 y 10
+	
 	public static void main(String[] args) {
-		
+
 		Scanner sc = new Scanner(System.in);
-		
+
 		int arrayAlumnos[];
-		int num=
-		
-		System.out.print("Introduce el numero de alumnos: ");
-		
-		
+		float notaMedia=0;
+		int numAlumnos,notaMasAlta,notaMasBaja;
+
+		System.out.print("Introduce el número de alumnos: ");
+		numAlumnos=sc.nextInt();
+
+		arrayAlumnos = new int[numAlumnos];
+
+		for (int cont=0;cont<numAlumnos;cont++) {
+			System.out.print("Introduce la nota del alumno " + (cont+1) + ": ");
+			arrayAlumnos[cont]=sc.nextInt();
+		}
+
+		notaMasAlta=arrayAlumnos[0];
+		notaMasBaja=arrayAlumnos[0];
+
+		System.out.println("\nNotas de los " + numAlumnos + " alumnos: ");
+		for (int cont=0;cont<arrayAlumnos.length;cont++) {
+			System.out.print(arrayAlumnos[cont] + " ");
+
+			if (arrayAlumnos[cont]>notaMasAlta) {
+				notaMasAlta=arrayAlumnos[cont];
+			}
+			else if (arrayAlumnos[cont]<notaMasBaja) {
+				notaMasBaja=arrayAlumnos[cont];
+			}
+
+			notaMedia+=arrayAlumnos[cont];
+		}
+
+		System.out.println("\n\nNota mas alta: " + notaMasAlta);
+		System.out.println("Nota mas baja: " + notaMasBaja);
+		System.out.println("Nota media: " + notaMedia/numAlumnos);
+
+
 		sc.close();
 	}
 

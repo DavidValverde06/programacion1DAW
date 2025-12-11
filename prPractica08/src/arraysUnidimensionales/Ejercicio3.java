@@ -12,18 +12,18 @@ public class Ejercicio3 {
 
 	public static void main(String[] args) {
 
-		char[] array = new char[10];
+		char[] miArray = new char[10];
 
-		array[0] = 'a';
-		array[1] = 'x';
-		array[4] = '@';
-		array[6] = ' ';
-		array[7] = '+';
-		array[8] = 'Q';
+		miArray[0] = 'a';
+		miArray[1] = 'x';
+		miArray[4] = '@';
+		miArray[6] = ' ';
+		miArray[7] = '+';
+		miArray[8] = 'Q';
 
 		System.out.println("Array de caracteres: ");
-		for (int cont=0;cont<array.length;cont++) {
-			System.out.print(array[cont] + " ");
+		for (int cont=0;cont<miArray.length;cont++) {
+			System.out.print(miArray[cont] + " ");
 		}
 	}
 
