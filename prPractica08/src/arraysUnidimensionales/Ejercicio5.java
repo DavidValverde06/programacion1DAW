@@ -9,6 +9,8 @@ package arraysUnidimensionales;
 public class Ejercicio5 {
 
 	public static void main(String[] args) {
+		
+		int suma=0;
 		int[] array = new int[20];
 
 		for (int cont=0;cont<array.length;cont++) {
@@ -17,10 +19,13 @@ public class Ejercicio5 {
 
 		System.out.println("Array de números aleatorios: ");
 		for (int cont=0;cont<array.length;cont++) {
-			if (cont%2!=0 && array[cont]%2==0) {
+			if (cont%2!=0 && array[cont]%2==0) { // Posición impar y elemento par
 				System.out.println("Posición:" + cont + " Número:" + array[cont]);
+				suma+=array[cont];
 			}
 		}
+		
+		System.out.println("\nSuma de los valores pares: " + suma);
 	}
 
 }
