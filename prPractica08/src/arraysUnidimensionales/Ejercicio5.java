@@ -20,8 +20,6 @@ public class Ejercicio5 {
 		System.out.println("Array de números aleatorios: ");
 		for (int cont=0;cont<miArray.length;cont++) {
 			System.out.println("Posición:" + (cont+1) + " Número:" + miArray[cont]);
-			suma+=miArray[cont];
-			contador++;
 		}
 
 		System.out.println("\nArray posición impar y elemento par: ");
