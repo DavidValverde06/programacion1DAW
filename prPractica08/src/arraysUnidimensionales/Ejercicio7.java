@@ -9,10 +9,10 @@ public class Ejercicio7 {
 
 	public static void main(String[] args) {
 
-		int[] arraySinRepeticiones = new int[50];
+		int[] arraySinRepeticiones = new int[10];
 
 		for (int cont=0;cont<arraySinRepeticiones.length;cont++) {
-			arraySinRepeticiones[cont] = (int)(Math.random()*50)+1;
+			arraySinRepeticiones[cont] = (int)(Math.random()*10)+1;
 		}
 
 		System.out.println("Array de números aleatorios que no se repiten: ");
