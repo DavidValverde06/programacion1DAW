@@ -10,8 +10,6 @@ import java.util.Scanner;
  */
 
 public class Ejercicio6 {
-
-	revisar que las notas sean entre 0 y 10
 	
 	public static void main(String[] args) {
 
@@ -29,6 +27,11 @@ public class Ejercicio6 {
 		for (int cont=0;cont<numAlumnos;cont++) {
 			System.out.print("Introduce la nota del alumno " + (cont+1) + ": ");
 			arrayAlumnos[cont]=sc.nextInt();
+			
+			if (arrayAlumnos[cont]<0||arrayAlumnos[cont]>10) {
+				System.out.println("Nota no válida");
+				arrayAlumnos[cont]=0;
+			}
 		}
 
 		notaMasAlta=arrayAlumnos[0];
