@@ -58,6 +58,11 @@ public class LibreriaArraysObjeto {
 	}
 
 
+	/**
+	 * =================
+	 * MÉTODOS DE OBJETO
+	 * =================
+	 */
 
 	/**
 	 * Método Carga de datos de teclado
@@ -127,5 +132,47 @@ public class LibreriaArraysObjeto {
 			}
 		}
 		return min;
+	}
+
+	/**
+	 * Método Suma de los elementos del array
+	 */
+	public int sumaElementos() {
+		int sumaElementos=0;
+		for (int cont=0;cont<array.length;cont++) {
+			sumaElementos+=array[cont];
+		}
+		return sumaElementos;
+	}
+
+	/**
+	 * Métodos de búsqueda dicotómica o binaria
+	 */
+	public void busquedaDico(int[] array, int numeroBuscar) {
+		for (int cont=0;cont<array.length;cont++) {
+
+		}
+	}
+
+	/**
+	 * Método de la burbuja
+	 */
+	public void ordenacionBurbuja(int[] array) {
+		int cont=1,aux;
+		boolean ordenado=false;
+
+		while (cont<array.length && ordenado==false) {
+			ordenado=true;
+			for (int cont2=array.length-1;cont2>=cont;cont2--) {
+
+				if (array[cont2]<array[cont2-1]) {
+					aux=array[cont2];
+					array[cont2]=array[cont2-1];
+					array[cont2-1]=aux;
+					ordenado = false;
+				}
+			}
+			cont++;
+		}
 	}
 }

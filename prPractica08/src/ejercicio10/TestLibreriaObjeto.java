@@ -24,23 +24,22 @@ public class TestLibreriaObjeto {
 				case 3 -> System.out.println(ob.toString2());
 				case 4 -> System.out.println("Valor máximo: " + ob.elementoMax());
 				case 5 -> System.out.println("Valor mínimo: " + ob.elementoMin());
-				case 6 ->
-				case 7 ->
-				case 8 ->
-				case 9 ->
-				case 10 ->
-				case 11 ->
-				case 12 ->
-				case 13 ->
-				case 14 ->
-				case 15 ->
-				case 16 ->
+				case 6 -> System.out.println("Suma elementos: " + ob.sumaElementos());
+//				case 7 ->
+//				case 8 -> 
+//				case 9 ->
+//				case 10 ->
+				case 11 -> ob.busquedaDico(ob.getArray(), 1);
+				case 12 -> ob.ordenacionBurbuja(ob.getArray());
+//				case 13 ->
+//				case 14 ->
+//				case 15 ->
+//				case 16 ->
 				case 17 -> System.out.println("\nSaliendo del programa...");
 				default -> System.out.println("Opción no válida");
 				}
 			}
 			while (opcion!=17);
-
 		}
 	}
 
