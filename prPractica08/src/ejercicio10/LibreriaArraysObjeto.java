@@ -155,6 +155,12 @@ public class LibreriaArraysObjeto {
 	}
 
 	/**
+	 * =====================
+	 * MÉTODOS DE ORDENACIÓN
+	 * =====================
+	 */
+	
+	/**
 	 * Método de la burbuja
 	 */
 	public void ordenacionBurbuja(int[] array) {
@@ -173,6 +179,79 @@ public class LibreriaArraysObjeto {
 				}
 			}
 			cont++;
+		}
+	}
+
+	/**
+	 * Método de selección
+	 */
+	public void ordenacionSeleccion(int[] array) {
+		int posicionMenor,menor;
+
+		for (int cont=0;cont<=array.length-2;cont++) {
+			posicionMenor=cont;
+			menor = array[cont];
+
+			for (int cont2= cont+1; cont2<=array.length-1; cont2++) {
+
+				if (array[cont2]<menor) {
+					posicionMenor = cont2;
+					menor = array[cont2];
+				}
+			}
+			
+			array[posicionMenor]=array[cont];
+			array[cont]=menor;
+		}
+	}
+
+	/**
+	 * Método de insercción
+	 */
+	public void ordenacionInsercion(int[] array) {
+		int contador,aux;
+
+		for (int cont=1;cont<(array.length);cont++) {
+			aux = array[cont];
+			contador = cont-1;
+
+			while ((contador>=0) && (array[contador]>aux)) {
+				array[contador+1] = array[contador];
+				contador--;
+			}
+
+			array[contador+1]=aux;
+		}
+	}
+
+	/**
+	 * Método de Shell
+	 */
+	public void ordenacionShell(int[] array) {
+		int sw, cont, salto, aux, n;
+
+		n = array.length-1;
+		salto = n;
+
+		while (salto != 1) {
+			sw = 1;
+			salto = salto/2;
+
+			while (sw!=0) {
+				cont = 0;
+				sw = 0;
+
+				while (cont <= (n-salto)) {
+
+					if (array[cont] > array[cont+salto]) {
+						aux = array[cont+salto];
+						array[cont+salto] = array[cont];
+						array[cont]= aux;
+						sw = 1;
+					}
+					cont++;
+				}
+			}
 		}
 	}
 }

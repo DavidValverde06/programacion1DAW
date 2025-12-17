@@ -2,38 +2,35 @@ package ejercicio10;
 
 import java.util.Scanner;
 
-public class TestLibreriaObjeto {
+public class TestLibreriaClase {
 
 	public static void main(String[] args) {
 
 		byte opcion;
 
-		LibreriaArraysObjeto ob = new LibreriaArraysObjeto(8);
-
+		int[] array = new int [10];
+		
 		try (Scanner sc = new Scanner(System.in)) {
 
 			do {
-				menu();
-
-				System.out.print("\nElija opción: ");
-				opcion = sc.nextByte();
+				opcion = menu(sc);
 
 				switch (opcion) {
-				case 1 -> ob.cargaDatosTeclado(sc);
-				case 2 -> ob.cargaDatosAleatorio();
-				case 3 -> System.out.println(ob.toString2());
-				case 4 -> System.out.println("Valor máximo: " + ob.elementoMax());
-				case 5 -> System.out.println("Valor mínimo: " + ob.elementoMin());
-				case 6 -> System.out.println("Suma elementos: " + ob.sumaElementos());
+				case 1 -> LibreriaArraysClase.cargaDatosTeclado(sc, array);
+				case 2 -> LibreriaArraysClase.cargaDatosAleatorio(array);
+				case 3 -> System.out.println(LibreriaArraysClase.toString(array));
+//				case 4 -> 
+//				case 5 -> 
+//				case 6 -> 
 //				case 7 ->
 //				case 8 -> 
 //				case 9 ->
 //				case 10 ->
-				case 11 -> ob.busquedaDico(ob.getArray(), 1);
-				case 12 -> ob.ordenacionBurbuja(ob.getArray());
-				case 13 -> ob.ordenacionSeleccion(ob.getArray());
-				case 14 -> ob.ordenacionInsercion(ob.getArray());
-				case 15 -> ob.ordenacionShell(ob.getArray());
+//				case 11 -> 
+//				case 12 -> 
+//				case 13 -> 
+//				case 14 -> 
+//				case 15 -> 
 //				case 16 ->
 				case 17 -> System.out.println("\nSaliendo del programa...");
 				default -> System.out.println("Opción no válida");
@@ -43,7 +40,10 @@ public class TestLibreriaObjeto {
 		}
 	}
 
-	public static void menu() {
+	public static byte menu(Scanner sc) {
+		
+		byte opcion;
+		
 		System.out.println("\n --- MENU DE OPERACIONES ---");
 		System.out.println("1.- Carga de datos desde teclado");
 		System.out.println("2.- Carga de datos aleatoria");
@@ -62,5 +62,11 @@ public class TestLibreriaObjeto {
 		System.out.println("15.- Ordenación por el método de Shell");
 		System.out.println("16.- Desordenar array");
 		System.out.println("17.- Salir");
+		
+		System.out.print("\nElija opción: ");
+		opcion = sc.nextByte();
+		
+		return opcion;
 	}
+
 }
