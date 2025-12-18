@@ -3,21 +3,21 @@ package ejercicio10;
 import java.util.Scanner;
 
 /**
- * Librería con métodos de objeto para manejar arrays, el array con el 
+ * Librería con métodos de objeto para manejar arrays, el array con el
  * que trabajaremos será variable de instancia.
  * 
  * Esta librería incluirá los siguientes métodos:
- *    - Carga de datos de teclado
- *    - Carga de datos aleatoria
- *    - toString
- *    - Elemento máximo del array
- *    - Elemento mínimo del array
- *    - Suma de los elementos del array
- *    - Métodos de búsqueda (lineal y dicotómica o binaria)
- *    - Métodos varios de ordenación (burbuja, selección, inserción y Shell)
+ *    - Carga de datos de teclado ✓
+ *    - Carga de datos aleatoria ✓
+ *    - toString ✓
+ *    - Elemento máximo del array ✓
+ *    - Elemento mínimo del array ✓
+ *    - Suma de los elementos del array ✓
+ *    - Métodos de búsqueda (lineal y dicotómica o binaria) ✓
+ *    - Métodos varios de ordenación (burbuja, selección, inserción y Shell) ✓
  *    - Método que desordene el array
- *    - Método de insertar por posición
- *    - Método de borrar por posición
+ *    - Método de insertar por posición ✓
+ *    - Método de borrar por posición ✓
  *    - Método de borrar por elemento
  *    - Método para borrar todas las apariciones de un elemento
  * 
@@ -32,7 +32,7 @@ public class LibreriaArraysObjeto {
 	/**
 	 * Variables de instancia
 	 */
-	private int [] array;
+	private int[] array;
 
 	/**
 	 * Constructor
@@ -72,6 +72,7 @@ public class LibreriaArraysObjeto {
 			System.out.print("Introduzca el elemento de la posición " + (cont+1) + ": ");
 			array[cont]=sc.nextInt();
 		}
+		sc.nextLine();
 	}
 
 	/**
@@ -146,12 +147,58 @@ public class LibreriaArraysObjeto {
 	}
 
 	/**
-	 * Métodos de búsqueda dicotómica o binaria
+	 * =====================
+	 * MÉTODOS DE BUSQUEDA
+	 * =====================
 	 */
-	public void busquedaDico(int[] array, int numeroBuscar) {
-		for (int cont=0;cont<array.length;cont++) {
 
+	/**
+	 * Método de búsqueda lineal
+	 */
+	public int busquedaLineal(int[] array,Scanner sc){
+		int num,contador=-1;
+
+		System.out.print("Introduce el número que quieres buscar (lineal): "); 
+		num = sc.nextInt();
+		sc.nextLine();
+		do {
+			contador++;
 		}
+		while ((array[contador]!=num) && (contador<(array.length-1)));
+
+		if (array[contador]==num) {
+			return contador;
+		}
+		return -1;
+	}
+
+	/**
+	 * Método de búsqueda dicotómica o binaria
+	 */
+	public int busquedaDico(int[] array,Scanner sc) {
+
+		boolean sw = false;
+		int num,mitad,primero=0,ultimo=array.length-1;
+
+		System.out.print("Introduce el número que quieres buscar (binaria): ");
+		num = sc.nextInt();
+		sc.nextLine(); 
+
+		do {
+			mitad = (primero + ultimo)/2;
+			if(array[mitad]==num)
+				sw = true;
+			else if(array[mitad]<num)
+				primero = mitad+1;
+			else
+				ultimo = mitad-1;
+		}
+
+		while ((sw == false) && (primero <= ultimo));
+		if(sw == false) {
+			return -1;
+		}
+		return mitad;
 	}
 
 	/**
@@ -159,9 +206,9 @@ public class LibreriaArraysObjeto {
 	 * MÉTODOS DE ORDENACIÓN
 	 * =====================
 	 */
-	
+
 	/**
-	 * Método de la burbuja
+	 * Método burbuja
 	 */
 	public void ordenacionBurbuja(int[] array) {
 		int cont=1,aux;
@@ -199,7 +246,6 @@ public class LibreriaArraysObjeto {
 					menor = array[cont2];
 				}
 			}
-			
 			array[posicionMenor]=array[cont];
 			array[cont]=menor;
 		}
@@ -241,7 +287,7 @@ public class LibreriaArraysObjeto {
 				cont = 0;
 				sw = 0;
 
-				while (cont <= (n-salto)) {
+				while (cont<=(n-salto)) {
 
 					if (array[cont] > array[cont+salto]) {
 						aux = array[cont+salto];
@@ -253,5 +299,72 @@ public class LibreriaArraysObjeto {
 				}
 			}
 		}
+	}
+
+	/**
+	 * Método que desordene el array
+	 */
+	public void desordenarArray(int[] array) {
+
+	}
+
+	/**
+	 * Método de insertar por posición
+	 */
+	public void insertarPorPosicion(int[] array, Scanner sc) {
+		int posicion,num;
+
+		System.out.print("Introduce la posición donde insertar el número: ");
+		posicion = sc.nextInt();
+
+		System.out.print("Introduce el número: ");
+		num = sc.nextInt();
+
+		if (posicion>=0 && posicion<array.length) {
+			if (array[posicion]==0) {
+				array[posicion]=num;
+			} 
+			else {
+				System.out.println("La posición ya está ocupada");
+			}
+		}
+		else {
+			System.out.println("Posición fuera de rango");
+		}
+		sc.nextLine();
+	}
+
+	/**
+	 * Método de borrar por posición
+	 */
+	public void borrarPorPosicion(int[] array, Scanner sc) {
+		int posicion;
+
+		System.out.print("Introduce la posición donde borrar el número: ");
+		posicion = sc.nextInt();
+
+		if (posicion>=0 && posicion<array.length) {
+			for (int cont=posicion;cont<array.length-1;cont++) {
+				array[cont]=array[cont+1];
+			}
+			array[array.length-1]=0;
+		} else {
+			System.out.println("Posición fuera de rango");
+		}
+		sc.nextLine();
+	}
+
+	/**
+	 * Método de borrar por elemento
+	 */
+	public void borrarPorElemento(int[] array, int numBorrar) {
+
+	}
+
+	/**
+	 * Método para borrar todas las apariciones de un elemento
+	 */
+	public void borrarTodasLasAparicionesElementos(int[] array, int numBorrar) {
+
 	}
 }

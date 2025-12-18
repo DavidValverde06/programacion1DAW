@@ -17,29 +17,36 @@ public class TestLibreriaObjeto {
 
 				System.out.print("\nElija opción: ");
 				opcion = sc.nextByte();
+				sc.nextLine();
 
 				switch (opcion) {
-				case 1 -> ob.cargaDatosTeclado(sc);
-				case 2 -> ob.cargaDatosAleatorio();
-				case 3 -> System.out.println(ob.toString2());
-				case 4 -> System.out.println("Valor máximo: " + ob.elementoMax());
-				case 5 -> System.out.println("Valor mínimo: " + ob.elementoMin());
-				case 6 -> System.out.println("Suma elementos: " + ob.sumaElementos());
-//				case 7 ->
-//				case 8 -> 
-//				case 9 ->
-//				case 10 ->
-				case 11 -> ob.busquedaDico(ob.getArray(), 1);
-				case 12 -> ob.ordenacionBurbuja(ob.getArray());
-				case 13 -> ob.ordenacionSeleccion(ob.getArray());
-				case 14 -> ob.ordenacionInsercion(ob.getArray());
-				case 15 -> ob.ordenacionShell(ob.getArray());
-//				case 16 ->
-				case 17 -> System.out.println("\nSaliendo del programa...");
-				default -> System.out.println("Opción no válida");
+				case 1 -> ob.cargaDatosTeclado(sc); // Carga de datos desde teclado
+				case 2 -> ob.cargaDatosAleatorio(); // Carga de datos aleatoria
+				case 3 -> System.out.println(ob.toString()); // Mostrar array				
+				case 4 -> System.out.println("Valor máximo: " + ob.elementoMax()); // Valor máximo del array				
+				case 5 -> System.out.println("Valor mínimo: " + ob.elementoMin()); // Valor mínimo del array				
+				case 6 -> System.out.println("Suma elementos: " + ob.sumaElementos()); // Suma de los elementos del array				
+				case 7 -> ob.insertarPorPosicion(ob.getArray(),sc); // Insertar por posición
+				case 8 -> ob.borrarPorPosicion(ob.getArray(), sc); // Borrar por posición				
+				case 9 -> // Borrar buscando el número				
+				case 10 -> // Borrar todas las apariciones de un elemento				
+				case 11 -> System.out.println("Resultado búsqueda lineal: " + ob.busquedaLineal(ob.getArray(),sc)); // Búsqueda lineal
+				case 12 -> System.out.println("Resultado búsqueda binaria: " + ob.busquedaDico(ob.getArray(),sc)); // Búsqueda binaria
+				case 13 -> ob.ordenacionBurbuja(ob.getArray()); // Ordenación por el método de la burbuja
+				case 14 -> ob.ordenacionSeleccion(ob.getArray()); // Ordenación por el método de inserción				
+				case 15 -> ob.ordenacionInsercion(ob.getArray()); // Ordenación por el método de selección				
+				case 16 -> ob.ordenacionShell(ob.getArray()); // Ordenación por el método de Shell				
+				case 17 -> // Desordenar array
+				case 18 -> System.out.println("\nSaliendo del programa..."); // Salida del bucle y fin de programa
+				default -> System.out.println("Opción no válida"); // Si se introduce un número no válido mostrara este mensaje
+				}
+
+				if (opcion != 18) {
+					System.out.println("\nPulsa Enter para mostrar el menú");
+					sc.nextLine(); // Pulsar Enter para mostrar el menú
 				}
 			}
-			while (opcion!=17);
+			while (opcion!=18);
 		}
 	}
 
@@ -54,13 +61,14 @@ public class TestLibreriaObjeto {
 		System.out.println("7.- Insertar por posición");
 		System.out.println("8.- Borrar por posición");
 		System.out.println("9.- Borrar buscando el número");
-		System.out.println("10.- Búsqueda lineal");
-		System.out.println("11.- Búsqueda binaria o dicotómica");
-		System.out.println("12.- Ordenación por el método de la burbuja");
-		System.out.println("13.- Ordenación por el método de inserción");
-		System.out.println("14.- Ordenación por el método de selección");
-		System.out.println("15.- Ordenación por el método de Shell");
-		System.out.println("16.- Desordenar array");
-		System.out.println("17.- Salir");
+		System.out.println("10.- Borrar todas las apariciones de un elemento");
+		System.out.println("11.- Búsqueda lineal");
+		System.out.println("12.- Búsqueda binaria o dicotómica");
+		System.out.println("13.- Ordenación por el método de la burbuja");
+		System.out.println("14.- Ordenación por el método de inserción");
+		System.out.println("15.- Ordenación por el método de selección");
+		System.out.println("16.- Ordenación por el método de Shell");
+		System.out.println("17.- Desordenar array");
+		System.out.println("18.- Salir");
 	}
 }
