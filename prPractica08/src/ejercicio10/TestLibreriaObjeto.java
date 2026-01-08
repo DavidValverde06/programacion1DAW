@@ -2,6 +2,12 @@ package ejercicio10;
 
 import java.util.Scanner;
 
+/**
+ * Clase de testeo de la librería de métodos de objeto
+ * 
+ * @author David Valverde Barea
+ */
+
 public class TestLibreriaObjeto {
 
 	public static void main(String[] args) {
@@ -15,28 +21,28 @@ public class TestLibreriaObjeto {
 			do {
 				menu();
 
-				System.out.print("\nElija opción: ");
+				System.out.print("\nElija una opción: ");
 				opcion = sc.nextByte();
 				sc.nextLine();
 
 				switch (opcion) {
 				case 1 -> ob.cargaDatosTeclado(sc); // Carga de datos desde teclado
 				case 2 -> ob.cargaDatosAleatorio(); // Carga de datos aleatoria
-				case 3 -> System.out.println(ob.toString()); // Mostrar array				
-				case 4 -> System.out.println("Valor máximo: " + ob.elementoMax()); // Valor máximo del array				
+				case 3 -> System.out.println(ob.toString()); // Mostrar array			
+				case 4 -> System.out.println("Valor máximo: " + ob.elementoMax()); // Valor máximo del array
 				case 5 -> System.out.println("Valor mínimo: " + ob.elementoMin()); // Valor mínimo del array				
-				case 6 -> System.out.println("Suma elementos: " + ob.sumaElementos()); // Suma de los elementos del array				
+				case 6 -> System.out.println("Suma elementos: " + ob.sumaElementos()); // Suma de los elementos del array
 				case 7 -> ob.insertarPorPosicion(ob.getArray(),sc); // Insertar por posición
-				case 8 -> ob.borrarPorPosicion(ob.getArray(), sc); // Borrar por posición				
-				case 9 -> // Borrar buscando el número				
-				case 10 -> // Borrar todas las apariciones de un elemento				
+				case 8 -> ob.borrarPorPosicion(ob.getArray(), sc); // Borrar por posición
+				case 9 -> ob.borrarPorElemento(ob.getArray(), sc); // Borrar buscando el número
+				case 10 -> ob.borrarTodasLasAparicionesElementos(ob.getArray(), sc); // Borrar todas las apariciones de un elemento
 				case 11 -> System.out.println("Resultado búsqueda lineal: " + ob.busquedaLineal(ob.getArray(),sc)); // Búsqueda lineal
 				case 12 -> System.out.println("Resultado búsqueda binaria: " + ob.busquedaDico(ob.getArray(),sc)); // Búsqueda binaria
 				case 13 -> ob.ordenacionBurbuja(ob.getArray()); // Ordenación por el método de la burbuja
-				case 14 -> ob.ordenacionSeleccion(ob.getArray()); // Ordenación por el método de inserción				
-				case 15 -> ob.ordenacionInsercion(ob.getArray()); // Ordenación por el método de selección				
+				case 14 -> ob.ordenacionSeleccion(ob.getArray()); // Ordenación por el método de inserción
+				case 15 -> ob.ordenacionInsercion(ob.getArray()); // Ordenación por el método de selección
 				case 16 -> ob.ordenacionShell(ob.getArray()); // Ordenación por el método de Shell				
-				case 17 -> // Desordenar array
+				case 17 -> ob.desordenarArray(ob.getArray()); // Desordenar array
 				case 18 -> System.out.println("\nSaliendo del programa..."); // Salida del bucle y fin de programa
 				default -> System.out.println("Opción no válida"); // Si se introduce un número no válido mostrara este mensaje
 				}

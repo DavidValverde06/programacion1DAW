@@ -1,5 +1,6 @@
 package ejercicio10;
 
+import java.util.Random;
 import java.util.Scanner;
 
 /**
@@ -15,11 +16,11 @@ import java.util.Scanner;
  *    - Suma de los elementos del array ✓
  *    - Métodos de búsqueda (lineal y dicotómica o binaria) ✓
  *    - Métodos varios de ordenación (burbuja, selección, inserción y Shell) ✓
- *    - Método que desordene el array
+ *    - Método que desordene el array ✓
  *    - Método de insertar por posición ✓
  *    - Método de borrar por posición ✓
- *    - Método de borrar por elemento
- *    - Método para borrar todas las apariciones de un elemento
+ *    - Método de borrar por elemento ✓
+ *    - Método para borrar todas las apariciones de un elemento ✓
  * 
  * @author profesor
  *
@@ -305,7 +306,16 @@ public class LibreriaArraysObjeto {
 	 * Método que desordene el array
 	 */
 	public void desordenarArray(int[] array) {
+		Random rand = new Random();
+		int posicionRandom,temp;
 
+		for (int cont=0;cont<array.length;cont++) {
+			posicionRandom=rand.nextInt(array.length);
+			temp=array[cont];
+
+			array[cont] = array[posicionRandom];
+			array[posicionRandom] = temp;
+		}
 	}
 
 	/**
@@ -351,20 +361,60 @@ public class LibreriaArraysObjeto {
 		} else {
 			System.out.println("Posición fuera de rango");
 		}
+
 		sc.nextLine();
 	}
 
 	/**
 	 * Método de borrar por elemento
 	 */
-	public void borrarPorElemento(int[] array, int numBorrar) {
+	public void borrarPorElemento(int[] array, Scanner sc) {
+		System.out.print("Introduce el número a borrar: ");
+		int numBorrar = sc.nextInt();
 
+		boolean encontrado = false;
+
+		for (int cont=0;cont<array.length;cont++) {
+			if (!encontrado && array[cont] == numBorrar) {
+				encontrado = true;
+			}
+			if (encontrado && cont < array.length-1) {
+				array[cont] = array[cont+1];
+			}
+		}
+
+		if (encontrado) {
+			array[array.length-1] = 0;
+		}
+		else {
+			System.out.println("\nEl número no se encuentra en el array");
+		}
+
+		sc.nextLine();
 	}
 
 	/**
 	 * Método para borrar todas las apariciones de un elemento
 	 */
-	public void borrarTodasLasAparicionesElementos(int[] array, int numBorrar) {
+	public void borrarTodasLasAparicionesElementos(int[] array, Scanner sc) {
+		System.out.print("Introduce el número a borrar: ");
+		int numBorrar = sc.nextInt();
 
+		int indice=0;
+
+		for (int cont=0;cont<array.length;cont++) {
+			if (array[cont] != numBorrar) {
+				array[indice] = array[cont];
+				indice++;
+			}
+		}
+
+		while (indice<array.length) {
+			array[indice]=0;
+			indice++;
+		}
+
+		sc.nextLine();
 	}
+
 }
