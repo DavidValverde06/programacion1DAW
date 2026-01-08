@@ -10,6 +10,7 @@ public class MainBingo {
 
 	public static void main(String[] args) {
 		
+		sin hacer
 	}
 
 }

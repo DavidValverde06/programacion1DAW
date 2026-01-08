@@ -167,7 +167,6 @@ public class LibreriaArraysClase {
 		return mitad;
 	}
 
-
 	/**
 	 * =====================
 	 * MÉTODOS DE ORDENACIÓN
