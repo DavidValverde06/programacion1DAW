@@ -24,7 +24,7 @@ public class Ejercicioo13 {
 		
 		for (int filas=0;filas<miMatriz.length;filas++) {
 			for (int columnas=0;columnas<miMatriz[filas].length;columnas++) {
-				System.out.print(miMatriz[filas][columnas] + " ");
+				System.out.print(miMatriz[filas][columnas] + "\t");
 			}
 			System.out.println(" ");
 		}

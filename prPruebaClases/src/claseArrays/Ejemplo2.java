@@ -26,6 +26,7 @@ public class Ejemplo2 {
 		int[] datos = {1, 2, 3, 4, 5, 6, 6, 6, 6, 6, 7, 8, 9, 10};
 		int index = Arrays.binarySearch(datos, 7);
 		System.out.println(index); // 6 (índice del valor 7)
+		System.out.println(Arrays.binarySearch(datos, 10));
 		
 	}
 

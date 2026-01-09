@@ -8,6 +8,8 @@ package arraysObjeto;
 
 public class Alumno {
 
+	sin hacer
+	
 	/**
 	 * Variables de instancia
 	 */
