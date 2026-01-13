@@ -9,6 +9,8 @@ import java.util.Scanner;
  * 	- Multiplicación de dos polinomios de grado N y M.
  */
 
+sin hacer
+
 public class Ejercicioo11 {
 
 	public static void main(String[] args) {
@@ -33,9 +35,21 @@ public class Ejercicioo11 {
 				sc.nextLine();
 
 				switch (opcion) {
-				case 1 -> System.out.println("Suma");
-				case 2 -> System.out.println("Resta");
-				case 3 -> System.out.println("Multiplicación");
+				case 1 -> {
+					System.out.println("Suma de los polinomios: ");
+					polResultado = sumar(pol1, pol2);
+					mostrarPolinomio(polResultado);
+				}
+				case 2 -> {
+					System.out.println("Resta de los polinomios: ");
+					polResultado = sumar(pol1, pol2);
+					mostrarPolinomio(polResultado);
+				}
+				case 3 -> {
+					System.out.println("Multiplicación de los polinomios:");
+					polResultado = multiplicar(pol1, pol2);
+					mostrarPolinomio(polResultado);
+				}
 				case 4 -> System.out.println("\nSaliendo del programa...");
 				default -> System.out.println("Opción no válida");
 				}
@@ -75,11 +89,17 @@ public class Ejercicioo11 {
 	}
 
 	public static int[] sumar(int[] pol1, int[] pol2) {
+		int[] resultado = new int [Math.max(pol1.length, pol2.length)];
 
+		for (int cont=0;cont<resultado.length-1;cont++) {
+			resultado[cont]=pol1[cont]+pol2[cont];
+		}
+
+		return resultado;
 	}
 
-
 	public static int[] multiplicar(int[] pol1, int[] pol2) {
+
 
 	}
 
