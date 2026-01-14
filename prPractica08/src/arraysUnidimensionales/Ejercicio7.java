@@ -7,42 +7,31 @@ import java.util.Arrays;
  * forma que no se repita ninguno.
  */
 
-sin hacer
-
 public class Ejercicio7 {
 
 	public static void main(String[] args) {
-		byte tamanioArray = 10;
-		int[] array = new int[tamanioArray];
+		int[] array = new int[50];
 		int numRandom;
 		boolean repetir=true;
 
-		//	Generas un número aleatorio.
-		//
-		//	Antes de meterlo, recorres el array para ver si ya existe.
-		//
-		//	Si existe, repites el intento.
-		//
-		//	Si no existe, lo guardas.
-
-		for(int cont=0;cont<array.length;cont++) {
-			array[cont] = (int)(Math.random()*10);
-			while (repetir) {
+		for (int cont=0;cont<array.length;cont++) {
+			do {
 				repetir=false;
-				numRandom=(int)(Math.random()*10);
-				if (numRandom!=array[cont]) {
-					array[cont]=numRandom;
+				numRandom = (int)(Math.random()*100)+1;
+
+				for (int cont2=0;cont2<array.length;cont2++) {
+					if (numRandom==array[cont2]) {
+						repetir=true;
+					}
 				}
+				array[cont]=numRandom;
 			}
+			while (repetir);
 		}
 
-		System.out.println(Arrays.toString(array));
-
 		Arrays.sort(array);
-
-		System.out.println();
-
 		System.out.println(Arrays.toString(array));
+
 	}
 
 }
