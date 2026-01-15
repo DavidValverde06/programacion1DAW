@@ -54,6 +54,21 @@ public class Jugador {
 	 */
 	public String jugar(Juego7Media obJuego) {
 
+		if (!continua) { // El usuario no sigue jugando
+			return "El usuario no continua jugando, se ha pasado o se ha plantado.";
+		}
 
+		// Sacar una carta para el usuario
+		int[] cartaSacada = obJuego.sacaCarta();
+
+		// Acumular los puntos de la carta sacada
+		this.puntos+=obJuego.getPuntuacionCarta(cartaSacada[1]);
+
+		// Comprobar si se ha pasado de 7.5
+		if (this.puntos>7.5) {
+			this.continua=false;
+		}
+
+		return obJuego.toStringCarta1(cartaSacada[0], cartaSacada[1]);
 	}
 }

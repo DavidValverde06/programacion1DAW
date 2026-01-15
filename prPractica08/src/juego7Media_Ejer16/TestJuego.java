@@ -41,7 +41,7 @@ public class TestJuego {
 			System.out.println(ordenador.toString());
 
 			if (usuario.isContinua()) {
-				System.out.print("Usuario tienes "+usuario.getPuntos() + " puntos, �quieres seguir jugando? ");
+				System.out.print("Usuario tienes "+usuario.getPuntos() + " puntos, ¿quieres seguir jugando? ");
 
 				//	usuario.setContinua(sc.nextLine().charAt(0)=='S');
 				usuario.setContinua(sc.nextLine().toUpperCase().charAt(0)=='S');

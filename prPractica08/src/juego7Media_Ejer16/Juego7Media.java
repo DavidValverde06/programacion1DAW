@@ -43,7 +43,13 @@ public class Juego7Media {
 	 * Constructor
 	 */
 	public Juego7Media() {
+		this.cartasRestantes = 40;
+		this.baraja = new boolean[4][10];
 
+		// Rellenar la matriz que simula la baraja con valores boolean
+		for (int fil=0;fil<this.baraja.length;fil++) {
+			Arrays.fill(this.baraja[fil], true);
+		}
 	}
 
 	/**
@@ -68,11 +74,9 @@ public class Juego7Media {
 	 * 
 	 * @return --> true, si aún quedan cartas en la baraja
 	 * 		   --> false, si no queda ninguna carta en la baraja
-	 * 
-	 * @author David Valverde
 	 */
-	public boolean quedanCartas() {
-		return (getCartasRestantes()==0)?false:true;
+	public boolean quedanCartas() {		
+		return this.cartasRestantes>0;
 	}
 
 	/**
@@ -83,6 +87,26 @@ public class Juego7Media {
 	 */
 	public int[] sacaCarta() {
 
+		// Comprobar si hay cartas
+		if (!this.quedanCartas()) {
+			return null;
+		}
+
+		// Definir un array de 2 elementos para guardar las coordenadas de la carta
+		int [] cartaSacada = new int[2];
+
+		do {
+			cartaSacada[0] = aleatorio.nextInt(4); // Genera fila entre 0...3
+			cartaSacada[1] = aleatorio.nextInt(10); // Genera fila entre 0...9
+
+		}
+		while(!this.baraja[cartaSacada[0]][cartaSacada[1]]);
+
+		this.baraja[cartaSacada[0]][cartaSacada[1]]=false;
+		
+		this.cartasRestantes--;
+
+		return cartaSacada;
 
 	}
 
@@ -94,7 +118,12 @@ public class Juego7Media {
 	 */
 	public float getPuntuacionCarta(int col) {
 
-
+		if (col<7) {
+			return col+1;
+		}
+		else {
+			return 0.5f;
+		}
 	}
 
 	/**
@@ -104,12 +133,56 @@ public class Juego7Media {
 	 * 
 	 * @return --> Por ejemplo: 3 de oros, Sota de copas, Rey de bastos, ...
 	 */
-	public String toStrigCarta1(int palo, int valor) {
+	public String toStringCarta1(int palo, int valor) {
+		String cadena="";
 
+		switch (valor) {
+		case 0: 
+		case 1:
+		case 2:
+		case 3:
+		case 4:
+		case 5:
+		case 6: cadena=(valor+1) + " de "; break;
+		case 7: cadena=("Sota de "); break;
+		case 8: cadena=("Caballo de "); break;
+		case 9: cadena=("Rey de "); break;
+		}
+
+		switch (palo) {
+		case 0: cadena+="oros"; break;
+		case 1: cadena+="copas"; break;
+		case 2: cadena+="bastos"; break;
+		case 3: cadena+="espadas"; break;
+		}
+
+		return cadena;
 	}
 
 	public String toStringCarta(int palo, int valor) {
+		String cadena="";
 
+		switch (valor) {
+		case 0: 
+		case 1:
+		case 2:
+		case 3:
+		case 4:
+		case 5:
+		case 6: cadena=(valor+1) + " de "; break;
+		case 7: cadena=("Sota de "); break;
+		case 8: cadena=("Caballo de "); break;
+		case 9: cadena=("Rey de "); break;
+		}
+
+		switch (palo) {
+		case 0: cadena+="oros"; break;
+		case 1: cadena+="copas"; break;
+		case 2: cadena+="bastos"; break;
+		case 3: cadena+="espadas"; break;
+		}
+
+		return cadena;
 	}
 
 	/**
@@ -118,6 +191,14 @@ public class Juego7Media {
 	@Override
 	public String toString() {
 
+		String cadena = "\nEn la baraja quedan " + this.cartasRestantes + " cartas";
 
+		for (int fil=0;fil<this.baraja.length;fil++) {
+			for (int col=0;col<this.baraja[fil].length;col++) {
+				if (baraja[fil][col]) // Si la carta no ha salido
+					cadena+= "\n\t"+this.toStringCarta(fil,col);
+			}
+		}
+		return cadena;
 	}	
 }
