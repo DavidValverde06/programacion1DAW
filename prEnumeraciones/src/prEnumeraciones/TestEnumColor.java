@@ -13,7 +13,7 @@ public class TestEnumColor {
 
 		//Color c3 = Color.VIOLETA;
 		
-		Color c4 = Color.ROSA;
+//		Color c4 = Color.ROSA;
 		
 		System.out.println(c1);
 		System.out.println(c2);

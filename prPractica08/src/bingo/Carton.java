@@ -19,5 +19,48 @@ package bingo;
 
 public class Carton {
 
-	sin hacer
+	/**
+	 * Variables de instancia
+	 */
+	private int[] numerosCarton;
+	private Bombo numBolasIniciales;
+	private int numAciertos;
+
+	/**
+	 * Constructor
+	 */
+	public Carton(int[] numerosCarton, Bombo numBolasIniciales, int numAciertos) {
+		this.numerosCarton = numerosCarton;
+		this.numBolasIniciales = numBolasIniciales;
+		this.numAciertos = numAciertos;
+	}
+
+	/**
+	 * Método existeNumero(n)
+	 * 
+	 * comprobará si en el cartón existe el número n.
+	 */
+	public boolean existeNumero() {
+
+	}
+
+	/**
+	 * Método compruebaNumero(n)
+	 * 
+	 * si existe en el cartón el número n incrementará el número de aciertos del
+	 * cartón.
+	 */
+	public boolean compruebaNumero() {
+		
+	}
+
+	/**
+	 * Método quedanNumeros()
+	 * 
+	 * devuelve true si todavía quedan números sin acertar en el cartón y false si el
+	 * cartón está completo.
+	 */
+	public boolean quedanNumero() {
+
+	}
 }

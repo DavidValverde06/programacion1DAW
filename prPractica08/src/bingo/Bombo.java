@@ -14,5 +14,27 @@ package bingo;
 
 public class Bombo {
 
-	sin hacer
+	/**
+	 * Variables de instancia
+	 */
+	private boolean haSalidoBola;
+	private int numBolasIniciales;
+	
+	/**
+	 * Constructor
+	 */
+	public Bombo(boolean haSalidoBola, int numBolasIniciales) {
+		this.haSalidoBola = haSalidoBola;
+		this.numBolasIniciales = numBolasIniciales;
+	}
+	
+	/**
+	 * Método extraeBola()
+	 * 
+	 * sacará una bola aleatoriamente del bombo, habrá que tener en cuenta que no se
+	 * puede sacar una bola que ya haya salido anteriormente.
+	 */
+	public void extraeBola() {
+		
+	}
 }

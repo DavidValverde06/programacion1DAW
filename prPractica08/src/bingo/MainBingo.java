@@ -10,7 +10,7 @@ public class MainBingo {
 
 	public static void main(String[] args) {
 		
-		sin hacer
+		Bombo miBombo = new Bombo(false, 100);
 	}
 
 }

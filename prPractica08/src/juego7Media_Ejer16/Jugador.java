@@ -12,7 +12,7 @@ public class Jugador {
 	private String nombre;
 	private float puntos;
 	private boolean continua; 
-	
+
 	/**
 	 * Constructor
 	 */
@@ -21,11 +21,11 @@ public class Jugador {
 		this.puntos = 0;
 		this.continua = true;
 	}
-	
+
 	public Jugador() {
 		this("Anónimo");
 	}
-	
+
 	/**
 	 * Métodos get y set
 	 */
@@ -43,35 +43,17 @@ public class Jugador {
 	@Override
 	public String toString() {
 		return this.nombre + " ("+this.puntos+")"+
-	            (this.continua?", continua jugando":", NO continua jugando");
+				(this.continua?", continua jugando":", NO continua jugando");
 	}
 
 	/**
-	 * M�todo que permite a un jugador sacar una carta, siempre y cuando 
+	 * Método que permite a un jugador sacar una carta, siempre y cuando 
 	 * el jugador haya decidido seguir jugando, y no se haya pasado
 	 * 
 	 * @return --> Cadena con información de la carta sacada
 	 */
 	public String jugar(Juego7Media obJuego) {
-		
-		
-		
+
+
 	}
-	
-	
-
-	
 }
-
-
-
-
-
-
-
-
-
-
-
-
-

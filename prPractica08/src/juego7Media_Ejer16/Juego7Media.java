@@ -20,7 +20,7 @@ import java.util.Random;
  */
 
 public class Juego7Media {
-	
+
 	/**
 	 * Variables de clase
 	 */
@@ -32,22 +32,20 @@ public class Juego7Media {
 	private boolean [][] baraja;  // Matriz que representa la baraja
 	private int cartasRestantes;  // Cartas que me quedan por sacar
 
-	
 	/**
 	 * Inicializador estático
 	 */
 	static {
 		aleatorio = new Random();
 	}
-	
-	
+
 	/**
 	 * Constructor
 	 */
 	public Juego7Media() {
-		
+
 	}
-	
+
 	/**
 	 * Métodos get y set
 	 */
@@ -62,67 +60,64 @@ public class Juego7Media {
 	public void setCartasRestantes(int cartasRestantes) {
 		this.cartasRestantes = cartasRestantes;
 	}
-	
+
 	public static Random getAleatorio() {return aleatorio;}
-	
-	
+
 	/**
-	 * M�todo que comprueba si me quedan cartas en la baraja
-	 * @return
+	 * Método que comprueba si me quedan cartas en la baraja
+	 * 
+	 * @return --> true, si aún quedan cartas en la baraja
+	 * 		   --> false, si no queda ninguna carta en la baraja
+	 * 
+	 * @author David Valverde
 	 */
 	public boolean quedanCartas() {
-		
+		return (getCartasRestantes()==0)?false:true;
 	}
-	
+
 	/**
 	 * Método que permite sacar una carta de la baraja
+	 * 
 	 * @return --> un array con 2 elementos con la fila y la columna
 	 *         --> un null si no hay cartas
 	 */
 	public int[] sacaCarta() {
-		
+
+
 	}
-	
-	
+
 	/**
-	 * M�todo que devuelve la puntuaci�n de una carta en el juego de la 7 y media
+	 * Método que devuelve la puntuación de una carta en el juego de la 7 y media
+	 * 
 	 * @return --> 1..7 si la carta tiene un valor de 1 a 7
 	 *         --> 0,5  si es sota, caballo o rey
 	 */
 	public float getPuntuacionCarta(int col) {
-		
-		
+
+
 	}
-	
+
 	/**
-	 * Método que devuelve una representació tipo String de una carta
+	 * Método que devuelve una representación tipo String de una carta
 	 * @param palo --> Valor de 0 a 3
 	 * @param valor --> Valor de 0 a 9
+	 * 
 	 * @return --> Por ejemplo: 3 de oros, Sota de copas, Rey de bastos, ...
 	 */
 	public String toStrigCarta1(int palo, int valor) {
-		
+
 	}
-	
+
 	public String toStringCarta(int palo, int valor) {
-		
+
 	}
-	
-	
+
 	/**
 	 * Redefinición de toString, muestra las cartas restantes
 	 */
 	@Override
 	public String toString() {
 
-	}
-	
+
+	}	
 }
-
-
-
-
-
-
-
-
