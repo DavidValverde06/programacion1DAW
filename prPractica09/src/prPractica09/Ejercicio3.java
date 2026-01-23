@@ -15,6 +15,13 @@ public class Ejercicio3 {
 		System.out.println("Cadena a Entero: " + (int)(Double.parseDouble(numeroCadena)));
 		System.out.println("Cadena a Double quitando decimales: " + Math.round(Double.parseDouble(numeroCadena)));
 
+		try {
+		System.out.println(Double.parseDouble("Hola"));
+		}
+		catch (NumberFormatException e) {
+			System.out.println("Error");
+		}
+		
 		// Autoboxing.
 		// Es el proceso por el cual un tipo primitivo se convierte automáticamente en su clase
 		// envoltorio correspondiente cuando es necesario.

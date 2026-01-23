@@ -21,15 +21,18 @@ public class Ejercicio1 {
 		Random rand = new Random();
 
 		int numRandom = rand.nextInt(100); // Número random entre 1 y 100
-		long inicio = System.nanoTime();
 
 		System.out.println("Número random entre 1 y 100: " + numRandom);
 
+		System.out.println("\nNombre del paquete al que pertence el objeto: " + rand.getClass().getPackageName());
 		System.out.println("\nNombre de la clase a la que pertence el objeto: " + rand.getClass().getSimpleName() + "\n");
 
-		// System.nanoTime es un reloj interno de la maquina virtual de java que sirve para medir el tiempo transcurrido.
-		long tiempo = System.nanoTime() - inicio;
-		System.out.println("Tiempo: " + tiempo + " ns");
+		if (rand instanceof Random) {
+			System.out.println("El objeto pertenece a la clase Random");
+		}
+		else {
+			System.out.println("El objeto no pertenece a la clase Random");
+		}
 
 		// Pruebas con métodos de Object 
 		System.out.println("\n=== Pruebas con Object ==="); 
@@ -42,6 +45,12 @@ public class Ejercicio1 {
 		System.out.println("Objects.isNull(rand): " + Objects.isNull(rand)); 
 		System.out.println("Objects.nonNull(rand): " + Objects.nonNull(rand)); 
 		System.out.println("Objects.equals(rand, rand): " + Objects.equals(rand, rand));
+
+		long inicio = System.nanoTime();
+		
+		// System.nanoTime es un reloj interno de la maquina virtual de java que sirve para medir el tiempo transcurrido.
+		long tiempo = System.nanoTime() - inicio;
+		System.out.println("Tiempo: " + tiempo + " ns");
 	}
 
 }

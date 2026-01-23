@@ -1,5 +1,6 @@
 package clasesString;
 
+import java.util.Arrays;
 import java.util.StringTokenizer;
 
 public class TestStringTokenizer {
@@ -36,6 +37,14 @@ public class TestStringTokenizer {
 		System.out.println("\nDía: " + arrayFecha[0]);
 		System.out.println("Mes: " + arrayFecha[1]);
 		System.out.println("Año: " + arrayFecha[2]);
+		
+		System.out.println();
+		
+		String cadena2 = "Hola que tal, prueba de Split. Fin; de la prueba";
+		String[] arraycadena=cadena2.split("[ ,;.]");
+		for (String elem: arraycadena) {
+			System.out.println(elem);
+		}
 	}
 
 

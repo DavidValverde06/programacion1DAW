@@ -14,8 +14,8 @@ public class Prueba1 {
 		
 		System.out.println(obInteger+7);
 		
-		System.out.println(obInteger.MIN_VALUE);
-		System.out.println(obInteger.MAX_VALUE);
+		System.out.println(Integer.MIN_VALUE);
+		System.out.println(Integer.MAX_VALUE);
 		
 		// Creaci�n de un objeto Integer, a partir de un String
 		Integer obInteger2 = Integer.valueOf("98");

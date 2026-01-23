@@ -17,10 +17,12 @@ public class Ejercicio4 {
 
 		// Averigua la longitud de la cadena.
 		System.out.println("Longitud de la cadena: " + obString.length());
-
+		System.out.println("Hola".length());
+		
 		// Muestra el carácter que se encuentra en la posición 2 de tu cadena.
 		System.out.println("Carácter que se encuentra en la posición 2: " + obString.charAt(1));
-
+		System.out.println("Carácter que se encuentra en la posición 2 (array): " + obString.toCharArray()[1]);
+		
 		// Mostrar todas las vocales de una cadena.
 		System.out.print("Todas las vocales de la cadena: ");
 		for (int cont=0;cont<obString.length();cont++) {
