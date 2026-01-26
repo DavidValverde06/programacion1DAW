@@ -10,13 +10,21 @@ package prPractica09;
  */
 public class Ejercicio5 {
 
-	sin hacer
-
 	public static void main(String[] args) {
 
 		String cadenaFecha = "22/01/2026";
 		String cadenaCorreo = "nombre_usuario@gestor_correo"; 
 
+		String [] arrayFecha = cadenaFecha.split("/");
+		System.out.println("Día: " + arrayFecha[0]);
+		System.out.println("Mes: " + arrayFecha[1]);
+		System.out.println("Año: " + arrayFecha[2]);
+		
+		System.out.println();
+		
+		String [] arrayCorreo = cadenaCorreo.split("@");
+		System.out.println("Nombre usuario: " + arrayCorreo[0]);
+		System.out.println("Gestor de correo: " + arrayCorreo[1]);
 	}
 
 }
