@@ -14,7 +14,7 @@ public class Ejercicio4 {
 		String otraCadena;
 
 		// Crea un objeto de tipo String que contenga varias palabras
-		String obString = new String("Tiene la Tarara un vestido blanco que sólo se pone en el Jueves Santo.");
+		String obString = "Tiene la Tarara un vestido blanco que sólo se pone en el Jueves Santo.";
 		System.out.println(obString);
 
 		// Averigua la longitud de la cadena.
@@ -90,13 +90,29 @@ public class Ejercicio4 {
 		System.out.println(obString.indexOf("un vestido nigga"));
 		
 		// Busca todas las ocurrencias de una cadena.
-		String 
+		 
 		
 		// Extrae de tu cadena la segunda palabra y almacénala en una nueva cadena.
+//		System.out.println("\n");
+//		
+//		String nuevaCadena;
+//		String[] arrayCaracteresSplit;
+//		
+//		arrayCaracteresSplit = obString.split(" ,.:;");
+//		System.out.println(Arrays.toString(arrayCaracteresSplit));
+//		System.out.println("Segunda palabra: " + arrayCaracteresSplit[1]);
 		
 		
 		// A partir de un array de caracteres crea un objeto de tipo cadena.
 		
+		char[] arrayCaracteres2 = {'H','o','l','a'};
+		String cadena2="";
+		
+		for (int cont=0;cont<arrayCaracteres2.length;cont++) {
+			cadena2+=arrayCaracteres2[cont];
+		}
+		
+		System.out.println(cadena2);
 		
 		// Muestra el valor Unicode de cada uno de los caracteres de la cadena anterior (codePointAt).
 
