@@ -116,6 +116,8 @@ public class Ejercicio4 {
 		
 		// Muestra el valor Unicode de cada uno de los caracteres de la cadena anterior (codePointAt).
 
+		
+		
 		// Crea un objeto de tipo StringBuffer, y prueba diferentes formas de concatenación con el método
 		// Append.
 
