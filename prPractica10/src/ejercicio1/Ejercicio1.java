@@ -29,6 +29,9 @@ public class Ejercicio1 {
 
 		System.out.println(lista + "\n");
 
+		// Prueba a mostrar la colección de diferentes formas, es decir, directamente, recorriéndola con
+		// Iterator, utilizando el bucle foreach, ...
+
 		// Recorrer con Iterator
 		Iterator<Object> it = lista.iterator();
 		while(it.hasNext()) {
@@ -42,7 +45,7 @@ public class Ejercicio1 {
 			System.out.println(object);
 		}
 
-		// Borrar los números de la colección
+		//  Elimina con la ayuda de Iterator, todos los números enteros.
 		Iterator<Object> it2 = lista.iterator();
 		Object elem;
 		while(it2.hasNext()) {

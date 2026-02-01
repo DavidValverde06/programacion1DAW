@@ -19,7 +19,7 @@ import java.util.Objects;
  */
 
 public class Cuenta {
-	
+
 	/**
 	 * Variables de instancia
 	 */
@@ -27,7 +27,7 @@ public class Cuenta {
 	private String nombreTitular;
 	protected float saldoActual;
 	private int numSecreto;
-	
+
 	/**
 	 * Constructor
 	 */
@@ -38,7 +38,7 @@ public class Cuenta {
 		this.saldoActual = saldoActual;
 		this.numSecreto = numSecreto;
 	}
-	
+
 	/**
 	 * Métodos getter's y setter's
 	 */
@@ -66,21 +66,21 @@ public class Cuenta {
 	public void setNumSecreto(int numSecreto) {
 		this.numSecreto = numSecreto;
 	}
-	
+
 	/**
 	 * imposicion(real cantidad). Ingresa cantidad en la cuenta.
 	 */
 	public void imposicion(float cantidad) {
 		this.saldoActual+=cantidad;
 	}
-	
+
 	/**
 	 * reintegro(real cantidad). Saca cantidad de la cuenta.
 	 */
 	public void reintegro(float cantidad) {
 		this.saldoActual-=cantidad;
 	}
-	
+
 	/**
 	 * toString redefinido
 	 */
@@ -91,7 +91,7 @@ public class Cuenta {
 				"\nNombre del titular de la cuenta: " + this.nombreTitular +
 				"\nSaldo actual de la cuenta: " + this.saldoActual + " €";
 	}
-	
+
 	/**
 	 * Método equals redefinido
 	 */
@@ -110,7 +110,7 @@ public class Cuenta {
 		Cuenta other = (Cuenta) obj;
 		return numCuenta == other.numCuenta;
 	}
-	
+
 	/**
 	 * validar(int clave).
 	 * 
