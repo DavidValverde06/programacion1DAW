@@ -1,6 +1,6 @@
 package ejercicio3;
 
-import java.util.*;
+import java.util.*;;
 
 /**
  * 3.- Crea una colección de libros que esté ordenada por autor, y en caso de estar repetido el autor, por título
@@ -8,12 +8,12 @@ import java.util.*;
  * versiones diferentes del ejercicio, una en la que almacenes los libros en un conjunto ordenado, y otra en
  * una lista.
  */
-public class Ejercicio3 {
+public class Ejercicio3v2 {
 
 	public static void main(String[] args) {
 
-		List<Libro> misLibros = new ArrayList<>();
-		
+		SortedSet<Libro> misLibros = new TreeSet<>();
+
 		misLibros.add(new Libro("María Dueñas","Entre costuras",false));
 		misLibros.add(new Libro("Sarah Lark","En el país de la nube blanca",true));
 		misLibros.add(new Libro("Eduardo Punset","Viaje al optimismo",false));
@@ -23,20 +23,21 @@ public class Ejercicio3 {
 		misLibros.add(new Libro("J.R.R. Tolkien","El Silmarillion",true));
 		misLibros.add(new Libro("Kate Morton","El jardín olvidado",true));
 		misLibros.add(new Libro("Sarah Lark","La canción de los maoríes",true));
-		
+
 		System.out.println("=== Lista de libros ===");
 		for(Iterator<Libro> it = misLibros.iterator();it.hasNext();) {
 			System.out.println(it.next() + "\n");
 		}
-		
-		misLibros.sort(new ComparatorLibro());
-		
+
+//		misLibros.sort(new ComparatorLibro());
+
 		System.out.println("////////////////////////////////////////////////////////////////");
-		
+
 		System.out.println("=== Lista de libros ordenada ===");
 		for(Iterator<Libro> it = misLibros.iterator();it.hasNext();) {
 			System.out.println(it.next() + "\n");
 		}
+
 	}
 
 }

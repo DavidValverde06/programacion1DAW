@@ -142,11 +142,14 @@ public class Ejercicio2 {
 
 		// • Prueba a ordenar tu lista, tanto de forma ascendente, como descendente.
 		System.out.println("\n\n=== Ordenar ===");
-		System.out.println("\n" + lista);
+		
+		// Ascendente
+		Collections.sort(lista);
+		System.out.println(lista);
 
-		lista.sort(null);
-
-		System.out.println("\n\n" + lista);
+		// Descendente
+		Collections.sort(lista, Collections.reverseOrder());
+		System.out.println(lista);
 	}
 
 }

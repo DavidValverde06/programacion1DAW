@@ -1,10 +1,6 @@
 package ejercicio1;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Random;
+import java.util.*;
 
 public class Ejercicio1Parte2 {
 
