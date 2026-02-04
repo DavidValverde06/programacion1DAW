@@ -13,7 +13,7 @@ public class Ejercicio3 {
 	public static void main(String[] args) {
 
 		List<Libro> misLibros = new ArrayList<>();
-		
+
 		misLibros.add(new Libro("María Dueñas","Entre costuras",false));
 		misLibros.add(new Libro("Sarah Lark","En el país de la nube blanca",true));
 		misLibros.add(new Libro("Eduardo Punset","Viaje al optimismo",false));
@@ -23,20 +23,85 @@ public class Ejercicio3 {
 		misLibros.add(new Libro("J.R.R. Tolkien","El Silmarillion",true));
 		misLibros.add(new Libro("Kate Morton","El jardín olvidado",true));
 		misLibros.add(new Libro("Sarah Lark","La canción de los maoríes",true));
-		
-		System.out.println("=== Lista de libros ===");
-		for(Iterator<Libro> it = misLibros.iterator();it.hasNext();) {
-			System.out.println(it.next() + "\n");
+
+		// ------------------------------------------------------------------
+		// Ordenar la coleccion por orden natural, con sort de ArrayList,
+		// y con sort de Collections
+		// Orden natural: ascendente por autor y ascendente por título 
+		// ------------------------------------------------------------------
+		System.out.println("\nLibros ordenados por orden natural");
+		//		misLibros.sort(null);
+		Collections.sort(misLibros);
+		for (Libro libro : misLibros) {
+			System.out.println(libro);
 		}
-		
-		misLibros.sort(new ComparatorLibro());
-		
-		System.out.println("////////////////////////////////////////////////////////////////");
-		
-		System.out.println("=== Lista de libros ordenada ===");
-		for(Iterator<Libro> it = misLibros.iterator();it.hasNext();) {
-			System.out.println(it.next() + "\n");
+
+		// Ordenar la colección por orden inverso
+		System.out.println("\nLibros ordenados por orden natural, en sentido inverso");
+		Collections.reverse(misLibros);
+		for (Libro libro : misLibros) {
+			System.out.println(libro);
 		}
+
+		// ------------------------------------------------------------------
+		// Ordenar la colección por orden alternativo, con sort de ArrayList,
+		// y con sort de Collections
+		// Orden alternativo: ascendente por autor y descendente por título
+		// ------------------------------------------------------------------
+		System.out.println("\nColección en orden alternativo");
+		//		misLibros.sort(new OrdenAlternativo());
+		Collections.sort(misLibros, new OrdenAlternativo());
+		for (Libro libro : misLibros) {
+			System.out.println(libro);
+		}
+
+
+		// ------------------------------------------------------------------
+		// Identico al anterior, pero en una CLASE ANÓNIMA
+		// ------------------------------------------------------------------
+		Collections.sort(misLibros, new Comparator<Libro>() {
+			@Override
+			public int compare(Libro o1, Libro o2) {
+
+				int compara = o1.getAutor().compareTo(o2.getAutor());
+
+				if (compara != 0) {
+					return compara; // Son distintos
+				} else {
+					return o2.getTitulo().compareTo(o1.getTitulo()); // Autores iguales, devuelvo titulos
+				}
+			} // end Método compare
+		} // end Clase Anónima
+				); // paréntesis de cierre del método sort
+
+		System.out.println("\nLibros ordenados (orden alternativo): " + misLibros);
+
+
+		// ------------------------------------------------------------------
+		// Orden alternativo con expresión lambda (1º versión)
+
+		Collections.sort(misLibros,(Libro o1, Libro o2) -> {
+			int compareAutor = o1.getAutor().compareTo(o2.getAutor());
+
+			if (compareAutor != 0)
+				return compareAutor;
+			else
+				return o2.getTitulo().compareTo(o1.getTitulo());
+		}
+				);
+
+		// ------------------------------------------------------------------
+		// Orden alternativo con expresión lambda (2º versión)
+
+		Collections.sort(misLibros,(o1, o2) -> {
+			int compareAutor = o1.getAutor().compareTo(o2.getAutor());
+
+			if (compareAutor != 0)
+				return compareAutor;
+			else
+				return o2.getTitulo().compareTo(o1.getTitulo());
+		}
+				);
 	}
 
 }

@@ -17,7 +17,7 @@ import java.util.Objects;
  * Una vez definido el interfaz, probarlo con el siguiente algoritmo: ...
  */
 
-public class Libro {
+public class Libro implements Comparable<Libro>{
 
 	/*
 	 * Variables de instancia
@@ -87,5 +87,15 @@ public class Libro {
 		Libro other = (Libro) obj;
 		return this.autor.equalsIgnoreCase(other.getAutor()) &&
 			   this.titulo.equalsIgnoreCase(other.getTitulo());
+	}
+
+	@Override
+	public int compareTo(Libro o) {
+		int compara = this.getAutor().compareTo(o.getAutor());
+		
+		if (compara!=0) // Los autores son diferentes
+			return compara;
+		
+		return this.getTitulo().compareTo(o.getTitulo());
 	}
 }

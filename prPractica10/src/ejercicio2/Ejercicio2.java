@@ -145,9 +145,12 @@ public class Ejercicio2 {
 		
 		// Ascendente
 		Collections.sort(lista);
+//		lista.sort(null); // Orden natural
 		System.out.println(lista);
 
 		// Descendente
+//		Collections.sort(lista,new ComparaStringInverso());
+		
 		Collections.sort(lista, Collections.reverseOrder());
 		System.out.println(lista);
 	}
