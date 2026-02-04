@@ -10,16 +10,16 @@ public class Ejercicio8 {
 
 	public static void main(String[] args) {
 
-		SortedSet<Integer> listaNumeros = new TreeSet<>();
+		SortedSet<Integer> listaNumSinRepetir = new TreeSet<>();
 
 		do {
-			listaNumeros.add((int)(Math.random()*50)+1);
+			listaNumSinRepetir.add((int)(Math.random()*50)+1);
 		}
-		while (listaNumeros.size()!=50);
+		while (listaNumSinRepetir.size()!=50);
 
-		System.out.println(listaNumeros);
+		System.out.println(listaNumSinRepetir);
 
-		System.out.println("\nCantidad de números en la lista: " + listaNumeros.size());
+		System.out.println("\nCantidad de números en la lista: " + listaNumSinRepetir.size());
 	}
 
 }
