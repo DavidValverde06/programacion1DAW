@@ -66,7 +66,7 @@ public class Test {
 		grupoDAW2.add(a9);
 		grupoDAW2.add(a10);
 			
-		System.out.println("LISTA CON EL ORDEN EN QUE SE HAN A�ADIDO LOS ALUMNOS"+
+		System.out.println("LISTA CON EL ORDEN EN QUE SE HAN AÑADIDO LOS ALUMNOS"+
 		                    grupoDAW2.toString());
 		
 		/**
@@ -92,6 +92,8 @@ public class Test {
 		
 		System.out.println(grupoDAW.toString());
 		System.out.println(grupoDAW2.toString());
+		
+		// Ordenar por edad
 	}
 
 }
