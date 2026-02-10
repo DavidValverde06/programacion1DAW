@@ -41,6 +41,15 @@ public class Test1 {
 		Optional<String> resultado = optional.flatMap(valor5 -> Optional.of(valor5.toUpperCase()));
 		
 		Optional<String> filtrado = optional.filter(valor6 -> valor6.startsWith("H"));
+		
+		System.out.println(valor);
+		System.out.println(valor2);
+		System.out.println(valor3);
+		System.out.println(valor4);
+		
+		System.out.println(longitud);
+		System.out.println(resultado);
+		System.out.println(filtrado);
 	}
 
 }

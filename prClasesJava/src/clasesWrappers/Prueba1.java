@@ -4,8 +4,8 @@ public class Prueba1 {
 
 	public static void main(String[] args) {
 
-		Integer obInteger8 = new Integer(67);  // Modo obsoleto
-		System.out.println(obInteger8);
+		// Integer obInteger8 = new Integer(67);  // Modo obsoleto
+		// System.out.println(obInteger8);
 		
 		// Creación de un objeto Integer, a partir de un tipo primitivo
 		Integer obInteger = Integer.valueOf(67);
@@ -23,6 +23,7 @@ public class Prueba1 {
 		
 		// Convertir un objeto Integer a tipo primitivo int
 		int num = obInteger.intValue();
+		System.out.println(num);
 		
 		// Convertir un String en un tipo primitivo int
 		int num2 = Integer.parseInt("987");
@@ -30,8 +31,10 @@ public class Prueba1 {
 		
 		// Convertir la variable de tipo primitivo en String
 		String numCadena = String.valueOf(num2);
+		System.out.println(numCadena);
 		
 		String numCadena2 = Integer.toString(num2);
+		System.out.println(numCadena2);
 		
 		// Crear un objeto a partir de un número directamente
 		Integer obInteger4 = 18;

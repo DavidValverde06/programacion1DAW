@@ -14,6 +14,21 @@ class Usuario {
     public Optional<String> getEmail() {
         return Optional.ofNullable(email);
     }
+
+    /*
+     * Getter's y setter's
+     */
+    public String getNombre() {
+		return nombre;
+	}
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
 }
 
 

@@ -54,6 +54,7 @@ public class PruebaAutoboxingInboxing {
 		
 		Integer numWrapper = 20;
 		int num = numWrapper;  // Unboxing: convierte Integer a int automáticamente
+		System.out.println(num);
 	}
 
 }

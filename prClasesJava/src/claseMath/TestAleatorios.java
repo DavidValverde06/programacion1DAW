@@ -28,16 +28,16 @@ public class TestAleatorios {
 		
 		numero = Math.random();
 		
-		System.out.println("N�mero aleatorio: "+numero);
+		System.out.println("Número aleatorio: "+numero);
 		
 		// Generar un n�mero entre 1 y 10
-		System.out.println("N�mero aleatorio entre 1 y 10: "+ (int) Math.floor(Math.random()*10+1));
+		System.out.println("Número aleatorio entre 1 y 10: "+ (int) Math.floor(Math.random()*10+1));
 		
 		// Generar valores entre 10 y 30
-		System.out.println("N�mero aleaotorio entre 10 y 30: "+ (int) Math.floor(Math.random()*21+10));
+		System.out.println("Número aleaotorio entre 10 y 30: "+ (int) Math.floor(Math.random()*21+10));
 		
 		// Generar valores entre 12 y 20
-		System.out.println("N�mero aleaotorio entre 12 y 20: "+ (int) Math.floor(Math.random()*9+12));
+		System.out.println("Número aleaotorio entre 12 y 20: "+ (int) Math.floor(Math.random()*9+12));
 		
 		// Generar las caras de un dado
 		System.out.println("Dado: "+(int) Math.floor(Math.random()*6+1));
@@ -52,7 +52,7 @@ public class TestAleatorios {
 		// Generar un n�mero aleatorio entre 1 y 20
 		int numero2 = obRandom.nextInt(20); // Genera un valor entre 0..19
 		numero2++; // N�mero entre 1 y 20
-		System.out.println("N�mero entre 1 y 20: "+numero2);
+		System.out.println("Número entre 1 y 20: "+numero2);
 		
 		// Simular una cara de un dado
 		System.out.println("Dado: "+(obRandom.nextInt(6)+1));
@@ -60,13 +60,15 @@ public class TestAleatorios {
 		// Simular la cara de un dado (ERRONEAMENTE)
 		int dado = obRandom.nextInt(7);  // Genera valores entre 0 y 6
 		  // OJO QUE LA CARA 0 DEL DADO NO EXISTE
-			
+		System.out.println("Simula la cara de un dado (Erroneamente)");
+		System.out.println(dado);
+		System.out.println("Puede llegar a salir 0");
 		
 		// Generar valores entre 10 y 30
-		System.out.println("N�mero aleatorio entre 10 y 30: "+(obRandom.nextInt(21)+10));
+		System.out.println("Número aleatorio entre 10 y 30: "+(obRandom.nextInt(21)+10));
 		
 		// Generar valores entre 12 y 20
-		System.out.println("N�mero aleaotorio entre 12 y 20: "+(obRandom.nextInt(9)+12));
+		System.out.println("Número aleaotorio entre 12 y 20: "+(obRandom.nextInt(9)+12));
 		
 		// Simular el lanzamiento de una moneda
 		if (obRandom.nextInt(2)==0) // Cara

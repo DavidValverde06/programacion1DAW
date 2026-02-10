@@ -4,10 +4,11 @@ public class TestCharacter {
 
 	public static void main(String[] args) {
 
-		Character caracter = new Character('A');  // Constructor (obsoleto en versiones recientes)
+		// Character caracter = new Character('A');  // Constructor (obsoleto en versiones recientes)
 		Character ch2 = 'B';   // Autoboxing
 		char c = ch2;           // Unboxing
-
+		System.out.println(c);
+		
 		System.out.println(Character.isLetter('A'));  // true
 		System.out.println(Character.isLetter('7'));  // false
 

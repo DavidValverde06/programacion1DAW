@@ -10,6 +10,9 @@ public class TestString {
 		String str1 = "Hola";              // Forma más eficiente de crear un String
 		String str2 = new String("Hola");  // Creación explícita usando un constructor
 		
+		System.out.println(str1);
+		System.out.println(str2);
+		
 		char[] caracteres = {'H', 'o', 'l', 'a'};
 		String str3 = new String(caracteres);  // Constructor que recibe un array de caracteres
 		System.out.println(str3);

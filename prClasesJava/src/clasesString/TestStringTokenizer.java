@@ -1,6 +1,5 @@
 package clasesString;
 
-import java.util.Arrays;
 import java.util.StringTokenizer;
 
 public class TestStringTokenizer {
