@@ -9,7 +9,13 @@ public class PruebaInmobiliaria {
 
 	public static void main(String[] args) {
 
-		sin hacer
+		Propiedad local = new Propiedad(23, TipoPropiedad.LOCAL, 70.0,"El local no tiene baño e instalaciones de agua, luz y teléfono", "C/Infante, 45", 60000.0);
+		Vivienda viviendaCasa = new Vivienda(24, TipoPropiedad.VIVIENDA, 100.0, "Perfectas condiciones", "C/Patata, 56", 240000.0, TipoVivienda.CASA);
+		FincaRustica fincaRustica = new FincaRustica(25, TipoPropiedad.FINCA, 400.0, "Espacioso", "C/Ensalada, 15", 500000.0, TipoTerreno.OLIVOS);
+
+		System.out.println(local);
+		System.out.println("\n" + viviendaCasa);
+		System.out.println("\n" + fincaRustica);
 	}
 
 }
