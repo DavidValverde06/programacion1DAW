@@ -7,6 +7,11 @@ package inmobiliaria;
 public class FincaRustica extends Propiedad {
 
 	/**
+	 * Variables de clase
+	 */
+	final float PORCENTAJE = 0.5f; 
+	
+	/**
 	 * Variables de instancia
 	 */
 	private TipoTerreno tipoTerreno;
@@ -42,7 +47,7 @@ public class FincaRustica extends Propiedad {
 	 */
 	@Override
 	public double calculaBeneficio() {
-		return super.calculaBeneficio() + (getPrecio()*0.5/100);
+		return super.calculaBeneficio() + (getPrecio()*this.PORCENTAJE/100);
 	}
 
 	/**

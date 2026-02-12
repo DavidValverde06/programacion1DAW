@@ -16,6 +16,12 @@ import java.util.Objects;
 public class Propiedad {
 
 	/**
+	 * Variables de clase
+	 */
+	final float GASTOS_GESTION = 150;
+	final float PORCENTAJE = 0.75f;
+	
+	/**
 	 * Variables de instancia
 	 * 
 	 * Se almacena el código de propiedad, tipo de propiedad, su dirección, el número de metros cuadrados, una descripción con
@@ -78,7 +84,7 @@ public class Propiedad {
 	 * Método que calcula el beneficio
 	 */
 	public double calculaBeneficio() {
-		return (this.precio*0.75/100) + 150;
+		return (this.precio*this.PORCENTAJE/100) + this.GASTOS_GESTION;
 	}
 
 	/**
@@ -118,7 +124,7 @@ public class Propiedad {
 	 */
 	@Override
 	public String toString() {
-		return this.tipoPropiedad +
+		return this.tipoPropiedad.getDescripcion().toUpperCase() +
 				"\n\tBeneficio obtenido: " + this.calculaBeneficio() + " €" +
 				"\n\tCódigo: " + this.codigo +
 				"\n\tSuperficie: " + this.superficie + " metros cuadrados" +

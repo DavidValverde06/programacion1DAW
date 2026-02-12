@@ -51,6 +51,7 @@ public class Excepcion2 {
 			}
 
 			System.out.println("Hola");
+			sc.nextLine();
 
 		} 
 		while (posicion!=10);

@@ -8,6 +8,11 @@ package inmobiliaria;
 public class Vivienda extends Propiedad {
 
 	/**
+	 * Variables de clase
+	 */
+	final float PORCENTAJE = 0.25f;
+	
+	/**
 	 * Variables de instancia
 	 */
 	private TipoVivienda tipoVivienda;
@@ -43,7 +48,7 @@ public class Vivienda extends Propiedad {
 	 */
 	@Override
 	public double calculaBeneficio() {
-		return super.calculaBeneficio() + (getPrecio()*0.25/100);
+		return super.calculaBeneficio() + (getPrecio()*this.PORCENTAJE/100);
 	}
 
 	/**
