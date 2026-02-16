@@ -56,6 +56,7 @@ public class Vivienda extends Propiedad {
 	 */
 	@Override
 	public String toString() {
-		return super.toString();
+		return super.toString() +
+				"\n\tTipo de vivienda: " + this.tipoVivienda;
 	}
 }

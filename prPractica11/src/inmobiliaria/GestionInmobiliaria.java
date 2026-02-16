@@ -12,37 +12,27 @@ public interface GestionInmobiliaria {
 	 * Método al cual le llegue una propiedad y la añada a la
 	 * colección de propiedades que mantiene la inmobiliaria.
 	 */
-	public static boolean añade(Propiedad ob) {
-
-	}
+	public boolean añade(Propiedad ob);
 
 	/**
 	 * Método que permita buscar una propiedad a partir de su
 	 * código en la colección.
 	 */
-	public static Propiedad buscar(int codigo) {
-
-	}
+	public Propiedad buscar(int codigo);
 
 	/**
 	 * Método que comprueba si una determinada propiedad
 	 * existe en la colección.
 	 */
-	public static boolean buscar(Propiedad p) {
-
-	}
+	public boolean buscar(Propiedad p);
 
 	/**
 	 * Método que permita borrar una propiedad a partir de su código.
 	 */
-	public static boolean borra(int cod) {
-
-	}
+	public Propiedad borra(int cod);
 
 	/**
 	 * Método que permita borrar una propiedad a partir del objeto Propiedad.
 	 */
-	public static boolean borra(Propiedad p) {
-
-	}
+	public boolean borra(Propiedad p);
 }

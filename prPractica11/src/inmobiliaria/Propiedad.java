@@ -20,7 +20,7 @@ public class Propiedad {
 	 */
 	final float GASTOS_GESTION = 150;
 	final float PORCENTAJE = 0.75f;
-	
+
 	/**
 	 * Variables de instancia
 	 * 

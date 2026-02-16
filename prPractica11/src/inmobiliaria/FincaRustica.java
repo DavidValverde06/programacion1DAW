@@ -10,7 +10,7 @@ public class FincaRustica extends Propiedad {
 	 * Variables de clase
 	 */
 	final float PORCENTAJE = 0.5f; 
-	
+
 	/**
 	 * Variables de instancia
 	 */
@@ -55,6 +55,7 @@ public class FincaRustica extends Propiedad {
 	 */
 	@Override
 	public String toString() {
-		return super.toString();
+		return super.toString() + 
+				"\n\tTipo de terreno: " + this.tipoTerreno;
 	}
 }
