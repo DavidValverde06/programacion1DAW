@@ -15,14 +15,21 @@ public class FincaRustica extends Propiedad {
 	 * Variables de instancia
 	 */
 	private TipoTerreno tipoTerreno;
+	private boolean disponeLuz;
+	private boolean disponeAgua;
+	private boolean disponeVivienda;
 
 	/**
 	 * Constructor
 	 */
 	public FincaRustica(int codigo, TipoPropiedad tipoPropiedad, double superficie, String descripcion,
-			String direccion, double precio, TipoTerreno tipoTerreno) {
+			String direccion, double precio, TipoTerreno tipoTerreno, boolean disponeLuz, boolean disponeAgua,
+			boolean disponeVivienda) {
 		super(codigo, tipoPropiedad, superficie, descripcion, direccion, precio);
 		this.tipoTerreno = tipoTerreno;
+		this.disponeLuz = disponeLuz;
+		this.disponeAgua = disponeAgua;
+		this.disponeVivienda = disponeVivienda;
 	}
 
 	/**
@@ -31,6 +38,14 @@ public class FincaRustica extends Propiedad {
 	public TipoTerreno getTipoTerreno() {return tipoTerreno;}
 	public void setTipoTerreno(TipoTerreno tipoTerreno) {this.tipoTerreno = tipoTerreno;}
 
+	public boolean isDisponeLuz() {return disponeLuz;}
+	public void setDisponeLuz(boolean disponeLuz) {this.disponeLuz = disponeLuz;}
+
+	public boolean isDisponeAgua() {return disponeAgua;}
+	public void setDisponeAgua(boolean disponeAgua) {this.disponeAgua = disponeAgua;}
+
+	public boolean isDisponeVivienda() {return disponeVivienda;}
+	public void setDisponeVivienda(boolean disponeVivienda) {this.disponeVivienda = disponeVivienda;}
 
 	/**
 	 * El beneficio de las fincas rústicas también se incrementa con respecto al beneficio inicial en un 0.5 %.
@@ -55,7 +70,10 @@ public class FincaRustica extends Propiedad {
 	 */
 	@Override
 	public String toString() {
-		return super.toString() + 
-				"\n\tTipo de terreno: " + this.tipoTerreno;
+		return super.toString() +
+				"\n\tTipo de terreno: " + this.tipoTerreno +
+				"\n\t¿Dispone de luz? " + (this.disponeLuz?"Si":"No") +
+				"\n\t¿Dispone de agua? " + (this.disponeAgua?"Si":"No") +
+				"\n\t¿Dispone de vivienda? " + (this.disponeVivienda?"Si":"No");
 	}
 }

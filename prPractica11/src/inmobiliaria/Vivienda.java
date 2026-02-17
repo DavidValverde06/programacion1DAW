@@ -11,19 +11,23 @@ public class Vivienda extends Propiedad {
 	 * Variables de clase
 	 */
 	final float PORCENTAJE = 0.25f;
-	
+
 	/**
 	 * Variables de instancia
 	 */
 	private TipoVivienda tipoVivienda;
+	private int numBanios;
+	private int numDormitorios;
 
 	/**
 	 * Constructor
 	 */
 	public Vivienda(int codigo, TipoPropiedad tipoPropiedad, double superficie, String descripcion, String direccion,
-			double precio, TipoVivienda tipoVivienda) {
+			double precio, TipoVivienda tipoVivienda, int numBanios, int numDormitorios) {
 		super(codigo, tipoPropiedad, superficie, descripcion, direccion, precio);
 		this.tipoVivienda = tipoVivienda;
+		this.numBanios = numBanios;
+		this.numDormitorios = numDormitorios;
 	}
 
 	/**
@@ -32,6 +36,11 @@ public class Vivienda extends Propiedad {
 	public TipoVivienda getTipoVivienda() {return tipoVivienda;}
 	public void setTipoVivienda(TipoVivienda tipoVivienda) {this.tipoVivienda = tipoVivienda;}
 
+	public int getNumBanios() {return numBanios;}
+	public void setNumBanios(int numBanios) {this.numBanios = numBanios;}
+
+	public int getNumDormitorios() {return numDormitorios;}
+	public void setNumDormitorios(int numDormitorios) {this.numDormitorios = numDormitorios;}
 
 	/**
 	 * En el caso de las viviendas al beneficio anterior hay que añadirle otro 0.25 % sobre el valor de la vivienda.
@@ -57,6 +66,8 @@ public class Vivienda extends Propiedad {
 	@Override
 	public String toString() {
 		return super.toString() +
-				"\n\tTipo de vivienda: " + this.tipoVivienda;
+				"\n\tTipo de vivienda: " + this.tipoVivienda +
+				"\n\tNúmero de baños: " + this.numBanios +
+				"\n\tNúmero de dormitorios: " + this.numDormitorios;
 	}
 }

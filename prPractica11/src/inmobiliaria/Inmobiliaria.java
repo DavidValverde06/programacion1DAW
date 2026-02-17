@@ -15,48 +15,55 @@ public class Inmobiliaria implements GestionInmobiliaria {
 	/**
 	 * Variables de instancia
 	 */
-	private Set<Propiedad> coleccionPropiedad;
+	private Set<Propiedad> coleccionPropiedadesEnVenta;
 
 	/**
 	 * Constructor sobrecargado
 	 */
 	public Inmobiliaria(Set<Propiedad> coleccionPropiedad) {
-		this.coleccionPropiedad = coleccionPropiedad;
+		this.coleccionPropiedadesEnVenta = coleccionPropiedad;
 	}
 
 	public Inmobiliaria() {
-		this.coleccionPropiedad = new TreeSet<Propiedad>();
+		this.coleccionPropiedadesEnVenta = new TreeSet<Propiedad>();
 	}
 
 	/**
 	 * Getter's y setter's
 	 */
-	public Set<Propiedad> getColeccionPropiedad() {
-		return coleccionPropiedad;
-	}
-
-	public void setColeccionPropiedad(Set<Propiedad> coleccionPropiedad) {
-		this.coleccionPropiedad = coleccionPropiedad;
-	}
+	public Set<Propiedad> getColeccionPropiedad() {return coleccionPropiedadesEnVenta;}
+	public void setColeccionPropiedad(Set<Propiedad> coleccionPropiedad) {this.coleccionPropiedadesEnVenta = coleccionPropiedad;}
 
 	// ================================================
 	// == Métodos de la interfaz GestionInmobiliaria ==
 	// ================================================
+
 	/**
 	 * Método al cual le llegue una propiedad y la añada a la
 	 * colección de propiedades que mantiene la inmobiliaria.
 	 */
 	@Override
 	public boolean añade(Propiedad ob) {
-		return this.coleccionPropiedad.add(ob);
+		return this.coleccionPropiedadesEnVenta.add(ob);
 	}
 
 	/**
 	 * Método que permita buscar una propiedad a partir de su
 	 * código en la colección.
+	 * 
+	 * Tienes que:
+	 * 1. Recorrer la colección.
+	 * 2. Comparar el código de cada propiedad.
+	 * 3. Si coincide → devolver esa propiedad.
+	 * 4. Si termina el bucle y no encuentra nada → devolver null.
 	 */
 	@Override
 	public Propiedad buscar(int codigo) {
+		for (Propiedad propiedad : coleccionPropiedadesEnVenta) {
+			if (propiedad.getCodigo()==codigo) {
+				return propiedad;
+			}
+		}
 		return null;
 	}
 
@@ -66,16 +73,24 @@ public class Inmobiliaria implements GestionInmobiliaria {
 	 */
 	@Override
 	public boolean buscar(Propiedad p) {
-		return this.coleccionPropiedad.contains(p);
+		return this.coleccionPropiedadesEnVenta.contains(p);
 	}
 
 	/**
 	 * Método que permita borrar una propiedad a partir de su código.
+	 * 
+	 * 1️. Llamar a buscar(cod)
+	 * 2️. Guardar lo que devuelve en una variable
+	 * 3️. Si esa variable NO es null → eliminarla de la colección
+	 * 4️. Devolver esa misma variable
 	 */
 	@Override
 	public Propiedad borra(int cod) {
-		return null;
-
+		Propiedad propiedad = buscar(cod);
+		if (propiedad!=null) {
+			this.coleccionPropiedadesEnVenta.remove(propiedad);
+		}
+		return propiedad;
 	}
 
 	/**
@@ -83,8 +98,7 @@ public class Inmobiliaria implements GestionInmobiliaria {
 	 */
 	@Override
 	public boolean borra(Propiedad p) {
-		return false;
-
+		return this.coleccionPropiedadesEnVenta.remove(p);
 	}
 
 	/**
@@ -92,8 +106,11 @@ public class Inmobiliaria implements GestionInmobiliaria {
 	 */
 	@Override
 	public String toString() {
-		return this.getClass().getSimpleName().toUpperCase() +
-				"\nColección de propiedades " + this.coleccionPropiedad;
+		String coleccionPropiedades="";
+		for (Propiedad propiedad : coleccionPropiedadesEnVenta) {
+			coleccionPropiedades += propiedad.toString() + "\n\n";
+		}
+		return (coleccionPropiedades.isEmpty()?"No existen propiedades en esta inmobiliaria":coleccionPropiedades);
 	}
 
 	/**
@@ -101,7 +118,7 @@ public class Inmobiliaria implements GestionInmobiliaria {
 	 * con las propiedades ordenadas por precio.
 	 */
 	public List<Propiedad> getPropiedadesOrdenPrecio() {
-		return null;
+
 	}
 
 	/**
@@ -113,7 +130,7 @@ public class Inmobiliaria implements GestionInmobiliaria {
 	 * 			2 - 400000.0 - FINCA
 	 */
 	public String getPropiedadOrdenPrecioString() {
-		return null;
+
 	}
 
 }

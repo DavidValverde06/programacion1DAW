@@ -32,15 +32,24 @@ public class TestBiblioteca {
 		Libro libro7 = new Libro("0007","El principito","Antoine de Saint-Exupary",
 				Arrays.asList("The Little Prince","El vanidoso","Le renard"));
 
+		// Creación usuarios
+		Usuario usuario1 = new Usuario("David");
+		Usuario usuario2 = new Usuario("Noemí");
+		
 		// Libros
 		System.out.println("LIBROS");
-		System.out.println(libro1 + "\n");
-		System.out.println(libro2 + "\n");
-		System.out.println(libro3 + "\n");
-		System.out.println(libro4 + "\n");
-		System.out.println(libro5 + "\n");
-		System.out.println(libro6 + "\n");
-		System.out.println(libro7 + "\n");
+		System.out.println(libro1);
+		System.out.println(libro2);
+		System.out.println(libro3);
+		System.out.println(libro4);
+		System.out.println(libro5);
+		System.out.println(libro6);
+		System.out.println(libro7);
+		
+		// Usuarios
+		System.out.println("\nUSUARIOS");
+		System.out.println(usuario1);
+		System.out.println(usuario2);
 	}
 
 }
