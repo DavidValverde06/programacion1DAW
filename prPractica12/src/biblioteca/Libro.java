@@ -45,6 +45,9 @@ public class Libro {
 
 	/**
 	 * equals y hashCode
+	 * 
+	 * La clase Libro debe permitir la comparación entre objetos de la misma. Las copias se compararán
+	 * atendiendo al valor numérico de sus códigos. 
 	 */
 	@Override
 	public int hashCode() {

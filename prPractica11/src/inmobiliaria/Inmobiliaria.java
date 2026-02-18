@@ -118,7 +118,10 @@ public class Inmobiliaria implements GestionInmobiliaria {
 	 * con las propiedades ordenadas por precio.
 	 */
 	public List<Propiedad> getPropiedadesOrdenPrecio() {
+		List<Propiedad> listaPropiedadesOrdenadasPrecio = new ArrayList<>(this.coleccionPropiedadesEnVenta);
+		listaPropiedadesOrdenadasPrecio.sort(new OrdenarPorPrecio());
 
+		return listaPropiedadesOrdenadasPrecio;
 	}
 
 	/**
@@ -130,7 +133,11 @@ public class Inmobiliaria implements GestionInmobiliaria {
 	 * 			2 - 400000.0 - FINCA
 	 */
 	public String getPropiedadOrdenPrecioString() {
-
+		String cadena="LISTA ORDENADA POR PRECIO\n";
+		for (Iterator<Propiedad> it = getPropiedadesOrdenPrecio().iterator();it.hasNext();) {
+			Propiedad p = it.next();
+			cadena += p.getCodigo() + " - " + p.getPrecio() + " - " + p.getTipoPropiedad() + "\n";
+		}
+		return cadena;
 	}
-
 }

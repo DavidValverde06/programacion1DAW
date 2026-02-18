@@ -53,7 +53,13 @@ public class Biblioteca implements InterfazBiblioteca {
 	 */
 	@Override
 	public Libro sacarLibro(String tit) {
-		return ;
+		for (Libro libro : LibrosDisponibles) {
+			if (libro.getTitulo().equalsIgnoreCase(tit)) {
+				this.LibrosDisponibles.remove(libro);
+				return libro;
+			}
+		}
+		return null;
 	}
 
 	/**
@@ -64,7 +70,12 @@ public class Biblioteca implements InterfazBiblioteca {
 	 */
 	@Override
 	public Usuario buscarUsuario(String nom) {
-		return ;
+		for (Usuario usuario : UsuariosBiblioteca) {
+			if (usuario.getNombreUsuario().equalsIgnoreCase(nom)) {
+				return usuario;
+			}
+		}
+		return null;
 	}
 
 	/**
@@ -76,7 +87,11 @@ public class Biblioteca implements InterfazBiblioteca {
 	 */
 	@Override
 	public boolean prestarLibro(String titulo, String nombre) {
-		return ;
+		for (Usuario usuario : UsuariosBiblioteca) {
+			if (usuario.getNombreUsuario().equalsIgnoreCase(nombre)) {
+				sacarLibro(titulo);
+			}
+		}
 	}
 
 	/**
@@ -86,7 +101,7 @@ public class Biblioteca implements InterfazBiblioteca {
 	 */
 	@Override
 	public boolean devolverLibro(String titulo, String nombre) {
-		return ;
+		
 	}
 
 	/**

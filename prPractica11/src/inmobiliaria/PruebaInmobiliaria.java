@@ -1,45 +1,72 @@
 package inmobiliaria;
 
-import java.util.*;
-
-/**
- * Realiza una clase de prueba, llamado PuebaInmobiliaria, para comprobar el buen funcionamiento de
- * todas las clases anteriores. Como mínimo en esta clase se deben crear varios objetos de las clases
- * anteriores y mostrar finalmente un listado con todas las propiedades.
- */
 public class PruebaInmobiliaria {
 
 	public static void main(String[] args) {
 
-		Propiedad local = new Propiedad(23, TipoPropiedad.LOCAL, 70.0,"El local no tiene baño e instalaciones de agua, luz y teléfono", "C/Infante, 45", 60000.0);
-		Vivienda viviendaCasa = new Vivienda(24, TipoPropiedad.VIVIENDA, 100.0, "Perfectas condiciones", "C/Patata, 56", 240000.0, TipoVivienda.CASA, 2, 3);
-		FincaRustica fincaRustica = new FincaRustica(25, TipoPropiedad.FINCA, 400.0, "Espacioso", "C/Ensalada, 15", 500000.0, TipoTerreno.OLIVOS, true, false, true);
+		// === Crear propiedades ===
+		Propiedad local = new Propiedad(
+				23, TipoPropiedad.LOCAL, 70.0,
+				"El local no tiene baño e instalaciones de agua, luz y teléfono",
+				"C/Infante, 45", 60000.0
+				);
 
-		/**
-		 * Pruebas Propiedad
-		 */
-		System.out.println("=== Pruebas Clase Propiedad ===");
+		Vivienda viviendaCasa = new Vivienda(
+				12, TipoPropiedad.VIVIENDA, 100.0,
+				"Perfectas condiciones", "C/Patata, 56",
+				240000.0, TipoVivienda.CASA, 2, 3
+				);
 
-		System.out.println(local);
-		System.out.println("\n" + viviendaCasa);
-		System.out.println("\n" + fincaRustica);
+		FincaRustica fincaRustica = new FincaRustica(
+				2, TipoPropiedad.FINCA, 400.0,
+				"Espacioso", "C/Ensalada, 15",
+				400000.0, TipoTerreno.OLIVOS, true, false, true
+				);
 
-		/**
-		 * Pruebas Inmobiliaria
-		 */
-		System.out.println("\n=== Pruebas Clase Inmobiliaria ===");
+		// === Crear inmobiliaria ===
+		Inmobiliaria inmobiliaria = new Inmobiliaria();
 
-		Set<Propiedad> miColeccion = new HashSet<Propiedad>();
-		miColeccion.add(local);
-		miColeccion.add(viviendaCasa);
-		miColeccion.add(fincaRustica);
+		System.out.println("=== AÑADIR PROPIEDADES ===");
+		System.out.println("Añadir local: " + inmobiliaria.añade(local));
+		System.out.println("Añadir vivienda: " + inmobiliaria.añade(viviendaCasa));
+		System.out.println("Añadir finca: " + inmobiliaria.añade(fincaRustica));
 
-		Inmobiliaria miInmobiliaria1 = new Inmobiliaria(miColeccion);
-		Inmobiliaria miInmobiliaria2 = new Inmobiliaria();
+		// === Ordenar por precio ===
+		System.out.println("\n=== LISTA ORDENADA POR PRECIO ===");
+		System.out.println(inmobiliaria.getPropiedadOrdenPrecioString());
 
+		// Intentar añadir una propiedad duplicada
+		System.out.println("Añadir local otra vez (debe ser false): " + inmobiliaria.añade(local));
 
-		System.out.println("Mi inmobiliaria 1:\n" + miInmobiliaria1);
-		System.out.println("Mi inmobiliaria 2:\n" + miInmobiliaria2);
+		System.out.println("\n=== MOSTRAR TODAS LAS PROPIEDADES (ordenadas por código) ===");
+		System.out.println(inmobiliaria);
+
+		// === Buscar por código ===
+		System.out.println("=== BUSCAR POR CÓDIGO ===");
+		System.out.println("Buscar código 12: " + inmobiliaria.buscar(12));
+		System.out.println("Buscar código 99 (no existe): " + inmobiliaria.buscar(99));
+
+		// === Buscar por objeto ===
+		System.out.println("\n=== BUSCAR POR OBJETO ===");
+		System.out.println("Buscar viviendaCasa: " + inmobiliaria.buscar(viviendaCasa));
+		System.out.println("Buscar nueva propiedad no añadida: " +
+				inmobiliaria.buscar(new Propiedad(50, TipoPropiedad.LOCAL, 30, "X", "Y", 10000)));
+
+		// === Borrar por código ===
+		System.out.println("\n=== BORRAR POR CÓDIGO ===");
+		System.out.println("Borrar código 23: " + inmobiliaria.borra(23));
+		System.out.println("Borrar código 23 otra vez (ya borrado): " + inmobiliaria.borra(23));
+
+		// === Borrar por objeto ===
+		System.out.println("\n=== BORRAR POR OBJETO ===");
+		System.out.println("Borrar viviendaCasa: " + inmobiliaria.borra(viviendaCasa));
+		System.out.println("Borrar viviendaCasa otra vez: " + inmobiliaria.borra(viviendaCasa));
+
+		System.out.println("\n=== PROPIEDADES RESTANTES ===");
+		System.out.println(inmobiliaria);
+
+		// === Ordenar por precio ===
+		System.out.println("\n=== LISTA ORDENADA POR PRECIO ===");
+		System.out.println(inmobiliaria.getPropiedadOrdenPrecioString());
 	}
-
 }

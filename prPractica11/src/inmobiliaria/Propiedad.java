@@ -13,7 +13,7 @@ import java.util.Objects;
  * 
  * 		✓ Redefinición del método toString, que devuelva la información sobre una propiedad.
  */
-public class Propiedad {
+public class Propiedad implements Comparable<Propiedad> {
 
 	/**
 	 * Variables de clase
@@ -131,5 +131,10 @@ public class Propiedad {
 				"\n\tDescripción: " + this.descripcion +
 				"\n\tDirección: " + this.direccion +
 				"\n\tPrecio: " + this.precio + " €";
+	}
+
+	@Override
+	public int compareTo(Propiedad o) {
+		return Integer.compare(this.codigo, o.codigo);
 	}
 }
