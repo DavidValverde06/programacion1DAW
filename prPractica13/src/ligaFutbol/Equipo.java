@@ -1,5 +1,7 @@
 package ligaFutbol;
 
+import java.util.Objects;
+
 /**
  * Crear la clase Equipo, sobre un equipo interesa almacenar su nombre, el número de los partidos
  * ganados, empatados y perdidos, así como el número de goles a favor (marcados) y de goles en contra
@@ -61,9 +63,12 @@ public class Equipo {
 
 	/**
 	 * Método que calcule los puntos acumulados por un equipo.
+	 * 
+	 * Si un equipo gana un partido,
+	 * recibe 3 puntos, cuando empata, 1 punto, y cuando pierde, ningún punto.
 	 */
-	public int numGolesMarcadosAcumulados() {
-
+	public int puntosAcumuladosEquipo() {
+		return (this.numPartidosGanados*3) + this.numPartidosEmpatados;
 	}
 
 	/**
@@ -71,33 +76,35 @@ public class Equipo {
 	 * considerará que dos equipos son iguales si coincide su nombre, sin distinguir entre mayúsculas y
 	 * minúsculas.
 	 */
+	@Override
+	public int hashCode() {
+		return Objects.hash(nombreEquipo.toLowerCase());
+	}
 
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Equipo other = (Equipo) obj;
+		return Objects.equals(nombreEquipo.toLowerCase(), other.nombreEquipo.toLowerCase());
+	}
 
 	/** • Método/métodos que permitan incrementar en 1 el número de partidos ganados, empatados o
-	 * perdidos.
+	 * 	perdidos.
 	 */
-	public void incrementaNumPartidosGanados() {
-		this.numPartidosGanados++;
-	}
-
-	public void incrementaNumPartidosEmpatados() {
-		this.numPartidosEmpatados++;
-	}
-
-	public void incrementaNumPartidosPerdidos() {
-		this.numPartidosPerdidos++;
-	}
+	public void incrementaNumPartidosGanados() {this.numPartidosGanados++;}
+	public void incrementaNumPartidosEmpatados() {this.numPartidosEmpatados++;}
+	public void incrementaNumPartidosPerdidos() {this.numPartidosPerdidos++;}
 
 	/** • Método/métodos que permitan incrementar el número de goles a favor o en contra en el número
 	 * de goles indicado.
 	 */
-	public void incrementaNumGolesMarcados(int numIncremento) {
-		this.numGolesMarcados+=numIncremento;
-	}
-
-	public void incrementaNumGolesRecibidos(int numIncremento) {
-		this.numGolesRecibidos+=numIncremento;
-	}
+	public void incrementaNumGolesMarcados(int numIncremento) {this.numGolesMarcados+=numIncremento;}
+	public void incrementaNumGolesRecibidos(int numIncremento) {this.numGolesRecibidos+=numIncremento;}
 
 	/**
 	 * toString redfinido
@@ -119,8 +126,8 @@ public class Equipo {
 				"\n\tPartidos Empatados: " + this.numPartidosEmpatados +
 				"\n\tPartidos Perdidos: " + this.numPartidosPerdidos +
 				"\n\tGoles a favor: " + this.numGolesMarcados +
-				"\n\tGoles en contra: " + this.nombreEquipo +
-				"\n\tPuntos acumulados: " + ;
+				"\n\tGoles en contra: " + this.numGolesRecibidos +
+				"\n\tPuntos acumulados: " + this.puntosAcumuladosEquipo();
 	}
 
 	/**
@@ -129,6 +136,6 @@ public class Equipo {
 	 */
 	public String toStringLineal() {
 		return this.numPartidosJugadosTotales() + "\t" + this.numPartidosGanados + "\t" + this.numPartidosEmpatados + "\t" +
-				this.numPartidosPerdidos + "\t" + this.numGolesMarcados + "\t" + this.numGolesRecibidos + "\t" +  + "\t" + this.nombreEquipo.toUpperCase();
+				this.numPartidosPerdidos + "\t" + this.numGolesMarcados + "\t" + this.numGolesRecibidos + "\t" + this.puntosAcumuladosEquipo() + "\t" + this.nombreEquipo.toUpperCase();
 	}
 }
