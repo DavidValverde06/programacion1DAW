@@ -31,5 +31,9 @@ public class Partido {
 	private String nombreEquipo2;
 	private LocalDate fechaPartido;
 	private String resultado;
+
+	/**
+	 * Constructor
+	 */
 	
 }
