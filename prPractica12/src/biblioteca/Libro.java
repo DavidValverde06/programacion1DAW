@@ -8,7 +8,7 @@ import java.util.*;
  * de personajes principales.
  * Defínanse los siguientes constructores y métodos:
  */
-public class Libro {
+public class Libro implements Comparable<Libro>{
 
 	/**
 	 * Variables de instancia
@@ -51,7 +51,7 @@ public class Libro {
 	 */
 	@Override
 	public int hashCode() {
-		return Objects.hash(codigo);
+		return Objects.hash(Integer.parseInt(codigo));
 	}
 
 	@Override
@@ -63,7 +63,7 @@ public class Libro {
 		if (getClass() != obj.getClass())
 			return false;
 		Libro other = (Libro) obj;
-		return Objects.equals(codigo, other.codigo);
+		return Integer.parseInt(codigo) == Integer.parseInt(other.codigo);
 	}
 
 	/**
@@ -75,4 +75,8 @@ public class Libro {
 	public String toString() {
 		return this.codigo + ": " + this.titulo + " (escrito por " + this.nombreAutor + " " + this.listaPersonajes + ")";
 	}
+
+	@Override
+	public int compareTo(Libro o) {
+		return Integer.parseInt(this.codigo) - Integer.parseInt(o.codigo);	}
 }

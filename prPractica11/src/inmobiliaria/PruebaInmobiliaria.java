@@ -5,38 +5,24 @@ public class PruebaInmobiliaria {
 	public static void main(String[] args) {
 
 		// === Crear propiedades ===
-		Propiedad local = new Propiedad(
-				23, TipoPropiedad.LOCAL, 70.0,
-				"El local no tiene baño e instalaciones de agua, luz y teléfono",
-				"C/Infante, 45", 60000.0
-				);
-
-		Vivienda viviendaCasa = new Vivienda(
-				12, TipoPropiedad.VIVIENDA, 100.0,
-				"Perfectas condiciones", "C/Patata, 56",
-				240000.0, TipoVivienda.CASA, 2, 3
-				);
-
-		FincaRustica fincaRustica = new FincaRustica(
-				2, TipoPropiedad.FINCA, 400.0,
-				"Espacioso", "C/Ensalada, 15",
-				400000.0, TipoTerreno.OLIVOS, true, false, true
-				);
+		Propiedad local = new Propiedad(23, TipoPropiedad.LOCAL, 70.0, "El local no tiene baño e instalaciones de agua, luz y teléfono", "C/Infante, 45", 60000.0);
+		Vivienda viviendaCasa = new Vivienda(12, TipoPropiedad.VIVIENDA, 100.0, "Perfectas condiciones", "C/Patata, 56", 240000.0, TipoVivienda.CASA, 2, 3);
+		FincaRustica fincaRustica = new FincaRustica(2, TipoPropiedad.FINCA, 400.0, "Espacioso", "C/Ensalada, 15", 400000.0, TipoTerreno.OLIVOS, true, false, true);
 
 		// === Crear inmobiliaria ===
 		Inmobiliaria inmobiliaria = new Inmobiliaria();
 
 		System.out.println("=== AÑADIR PROPIEDADES ===");
-		System.out.println("Añadir local: " + inmobiliaria.añade(local));
-		System.out.println("Añadir vivienda: " + inmobiliaria.añade(viviendaCasa));
-		System.out.println("Añadir finca: " + inmobiliaria.añade(fincaRustica));
+		System.out.println("Añadir local: " + (inmobiliaria.añade(local)?"Añadida":"No se ha podido añadir"));
+		System.out.println("Añadir vivienda: " + (inmobiliaria.añade(viviendaCasa)?"Añadida":"No se ha podido añadir"));
+		System.out.println("Añadir finca: " + (inmobiliaria.añade(fincaRustica)?"Añadida":"No se ha podido añadir"));
 
 		// === Ordenar por precio ===
 		System.out.println("\n=== LISTA ORDENADA POR PRECIO ===");
 		System.out.println(inmobiliaria.getPropiedadOrdenPrecioString());
 
 		// Intentar añadir una propiedad duplicada
-		System.out.println("Añadir local otra vez (debe ser false): " + inmobiliaria.añade(local));
+		System.out.println("Añadir el mismo local otra vez: " + (inmobiliaria.añade(local)?"Añadida":"No se ha podido añadir"));
 
 		System.out.println("\n=== MOSTRAR TODAS LAS PROPIEDADES (ordenadas por código) ===");
 		System.out.println(inmobiliaria);

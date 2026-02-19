@@ -39,6 +39,9 @@ public class Usuario implements InterfazUsuario{
 	 */
 	@Override
 	public boolean sacaLibro(Libro lib) {
+		if (this.puedeSacarMasLibros()==false) {
+			return false;
+		}
 		return this.coleccionLibrosSacados.add(lib);
 	}
 
@@ -55,11 +58,16 @@ public class Usuario implements InterfazUsuario{
 	 */
 	@Override
 	public boolean puedeSacarMasLibros() {
-		if (this.coleccionLibrosSacados.size()>10) {
+		if (this.coleccionLibrosSacados.size()>9) {
 			return false;
 		}
 		return true;
 	}
+
+	// @Override
+	// public boolean puedeSacarMasLibros() {
+	//     return this.coleccionLibrosSacados.size() < 10;
+	// }
 
 	/**
 	 * Libro devuelveLibro(String tit). Método que extraiga el libro con título tit del conjunto de
@@ -68,12 +76,19 @@ public class Usuario implements InterfazUsuario{
 	 */
 	@Override
 	public Libro devuelveLibro(String titulo) {
+		Libro encontrado = null;
+
 		for (Libro libro : coleccionLibrosSacados) {
 			if (libro.getTitulo().equalsIgnoreCase(titulo)) {
-				return libro;
+				encontrado = libro;
 			}
 		}
-		return null;
+
+		if (encontrado != null) {
+			coleccionLibrosSacados.remove(encontrado);
+		}
+
+		return encontrado;
 	}
 
 	/**
@@ -82,7 +97,7 @@ public class Usuario implements InterfazUsuario{
 	 */
 	@Override
 	public int hashCode() {
-		return Objects.hash(nombreUsuario);
+		return Objects.hash(nombreUsuario.toLowerCase());
 	}
 
 	@Override
@@ -94,7 +109,7 @@ public class Usuario implements InterfazUsuario{
 		if (getClass() != obj.getClass())
 			return false;
 		Usuario other = (Usuario) obj;
-		return Objects.equals(nombreUsuario, other.nombreUsuario);
+		return Objects.equals(nombreUsuario.toLowerCase(), other.nombreUsuario.toLowerCase());
 	}
 
 	/**
@@ -105,6 +120,16 @@ public class Usuario implements InterfazUsuario{
 	 */
 	@Override
 	public String toString() {
-		return this.nombreUsuario + " (" + this.coleccionLibrosSacados + ")";
+		String cadena = this.getNombreUsuario() + " (";
+
+		if (coleccionLibrosSacados.isEmpty()) {
+			return cadena += "No tiene libros sacados)";
+		}
+		else {
+			for (Libro libro : coleccionLibrosSacados) {
+				cadena += libro.getTitulo() + "; ";
+			}
+		}
+		return cadena + ")";
 	}
 }

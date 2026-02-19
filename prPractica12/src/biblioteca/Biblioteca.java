@@ -12,29 +12,32 @@ public class Biblioteca implements InterfazBiblioteca {
 	/**
 	 * Variables de instancia
 	 */
-	private Set<Usuario> UsuariosBiblioteca;
-	private SortedSet<Libro> LibrosDisponibles;
+	private Set<Usuario> usuariosBiblioteca;
+	private SortedSet<Libro> librosDisponibles;
 
 	/**
-	 * Un constructor, métodos getter y setter.
+	 * Constructor
 	 */
 	public Biblioteca(Set<Usuario> usuariosBiblioteca, SortedSet<Libro> librosDisponibles) {
-		UsuariosBiblioteca = usuariosBiblioteca;
-		LibrosDisponibles = librosDisponibles;
+		this.usuariosBiblioteca = usuariosBiblioteca;
+		this.librosDisponibles = librosDisponibles;
 	}
 
-	public Set<Usuario> getUsuariosBiblioteca() {return UsuariosBiblioteca;}
-	public void setUsuariosBiblioteca(Set<Usuario> usuariosBiblioteca) {UsuariosBiblioteca = usuariosBiblioteca;}
+	/**
+	 * Getter's y setter's
+	 */
+	public Set<Usuario> getUsuariosBiblioteca() {return usuariosBiblioteca;}
+	public void setUsuariosBiblioteca(Set<Usuario> usuariosBiblioteca) {this.usuariosBiblioteca = usuariosBiblioteca;}
 
-	public SortedSet<Libro> getLibrosDisponibles() {return LibrosDisponibles;}
-	public void setLibrosDisponibles(SortedSet<Libro> librosDisponibles) {LibrosDisponibles = librosDisponibles;}
+	public SortedSet<Libro> getLibrosDisponibles() {return librosDisponibles;}
+	public void setLibrosDisponibles(SortedSet<Libro> librosDisponibles) {this.librosDisponibles = librosDisponibles;}
 
 	/**
 	 * Método para añadir un usuario a la biblioteca.
 	 */
 	@Override
 	public boolean altaUsuario(Usuario usu) {
-		return this.UsuariosBiblioteca.add(usu);
+		return this.usuariosBiblioteca.add(usu);
 	}
 
 	/**
@@ -42,7 +45,7 @@ public class Biblioteca implements InterfazBiblioteca {
 	 */
 	@Override
 	public boolean altaLibro(Libro lib) {
-		return this.LibrosDisponibles.add(lib);
+		return this.librosDisponibles.add(lib);
 	}
 
 	/**
@@ -53,13 +56,19 @@ public class Biblioteca implements InterfazBiblioteca {
 	 */
 	@Override
 	public Libro sacarLibro(String tit) {
-		for (Libro libro : LibrosDisponibles) {
-			if (libro.getTitulo().equalsIgnoreCase(tit)) {
-				this.LibrosDisponibles.remove(libro);
-				return libro;
+		Libro libroSacado = null;
+
+		for (Libro libro : librosDisponibles) {
+			if (libro.getTitulo().equalsIgnoreCase(tit) && libroSacado == null) {
+				libroSacado=libro;
 			}
 		}
-		return null;
+
+		if (libroSacado != null) {
+			librosDisponibles.remove(libroSacado);
+		}
+
+		return libroSacado;
 	}
 
 	/**
@@ -70,12 +79,15 @@ public class Biblioteca implements InterfazBiblioteca {
 	 */
 	@Override
 	public Usuario buscarUsuario(String nom) {
-		for (Usuario usuario : UsuariosBiblioteca) {
+		Usuario usuarioBuscado = null;
+
+		for (Usuario usuario : usuariosBiblioteca) {
 			if (usuario.getNombreUsuario().equalsIgnoreCase(nom)) {
-				return usuario;
+				usuarioBuscado = usuario;
 			}
 		}
-		return null;
+
+		return usuarioBuscado;
 	}
 
 	/**
@@ -87,11 +99,35 @@ public class Biblioteca implements InterfazBiblioteca {
 	 */
 	@Override
 	public boolean prestarLibro(String titulo, String nombre) {
-		for (Usuario usuario : UsuariosBiblioteca) {
-			if (usuario.getNombreUsuario().equalsIgnoreCase(nombre)) {
-				sacarLibro(titulo);
+		Libro libroAprestar = null;
+		Usuario usuarioEncontrado = null;
+		boolean exito = false;
+
+		// Buscar libro en la biblioteca
+		for (Libro libro : librosDisponibles) {
+			if (libro.getTitulo().equalsIgnoreCase(titulo) && libroAprestar == null) {
+				libroAprestar = libro;
 			}
 		}
+
+		// Buscar usuario en la biblioteca
+		for (Usuario usuario : usuariosBiblioteca) {
+			if (usuario.getNombreUsuario().equalsIgnoreCase(nombre) && usuarioEncontrado == null) {
+				usuarioEncontrado = usuario;
+			}
+		}
+
+		// Si ambos existen, realizar el préstamo
+		if (libroAprestar != null && usuarioEncontrado != null) {
+			// Intentar añadir el libro al usuario
+			exito = usuarioEncontrado.sacaLibro(libroAprestar);
+			if (exito) {
+				// Si se añadió correctamente al usuario, quitar de la biblioteca
+				librosDisponibles.remove(libroAprestar);
+			}
+		}
+
+		return exito;
 	}
 
 	/**
@@ -101,7 +137,28 @@ public class Biblioteca implements InterfazBiblioteca {
 	 */
 	@Override
 	public boolean devolverLibro(String titulo, String nombre) {
-		
+		Usuario usuarioEncontrado = null;
+		Libro libroADevolver = null;
+		boolean exito = false;
+
+		// Buscar usuario en la biblioteca
+		for (Usuario usuario : usuariosBiblioteca) {
+			if (usuario.getNombreUsuario().equalsIgnoreCase(nombre) && usuarioEncontrado == null) {
+				usuarioEncontrado = usuario;
+			}
+		}
+
+		// Si existe el usuario, pedirle que devuelva el libro
+		if (usuarioEncontrado != null) {
+			libroADevolver = usuarioEncontrado.devuelveLibro(titulo);
+			if (libroADevolver != null) {
+				// Si el libro existía en su colección, añadirlo a la biblioteca
+				librosDisponibles.add(libroADevolver);
+				exito = true;
+			}
+		}
+
+		return exito;
 	}
 
 	/**
@@ -110,7 +167,13 @@ public class Biblioteca implements InterfazBiblioteca {
 	 */
 	@Override
 	public String librosDisponibles() {
-		return ;
+		String libros = "";
+
+		for (Libro libro : librosDisponibles) {
+			libros += libro.getTitulo() + " ";
+		}
+
+		return libros;
 	}
 
 	/**
@@ -119,16 +182,34 @@ public class Biblioteca implements InterfazBiblioteca {
 	 */
 	@Override
 	public String librosPrestadosUsuario(String nombre) {
-		return ;
+		String cadena = "";
+
+		for (Usuario usuario : usuariosBiblioteca) {
+			if (usuario.getNombreUsuario().equalsIgnoreCase(nombre)) {
+				for (Libro usuario2 : usuario.getColeccionLibros()) {
+					cadena += usuario2.getTitulo() + " ";
+				}
+			}
+		}
+
+		return cadena;
 	}
 
 	/**
-	 * Un método SortedSet<Libro> copias(String titulo) que devuelve un conjunto con todos las
+	 * Un método SortedSet<Libro> copias(String titulo) que devuelve un conjunto con todos los
 	 * libros que hay con el título que se pasa como argumento.
 	 */
 	@Override
 	public SortedSet<Libro> copias(String titulo) {
-		return ;
+		SortedSet<Libro> copias = new TreeSet<>();
+
+		for (Libro libro : librosDisponibles) {
+			if (libro.getTitulo().equalsIgnoreCase(titulo)) {
+				copias.add(libro);
+			}
+		}
+
+		return copias;
 	}
 
 	/**
@@ -137,6 +218,14 @@ public class Biblioteca implements InterfazBiblioteca {
 	 */
 	@Override
 	public Set<Libro> getLibrosUsuario(String nomCli) {
-		return ;
+		Set<Libro> librosUsu = new TreeSet<>();
+
+		for (Usuario usuario : usuariosBiblioteca) {
+			if (usuario.getNombreUsuario().equalsIgnoreCase(nomCli)) {
+				librosUsu.addAll(usuario.getColeccionLibros());
+			}
+		}
+
+		return librosUsu;
 	}
 }

@@ -59,13 +59,20 @@ public class Inmobiliaria implements GestionInmobiliaria {
 	 */
 	@Override
 	public Propiedad buscar(int codigo) {
-		for (Propiedad propiedad : coleccionPropiedadesEnVenta) {
-			if (propiedad.getCodigo()==codigo) {
-				return propiedad;
+
+		Propiedad encontrada = null;
+		Iterator<Propiedad> it = coleccionPropiedadesEnVenta.iterator();
+
+		while (it.hasNext() && encontrada == null) {
+			Propiedad propiedad = it.next();
+			if (propiedad.getCodigo() == codigo) {
+				encontrada = propiedad;
 			}
 		}
-		return null;
+
+		return encontrada;
 	}
+
 
 	/**
 	 * Método que comprueba si una determinada propiedad
@@ -125,7 +132,7 @@ public class Inmobiliaria implements GestionInmobiliaria {
 	}
 
 	/**
-	 * ✓ String getPropiedadesOrdenPrecioString(). Método que devuelve una cadena con un
+	 * ✓ String getPropiedadOrdenPrecioString(). Método que devuelve una cadena con un
 	 * resumen de todas las propiedades ordenadas por su precio, por ejemplo:
 	 * 			LISTA ORDENADA POR PRECIO
 	 * 			23 - 60000.0 - LOCAL
