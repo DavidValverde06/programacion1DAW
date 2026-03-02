@@ -78,5 +78,6 @@ public class Libro implements Comparable<Libro>{
 
 	@Override
 	public int compareTo(Libro o) {
-		return Integer.parseInt(this.codigo) - Integer.parseInt(o.codigo);	}
+		return Integer.parseInt(this.codigo) - Integer.parseInt(o.codigo);
+	}
 }
