@@ -89,10 +89,10 @@ public class Empleado implements Comparable<Empleado> {
 	 * Un método para calcular el salario neto, para su cálculo al salario bruto habrá que aplicarle los
 	 * impuestos que serán un 4% de Seguridad Social, y un porcentaje de IRPF en función de los siguientes
 	 * tramos y porcentajes:
-	 * o Inferior a 1500€ - retención 5%
-	 * o Superior o igual a 1500€ e inferior a 2500€ - retención 10%
-	 * o Superior o igual a 2500€ e inferior a 3500€ - retención 15%
-	 * o Superior o igual a 3500 – retención 20%
+	 * 		o Inferior a 1500€ - retención 5%
+	 * 		o Superior o igual a 1500€ e inferior a 2500€ - retención 10%
+	 * 		o Superior o igual a 2500€ e inferior a 3500€ - retención 15%
+	 * 		o Superior o igual a 3500 – retención 20%
 	 */
 	public double calculoSalarioNeto() {
 		double porcentajeIRPF;

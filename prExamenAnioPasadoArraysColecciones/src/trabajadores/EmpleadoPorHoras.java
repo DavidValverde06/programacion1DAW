@@ -43,18 +43,6 @@ public class EmpleadoPorHoras extends Empleado {
 		return (super.calculoSalarioBruto() / this.HORAS_ESTIMADAS_TRABAJADAS) * this.horasTrabajadas;
 	}
 
-	@Override
-	public double calculoSalarioNeto() {
-		double porcentajeIRPF;
-
-		if (calculoSalarioBruto()>=3500) porcentajeIRPF = 0.20;
-		else if (calculoSalarioBruto()>=2500) porcentajeIRPF = 0.15;
-		else if (calculoSalarioBruto()>=1500) porcentajeIRPF = 0.10;
-		else porcentajeIRPF = 0.05;
-
-		return calculoSalarioBruto() - (calculoSalarioBruto()*PORCENTAJE_IVA) - (calculoSalarioBruto()*porcentajeIRPF);
-	}
-
 	/**
 	 * toString
 	 */
