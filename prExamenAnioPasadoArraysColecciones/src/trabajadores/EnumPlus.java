@@ -1,7 +1,7 @@
 package trabajadores;
 
 public enum EnumPlus {
-	
+
 	ACTIVIDAD(50),
 	ASISTENCIA(30),
 	FLEXIBILIDAD(60), 
@@ -11,8 +11,22 @@ public enum EnumPlus {
 	TRABAJO_FIN_DE_SEMANA(250),
 	NOCTURNIDAD(100);
 
-	EnumPlus(int i) {
+	/**
+	 * Variables de instancia
+	 */
+	private int importeIncrementaSalario;
 
+	/**
+	 * Constructor
+	 */
+	private EnumPlus(int importeIncrementaSalario) {
+		this.importeIncrementaSalario = importeIncrementaSalario;
 	}
-	
+
+	/**
+	 * Getter
+	 */
+	public int getImporteIncrementaSalario() {
+		return importeIncrementaSalario;
+	}
 }
