@@ -23,6 +23,21 @@ public class Ejercicio1 {
 		int columnas = 15;
 		int[][] marco = new int[filas][columnas]; // Array bidimensional de longitud 5 x 15
 
-		
+		for (int fil=0;fil<marco.length;fil++) {
+			for (int col=0;col<marco[fil].length;col++) {
+				marco[fil][col] = 2; // Rellenar todo con 2
+				
+				marco[fil][0] = 1; // Lateral izquierdo
+				
+				marco[fil][columnas-1] = 1; // Lateral derecho
+				
+				marco[0][col] = 1; // Parte superior
+				
+				marco[filas-1][col] = 1; // Parte inferior
+				
+				System.out.print(marco[fil][col]); // Mostrar matriz
+			}
+			System.out.println(" ");
+		}
 	}
 }

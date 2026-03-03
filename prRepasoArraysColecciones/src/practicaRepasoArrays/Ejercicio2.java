@@ -10,10 +10,30 @@ import java.util.Arrays;
 public class Ejercicio2 {
 
 	public static void main(String[] args) {
-		
-		int[] array = new int[20];
-		
-		System.out.println("\n" + Arrays.toString(array));
+
+		int numElementos = 20;
+		int numMaximo = 0;
+		int[] array = new int[numElementos];
+
+		for (int cont=0;cont<array.length;cont++) {
+			array[cont] = (int)(Math.random()*50);
+			numMaximo = array[cont];
+		}
+
+		for (int cont=0;cont<array.length;cont++) {
+			if (numMaximo<array[cont]) {
+				numMaximo=array[cont];
+			}
+		}
+
+		System.out.println(Arrays.toString(array));
+
+		System.out.println("Número máximo: " + numMaximo);
+
+		// Abrir hueco en el array para insertar el numMaximo
+
+		System.out.println(Arrays.toString(array));
+
 	}
 
 }
