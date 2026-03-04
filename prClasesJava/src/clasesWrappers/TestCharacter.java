@@ -54,8 +54,6 @@ public class TestCharacter {
         System.out.println("Letras: " + letras);
         System.out.println("Dígitos: " + digitos);
         System.out.println("Espacios: " + espacios);
-
-		
 	}
 
 }

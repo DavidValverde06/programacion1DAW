@@ -5,6 +5,7 @@ import java.time.format.DateTimeFormatter;
 
 public class Test03 {
 
+	@SuppressWarnings("unused")
 	public static void main(String[] args) {
 		// Creación
         LocalDate date = LocalDate.of(2025, 1, 16);

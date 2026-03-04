@@ -7,6 +7,7 @@ import java.util.*;
 
 public class Test06_DateFormat {
 
+	@SuppressWarnings("unused")
 	public static void main(String[] args) {
 	
 		// ------------------------------------------------------------

@@ -42,8 +42,7 @@ public class Prueba1 {
 		System.out.println("Tipo primitivo del objeto Integer: " + obInteger4.intValue());
 		System.out.println("Objeto Integer como cadena: " + Integer.toString(obInteger4));
 	
-		
-		// Crear un objeto a partir de un n�mero directamente
+		// Crear un objeto a partir de un número directamente
 		Integer obInteger6 = 180;
 		System.out.println("Objeto Integer: " + obInteger6);
 		System.out.println("Tipo primitivo del objeto Integer: " + obInteger6.intValue());
@@ -52,8 +51,6 @@ public class Prueba1 {
 		
 		Integer n1 = 6, n2 = 10;
 		System.out.println(n1+n2);
-		
-		
 	}
 
 }

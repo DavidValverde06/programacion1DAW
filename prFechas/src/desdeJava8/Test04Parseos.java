@@ -8,6 +8,7 @@ import java.util.Locale;
 
 public class Test04Parseos {
 
+	@SuppressWarnings("deprecation")
 	public static void main(String[] args) {
 
 		// --------------------------------------------------------

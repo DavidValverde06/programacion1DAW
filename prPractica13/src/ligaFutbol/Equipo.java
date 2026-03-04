@@ -23,14 +23,8 @@ public class Equipo {
 	/**
 	 * Constructor
 	 */
-	public Equipo(String nombreEquipo, int numPartidosGanados, int numPartidosEmpatados, int numPartidosPerdidos,
-			int numGolesMarcados, int numGolesRecibidos) {
+	public Equipo(String nombreEquipo) {
 		this.nombreEquipo = nombreEquipo;
-		this.numPartidosGanados = numPartidosGanados;
-		this.numPartidosEmpatados = numPartidosEmpatados;
-		this.numPartidosPerdidos = numPartidosPerdidos;
-		this.numGolesMarcados = numGolesMarcados;
-		this.numGolesRecibidos = numGolesRecibidos;
 	}
 
 	/**
@@ -38,21 +32,6 @@ public class Equipo {
 	 */
 	public String getNombreEquipo() {return nombreEquipo;}
 	public void setNombreEquipo(String nombreEquipo) {this.nombreEquipo = nombreEquipo;}
-
-	public int getNumPartidosGanados() {return numPartidosGanados;}
-	public void setNumPartidosGanados(int numPartidosGanados) {this.numPartidosGanados = numPartidosGanados;}
-
-	public int getNumPartidosEmpatados() {return numPartidosEmpatados;}
-	public void setNumPartidosEmpatados(int numPartidosEmpatados) {this.numPartidosEmpatados = numPartidosEmpatados;}
-
-	public int getNumPartidosPerdidos() {return numPartidosPerdidos;}
-	public void setNumPartidosPerdidos(int numPartidosPerdidos) {this.numPartidosPerdidos = numPartidosPerdidos;}
-
-	public int getNumGolesMarcados() {return numGolesMarcados;}
-	public void setNumGolesMarcados(int numGolesMarcados) {this.numGolesMarcados = numGolesMarcados;}
-
-	public int getNumGolesRecibidos() {return numGolesRecibidos;}
-	public void setNumGolesRecibidos(int numGolesRecibidos) {this.numGolesRecibidos = numGolesRecibidos;}
 
 	/**
 	 * Método que devuelva el número de partidos jugados.
@@ -68,7 +47,7 @@ public class Equipo {
 	 * recibe 3 puntos, cuando empata, 1 punto, y cuando pierde, ningún punto.
 	 */
 	public int puntosAcumuladosEquipo() {
-		return (this.numPartidosGanados*3) + this.numPartidosEmpatados;
+		return (this.numPartidosGanados*3) + this.numPartidosEmpatados; // El 3 deberia ser una constante
 	}
 
 	/**

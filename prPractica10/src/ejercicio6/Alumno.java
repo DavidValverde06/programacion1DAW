@@ -27,9 +27,10 @@ public class Alumno implements Comparable<Alumno>{
 	 * @param fecNac2
 	 * @param domicilio
 	 * @param dni
+	 * @throws Exception 
 	 */
 	public Alumno(byte numClase, String nombre, String apellido1, String apellido2, 
-			      String fecNac, String domicilio, String dni) {
+			      String fecNac, String domicilio, String dni) throws Exception {
 		super();
 		this.numClase = numClase;
 		this.nombre = nombre;
@@ -54,7 +55,8 @@ public class Alumno implements Comparable<Alumno>{
 		if (LibreriaFechasJava8.isFechaCorrecta(fecNac))  //Fecha correcta
 			this.fecNac2 = LibreriaFechasJava8.convierteStringToLocalDate(fecNac);
 		else
-			this.fecNac2 = LocalDate.now();
+			//this.fecNac2 = LocalDate.now();
+			throw new Exception("Error en fecha");
 	}
 	
 	/**

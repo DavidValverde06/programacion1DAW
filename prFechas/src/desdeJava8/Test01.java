@@ -9,8 +9,9 @@ import java.util.Date;
 
 public class Test01 {
 
+	@SuppressWarnings("unused")
 	public static void main(String[] args) {
-		
+
 		LocalDate today = LocalDate.now();
 		LocalDate nextWeek = today.plusWeeks(1);
 		System.out.println("Hoy: " + today);
@@ -20,12 +21,10 @@ public class Test01 {
 		LocalDate date = LocalDate.parse("16-01-2025", formatter);
 		String formattedDate = date.format(formatter);
 		System.out.println(formattedDate);
-		
+
 		Date date1 = new Date();
 		Instant instant = date1.toInstant();
-		LocalDateTime dateTime = instant.atZone(ZoneId.systemDefault()).toLocalDateTime();
-		
-		
+		LocalDateTime dateTime = instant.atZone(ZoneId.systemDefault()).toLocalDateTime();	
 	}
 
 }

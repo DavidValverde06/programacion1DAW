@@ -6,6 +6,7 @@ import java.time.temporal.ChronoUnit;
 
 public class Test00 {
 
+	@SuppressWarnings("unused")
 	public static void main(String[] args) {
 		
 		// Ejemplo de now

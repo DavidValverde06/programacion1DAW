@@ -5,6 +5,7 @@ import java.util.Date;
 
 public class Test01_Date {
 
+	@SuppressWarnings("deprecation")
 	public static void main(String[] args) {
 		
 		// Crear varios objetos tipo Date

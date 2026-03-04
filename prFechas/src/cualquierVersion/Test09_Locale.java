@@ -4,6 +4,7 @@ import java.util.*;
 
 public class Test09_Locale {
 
+	@SuppressWarnings({ "deprecation", "unused" })
 	public static void main(String[] args) {
 		
 		Calendar c = Calendar.getInstance();
