@@ -6,7 +6,6 @@ import java.util.Objects;
  * Crear la clase Equipo, sobre un equipo interesa almacenar su nombre, el número de los partidos
  * ganados, empatados y perdidos, así como el número de goles a favor (marcados) y de goles en contra
  * (recibidos).
- * Esta clase debe proporcionar como mínimo los siguientes métodos:
  */
 public class Equipo {
 
@@ -30,30 +29,32 @@ public class Equipo {
 	/**
 	 * Getter's y setter's
 	 */
-	public String getNombreEquipo() {return nombreEquipo;}
-	public void setNombreEquipo(String nombreEquipo) {this.nombreEquipo = nombreEquipo;}
+	public String getNombreEquipo() { return nombreEquipo; }
+	public void setNombreEquipo(String nombreEquipo) { this.nombreEquipo = nombreEquipo; }
+
+	public int getNumPartidosGanados() { return numPartidosGanados; }
+	public int getNumPartidosEmpatados() { return numPartidosEmpatados; }
+	public int getNumPartidosPerdidos() { return numPartidosPerdidos; }
+	public int getNumGolesMarcados() { return numGolesMarcados; }
+	public int getNumGolesRecibidos() { return numGolesRecibidos; }
 
 	/**
 	 * Método que devuelva el número de partidos jugados.
 	 */
 	public int numPartidosJugadosTotales() {
-		return this.numPartidosEmpatados + this.numPartidosGanados + this.numPartidosPerdidos;
+		return this.numPartidosGanados + this.numPartidosEmpatados + this.numPartidosPerdidos;
 	}
 
 	/**
 	 * Método que calcule los puntos acumulados por un equipo.
-	 * 
-	 * Si un equipo gana un partido,
-	 * recibe 3 puntos, cuando empata, 1 punto, y cuando pierde, ningún punto.
+	 * 3 puntos por victoria, 1 punto por empate, 0 por derrota
 	 */
 	public int puntosAcumuladosEquipo() {
-		return (this.numPartidosGanados*3) + this.numPartidosEmpatados; // El 3 deberia ser una constante
+		return (this.numPartidosGanados * 3) + this.numPartidosEmpatados;
 	}
 
 	/**
-	 * Un método de objeto y otro de clase para poder comparar si dos equipos son iguales, se
-	 * considerará que dos equipos son iguales si coincide su nombre, sin distinguir entre mayúsculas y
-	 * minúsculas.
+	 * equals y hashCode basados en el nombre del equipo
 	 */
 	@Override
 	public int hashCode() {
@@ -62,40 +63,28 @@ public class Equipo {
 
 	@Override
 	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
+		if (this == obj) return true;
+		if (obj == null) return false;
+		if (getClass() != obj.getClass()) return false;
 		Equipo other = (Equipo) obj;
 		return Objects.equals(nombreEquipo.toLowerCase(), other.nombreEquipo.toLowerCase());
 	}
 
-	/** • Método/métodos que permitan incrementar en 1 el número de partidos ganados, empatados o
-	 * 	perdidos.
+	/**
+	 * Incrementos de partidos
 	 */
-	public void incrementaNumPartidosGanados() {this.numPartidosGanados++;}
-	public void incrementaNumPartidosEmpatados() {this.numPartidosEmpatados++;}
-	public void incrementaNumPartidosPerdidos() {this.numPartidosPerdidos++;}
-
-	/** • Método/métodos que permitan incrementar el número de goles a favor o en contra en el número
-	 * de goles indicado.
-	 */
-	public void incrementaNumGolesMarcados(int numIncremento) {this.numGolesMarcados+=numIncremento;}
-	public void incrementaNumGolesRecibidos(int numIncremento) {this.numGolesRecibidos+=numIncremento;}
+	public void incrementaNumPartidosGanados() { this.numPartidosGanados++; }
+	public void incrementaNumPartidosEmpatados() { this.numPartidosEmpatados++; }
+	public void incrementaNumPartidosPerdidos() { this.numPartidosPerdidos++; }
 
 	/**
-	 * toString redfinido
-	 * 
-	 * 		ANTEQUERA CF
-	 * 			Partidos Jugados: 6
-	 * 			Partidos Ganados: 3
-	 * 			Partidos Empatados: 2
-	 * 			Partidos Perdidos: 1
-	 * 			Goles a favor: 10
-	 * 			Goles en contra: 3
-	 * 			Puntos acumulados: 11
+	 * Incrementos de goles
+	 */
+	public void incrementaNumGolesMarcados(int numIncremento) { this.numGolesMarcados += numIncremento; }
+	public void incrementaNumGolesRecibidos(int numIncremento) { this.numGolesRecibidos += numIncremento; }
+
+	/**
+	 * toString
 	 */
 	@Override
 	public String toString() {
@@ -110,11 +99,16 @@ public class Equipo {
 	}
 
 	/**
-	 * toStringLineal, que muestre la misma información pero en una sola línea, por ejemplo:
-	 * 		6 3 2 1 10 3 11 ANTEQUERA CF
+	 * toStringLineal
 	 */
 	public String toStringLineal() {
-		return this.numPartidosJugadosTotales() + "\t" + this.numPartidosGanados + "\t" + this.numPartidosEmpatados + "\t" +
-				this.numPartidosPerdidos + "\t" + this.numGolesMarcados + "\t" + this.numGolesRecibidos + "\t" + this.puntosAcumuladosEquipo() + "\t" + this.nombreEquipo.toUpperCase();
+		return this.numPartidosJugadosTotales() + "\t" +
+				this.numPartidosGanados + "\t" +
+				this.numPartidosEmpatados + "\t" +
+				this.numPartidosPerdidos + "\t" +
+				this.numGolesMarcados + "\t" +
+				this.numGolesRecibidos + "\t" +
+				this.puntosAcumuladosEquipo() + "\t" +
+				this.nombreEquipo.toUpperCase();
 	}
 }
