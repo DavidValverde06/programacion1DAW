@@ -1,9 +1,7 @@
-package awt;
+package prPractica14;
 
-import java.awt.BorderLayout;
-import java.awt.Container;
-import javax.swing.JButton;
-import javax.swing.JFrame;
+import java.awt.*;
+import javax.swing.*;
 
 public class Ejer02v1 {
 
@@ -24,6 +22,8 @@ public class Ejer02v1 {
 		f.setVisible(true);
 
 		f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
+		f.setLocationRelativeTo(null);
 	}
 
 }

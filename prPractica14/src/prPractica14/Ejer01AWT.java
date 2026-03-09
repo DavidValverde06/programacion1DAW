@@ -1,65 +1,62 @@
-package awt;
+package prPractica14;
 
-import java.awt.Container;
-import java.awt.FlowLayout;
-
-import javax.swing.*;
+import java.awt.*;
 
 /**
  * Ejercicio 1 con AWT
  */
-public class Ejer01Swing {
+public class Ejer01AWT {
 
 	public static void main(String[] args) {
 
 		/**
 		 * Crear contenedor
 		 */
-		JFrame f = new JFrame("Mi primer GUI");
+		Frame f = new Frame("Mi primer GUI");
 
-		/**
-		 * Crear panel contenedor
-		 */
-		Container contenPane = f.getContentPane();
-		
 		/**
 		 * Seleccionar un gestor de esquemas para la inserción de los componentes
 		 */
-		contenPane.setLayout(new FlowLayout());
-		
+		//		FlowLayout gestorEsquemas = new FlowLayout;
+		//		f.setLayout(gestorEsquemas);
+
+		f.setLayout(new FlowLayout());
+
 		/**
 		 * Crear los componentes adecuados
 		 */
-		JButton bSi = new JButton("Si");
-		JButton bNo = new JButton("No");
-		JLabel lNombre = new JLabel("Nombre");
-		
+		Button bSi = new Button("Si");
+		Button bNo = new Button("No");
+		Label lNombre = new Label("Nombre");
+
 		/**
 		 * Agregarlos al contenedor
 		 */
-		contenPane.add(lNombre);
-		contenPane.add(bSi);
-		contenPane.add(bNo);
-		
+		f.add(lNombre);
+		f.add(bSi);
+		f.add(bNo);
+
 		/**
 		 * Pedir ajuste de los componentes al contenedor
 		 */
 		f.pack();
-		
+
 		/**
 		 * Dimensionar el contenedor(opcional)
 		 */
 		f.setSize(400,200);
-		
+
 		/**
 		 * Mostrar el contenedor
 		 */
 		f.setVisible(true);
-		
+
 		/**
 		 * Programar el evento de cierre de ventana
 		 */
-		f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		f.addWindowListener(new ControlVentana());
+		
+		f.setLocationRelativeTo(null);
 	}
 
 }

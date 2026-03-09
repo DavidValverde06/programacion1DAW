@@ -1,4 +1,4 @@
-package awt;
+package prPractica14;
 
 // Clase para controlar los eventos de ventana
 import java.awt.event.*;

@@ -1,4 +1,4 @@
-package awt;
+package prPractica14;
 
 import java.awt.*;
 import javax.swing.*;
@@ -33,7 +33,7 @@ public class Ejer03v1 {
 
 		f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-		Thread.sleep(5000);
+		Thread.sleep(3000);
 
 		botonSur.setVisible(false);
 
