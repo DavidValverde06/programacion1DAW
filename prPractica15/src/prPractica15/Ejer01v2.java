@@ -45,7 +45,7 @@ public class Ejer01v2 extends JFrame {
 		 */
 		JPanel panelMedio = new JPanel(new BorderLayout());
 
-		JLabel etiqueta = new JLabel("Etiqueta");
+		JLabel etiqueta = new JLabel("Etiqueta",JLabel.CENTER);
 		JTextArea areaTexto = new JTextArea("Area de texto");
 		JScrollPane panelAreaTexto = new JScrollPane(areaTexto);
 
