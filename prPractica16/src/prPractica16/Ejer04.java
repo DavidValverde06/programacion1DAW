@@ -88,6 +88,9 @@ public class Ejer04 extends JFrame {
 
 		// Color de fondo (Naranja)
 		panelPrincipal.setBackground(Color.orange);
+		chNegrita.setBackground(Color.orange);
+		chCursiva.setBackground(Color.orange);
+		chSubrayado.setBackground(Color.orange);
 
 		// Añadir el Panel Principal al Panel Contenedor (cp)
 		cp.add(panelPrincipal);

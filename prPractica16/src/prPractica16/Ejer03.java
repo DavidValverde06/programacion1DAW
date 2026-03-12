@@ -2,6 +2,7 @@ package prPractica16;
 
 import java.awt.*;
 import javax.swing.*;
+import javax.swing.border.EmptyBorder;
 
 public class Ejer03 extends JFrame {
 
@@ -70,10 +71,10 @@ public class Ejer03 extends JFrame {
 
 		ButtonGroup grupoBotones = new ButtonGroup();
 
-		JRadioButton rbDec = new JRadioButton("Dec");
-		JRadioButton rbBin = new JRadioButton("Bin");
-		JRadioButton rbHex = new JRadioButton("Hex");
-		JRadioButton rbOct = new JRadioButton("Oct");
+		JRadioButton rbDec = new JRadioButton("Dec",true);
+		JRadioButton rbBin = new JRadioButton("Bin",false);
+		JRadioButton rbHex = new JRadioButton("Hex",false);
+		JRadioButton rbOct = new JRadioButton("Oct",false);
 
 		grupoBotones.add(rbDec);
 		grupoBotones.add(rbBin);
@@ -91,8 +92,11 @@ public class Ejer03 extends JFrame {
 		 * blanco. Más adelante, os explicaré como poner bordes, y uno de los bordes es un borde vacío, por
 		 * tanto podemos conseguir ese espaciado.
 		 */
-		contenPane.add(new JLabel("           "),BorderLayout.EAST);
-		contenPane.add(new JLabel("           "),BorderLayout.WEST);
+		// contenPane.add(new JLabel("           "),BorderLayout.EAST);
+		// contenPane.add(new JLabel("           "),BorderLayout.WEST);
+
+		// Sin usar JLabel, usando setBorder(new EmptyBorder()) para crear un borde vacio
+		panelCentro.setBorder(new EmptyBorder(5,50,5,50));
 
 		// Añadir paneles al panel contenedor
 		contenPane.add(panelNorte,BorderLayout.NORTH);

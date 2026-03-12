@@ -15,11 +15,13 @@ public class Ejer01 extends JFrame {
 		// Panel Contenedor
 		Container cp = this.getContentPane();
 
+		JPanel panelPrincipal = new JPanel(new BorderLayout(15,15));
+
 		/**
 		 * El panel contenedor del JFrame tiene un borde vacío alrededor, por eso nos queda más espaciado
 		 * con respecto al borde de la ventana.
 		 */
-		((JComponent) cp).setBorder(new EmptyBorder(10,30,10,30));
+		((JComponent)cp).setBorder(new EmptyBorder(10,30,10,30));
 
 		// Panel Norte
 		JPanel panelNorte = new JPanel();
@@ -51,7 +53,7 @@ public class Ejer01 extends JFrame {
 		panelCentroIzquierdo.add(panelBotones);
 		panelCentroIzquierdo.add(panelLista);
 
-		JPanel panelCentroDerecho = new JPanel(new GridLayout(4,1));
+		JPanel panelEdad = new JPanel(new GridLayout(4,1));
 
 		JLabel lEdad = new JLabel("Marca tu edad:");
 
@@ -64,10 +66,10 @@ public class Ejer01 extends JFrame {
 		grupoBotones.add(jrb2);
 		grupoBotones.add(jrb3);
 
-		panelCentroDerecho.add(lEdad);
-		panelCentroDerecho.add(jrb1);
-		panelCentroDerecho.add(jrb2);
-		panelCentroDerecho.add(jrb3);
+		panelEdad.add(lEdad);
+		panelEdad.add(jrb1);
+		panelEdad.add(jrb2);
+		panelEdad.add(jrb3);
 
 		/**
 		 * El panel contenedor de la edad, es un buen panel para que probéis a ponerles distintos bordes,
@@ -108,14 +110,13 @@ public class Ejer01 extends JFrame {
 		/**
 		 * En la captura de pantalla que os he puesto, el panel de la edad tiene el siguiente borde:
 		 */
-		panelCentroDerecho.setBorder(
+		panelEdad.setBorder(
 				new CompoundBorder(
 						new TitledBorder("Borde compuesto"),
 						new BevelBorder(BevelBorder.RAISED)));
 
 		// Añadir paneles al Panel Centro
 		panelCentro.add(panelCentroIzquierdo);
-		panelCentro.add(panelCentroDerecho);
 		// -------------------------------------------------------------------------------------------------------
 
 		// Panel Sur
@@ -134,9 +135,13 @@ public class Ejer01 extends JFrame {
 		panelSur.add(tfObservacion);
 
 		// Añadir paneles al Panel Contenedor (cp)
-		cp.add(panelNorte,BorderLayout.NORTH);
-		cp.add(panelCentro,BorderLayout.CENTER);
-		cp.add(panelSur,BorderLayout.SOUTH);
+		panelPrincipal.add(panelNorte,BorderLayout.NORTH);
+		panelPrincipal.add(panelEdad,BorderLayout.EAST);
+		panelPrincipal.add(panelBotones,BorderLayout.WEST);
+		panelPrincipal.add(panelCentro,BorderLayout.CENTER);
+		panelPrincipal.add(panelSur,BorderLayout.SOUTH);
+
+		cp.add(panelPrincipal);
 	}
 
 	public static void main(String[] args) {
