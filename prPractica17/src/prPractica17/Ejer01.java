@@ -15,25 +15,24 @@ public class Ejer01 extends JFrame {
 		// Panel Contenedor
 		Container cp = this.getContentPane();
 
+		// Panel Principal
 		JPanel panelPrincipal = new JPanel(new BorderLayout(15,15));
 
 		/**
 		 * El panel contenedor del JFrame tiene un borde vacío alrededor, por eso nos queda más espaciado
 		 * con respecto al borde de la ventana.
 		 */
-		((JComponent)cp).setBorder(new EmptyBorder(10,30,10,30));
+		// ((JComponent)cp).setBorder(new EmptyBorder(10,30,10,30));
+		panelPrincipal.setBorder(new EmptyBorder(10,30,10,30));
 
 		// Panel Norte
 		JPanel panelNorte = new JPanel();
 		panelNorte.add(new JLabel("Esto es un ejercicio de JAVA"),JLabel.CENTER);
 
 		// -------------------------------------------------------------------------------------------------------
-		// Panel Centro
-		JPanel panelCentro = new JPanel(new GridLayout(1,2));
-
-		JPanel panelCentroIzquierdo = new JPanel(new GridLayout(1,2));
-
+		// Centro Panel Botones
 		JPanel panelBotones = new JPanel(new GridLayout(3,1));
+
 		JButton b1 = new JButton("Botón 1");
 		JButton b2 = new JButton("Botón 2");
 		JButton b3 = new JButton("Botón 3");
@@ -43,16 +42,18 @@ public class Ejer01 extends JFrame {
 			arrayLista[i] = "Item número "+(i+1);
 		}
 
+		// Centro Panel Lista
 		JList<String> miLista = new JList<String>(arrayLista);
-
 		JScrollPane panelLista = new JScrollPane(miLista);
 
 		panelBotones.add(b1);
 		panelBotones.add(b2);
 		panelBotones.add(b3);
-		panelCentroIzquierdo.add(panelBotones);
-		panelCentroIzquierdo.add(panelLista);
 
+		panelPrincipal.add(panelBotones);
+		panelPrincipal.add(panelLista);
+
+		// Centro Panel Edad
 		JPanel panelEdad = new JPanel(new GridLayout(4,1));
 
 		JLabel lEdad = new JLabel("Marca tu edad:");
@@ -114,9 +115,6 @@ public class Ejer01 extends JFrame {
 				new CompoundBorder(
 						new TitledBorder("Borde compuesto"),
 						new BevelBorder(BevelBorder.RAISED)));
-
-		// Añadir paneles al Panel Centro
-		panelCentro.add(panelCentroIzquierdo);
 		// -------------------------------------------------------------------------------------------------------
 
 		// Panel Sur
@@ -138,14 +136,13 @@ public class Ejer01 extends JFrame {
 		panelPrincipal.add(panelNorte,BorderLayout.NORTH);
 		panelPrincipal.add(panelEdad,BorderLayout.EAST);
 		panelPrincipal.add(panelBotones,BorderLayout.WEST);
-		panelPrincipal.add(panelCentro,BorderLayout.CENTER);
+		panelPrincipal.add(panelLista,BorderLayout.CENTER);
 		panelPrincipal.add(panelSur,BorderLayout.SOUTH);
 
 		cp.add(panelPrincipal);
 	}
 
 	public static void main(String[] args) {
-
 		Ejer01 ventana = new Ejer01();
 
 		// ventana.setResizable(false);
@@ -157,7 +154,6 @@ public class Ejer01 extends JFrame {
 		ventana.setLocationRelativeTo(null);
 
 		ventana.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
 	}
 
 }
