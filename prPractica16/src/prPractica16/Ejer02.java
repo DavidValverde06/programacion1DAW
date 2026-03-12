@@ -1,12 +1,8 @@
 package prPractica16;
 
-import java.awt.Container;
-
-import javax.swing.JCheckBoxMenuItem;
-import javax.swing.JFrame;
-import javax.swing.JMenu;
-import javax.swing.JMenuBar;
-import javax.swing.JMenuItem;
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
 
 /**
  * 2.- En este GUI vamos a diseñar un menú de opciones, para ello primero tenéis que leeros el apartado 5.15.
@@ -22,6 +18,7 @@ public class Ejer02 extends JFrame {
 		super("Mi menú de opciones");
 
 		Container contenPane = new Container();
+		JPanel panelPrincipal = new JPanel(new BorderLayout());
 
 		/**
 		 * Aunque el orden en el que creéis los componentes no importa, intentad como siempre ser ordenados, y
@@ -43,27 +40,39 @@ public class Ejer02 extends JFrame {
 		JMenuItem menuItem131 = new JMenuItem("SubEntrada 1.3.1.");
 		JCheckBoxMenuItem menuItem132 = new JCheckBoxMenuItem("SubEntrada 1.3.2.");
 
-		// 4.- Añado las entradas a los submenús.
+		itemMenu12.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_E, ActionEvent.CTRL_MASK));
 
+		// 4.- Añado las entradas a los submenús.
+		menu13.add(menuItem131);
+		menu13.add(menuItem132);
 
 		// 5.- Añado las entradas a los menús, puede que alguna de esas entradas sea a su vez un menú (así
 		//		conseguimos los submenús).
+		entrada1.add(itemMenu11);
+		entrada1.add(itemMenu12);
+		entrada1.add(menu13);
 
 		// 6.- Añado los menús a la barra de menús.
+		barraMenu.add(entrada1);
+		barraMenu.add(entrada2);
+		barraMenu.add(ayuda);
 
 		// 7.- Coloco la barra de menús en el panel contenedor, recordar que es con el método setJMenuBar.
 
 		this.setJMenuBar(barraMenu);
 
+		contenPane.add(panelPrincipal);
 	}
 
 	public static void main(String[] args) {
 
 		Ejer02 ventana = new Ejer02();
 
-		//ventana.setResizable(false);
+		ventana.setResizable(false);
 
 		ventana.pack();
+
+		ventana.setSize(400, 200);
 
 		ventana.setVisible(true);
 
