@@ -2,6 +2,7 @@ package prPractica16;
 
 import java.awt.*;
 import java.awt.event.*;
+
 import javax.swing.*;
 
 public class Ejer04 extends JFrame {
@@ -79,6 +80,11 @@ public class Ejer04 extends JFrame {
 		// Cambiar el tipo de letra y tamaño de "Negrita"
 		chNegrita.setFont(new Font("Comic Sans MS", Font.BOLD|Font.ITALIC, 25));
 		chNegrita.setForeground(Color.gray);
+
+		//		Font font = chSubrayado.getFont();
+		//		Map attributes = font.getAttributes();
+		//		attributes.put(TextAttribute.UNDERLINE, TextAttribute.UNDERLINE_ON);
+		//		chSubrayado.setFont(font.deriveFont(attributes));
 
 		// Añadir componentes al Panel Principal
 		panelPrincipal.add(comboBoxFonts);

@@ -39,7 +39,8 @@ public class Ejer02 extends JFrame {
 		// Crear un diálogo asociado a esta ventana (Frame)
 		// ------------------------------------------------
 		JDialog d = new JDialog(this,"Título de diálogo",false);
-								// this es el JFrame, he heredado de JFrame
+		//		JDialog d = new JDialog(this,"Título de diálogo",true);
+										// this es el JFrame, he heredado de JFrame
 
 		d.setLayout(new FlowLayout());
 

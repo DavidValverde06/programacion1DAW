@@ -14,6 +14,7 @@ public class Ejer01 extends JFrame {
 
 		// Panel Contenedor
 		Container cp = this.getContentPane();
+		cp.setLayout(new FlowLayout());
 
 		// Panel Principal
 		JPanel panelPrincipal = new JPanel(new BorderLayout(15,15));
@@ -82,31 +83,32 @@ public class Ejer01 extends JFrame {
 		// PRUEBA DE BORDES SOBRE EL panelEdad
 
 		// EtcherBorder --> Crea una linea resaltada o hundida.
-		// panelEdad.setBorder(new EtchedBorder(EtchedBorder.RAISED));
+		//		 panelEdad.setBorder(new EtchedBorder(EtchedBorder.LOWERED));
+		//		 panelEdad.setBorder(new EtchedBorder(EtchedBorder.RAISED));
 
 		// TitledBorder --> Crea un borde añadiendo un tilulo a otro borde.
-		// panelEdad.setBorder(new TitledBorder("Marca tu edad"));
-		// panelEdad.setBorder(new TitledBorder(new LineBorder(Color.blue,3,true),"Titulo"));
+		//		 panelEdad.setBorder(new TitledBorder("Marca tu edad"));
+		//		 panelEdad.setBorder(new TitledBorder(new LineBorder(Color.blue,3,true),"Titulo"));
 
 		// LineBorder --> Dibuja una linea de diferentes grosores..
-		// panelEdad.setBorder(new LineBorder(Color.red,5));
+		//		 panelEdad.setBorder(new LineBorder(Color.red,5));
 
 		// MatteBorder --> Crea un borde usando un color o una imagen.
-		// panelEdad.setBorder(new MatteBorder(5,15,30,30,Color.LIGHT_GRAY));
+		//		 panelEdad.setBorder(new MatteBorder(5,15,30,30,Color.LIGHT_GRAY));
 
 		// BevelBorder --> Presenta al componente alzado o hundido.
-		// panelEdad.setBorder(new BevelBorder(BevelBorder.RAISED));
+		//		 panelEdad.setBorder(new BevelBorder(BevelBorder.RAISED));
 
 		// SoftBevelBorder --> Mas suave que BevelBorder.
-		// panelEdad.setBorder(new SoftBevelBorder(BevelBorder.LOWERED));
+		//		 panelEdad.setBorder(new SoftBevelBorder(BevelBorder.LOWERED));
 
 		// EmptyBorder --> Borde para añadir espacio vacio.
-		// panelEdad.setBorder(new EmptyBorder(5,15,30,30));
+		//		 panelEdad.setBorder(new EmptyBorder(5,15,30,30));
 
 		// CompoundBorder --> Compone dos bordes en uno solo
-		// panelEdad.setBorder(
-		// new CompoundBorder(new EtchedBorder(),
-		// new LineBorder(Color.red,3)));
+		//		 panelEdad.setBorder(
+		//		 new CompoundBorder(new EtchedBorder(),
+		//		 new LineBorder(Color.red,3)));
 
 		/**
 		 * En la captura de pantalla que os he puesto, el panel de la edad tiene el siguiente borde:
