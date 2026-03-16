@@ -10,24 +10,25 @@ public class Ejer05 {
 
 	public static void main(String[] args) {
 
-		try {
-			String numIntroducido = JOptionPane.showInputDialog("Escriba un número");
-			int num = Integer.parseInt(numIntroducido);
 
-			if (numIntroducido==null || numIntroducido.equals("")) {
-				JOptionPane.showMessageDialog(null, "Dato incorrecto", "Mensaje", JOptionPane.ERROR_MESSAGE);
-			}
-			else if (num==100) {
+		String numIntroducido = JOptionPane.showInputDialog("Escriba un número");
+
+		try {
+			double num = Double.parseDouble(numIntroducido);
+
+			if (num==100) {
 				JOptionPane.showMessageDialog(null, "Enhorabuena, has obtenido un premio");
 			}
 			else {
 				JOptionPane.showMessageDialog(null, "El número introducido es " + num);
 			}
 		}
-		catch (NumberFormatException e) {
-			JOptionPane.showMessageDialog(null, "Introduce un número", "Mensaje", JOptionPane.ERROR_MESSAGE);
+		catch (NullPointerException e) {
+			JOptionPane.showMessageDialog(null, "Operación cancelada");
 		}
-
+		catch (NumberFormatException e) {
+			JOptionPane.showMessageDialog(null, "Dato incorrecto", "Error", JOptionPane.ERROR_MESSAGE);
+		}
 	}
 
 }

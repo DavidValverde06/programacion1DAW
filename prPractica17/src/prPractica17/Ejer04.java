@@ -30,11 +30,15 @@ public class Ejer04 {
 		JOptionPane.showMessageDialog(null, "Hola",
 				"Título mensaje", JOptionPane.ERROR_MESSAGE);
 
+		// Ruta del proyecto
+		String dir = System.getProperty("user.dir");
+		System.out.println(dir);
+		
 		JOptionPane.showMessageDialog(null,
 				"Hola, que tal estáis",
 				"Título mensaje",
 				JOptionPane.PLAIN_MESSAGE,
-				new ImageIcon("C:/Users/david/Downloads/81MJUW7iUaL.jpg"));
+				new ImageIcon("./recursos/Duke.png"));
 
 		// ------------------------------------------------------------
 		// Pruebas del método showConfirmDialog
@@ -71,7 +75,7 @@ public class Ejer04 {
 				"Hola, " + nombre.toUpperCase(),
 				"Bienvenido",
 				JOptionPane.PLAIN_MESSAGE,
-				new ImageIcon("Duke.png"));
+				new ImageIcon("./recursos/Duke.png"));
 
 		Object [] diasSemana = {"Lunes","Martes","Miércoles","Jueves","Viernes"};
 
