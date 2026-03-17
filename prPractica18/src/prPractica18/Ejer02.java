@@ -11,8 +11,20 @@ import javax.swing.border.*;
  */
 public class Ejer02 extends JFrame {
 
+	faltan eventos
+
 	private static final long serialVersionUID = 4589263424739830124L;
 
+	// Variables de instancia
+	private JLabel etiquetaPuntosObtenidos;
+	private JLabel puntos;
+	private JTextField dado1Apuesta;
+	private JTextField dado2Apuesta;
+	private JTextField dado1Resultado;
+	private JTextField dado2Resultado;
+	private JButton bLanza;
+
+	// Constructor
 	public Ejer02() {
 
 		super("Jugar a los dados");
@@ -46,8 +58,8 @@ public class Ejer02 extends JFrame {
 		 */
 		JPanel panelPuntuacionNorte = new JPanel(new FlowLayout(FlowLayout.RIGHT));
 
-		JLabel etiquetaPuntosObtenidos = new JLabel("Puntos Obtenidos: ");
-		JLabel puntos = new JLabel("0");
+		etiquetaPuntosObtenidos = new JLabel("Puntos Obtenidos: ");
+		puntos = new JLabel("0");
 
 		Font fuente = new Font("Comic Sans MS", Font.BOLD, 15);
 
@@ -95,22 +107,22 @@ public class Ejer02 extends JFrame {
 		 * borde es donde especifico “Dado 1” y “Dado 2”. La fuente de estos JTextField es la misma que la
 		 * de las etiquetas de la Puntuación obtenida. 
 		 */
-		JTextField dado1Apuesta = new JTextField();
+		dado1Apuesta = new JTextField();
 		dado1Apuesta.setBorder(new CompoundBorder(
 				new TitledBorder("Dado 1"), null));
 		dado1Apuesta.setFont(fuente);
 
-		JTextField dado2Apuesta = new JTextField();
+		dado2Apuesta = new JTextField();
 		dado2Apuesta.setBorder(new CompoundBorder(
 				new TitledBorder("Dado 2"), null));
 		dado2Apuesta.setFont(fuente);
 
-		JTextField dado1Resultado = new JTextField();
+		dado1Resultado = new JTextField();
 		dado1Resultado.setBorder(new CompoundBorder(
 				new TitledBorder("Dado 1"), null));
 		dado1Resultado.setFont(fuente);
 
-		JTextField dado2Resultado = new JTextField();
+		dado2Resultado = new JTextField();
 		dado2Resultado.setBorder(new CompoundBorder(
 				new TitledBorder("Dado 2"), null));
 		dado2Resultado.setFont(fuente);
@@ -162,7 +174,7 @@ public class Ejer02 extends JFrame {
 		 */
 		JPanel panelBotonSur = new JPanel();
 
-		JButton bLanza = new JButton("Lanzar dados");
+		bLanza = new JButton("Lanzar dados");
 
 		bLanza = new JButton("Lanzar dados", new ImageIcon("dados-03.gif"));
 		bLanza.setBorder(new BevelBorder(BevelBorder.RAISED));
@@ -194,5 +206,18 @@ public class Ejer02 extends JFrame {
 
 		ventana.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
+
+	/**
+	 * Por último el funcionamiento del juego es el siguiente:
+	 * o Vamos a jugar con el ordenador a acertar el resultado del lanzamiento de dos dados.
+	 * o El jugador dará el posible resultado de cada uno de los dados, en los JTextField del panel “Apuesta
+	 * Jugador” y el ordenador internamente generará el número que saldrá en cada dado cada vez que
+	 * se pulse el botón pulsar, y que se mostrarán en los JTextField del panel Resultado.
+	 * o Si el resultado dado por el jugador coincide con el del ordenador el jugador sumará 25 puntos a su
+	 * acumulador, si solo coincide uno de los dados sumará 10 puntos, y si no coincide ninguno restará
+	 * 5 puntos.
+	 * o No tienen que coincidir el orden del resultado, es decir, si la apuesta del usuario es 1 y 3, y el
+	 * ordenador genera 3 y 1, es válido y sumaría 25 puntos.
+	 */
 
 }

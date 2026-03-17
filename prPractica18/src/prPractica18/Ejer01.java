@@ -8,6 +8,10 @@ public class Ejer01 extends JFrame implements FocusListener {
 
 	private static final long serialVersionUID = -2739471212745483337L;
 
+	// Variables de instancia
+	private JTextArea textAreaSur;
+
+	// Constructor
 	public Ejer01() {
 
 		super("Ejemplo con FocusListener");
@@ -44,8 +48,8 @@ public class Ejer01 extends JFrame implements FocusListener {
 		JList<String> miJList = new JList<>(listaArray);
 		JScrollPane scrollPanelCentro = new JScrollPane(miJList);
 
-		// En el sur un JTextArea, contenida en un JScrollPane, al JTextArea le he dado un tamaño de 10x5.		
-		JTextArea textAreaSur = new JTextArea(10,5);
+		// En el sur un JTextArea, contenida en un JScrollPane, al JTextArea le he dado un tamaño de 10x5.
+		textAreaSur = new JTextArea(10,5);
 		JScrollPane scrollPanelSur = new JScrollPane(textAreaSur);
 
 		// Añadir el control de foco a todos los componentes de la ventana, excepto a los contenedores
@@ -108,14 +112,14 @@ public class Ejer01 extends JFrame implements FocusListener {
 	 */
 	@Override
 	public void focusGained(FocusEvent e) {
-
-		System.out.println("Foco ganado: " + e.getComponent());
+		textAreaSur.append("Foco ganado: " + e.getComponent() + "\n");
+		//		System.out.println("Foco ganado: " + e.getComponent());
 	}
 
 	@Override
 	public void focusLost(FocusEvent e) {
-
-		System.out.println("Foco perdido: " + e.getComponent());
+		textAreaSur.append("Foco perdido: " + e.getComponent() + "\n");
+		//		System.out.println("Foco perdido: " + e.getComponent());
 	}
 
 }
