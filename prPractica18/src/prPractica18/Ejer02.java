@@ -11,8 +11,6 @@ import javax.swing.border.*;
  */
 public class Ejer02 extends JFrame {
 
-	faltan eventos
-
 	private static final long serialVersionUID = 4589263424739830124L;
 
 	// Variables de instancia

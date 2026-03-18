@@ -108,7 +108,7 @@ public class Ejer01 extends JFrame implements MouseListener{
 	@Override
 	public void mouseExited(MouseEvent e) {
 		boton.setBackground(Color.YELLOW);
-		etiqueta.setText("Salio en el botón con el ratón");
+		etiqueta.setText("Salgo del botón con el ratón");
 	}
 
 }
