@@ -1,6 +1,7 @@
 package prPractica18;
 
 import java.awt.*;
+import java.awt.event.*;
 import javax.swing.*;
 import javax.swing.border.*;
 
@@ -9,7 +10,7 @@ import javax.swing.border.*;
  * par de dados aleatoriamente. Programaremos un evento tipo Action (ActionEvent), que se lanzará al
  * pulsar el botón Lanzar dados:
  */
-public class Ejer02 extends JFrame {
+public class Ejer02 extends JFrame implements ActionListener{
 
 	private static final long serialVersionUID = 4589263424739830124L;
 
@@ -21,6 +22,12 @@ public class Ejer02 extends JFrame {
 	private JTextField dado1Resultado;
 	private JTextField dado2Resultado;
 	private JButton bLanza;
+
+	private int apuesta1;
+	private int apuesta2;
+	private int resultado1;
+	private int resultado2;
+	private int acumulador;
 
 	// Constructor
 	public Ejer02() {
@@ -177,6 +184,9 @@ public class Ejer02 extends JFrame {
 		bLanza = new JButton("Lanzar dados", new ImageIcon("dados-03.gif"));
 		bLanza.setBorder(new BevelBorder(BevelBorder.RAISED));
 
+		// Añadir ActionListener al botón para lanzar los dados
+		bLanza.addActionListener(this);
+
 		panelBotonSur.add(bLanza);
 
 		// Añadir todo al Panel Principal
@@ -208,14 +218,55 @@ public class Ejer02 extends JFrame {
 	/**
 	 * Por último el funcionamiento del juego es el siguiente:
 	 * o Vamos a jugar con el ordenador a acertar el resultado del lanzamiento de dos dados.
+	 * 
 	 * o El jugador dará el posible resultado de cada uno de los dados, en los JTextField del panel “Apuesta
 	 * Jugador” y el ordenador internamente generará el número que saldrá en cada dado cada vez que
 	 * se pulse el botón pulsar, y que se mostrarán en los JTextField del panel Resultado.
+	 * 
 	 * o Si el resultado dado por el jugador coincide con el del ordenador el jugador sumará 25 puntos a su
 	 * acumulador, si solo coincide uno de los dados sumará 10 puntos, y si no coincide ninguno restará
 	 * 5 puntos.
+	 * 
 	 * o No tienen que coincidir el orden del resultado, es decir, si la apuesta del usuario es 1 y 3, y el
 	 * ordenador genera 3 y 1, es válido y sumaría 25 puntos.
 	 */
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		try {
+			apuesta1 = Integer.parseInt(dado1Apuesta.getText());
+			apuesta2 = Integer.parseInt(dado2Apuesta.getText());
+
+			if (apuesta1 < 1 || apuesta1 > 6 || apuesta2 < 1 || apuesta2 > 6) {
+				throw new NumberFormatException();
+			}
+
+			resultado1 = (int)(Math.random()*6)+1;
+			resultado2 = (int)(Math.random()*6)+1;
+
+			dado1Resultado.setText(String.valueOf(resultado1));
+			dado2Resultado.setText(String.valueOf(resultado2));
+
+			if ((resultado1 == apuesta1 && resultado2 == apuesta2) || (resultado1 == apuesta2 && resultado2 == apuesta1)) {
+				acumulador+=25;
+			}
+			else if (resultado1 == apuesta1 || resultado1 == apuesta2 || resultado2 == apuesta1 || resultado2 == apuesta2) {
+				acumulador+=10;
+			}
+			else {
+				acumulador-=5;
+			}
+
+			puntos.setText(String.valueOf(acumulador));
+		}
+		catch (NumberFormatException ex) {
+			JOptionPane.showMessageDialog(null, "Debe introducir dos números entre 1 y 6");
+
+			dado1Apuesta.setText("");
+			dado2Apuesta.setText("");
+
+			dado1Resultado.setText("");
+			dado2Resultado.setText("");
+		}
+	}
 
 }

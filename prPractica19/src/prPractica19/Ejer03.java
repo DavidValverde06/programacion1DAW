@@ -3,7 +3,7 @@ package prPractica19;
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
-import javax.swing.border.EmptyBorder;
+import javax.swing.border.*;
 
 public class Ejer03 extends JFrame implements ItemListener {
 
@@ -29,13 +29,13 @@ public class Ejer03 extends JFrame implements ItemListener {
 
 		chMelon = new JCheckBox("Melón");
 		chNaranja = new JCheckBox("Naranja");
-		chPlatano = new JCheckBox("Plátano");
-		chManzana = new JCheckBox("Manzana");
+		chPlatano = new JCheckBox("Plátano",true);
+		chManzana = new JCheckBox("Manzana",true);
 
-		panelCheckBox.add(chMelon,true);
-		panelCheckBox.add(chNaranja,false);
-		panelCheckBox.add(chPlatano,false);
-		panelCheckBox.add(chManzana,true);
+		panelCheckBox.add(chMelon);
+		panelCheckBox.add(chNaranja);
+		panelCheckBox.add(chPlatano);
+		panelCheckBox.add(chManzana);
 
 		chMelon.addItemListener(this);
 		chNaranja.addItemListener(this);
@@ -43,6 +43,8 @@ public class Ejer03 extends JFrame implements ItemListener {
 		chManzana.addItemListener(this);
 
 		textoArea = new JTextArea();
+		textoArea.setEditable(false);
+
 		JScrollPane panelTextArea = new JScrollPane(textoArea);
 
 		panelPrincipal.setBorder(new EmptyBorder(20,20,20,20));
@@ -74,13 +76,20 @@ public class Ejer03 extends JFrame implements ItemListener {
 	@Override
 	public void itemStateChanged(ItemEvent e) {
 
-		terminar esto
+		JCheckBox check = (JCheckBox)e.getSource();
+		String estado = "";
 
-		textoArea.append("Componente: " +
-				"\nEstado actual: " +
-				"\nEstado actual: " +
-				"\n" +
-				"\n");
+		if (e.getStateChange() == ItemEvent.SELECTED) {
+			estado = "Seleccionado";
+		}
+		else {
+			estado = "No seleccionado";
+		}
+
+		textoArea.append("Componente: " + check.getText() +
+				"\nEstado actual: " + check.isSelected() +
+				"\nEstado actual: " + e.getStateChange() +
+				"\n" + estado + "\n\n");
 	}
 
 }

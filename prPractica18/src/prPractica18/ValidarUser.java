@@ -93,9 +93,17 @@ public class ValidarUser extends JFrame implements ActionListener {
 		String miUsuario = "David";
 		String miPassword = "123";
 
+		char[] passwordCliente = tfPassword.getPassword();
+		String passwordSinCifrar="";
+
+		for (int cont=0;cont<passwordCliente.length;cont++) {
+			passwordSinCifrar += passwordCliente[cont];
+		}
+
 		if (e.getSource()==bAceptar) {
-			if (miUsuario.equalsIgnoreCase(tfUsuario.getText()) && miPassword.equals(tfPassword.getPassword())) {
+			if (miUsuario.equalsIgnoreCase(tfUsuario.getText()) && miPassword.equalsIgnoreCase(passwordSinCifrar)) {
 				etiquetaSur.setText("Datos correctos");
+				etiquetaSur.setForeground(Color.BLACK);
 			}
 			else {
 				etiquetaSur.setText("Datos incorrectos");

@@ -23,9 +23,11 @@ public class Ejer02 extends JFrame implements MouseMotionListener {
 
 	private static final long serialVersionUID = -6506886234074229002L;
 
+	// Variables de instancia
 	private JLabel etiqueta1;
 	private JLabel etiqueta2;
 
+	// Constructor
 	public Ejer02() {
 
 		super("Prueba eventos de movimiento ratón");

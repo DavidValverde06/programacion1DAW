@@ -3,9 +3,7 @@ package prPractica19;
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
-import javax.swing.border.BevelBorder;
-import javax.swing.border.CompoundBorder;
-import javax.swing.border.EmptyBorder;
+import javax.swing.border.*;
 
 /**
  * 1.- Diseña la interfaz gráfica que se muestra a continuación, y en la que vamos a probar eventos de ratón
