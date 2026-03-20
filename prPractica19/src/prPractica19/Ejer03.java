@@ -25,7 +25,7 @@ public class Ejer03 extends JFrame implements ItemListener {
 
 		JPanel panelPrincipal = new JPanel(new BorderLayout());
 
-		JPanel panelCheckBox = new JPanel(new GridLayout(4,1));
+		JPanel panelCheckBox = new JPanel(new GridLayout(4,1,5,15));
 
 		chMelon = new JCheckBox("Melón");
 		chNaranja = new JCheckBox("Naranja");

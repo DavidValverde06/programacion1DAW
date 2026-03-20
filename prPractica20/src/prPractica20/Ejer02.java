@@ -66,7 +66,7 @@ public class Ejer02 extends JFrame implements ItemListener, ListSelectionListene
 		panelLlantas.setBorder(new CompoundBorder(
 				new TitledBorder("Elija número de llantas"),null));
 
-		String [] arrayLlantas = {"Tres radios"};
+		String [] arrayLlantas = {"Tres radios","Cinco radios","Siete radios","Nueve radios"};
 		comboNumLlantas = new JComboBox<String>(arrayLlantas);
 		comboNumLlantas.setEnabled(false);
 

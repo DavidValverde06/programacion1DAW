@@ -68,6 +68,11 @@ public class Ejer01v1 extends JFrame implements KeyListener {
 
 	@Override
 	public void keyTyped(KeyEvent e) {
+		
+		if (e.getKeyChar()=='*') {
+			System.exit(0);
+		}
+		
 		cadena += e.getKeyChar();
 		etiquetaCaracteres.setText(cadena);
 	}
