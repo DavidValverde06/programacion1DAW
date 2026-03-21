@@ -30,8 +30,7 @@ public class Ejer01v1 extends JFrame implements KeyListener {
 		super("Pruebas eventos KeyEvent");
 
 		Container cp = this.getContentPane();
-
-		JPanel panelPrincipal = new JPanel(new BorderLayout());
+		cp.setLayout(new GridLayout(3,1));
 
 		bPrimero = new JButton("Primero");
 		bSegundo = new JButton("Segundo");
@@ -42,11 +41,9 @@ public class Ejer01v1 extends JFrame implements KeyListener {
 		// escribir en la etiqueta cuando el bSegundo tenga el foco
 		bSegundo.addKeyListener(this);
 
-		panelPrincipal.add(bPrimero,BorderLayout.NORTH);
-		panelPrincipal.add(bSegundo,BorderLayout.SOUTH);
-
-		cp.add(panelPrincipal,BorderLayout.NORTH);
-		cp.add(etiquetaCaracteres,BorderLayout.SOUTH);
+		cp.add(bPrimero);
+		cp.add(bSegundo);
+		cp.add(etiquetaCaracteres);
 	}
 
 	public static void main(String[] args) {
@@ -68,11 +65,11 @@ public class Ejer01v1 extends JFrame implements KeyListener {
 
 	@Override
 	public void keyTyped(KeyEvent e) {
-		
+
 		if (e.getKeyChar()=='*') {
 			System.exit(0);
 		}
-		
+
 		cadena += e.getKeyChar();
 		etiquetaCaracteres.setText(cadena);
 	}
