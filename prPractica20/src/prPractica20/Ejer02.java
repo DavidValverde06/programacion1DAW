@@ -2,6 +2,7 @@ package prPractica20;
 
 import java.awt.*;
 import java.awt.event.*;
+import java.util.*;
 import javax.swing.*;
 import javax.swing.border.*;
 import javax.swing.event.*;
@@ -21,6 +22,9 @@ public class Ejer02 extends JFrame implements ItemListener, ListSelectionListene
 	private JList<String> listaColores;
 
 	private JLabel etiquetaInfo;
+
+	private Map<String,Color> mapaColores;
+	private JScrollPane scrollColor;
 
 	// Constructor
 	public Ejer02() {
@@ -45,10 +49,10 @@ public class Ejer02 extends JFrame implements ItemListener, ListSelectionListene
 		// Panel Información
 		JPanel panelInfo = preparaPanelInfo();
 
-		panelPrincipal.add(panelExtras,TOP_ALIGNMENT);
-		panelPrincipal.add(panelLlantas,TOP_ALIGNMENT);
-		panelPrincipal.add(panelColor,BOTTOM_ALIGNMENT);
-		panelPrincipal.add(panelInfo,BOTTOM_ALIGNMENT);
+		panelPrincipal.add(panelExtras);
+		panelPrincipal.add(panelLlantas);
+		panelPrincipal.add(panelColor);
+		panelPrincipal.add(panelInfo);
 
 		cp.add(panelPrincipal);
 
@@ -71,16 +75,34 @@ public class Ejer02 extends JFrame implements ItemListener, ListSelectionListene
 	// Panel Color
 	private JPanel preparaPanelColor() {
 		JPanel panelColor = new JPanel();
+		panelColor.setPreferredSize(new Dimension(80,80));
 		panelColor.setBorder(new CompoundBorder(
 				new TitledBorder("Elija color"),null));
 
-		String[] arrayColores = {"Rojo","Verde","Azul"};
-		listaColores = new JList<String>(arrayColores);
+		// Primera forma -- Array de colores
+		/**
+		 * String[] arrayColores = {"Rojo","Verde","Azul"};
+		 * listaColores = new JList<String>(arrayColores);
+		 */
+
+		// Segunda forma - Mapa de colores
+		mapaColores = new HashMap<String,Color>();
+
+		mapaColores.put("Rojo", Color.RED);
+		mapaColores.put("Verde", Color.GREEN);
+		mapaColores.put("Negro", Color.BLACK);
+		mapaColores.put("Azul", Color.BLUE);
+		mapaColores.put("Amarillo", Color.YELLOW);
+		mapaColores.put("Naranja", Color.ORANGE);
+
+		// Extraer las claves del mapa anterior y guardarlas en una coleccion tipo Vector
+		Vector<String> listaClaves = new Vector<>(mapaColores.keySet());
+		listaColores = new JList<String>(listaClaves);
 
 		// Añadir ListSelectionListener
 		listaColores.addListSelectionListener(this);
 
-		JScrollPane scrollColor = new JScrollPane(listaColores);
+		scrollColor = new JScrollPane(listaColores);
 		scrollColor.setPreferredSize(new Dimension(80,40));
 
 		panelColor.add(scrollColor);
@@ -174,25 +196,26 @@ public class Ejer02 extends JFrame implements ItemListener, ListSelectionListene
 	 */
 	@Override
 	public void valueChanged(ListSelectionEvent e) {
-		if (!e.getValueIsAdjusting()) {
-			String color = listaColores.getSelectedValue();
-			etiquetaInfo.setText("Pintura: " + color);
+		etiquetaInfo.setForeground(
+				mapaColores.get(
+						listaColores.getSelectedValue()));
 
-			if (color.equalsIgnoreCase("Rojo")) {
-				etiquetaInfo.setForeground(Color.RED);
-			}
-			else if (color.equalsIgnoreCase("Verde")) {
-				etiquetaInfo.setForeground(Color.GREEN);
-			}
-			else if (color.equalsIgnoreCase("Azul")) {
-				etiquetaInfo.setForeground(Color.BLUE);
-			}
-		}
+		etiquetaInfo.setText("Color pintura: " + listaColores.getSelectedValue());
 	}
 
 	@Override
 	public void itemStateChanged(ItemEvent e) {
-		Object componente = e.getSource();
+
+		JCheckBox checkMarcado = (JCheckBox)e.getSource();
+
+		etiquetaInfo.setForeground(Color.BLUE);
+
+		// ComboBox Llantas
+		if (e.getSource() == comboNumLlantas) {
+			String llanta = (String)comboNumLlantas.getSelectedItem();
+			etiquetaInfo.setText("Llantas: " + llanta);
+			return;
+		}
 
 		/**
 		 * Si el elemento que ha generado el evento es “Llantas de aleación”, el combo se habilita en caso de
@@ -201,11 +224,11 @@ public class Ejer02 extends JFrame implements ItemListener, ListSelectionListene
 		 */
 
 		// Llantas de aleacion
-		if (e.getStateChange() == ItemEvent.SELECTED && componente == chLLantasAleacion) {
+		if (e.getStateChange() == ItemEvent.SELECTED && checkMarcado == chLLantasAleacion) {
 			comboNumLlantas.setEnabled(true);
 			etiquetaInfo.setText("LLantas de aleación");
 		}
-		else if (e.getStateChange() == ItemEvent.DESELECTED && componente == chLLantasAleacion) {
+		else if (e.getStateChange() == ItemEvent.DESELECTED && checkMarcado == chLLantasAleacion) {
 			comboNumLlantas.setEnabled(false);
 			etiquetaInfo.setText("LLantas de aleación");
 		}
@@ -216,12 +239,12 @@ public class Ejer02 extends JFrame implements ItemListener, ListSelectionListene
 		 */
 
 		// Pintura metalizada
-		if (e.getStateChange() == ItemEvent.SELECTED && componente == chPintura) {
-			listaColores.setEnabled(true);
+		if (e.getStateChange() == ItemEvent.SELECTED && checkMarcado == chPintura) {
+			scrollColor.setVisible(true);
 			etiquetaInfo.setText("Pintura metalizada");
 		}
-		else if (e.getStateChange() == ItemEvent.DESELECTED && componente == chPintura) {
-			listaColores.setEnabled(false);
+		else if (e.getStateChange() == ItemEvent.DESELECTED && checkMarcado == chPintura) {
+			scrollColor.setVisible(false);
 			etiquetaInfo.setText("Pintura metalizada");
 		}
 
@@ -232,12 +255,12 @@ public class Ejer02 extends JFrame implements ItemListener, ListSelectionListene
 		 */
 
 		// Asientos deportivos
-		if (e.getStateChange() == ItemEvent.SELECTED && componente == chAsientosDeportivos) {
+		if (e.getStateChange() == ItemEvent.SELECTED && checkMarcado == chAsientosDeportivos) {
 			chTapiceria.setEnabled(false);
 			chTapiceria.setSelected(true);
 			etiquetaInfo.setText("Asientos deportivos");
 		}
-		else if (e.getStateChange() == ItemEvent.DESELECTED && componente == chAsientosDeportivos) {
+		else if (e.getStateChange() == ItemEvent.DESELECTED && checkMarcado == chAsientosDeportivos) {
 			chTapiceria.setEnabled(true);
 			chTapiceria.setSelected(false);
 			etiquetaInfo.setText("Asientos deportivos");
@@ -250,26 +273,21 @@ public class Ejer02 extends JFrame implements ItemListener, ListSelectionListene
 		 */
 
 		// Diesel
-		if (e.getStateChange() == ItemEvent.SELECTED && componente == chDiesel) {
+		if (e.getStateChange() == ItemEvent.SELECTED && checkMarcado == chDiesel) {
 			etiquetaInfo.setText("Diesel");
 		}
-		else if (e.getStateChange() == ItemEvent.DESELECTED && componente == chDiesel) {
+		else if (e.getStateChange() == ItemEvent.DESELECTED && checkMarcado == chDiesel) {
 			etiquetaInfo.setText("Diesel");
 		}
 
 		// Tapiceria de cuero
-		if (e.getStateChange() == ItemEvent.SELECTED && componente == chTapiceria) {
+		if (e.getStateChange() == ItemEvent.SELECTED && checkMarcado == chTapiceria) {
 			etiquetaInfo.setText("Tapicería de cuero");
 		}
-		else if (e.getStateChange() == ItemEvent.DESELECTED && componente == chTapiceria) {
+		else if (e.getStateChange() == ItemEvent.DESELECTED && checkMarcado == chTapiceria) {
 			etiquetaInfo.setText("Tapicería de cuero");
 		}
 
-		// ComboBox Llantas
-		if (e.getStateChange() == ItemEvent.SELECTED && componente == comboNumLlantas) {
-			String llanta = (String)comboNumLlantas.getSelectedItem();
-			etiquetaInfo.setText("Llantas: " + llanta);
-		}
 	}
 
 }
