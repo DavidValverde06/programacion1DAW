@@ -2,6 +2,7 @@ package prPractica21;
 
 import java.awt.*;
 import java.awt.event.*;
+import java.text.*;
 import javax.swing.*;
 
 /**
@@ -17,12 +18,11 @@ public class Ejer02 extends JFrame implements ActionListener {
 	// Variables de instancia
 	private JLabel etiquetaVisorResultado;
 	private JTextField tfVisorResultado;
-
 	private JButton bEuros;
 	private JButton bDolares;
 	private JButton bDesglosar;
-
 	private JTextArea taAreaDesglose;
+	private double cambioDolar;
 
 	// Constructor
 	public Ejer02() {
@@ -85,7 +85,7 @@ public class Ejer02 extends JFrame implements ActionListener {
 
 	public static void main(String[] args) {
 
-		double cambioDivisa = Double.parseDouble(JOptionPane.showInputDialog("Indique cambio a dolar")); 
+		// cambioDolar = Double.parseDouble(JOptionPane.showInputDialog("Indique cambio a dolar")); 
 
 		Ejer02 ventana = new Ejer02();
 
@@ -102,10 +102,48 @@ public class Ejer02 extends JFrame implements ActionListener {
 		ventana.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
 
-	@Override
-	public void actionPerformed(ActionEvent e) {
-		// TODO Auto-generated method stub
+	/**
+	 * Método del desglose
+	 */
+	private void desglosar() {
+		double [] array = {500,200,100,50,20,10,5,2,1,0.50,0.20,0.10,0.05,0.02,0.01};
 
+	}
+
+	/**
+	 * Método de la interfaz ActionListener
+	 */
+	public void actionPerformed(ActionEvent e) {
+		Double valor;
+		JButton bp = (JButton) e.getSource(); // Boton pulsado
+
+		try { // Control de excepciones
+			if (bp==bDesglosar) {
+				desglosar(); // Método que se encarga de realizar el desglose
+			}
+			else {
+				// Especificar el que punto decimal será ".", sino lo hacéis os fallará
+				DecimalFormatSymbols simbolos = new DecimalFormatSymbols();
+				simbolos.setDecimalSeparator('.');
+
+				// Indicar que formatearemos los números con dos decimales
+				// y con el punto decimal
+				DecimalFormat patron = new DecimalFormat("0.00",simbolos);
+
+				if (bp==bDolares) { // Conversion a dolares
+					valor = (Double.valueOf(tfVisorResultado.getText())) * cambioDolar ;
+					tfVisorResultado.setText(patron.format(valor).toString());
+				}
+				else { // Conversión a euros
+					valor = (Double.valueOf(tfVisorResultado.getText())) / cambioDolar;
+					tfVisorResultado.setText(patron.format(valor).toString());
+				}
+			}
+
+		} // Fin try
+		catch (NumberFormatException e1) {
+			JOptionPane.showMessageDialog(f, "Debe introducir un número.");
+		}
 	}
 
 }
