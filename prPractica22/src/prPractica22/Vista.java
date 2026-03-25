@@ -55,8 +55,8 @@ public class Vista extends JPanel {
 		JPanel panelNorte = new JPanel();
 
 		tfCalculadora = new JTextField(10);
-		tfCalculadora.setEditable(false);
-		tfCalculadora.setBackground(Color.WHITE);
+		// tfCalculadora.setEditable(false);
+		// tfCalculadora.setBackground(Color.WHITE);
 		panelNorte.setBorder(new TitledBorder("Resultado"));
 
 		panelNorte.add(tfCalculadora);
