@@ -49,15 +49,15 @@ public class Grupo {
 	/**
 	 * Método que nos devuelva un array clásico con los alumnos suspensos
 	 */
-	public Alumno[] getSuspensos() {
-		Alumno[] alumnosSuspensos = this.listaAlumnos.toArray();
-		for (Alumno alumno : this.listaAlumnos) {
-			if (alumno.getNotaMedia()<4) {
-
-			}
-		}
-		return null;
-	}
+	//	public Alumno[] getSuspensos() {
+	//		Alumno[] alumnosSuspensos = this.listaAlumnos.toArray();
+	//		for (Alumno alumno : this.listaAlumnos) {
+	//			if (alumno.getNotaMedia()<4) {
+	//
+	//			}
+	//		}
+	//		return null;
+	//	}
 
 	/**
 	 * Método que nos devuelva un conjunto ordenado (SortedSet<>) de los alumnos aprobados,

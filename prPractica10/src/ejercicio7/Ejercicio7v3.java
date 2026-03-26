@@ -8,7 +8,7 @@ public class Ejercicio7v3 {
 
 	public static void main(String[] args) {
 
-		sin hacer
+		// Sin hacer
 	}
 
 }

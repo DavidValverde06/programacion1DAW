@@ -83,9 +83,9 @@ public class Ventas {
 	 * Método getTotalVentasPlataforma(), método que nos devuelva un array unidimensional con las
 	 * ventas de cada plataforma, sin importar cuál ha sido el videojuego vendido.
 	 */
-	public int getTotalVentasPlataforma() {
-
-	}
+	//	public int getTotalVentasPlataforma() {
+	//
+	//	}
 
 	/**
 	 * Método toStringVentasPlataforma(), método que os devuelva una cadena con información sobre
@@ -93,22 +93,22 @@ public class Ventas {
 	 * debe ser similar al siguiente ejemplo:
 	 * 
 	 */
-	public String toStringVentasPlataforma() {
-
-	}
+	//	public String toStringVentasPlataforma() {
+	//
+	//	}
 
 	/**
 	 * Método que nos devuelva las ventas de un determinado juego para una plataforma en concreto. El
 	 * método estará sobrecargado, ya que la plataforma nos podrá llegar como valor enumerado o como
 	 * cadena.
 	 */
-	public int getVentasJuego(Plataforma plataforma) { // Valor enumerado
-
-	}
-	
-	public int getVentasJuego(String nombreJuego) { // Cadena
-
-	}
+	//	public int getVentasJuego(Plataforma plataforma) { // Valor enumerado
+	//
+	//	}
+	//	
+	//	public int getVentasJuego(String nombreJuego) { // Cadena
+	//
+	//	}
 
 	/**
 	 * Método que nos devuelva un array de objetos de tipo Juego, con los n videojuegos más vendidos.
@@ -116,7 +116,7 @@ public class Ventas {
 	 * siguiente los ejemplos anteriormente mostrados, me debería devolver una salida similar a:
 	 * 
 	 */
-	public Juego[] numJuegosMasVendidos() {
-		
-	}
+	//	public Juego[] numJuegosMasVendidos() {
+	//		
+	//	}
 }

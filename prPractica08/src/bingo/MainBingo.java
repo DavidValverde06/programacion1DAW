@@ -9,8 +9,8 @@ package bingo;
 public class MainBingo {
 
 	public static void main(String[] args) {
-		
-		Bombo miBombo = new Bombo(false, 100);
+
+		// Bombo miBombo = new Bombo(false, 100);
 	}
 
 }

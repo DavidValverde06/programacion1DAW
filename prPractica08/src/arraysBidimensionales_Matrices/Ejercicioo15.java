@@ -10,8 +10,8 @@ import java.util.Scanner;
 
 public class Ejercicioo15 {
 
-	sin hacer
-	
+	// Sin hacer
+
 	public static void main(String[] args) {
 
 		try (Scanner sc = new Scanner(System.in)){
@@ -21,19 +21,19 @@ public class Ejercicioo15 {
 
 			System.out.print("Introduce las filas de la matriz: ");
 			n=sc.nextInt();
-			
+
 			System.out.print("Introduce las columnas de la matriz: ");
 			m=sc.nextInt();
-			
+
 			miMatriz = new int[n][m];
-			
+
 			visualizarMatrices(miMatriz);
 		}
 	}
 
 	public static void transportarMatrices(int[][] miMatriz) {
-		
-		
+
+
 	}
 
 	public static void leerMatrices() {

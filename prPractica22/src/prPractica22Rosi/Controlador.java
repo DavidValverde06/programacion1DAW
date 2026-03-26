@@ -1,10 +1,8 @@
 package prPractica22Rosi;
 
-import java.awt.Color;
+import java.awt.*;
 import java.awt.event.*;
-
-import javax.swing.JButton;
-import javax.swing.UIManager;
+import javax.swing.*;
 
 public class Controlador implements ActionListener, KeyListener, FocusListener {
 
@@ -33,17 +31,14 @@ public class Controlador implements ActionListener, KeyListener, FocusListener {
 	@Override
 	public void focusLost(FocusEvent e) {
 		JButton botonPulsado = (JButton)e.getSource();
-		if (botonPulsado.getText().equals(" + ")) ||
-		botonPulsado.getText().equals(" - ")) ||
-botonPulsado.getText().equals(" * ")) ||
-botonPulsado.getText().equals(" / ")) ||
-botonPulsado.getText().equals(" . ")) ||
-botonPulsado.getText().equals(" = "))) {
-	e.getComponent().setBackground(UIManager.getColor("Button.setBackground"));
-}
-else {
-	e.getComponent().setBackground(Color.GREEN);
-}
+		if (botonPulsado.getText().equals(" + ") || botonPulsado.getText().equals(" - ") || 
+				botonPulsado.getText().equals(" * ") || botonPulsado.getText().equals(" / ") ||
+				botonPulsado.getText().equals(".") || botonPulsado.getText().equals("=")) {
+			e.getComponent().setBackground(UIManager.getColor("Button.setBackground"));
+		}
+		else {
+			e.getComponent().setBackground(Color.GREEN);
+		}
 	}
 
 	/**

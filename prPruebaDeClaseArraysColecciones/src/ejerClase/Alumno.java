@@ -59,16 +59,16 @@ public class Alumno implements Comparable<Alumno> {
 		if (compara!=0) {
 			return compara;
 		}
-		
-		int compara = this.getApellido().compareTo(o.getApellido());
-		if (compara!=0) {
-			return compara;
-		}
-		
+
+		//		int compara = this.getApellido().compareTo(o.getApellido());
+		//		if (compara!=0) {
+		//			return compara;
+		//		}
+
 		return this.nombre.compareTo(o.getNombre());
 	}
 
-	
+
 
 	/**
 	 * hashCode / equals
@@ -77,7 +77,7 @@ public class Alumno implements Comparable<Alumno> {
 	public int hashCode() {
 		return Objects.hash(apellido, nombre, getNotaMedia());
 	}
-	
+
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)

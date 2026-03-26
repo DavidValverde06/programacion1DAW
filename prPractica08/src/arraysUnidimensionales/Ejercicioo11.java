@@ -9,7 +9,7 @@ import java.util.Scanner;
  * 	- Multiplicación de dos polinomios de grado N y M.
  */
 
-sin hacer
+// Sin hacer
 
 public class Ejercicioo11 {
 
@@ -47,7 +47,7 @@ public class Ejercicioo11 {
 				}
 				case 3 -> {
 					System.out.println("Multiplicación de los polinomios:");
-					polResultado = multiplicar(pol1, pol2);
+					// polResultado = multiplicar(pol1, pol2);
 					mostrarPolinomio(polResultado);
 				}
 				case 4 -> System.out.println("\nSaliendo del programa...");
@@ -98,10 +98,10 @@ public class Ejercicioo11 {
 		return resultado;
 	}
 
-	public static int[] multiplicar(int[] pol1, int[] pol2) {
-
-
-	}
+	//	public static int[] multiplicar(int[] pol1, int[] pol2) {
+	//
+	//
+	//	}
 
 	public static void menu() {
 		System.out.println("\n--- MENÚ ---");

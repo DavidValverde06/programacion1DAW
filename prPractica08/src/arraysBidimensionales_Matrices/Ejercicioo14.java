@@ -8,9 +8,9 @@ package arraysBidimensionales_Matrices;
  */
 
 public class Ejercicioo14 {
-	
-	sin hacer
-	
+
+	// Sin hacer
+
 	public static void main(String[] args) {
 
 		byte filasArray=8;

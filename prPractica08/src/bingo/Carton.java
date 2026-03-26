@@ -22,27 +22,27 @@ public class Carton {
 	/**
 	 * Variables de instancia
 	 */
-	private int[] numerosCarton;
-	private Bombo numBolasIniciales;
-	private int numAciertos;
+	//	private int[] numerosCarton;
+	//	private Bombo numBolasIniciales;
+	//	private int numAciertos;
 
 	/**
 	 * Constructor
 	 */
-	public Carton(int[] numerosCarton, Bombo numBolasIniciales, int numAciertos) {
-		this.numerosCarton = numerosCarton;
-		this.numBolasIniciales = numBolasIniciales;
-		this.numAciertos = numAciertos;
-	}
+	//	public Carton(int[] numerosCarton, Bombo numBolasIniciales, int numAciertos) {
+	//		this.numerosCarton = numerosCarton;
+	//		this.numBolasIniciales = numBolasIniciales;
+	//		this.numAciertos = numAciertos;
+	//	}
 
 	/**
 	 * Método existeNumero(n)
 	 * 
 	 * comprobará si en el cartón existe el número n.
 	 */
-	public boolean existeNumero() {
-
-	}
+	//	public boolean existeNumero() {
+	//
+	//	}
 
 	/**
 	 * Método compruebaNumero(n)
@@ -50,9 +50,9 @@ public class Carton {
 	 * si existe en el cartón el número n incrementará el número de aciertos del
 	 * cartón.
 	 */
-	public boolean compruebaNumero() {
-		
-	}
+	//	public boolean compruebaNumero() {
+	//		
+	//	}
 
 	/**
 	 * Método quedanNumeros()
@@ -60,7 +60,7 @@ public class Carton {
 	 * devuelve true si todavía quedan números sin acertar en el cartón y false si el
 	 * cartón está completo.
 	 */
-	public boolean quedanNumero() {
-
-	}
+	//	public boolean quedanNumero() {
+	//
+	//	}
 }

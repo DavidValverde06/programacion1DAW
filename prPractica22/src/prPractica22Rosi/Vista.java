@@ -16,7 +16,6 @@ public class Vista extends JPanel{
 	private JButton bPunto, bIgual;
 	private JTextField tfRdo;
 
-
 	/**
 	 * Constructor
 	 */
@@ -34,7 +33,6 @@ public class Vista extends JPanel{
 		// Añadir el panel principal al panel contenedor
 		this.add(panelPrincipal);
 	}
-
 
 	/**
 	 * Método que se encarga de preparar el panel del norte
@@ -90,7 +88,6 @@ public class Vista extends JPanel{
 		p.add(this.bIgual);
 
 		return p;
-
 	}
 
 	/**

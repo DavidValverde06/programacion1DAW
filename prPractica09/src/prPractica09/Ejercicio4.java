@@ -1,14 +1,14 @@
 package prPractica09;
 
-import java.util.Arrays;
+// import java.util.Arrays;
 
 /**
  * 4.- Manejo de las clases String y StringBuffer:
  */
 public class Ejercicio4 {
 
-	sin hacer revisar
-	
+	// Sin hacer - Revisar
+
 	public static void main(String[] args) {
 
 		String vocales = "aeiouAEIOU";
@@ -63,20 +63,20 @@ public class Ejercicio4 {
 		System.out.println(otraCadena=otraCadena.toUpperCase());
 
 		// Sacar la palabra "blanco" a un array con el método getChars y substring
-//		try {
-//			int longitudPalabra="blanca".length();
-//			char[] array3 = new char[longitudPalabra];
-//			
-//			int posicionPalabra=obString.indexOf("blanca");
-//			
-//			obString.getChars(posicionPalabra, posicionPalabra+longitudPalabra, array3, 0);
-//			System.out.println(Arrays.toString(array3));
-//			
-//			char[] array4 = obString.substring(posicionPalabra,posicionPalabra+longitudPalabra)
-//		}
-//		catch (StringIndexOutOfBoundsException e) {
-//			
-//		}
+		//		try {
+		//			int longitudPalabra="blanca".length();
+		//			char[] array3 = new char[longitudPalabra];
+		//			
+		//			int posicionPalabra=obString.indexOf("blanca");
+		//			
+		//			obString.getChars(posicionPalabra, posicionPalabra+longitudPalabra, array3, 0);
+		//			System.out.println(Arrays.toString(array3));
+		//			
+		//			char[] array4 = obString.substring(posicionPalabra,posicionPalabra+longitudPalabra)
+		//		}
+		//		catch (StringIndexOutOfBoundsException e) {
+		//			
+		//		}
 
 		// Comprueba si la cadena empieza por la palabra “Hola”.
 		System.out.println(obString.startsWith("Hola"));
@@ -89,36 +89,36 @@ public class Ejercicio4 {
 		System.out.println(obString);
 		System.out.println(obString.indexOf("un vestido blanco"));
 		System.out.println(obString.indexOf("un vestido nigga"));
-		
+
 		// Busca todas las ocurrencias de una cadena.
-		 
-		
+
+
 		// Extrae de tu cadena la segunda palabra y almacénala en una nueva cadena.
-//		System.out.println("\n");
-//		
-//		String nuevaCadena;
-//		String[] arrayCaracteresSplit;
-//		
-//		arrayCaracteresSplit = obString.split(" ,.:;");
-//		System.out.println(Arrays.toString(arrayCaracteresSplit));
-//		System.out.println("Segunda palabra: " + arrayCaracteresSplit[1]);
-		
-		
+		//		System.out.println("\n");
+		//		
+		//		String nuevaCadena;
+		//		String[] arrayCaracteresSplit;
+		//		
+		//		arrayCaracteresSplit = obString.split(" ,.:;");
+		//		System.out.println(Arrays.toString(arrayCaracteresSplit));
+		//		System.out.println("Segunda palabra: " + arrayCaracteresSplit[1]);
+
+
 		// A partir de un array de caracteres crea un objeto de tipo cadena.
-		
+
 		char[] arrayCaracteres2 = {'H','o','l','a'};
 		String cadena2="";
-		
+
 		for (int cont=0;cont<arrayCaracteres2.length;cont++) {
 			cadena2+=arrayCaracteres2[cont];
 		}
-		
+
 		System.out.println(cadena2);
-		
+
 		// Muestra el valor Unicode de cada uno de los caracteres de la cadena anterior (codePointAt).
 
-		
-		
+
+
 		// Crea un objeto de tipo StringBuffer, y prueba diferentes formas de concatenación con el método
 		// Append.
 

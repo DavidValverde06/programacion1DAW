@@ -1,6 +1,6 @@
 package ejerClase;
 
-import java.util.Arrays;
+// import java.util.Arrays;
 
 public class Test {
 
@@ -15,7 +15,7 @@ public class Test {
 		System.out.println(miClase.toString());  // Devolverá la lista completa ordenada alfabéticamente
 
 		System.out.println("\nLista de suspensos");
-		System.out.println(Arrays.toString(miClase.getSuspensos()));
+		// System.out.println(Arrays.toString(miClase.getSuspensos()));
 
 		System.out.println("\nLista de aprobados ordenada por nota");
 		System.out.println(miClase.getAprobados());
