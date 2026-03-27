@@ -64,7 +64,6 @@ public class Vista extends JPanel {
 		return scrollColor;
 	}
 
-
 	/**
 	 * Constructor
 	 */

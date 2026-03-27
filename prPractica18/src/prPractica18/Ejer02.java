@@ -10,7 +10,7 @@ import javax.swing.border.*;
  * par de dados aleatoriamente. Programaremos un evento tipo Action (ActionEvent), que se lanzará al
  * pulsar el botón Lanzar dados:
  */
-public class Ejer02 extends JFrame implements ActionListener{
+public class Ejer02 extends JFrame implements ActionListener, KeyListener{
 
 	private static final long serialVersionUID = 4589263424739830124L;
 
@@ -186,6 +186,7 @@ public class Ejer02 extends JFrame implements ActionListener{
 
 		// Añadir ActionListener al botón para lanzar los dados
 		bLanza.addActionListener(this);
+		bLanza.addKeyListener(this);
 
 		panelBotonSur.add(bLanza);
 
@@ -267,6 +268,24 @@ public class Ejer02 extends JFrame implements ActionListener{
 			dado1Resultado.setText("");
 			dado2Resultado.setText("");
 		}
+	}
+
+	@Override
+	public void keyTyped(KeyEvent e) {
+
+	}
+
+	@Override
+	public void keyPressed(KeyEvent e) {
+		if (e.getKeyCode() == KeyEvent.VK_ENTER) {
+			bLanza.doClick();
+			bLanza.requestFocus();
+		}
+	}
+
+	@Override
+	public void keyReleased(KeyEvent e) {
+
 	}
 
 }
