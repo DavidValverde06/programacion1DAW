@@ -1,8 +1,8 @@
 package test;
 
 import javax.swing.*;
-import controlador.Controlador;
-import vista.Vista;
+import controlador.*;
+import vista.*;
 
 public class MainInmobiliaria {
 
