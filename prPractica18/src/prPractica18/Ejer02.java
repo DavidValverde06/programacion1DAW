@@ -260,7 +260,7 @@ public class Ejer02 extends JFrame implements ActionListener, KeyListener{
 			puntos.setText(String.valueOf(acumulador));
 		}
 		catch (NumberFormatException ex) {
-			JOptionPane.showMessageDialog(null, "Debe introducir dos números entre 1 y 6");
+			JOptionPane.showMessageDialog(this, "Debe introducir dos números entre 1 y 6");
 
 			dado1Apuesta.setText("");
 			dado2Apuesta.setText("");

@@ -6,7 +6,7 @@ import javax.swing.*;
 import modelo.*;
 import vista.*;
 
-public class Controlador {
+public class Controlador implements ItemListener {
 
 	/**
 	 * Variables de instancia
@@ -19,6 +19,14 @@ public class Controlador {
 	public Controlador(Vista v) {
 		this.miVista = v;
 		this.miInmobiliaria = new Inmobiliaria();
+	}
+	@Override
+	public void itemStateChanged(ItemEvent e) {
+
+		if (e.getSource() == miVista.getMiComboTipoPropiedad()) {
+			
+			
+		}
 	}
 
 
