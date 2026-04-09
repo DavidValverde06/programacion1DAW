@@ -15,7 +15,7 @@ public class MainInmobiliaria {
 		Controlador ctr = new Controlador(miVista);
 
 		// Llamar al método que da control a los componentes
-		// miVista.control(ctr);
+		miVista.control(ctr);
 
 		// Crearemos un JFrame
 		JFrame ventana = new JFrame("Agencia Inmobiliaria");

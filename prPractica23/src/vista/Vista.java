@@ -3,6 +3,7 @@ package vista;
 import java.awt.*;
 import javax.swing.*;
 import javax.swing.border.*;
+import controlador.*;
 import modelo.*;
 
 public class Vista extends JPanel {
@@ -332,7 +333,31 @@ public class Vista extends JPanel {
 	 * Método se encarga de añadir el control de los 
 	 * eventos a los componentes
 	 */
-	//	public void control(Controlador ctr) {
-	//
-	//	}
+	public void control(Controlador ctr) {
+		// JComboBox
+		this.miComboTipoPropiedad.addItemListener(ctr);
+
+		this.miComboTipoVivienda.addItemListener(ctr);
+		this.miComboNumDormitorios.addItemListener(ctr);
+		this.miComboNumBanios.addItemListener(ctr);
+
+		this.miComboTipoTerreno.addItemListener(ctr);
+
+		// JRadioButton
+		this.rbSuministroElecSi.addActionListener(ctr);
+		this.rbSuministroElecNo.addActionListener(ctr);
+
+		this.rbSuministroAguaSi.addActionListener(ctr);
+		this.rbSuministroAguaNo.addActionListener(ctr);
+
+		this.rbDisponeViviendaSi.addActionListener(ctr);
+		this.rbDisponeViviendaNo.addActionListener(ctr);
+
+		// JButton
+		this.bGuardar.addActionListener(ctr);
+		this.bConsultar.addActionListener(ctr);
+		this.bBorrar.addActionListener(ctr);
+		this.bLimpiar.addActionListener(ctr);
+
+	}
 }
