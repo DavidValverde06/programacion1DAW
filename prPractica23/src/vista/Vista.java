@@ -47,6 +47,8 @@ public class Vista extends JPanel {
 		panelPrincipal.add(panelDatosEspecificosFinca);
 		panelPrincipal.add(panelOperacionesDisponibles);
 
+		this.setLayout(new FlowLayout(FlowLayout.CENTER,20,20));
+
 		this.add(panelPrincipal);
 	}
 
@@ -224,10 +226,9 @@ public class Vista extends JPanel {
 		JPanel panelGeneral3 = new JPanel(new FlowLayout(FlowLayout.LEFT));
 		JLabel etiquetaDescripcion = new JLabel("Descripción:");
 		taDescripcion = new JTextArea(3,40);
-		taDescripcion.setBorder(new LineBorder(Color.GRAY));
 		panelGeneral3.add(etiquetaDescripcion);
-		panelGeneral3.add(taDescripcion);
-
+		JScrollPane sp = new JScrollPane(taDescripcion);
+		panelGeneral3.add(sp);
 
 		panelDatosGenerales.add(panelGeneral1);
 		panelDatosGenerales.add(panelGeneral2);
