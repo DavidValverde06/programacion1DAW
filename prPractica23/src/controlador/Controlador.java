@@ -212,10 +212,8 @@ public class Controlador implements ItemListener, ActionListener {
 					Propiedad borrada = miInmobiliaria.borra(cod);
 
 					if (borrada != null) {
-						JOptionPane.showMessageDialog(miVista, "LA PROPIEDAD HA SIDO BORRADA");
-
 						miVista.getbLimpiar().doClick(); // Llamar al botón limpiar
-
+						JOptionPane.showMessageDialog(miVista, "LA PROPIEDAD HA SIDO BORRADA");
 					}
 					else {	
 						JOptionPane.showMessageDialog(miVista, "No se pudo borrar. La propiedad no existe.");
