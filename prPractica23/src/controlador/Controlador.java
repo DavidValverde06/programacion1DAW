@@ -21,121 +21,56 @@ public class Controlador implements ItemListener, ActionListener {
 		this.miInmobiliaria = new Inmobiliaria();
 	}
 
-	// ItemStateChanged (ComboBox)
+	// Método de la interfaz ItemStateChanged (ComboBox)
 	@Override
 	public void itemStateChanged(ItemEvent e) {
-
 		if (e.getSource() == miVista.getMiComboTipoPropiedad()) {
 
-			TipoPropiedad seleccionado = (TipoPropiedad) miVista.getMiComboTipoPropiedad().getSelectedItem();
+			TipoPropiedad itemSeleccionado = (TipoPropiedad)miVista.getMiComboTipoPropiedad().getSelectedItem();
 
-			if (seleccionado == TipoPropiedad.VIVIENDA) {
-
-				miVista.getMiComboTipoVivienda().setEnabled(true);
-				miVista.getMiComboNumDormitorios().setEnabled(true);
-				miVista.getMiComboNumBanios().setEnabled(true);
-
-				miVista.getMiComboTipoTerreno().setEnabled(false);
-				miVista.getRbSuministroElecSi().setEnabled(false);
-				miVista.getRbSuministroElecNo().setEnabled(false);
-				miVista.getRbSuministroAguaSi().setEnabled(false);
-				miVista.getRbSuministroAguaNo().setEnabled(false);
-				miVista.getRbDisponeViviendaSi().setEnabled(false);
-				miVista.getRbDisponeViviendaNo().setEnabled(false);
-				return;
+			if (itemSeleccionado == TipoPropiedad.VIVIENDA) {
+				habilitarPanelVivienda();
 			}
-			else if (seleccionado == TipoPropiedad.FINCA) {
-
-				miVista.getMiComboTipoVivienda().setEnabled(false);
-				miVista.getMiComboNumDormitorios().setEnabled(false);
-				miVista.getMiComboNumBanios().setEnabled(false);
-
-				miVista.getMiComboTipoTerreno().setEnabled(true);
-				miVista.getRbSuministroElecSi().setEnabled(true);
-				miVista.getRbSuministroElecNo().setEnabled(true);
-				miVista.getRbSuministroAguaSi().setEnabled(true);
-				miVista.getRbSuministroAguaNo().setEnabled(true);
-				miVista.getRbDisponeViviendaSi().setEnabled(true);
-				miVista.getRbDisponeViviendaNo().setEnabled(true);
-				return;
+			else if (itemSeleccionado == TipoPropiedad.FINCA) {
+				habilitarPanelFinca();
 			}
 			else {
-
-				miVista.getMiComboTipoVivienda().setEnabled(false);
-				miVista.getMiComboNumDormitorios().setEnabled(false);
-				miVista.getMiComboNumBanios().setEnabled(false);
-
-				miVista.getMiComboTipoTerreno().setEnabled(false);
-				miVista.getRbSuministroElecSi().setEnabled(false);
-				miVista.getRbSuministroElecNo().setEnabled(false);
-				miVista.getRbSuministroAguaSi().setEnabled(false);
-				miVista.getRbSuministroAguaNo().setEnabled(false);
-				miVista.getRbDisponeViviendaSi().setEnabled(false);
-				miVista.getRbDisponeViviendaNo().setEnabled(false);
-				return;
+				deshabilitarPanelViviendaFinca();
 			}
 		}
 	}
 
 	/**
-	 * ActionListener (Botones)
+	 * Método de la interfaz ActionListener (Botones)
 	 */
 	@Override
 	public void actionPerformed(ActionEvent e) {
-
-		// Botón Guardar
 		if (e.getSource() == miVista.getbGuardar()) {
-
-			try {
-				int cod = Integer.parseInt(miVista.getTfCodigo().getText());
-				double pre = Double.parseDouble(miVista.getTfPrecio().getText());
-				double sup = Double.parseDouble(miVista.getTfSuperficie().getText());
-				String dir = miVista.getTfDireccion().getText();
-				String des = miVista.getTaDescripcion().getText();
-				TipoPropiedad tProp = (TipoPropiedad)miVista.getMiComboTipoPropiedad().getSelectedItem();
-
-				Propiedad nuevaPropiedad = null;
-
-				if (tProp == TipoPropiedad.VIVIENDA) {
-
-					TipoVivienda tViv = (TipoVivienda)miVista.getMiComboTipoVivienda().getSelectedItem();
-					int dorm = (int)miVista.getMiComboNumDormitorios().getSelectedItem();
-					int baño = (int)miVista.getMiComboNumBanios().getSelectedItem();
-
-					nuevaPropiedad = new Vivienda(cod, tProp, sup, des, dir, pre, tViv, baño, dorm);
-				} 
-				else if (tProp == TipoPropiedad.FINCA) {
-
-					TipoTerreno tTerr = (TipoTerreno)miVista.getMiComboTipoTerreno().getSelectedItem();
-					boolean elec = miVista.getRbSuministroElecSi().isSelected();
-					boolean agua = miVista.getRbSuministroAguaSi().isSelected();
-					boolean disponeViv = miVista.getRbDisponeViviendaSi().isSelected();
-
-					nuevaPropiedad = new FincaRustica(cod, tProp, sup, des, dir, pre, tTerr, elec, agua, disponeViv);
-				}
-
-				if (nuevaPropiedad!=null) {
-					if (miInmobiliaria.añade(nuevaPropiedad)) {
-						JOptionPane.showMessageDialog(miVista, "Se han almacenado los siguientes datos:\n" + nuevaPropiedad.toString());
-					}
-					else {
-						JOptionPane.showMessageDialog(miVista, "Ya existe otra propiedad con este código.", "Error", JOptionPane.ERROR_MESSAGE);
-					}
-				}
-			}
-			catch (NumberFormatException ex) {
-				JOptionPane.showMessageDialog(miVista, "Datos erroneos.", "Error", JOptionPane.ERROR_MESSAGE);
-			}
+			guardar(); // Botón Guardar
 		}
-
-		// Botón Consultar
 		if (e.getSource() == miVista.getbConsultar()) {
+			consultar(); // Botón Consultar
+		}
+		if (e.getSource() == miVista.getbBorrar()) {
+			borrar(); // Botón Borrar
+		}
+		if (e.getSource() == miVista.getbLimpiar()) {
+			limpiar(); // Botón Limpiar
+		}
+	}
 
-			if (miInmobiliaria.getColeccionPropiedad().isEmpty()) {
-				JOptionPane.showMessageDialog(miVista, "No hay propiedades registradas.");
-				return;
-			}
+	// ==================== //
+	// Métodos del programa //
+	// ==================== //
 
+	/**
+	 * Método para consultar las propiedades ya creadas al pulsar el botón consultar
+	 */
+	private void consultar() {
+		if (miInmobiliaria.getColeccionPropiedad().isEmpty()) {
+			JOptionPane.showMessageDialog(miVista, "No hay propiedades registradas.");
+		}
+		else {
 			String[] codigos = new String[miInmobiliaria.getColeccionPropiedad().size()];
 
 			int cont = 0;
@@ -189,17 +124,18 @@ public class Controlador implements ItemListener, ActionListener {
 				}
 			}
 		}
+	}
 
-		// Botón Borrar
-		if (e.getSource() == miVista.getbBorrar()) {
+	/**
+	 * Método para borrar las propiedades una vez consultadas al pulsar el botón borrar
+	 */
+	private void borrar() {
+		String textoCodigo = miVista.getTfCodigo().getText();
 
-			String textoCodigo = miVista.getTfCodigo().getText();
-
-			if (textoCodigo.isEmpty()) {
-				JOptionPane.showMessageDialog(miVista, "Primero debes consultar o escribir el código de una propiedad.");
-				return;
-			}
-
+		if (textoCodigo.isEmpty()) {
+			JOptionPane.showMessageDialog(miVista, "Primero debes consultar o escribir el código de una propiedad.");
+		}
+		else {
 			try {
 				int cod = Integer.parseInt(textoCodigo);
 
@@ -227,35 +163,148 @@ public class Controlador implements ItemListener, ActionListener {
 				JOptionPane.showMessageDialog(miVista, "El código debe ser un número entero.");
 			}
 		}
-
-		// Botón Limpiar
-		if (e.getSource() == miVista.getbLimpiar()) {
-			miVista.getTfCodigo().setText("");
-			miVista.getTfPrecio().setText("0");
-			miVista.getTfSuperficie().setText("0");
-			miVista.getTfDireccion().setText("");
-			miVista.getTaDescripcion().setText("");
-
-			miVista.getMiComboTipoPropiedad().setSelectedIndex(3);
-			miVista.getMiComboTipoVivienda().setSelectedIndex(0);
-			miVista.getMiComboNumDormitorios().setSelectedIndex(0);
-			miVista.getMiComboNumBanios().setSelectedIndex(0);
-			miVista.getMiComboTipoTerreno().setSelectedIndex(0);
-
-			miVista.getRbSuministroElecSi().setSelected(true);
-			miVista.getRbSuministroAguaSi().setSelected(true);
-			miVista.getRbDisponeViviendaSi().setSelected(true);
-
-			miVista.getMiComboTipoVivienda().setEnabled(false);
-			miVista.getMiComboNumDormitorios().setEnabled(false);
-			miVista.getMiComboNumBanios().setEnabled(false);
-
-			miVista.getMiComboTipoTerreno().setEnabled(true);
-			miVista.getRbSuministroElecSi().setEnabled(true);
-			miVista.getRbSuministroElecNo().setEnabled(true);
-			return;
-		}
-
 	}
 
+	/**
+	 * Método para guardar las propiedades del programa al pulsar el botón guardar
+	 */
+	private void guardar() {
+		try {
+
+			int cod = Integer.parseInt(miVista.getTfCodigo().getText());
+			double pre = Double.parseDouble(miVista.getTfPrecio().getText());
+			double sup = Double.parseDouble(miVista.getTfSuperficie().getText());
+			String dir = miVista.getTfDireccion().getText();
+			String des = miVista.getTaDescripcion().getText();
+			TipoPropiedad tProp = (TipoPropiedad)miVista.getMiComboTipoPropiedad().getSelectedItem();
+
+			Propiedad nuevaPropiedad = null;
+
+			if (tProp == TipoPropiedad.VIVIENDA) {
+
+				TipoVivienda tViv = (TipoVivienda)miVista.getMiComboTipoVivienda().getSelectedItem();
+				int dorm = (int)miVista.getMiComboNumDormitorios().getSelectedItem();
+				int baño = (int)miVista.getMiComboNumBanios().getSelectedItem();
+
+				// Crear una propiedad de tipo Vivienda
+				nuevaPropiedad = new Vivienda(cod, tProp, sup, des, dir, pre, tViv, baño, dorm);
+			} 
+			else if (tProp == TipoPropiedad.FINCA) {
+
+				TipoTerreno tTerr = (TipoTerreno)miVista.getMiComboTipoTerreno().getSelectedItem();
+				boolean elec = miVista.getRbSuministroElecSi().isSelected();
+				boolean agua = miVista.getRbSuministroAguaSi().isSelected();
+				boolean disponeViv = miVista.getRbDisponeViviendaSi().isSelected();
+
+				// Crear una propiedad de tipo Finca Rustica
+				nuevaPropiedad = new FincaRustica(cod, tProp, sup, des, dir, pre, tTerr, elec, agua, disponeViv); 
+			}
+			else {
+				// Crear una propiedad de cualquier otro tipo
+				nuevaPropiedad = new Propiedad(cod, tProp, sup, des, dir, pre);
+			}
+
+			if (nuevaPropiedad!=null) {
+				if (miInmobiliaria.añade(nuevaPropiedad)) {
+					JOptionPane.showMessageDialog(miVista, "Se han almacenado los siguientes datos:\n" + nuevaPropiedad.toString());
+				}
+				else {
+					JOptionPane.showMessageDialog(miVista, "Ya existe otra propiedad con este código.", "Error", JOptionPane.ERROR_MESSAGE);
+				}
+			}
+		}
+		catch (NumberFormatException ex) {
+			JOptionPane.showMessageDialog(miVista, "Datos erroneos.", "Error", JOptionPane.ERROR_MESSAGE);
+		}
+	}
+
+	/**
+	 * Método para limpiar el programa al pulsar el botón limpiar
+	 */
+	private void limpiar() {
+		// Panel 1 - Datos generales
+		miVista.getTfCodigo().setText("");
+		miVista.getMiComboTipoPropiedad().setSelectedIndex(3);
+		miVista.getTfPrecio().setText("0");
+		miVista.getTfSuperficie().setText("0");
+		miVista.getTfDireccion().setText("");
+		miVista.getTaDescripcion().setText("");
+
+		// Panel 2 - Datos especificos vivienda
+		miVista.getMiComboTipoVivienda().setSelectedIndex(0);
+		miVista.getMiComboNumDormitorios().setSelectedIndex(0);
+		miVista.getMiComboNumBanios().setSelectedIndex(0);
+
+		miVista.getMiComboTipoVivienda().setEnabled(false);
+		miVista.getMiComboNumDormitorios().setEnabled(false);
+		miVista.getMiComboNumBanios().setEnabled(false);
+
+		// Panel 3 - Datos especificos finca
+		miVista.getMiComboTipoTerreno().setSelectedIndex(0);
+
+		miVista.getRbSuministroElecSi().setSelected(true);
+		miVista.getRbSuministroAguaSi().setSelected(true);
+		miVista.getRbDisponeViviendaSi().setSelected(true);
+
+		miVista.getMiComboTipoTerreno().setEnabled(true);
+		miVista.getRbSuministroElecSi().setEnabled(true);
+		miVista.getRbSuministroElecNo().setEnabled(true);
+	}
+
+	/**
+	 * Método que deshabilita los componentes del panel Vivienda y del panel Finca 
+	 */
+	private void deshabilitarPanelViviendaFinca() {
+		// Panel Especifico Vivienda habilitado
+		miVista.getMiComboTipoVivienda().setEnabled(false);
+		miVista.getMiComboNumDormitorios().setEnabled(false);
+		miVista.getMiComboNumBanios().setEnabled(false);
+
+		// Panel Especifico Finca deshabilitado
+		miVista.getMiComboTipoTerreno().setEnabled(false);
+		miVista.getRbSuministroElecSi().setEnabled(false);
+		miVista.getRbSuministroElecNo().setEnabled(false);
+		miVista.getRbSuministroAguaSi().setEnabled(false);
+		miVista.getRbSuministroAguaNo().setEnabled(false);
+		miVista.getRbDisponeViviendaSi().setEnabled(false);
+		miVista.getRbDisponeViviendaNo().setEnabled(false);
+	}
+
+	/**
+	 * Método que deshabilita los componentes del panel Vivienda y habilita los del panel Finca 
+	 */
+	private void habilitarPanelFinca() {
+		// Panel Especifico Vivienda deshabilitado
+		miVista.getMiComboTipoVivienda().setEnabled(false);
+		miVista.getMiComboNumDormitorios().setEnabled(false);
+		miVista.getMiComboNumBanios().setEnabled(false);
+
+		// Panel Especifico Finca habilitado
+		miVista.getMiComboTipoTerreno().setEnabled(true);
+		miVista.getRbSuministroElecSi().setEnabled(true);
+		miVista.getRbSuministroElecNo().setEnabled(true);
+		miVista.getRbSuministroAguaSi().setEnabled(true);
+		miVista.getRbSuministroAguaNo().setEnabled(true);
+		miVista.getRbDisponeViviendaSi().setEnabled(true);
+		miVista.getRbDisponeViviendaNo().setEnabled(true);
+	}
+
+	/**
+	 * Método que deshabilita los componentes del panel Finca y habilita los del panel Vivienda 
+	 */
+	private void habilitarPanelVivienda() {
+		// Panel Especifico Vivienda deshabilitado
+		miVista.getMiComboTipoVivienda().setEnabled(true);
+		miVista.getMiComboNumDormitorios().setEnabled(true);
+		miVista.getMiComboNumBanios().setEnabled(true);
+
+		// Panel Especifico Finca deshabilitado
+		miVista.getMiComboTipoTerreno().setEnabled(false);
+		miVista.getRbSuministroElecSi().setEnabled(false);
+		miVista.getRbSuministroElecNo().setEnabled(false);
+		miVista.getRbSuministroAguaSi().setEnabled(false);
+		miVista.getRbSuministroAguaNo().setEnabled(false);
+		miVista.getRbDisponeViviendaSi().setEnabled(false);
+		miVista.getRbDisponeViviendaNo().setEnabled(false);
+	}
 }

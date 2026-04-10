@@ -19,13 +19,13 @@ public class MainInmobiliaria {
 
 		// Crearemos un JFrame
 		JFrame ventana = new JFrame("Agencia Inmobiliaria");
+
 		ventana.setContentPane(miVista);
 		ventana.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		ventana.pack();
 		// ventana.setSize(250,230);
 		ventana.setLocationRelativeTo(null);
 		ventana.setVisible(true);
-
 	}
 
 }
