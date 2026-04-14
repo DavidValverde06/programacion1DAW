@@ -1,0 +1,4 @@
+Pedro Gómez,11111111A,25
+Luisa Espinel,222222222B,24
+Pedro Gómez,33333333C,24
+Mariana Guerrero,44444444D,28
