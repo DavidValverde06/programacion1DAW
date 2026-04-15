@@ -27,59 +27,59 @@ public class Ejemplo1Flujos {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		
+
 		// Crear una cadena de texto con las primeras frase de "El Quijote"
 		String s = "En un lugar de la Mancha de cuyo nombre no quiero acordarme, " +
-				   "no ha mucho tiempo que vivía un hidalgo de los de lanza en " +
-				   "astillero, adarga antigua, rocín flaco y galgo corredor...";
-		
+				"no ha mucho tiempo que vivía un hidalgo de los de lanza en " +
+				"astillero, adarga antigua, rocín flaco y galgo corredor...";
+
 		// Pedir memoria para una array de caracteres, cuya longitud sera igual a la cadena anterior
 		char [] miArrayChar = new char[s.length()];
-		
+
 		// Variable auxiliar en la que ir guardando el caracter leido del flujo de entrada 
 		int car=0;
-		
+
 		// Apertura de los flujos
 		StringReader flujoInput = new StringReader(s);   // Definir el flujo de entrada (lectura)
 		CharArrayWriter flujoOutput = new CharArrayWriter();  // Definir el flujo de salida (escritura)
-		
+
 		try {
-			
+
 			// Primer planteamiento, el primer caractr se lee fuera del bucle, y el resto de 
 			// caracteres hasta finalizar (la lectura retorna -1) antes del final del bucle
-	/*		car = flujoInput.read();  // Leer el primer caracter del flujo de entrada 
+			/*		car = flujoInput.read();  // Leer el primer caracter del flujo de entrada 
 			while (car != -1) {
 				flujoOutput.write(car);  // Escribir un caracter en el flujo de salida
 				car = flujoInput.read(); // Leer otro caracter del flujo de entrada 
 			}
-		*/	
-			
-			
+			 */	
+
+
 			// Segundo planteamiento en la condicion del bucle se lee y se va comprobando 
 			// si hemos alcanzado el final de fichero (caracter -1)
 			while ((car = flujoInput.read()) != -1) {
 				flujoOutput.write(car);
 			}
 
-				
+
 			// Convertimos el flujo en un array
 			miArrayChar = flujoOutput.toCharArray(); 
-			
+
 			// Mostramos el array de diferentes formas
 			System.out.println(Arrays.toString(miArrayChar));  
 			System.out.println(miArrayChar);  
 
 			// Mostramos el flujo de entrada
 			System.out.println("Flujo entrada (StringReader):  " + flujoInput);
-			
+
 			// Mostramos el flujo de salida
 			System.out.println("Flujo salida (CharArrayWriter): " + flujoOutput);
-			
+
 			// Accedemos al segundo caracter del array creado a partir del flujo de salid
 			System.out.println("Segundo caracter de array: "+miArrayChar[1]);
-			
+
 			// Intentamos acceder al segundo caracter del flujo de salida, da error, no es un array
-	//		System.out.println(flujoOutput[1]);  
+			//		System.out.println(flujoOutput[1]);  
 		}
 		catch (IOException e) {
 			e.printStackTrace();
@@ -89,8 +89,8 @@ public class Ejemplo1Flujos {
 			flujoInput.close();   
 			flujoOutput.close();
 		}
-		
-		
+
+
 		// El siguiente planteamiento, evidentemente, es mucho mas simple, no necesitamos
 		// un flujo para convertir una cadena en array
 		// En el codigo anterior lo que se planteaba es como poder hacerlo a traves de flujos

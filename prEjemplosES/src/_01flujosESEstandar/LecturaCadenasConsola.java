@@ -18,23 +18,23 @@ public class LecturaCadenasConsola {
 	 */
 	public static void main(String args[]) {
 		String cad;
-		
+
 		System.out.println("Este programa hace eco hasta que escribas 'para': ");
-		
+
 		// Abrir un flujo de entrada, de la entrada estándar (System.in), es decir, el teclado
 		BufferedReader br = new BufferedReader(
-				               new InputStreamReader(System.in));
-		  // La línea anterior crea un objeto BufferedReader, que en su constructor 
-		  // pide un Reader, para lo cual utilizamos un objeto InputStreamReader que 
-		  // a su vez, pide en su constructor un InputStream(el objeto System.in)
-		  // En realidad, está encadenando dos flujos
-	
+				new InputStreamReader(System.in));
+		// La línea anterior crea un objeto BufferedReader, que en su constructor 
+		// pide un Reader, para lo cual utilizamos un objeto InputStreamReader que 
+		// a su vez, pide en su constructor un InputStream(el objeto System.in)
+		// En realidad, está encadenando dos flujos
+
 		try {
 			do {
-				cad = br.readLine();  // Leer una l�nea del buffer de entrada
+				cad = br.readLine();  // Leer una línea del buffer de entrada
 
-				System.out.println(cad); // Mostrar la l�nea le�a en consola
-				    // Observar como el m�todo println pertenece a la clase PrintStream
+				System.out.println(cad); // Mostrar la línea leía en consola
+				// Observar como el m�todo println pertenece a la clase PrintStream
 			} 
 			while (!cad.equals("para"));
 
@@ -43,7 +43,7 @@ public class LecturaCadenasConsola {
 			// e.printStackTrace();
 			System.out.println("Se ha producido un error de E/S");
 		}
-		
+
 		// Cerrar el flujo de entrada
 		try {
 			br.close();
@@ -54,10 +54,3 @@ public class LecturaCadenasConsola {
 		}
 	}
 }
-
-
-
-
-
-
-
