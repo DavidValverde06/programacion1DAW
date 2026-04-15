@@ -4,9 +4,7 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 
-import test.MainCuadradoMagico;
-
-public class DialogoInicio extends JDialog implements ActionListener{
+public class DialogoInicio extends JDialog implements ActionListener {
 
 	private static final long serialVersionUID = 7301259959233833865L;
 
@@ -75,7 +73,7 @@ public class DialogoInicio extends JDialog implements ActionListener{
 		 * Establecer tamaño, pack, ...
 		 */
 		// this.setLocationRelativeTo(null);
-		this.setLocation(500, 250);
+		this.setLocation(458, 250);
 		this.setPreferredSize(new Dimension(450,220));
 		this.pack();
 		this.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
@@ -89,7 +87,7 @@ public class DialogoInicio extends JDialog implements ActionListener{
 	private JPanel prepararPanelBotones() {
 		JPanel panelBotones = new JPanel();
 		bComenzar = new JButton("Comenzar");
-		bSalir = new JButton("Salir");
+		bSalir = new JButton("     Salir     ");
 
 		panelBotones.add(bComenzar);
 		panelBotones.add(bSalir);

@@ -1,7 +1,7 @@
 package controlador;
 
 import modelo.*;
-import vista.Vista;
+import vista.*;
 
 public class Controlador {
 
@@ -9,13 +9,13 @@ public class Controlador {
 	 * Variables de instancia
 	 */
 	private Vista miVista;
-	private Inmobiliaria miInmobiliaria;
+	private CuadradoMagico miCuadrado;
 
 	/**
 	 * Constructor
 	 */
 	public Controlador(Vista v) {
 		this.miVista = v;
-		this.miInmobiliaria = new Inmobiliaria();
+		this.miCuadrado = new CuadradoMagico();
 	}
 }

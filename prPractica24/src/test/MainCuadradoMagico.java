@@ -1,16 +1,11 @@
 package test;
 
-import javax.swing.JFrame;
-
-import controlador.Controlador;
-import vista.DialogoInicio;
-import vista.Vista;
+import javax.swing.*;
+import vista.*;
 
 public class MainCuadradoMagico {
 
 	public static void main(String[] args) {
-
-		DialogoInicio dialogo = new DialogoInicio();
 
 		// Crear un objeto de la clase Vista
 		Vista miVista = new Vista();
@@ -22,7 +17,7 @@ public class MainCuadradoMagico {
 		//miVista.control(ctr);
 
 		// Crearemos un JFrame
-		JFrame ventana = new JFrame("Agencia Inmobiliaria");
+		JFrame ventana = new JFrame("Cuadrado mágico");
 
 		ventana.setContentPane(miVista);
 		ventana.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
