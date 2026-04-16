@@ -33,26 +33,14 @@ public class DialogoInicio extends JDialog implements ActionListener {
 		 */
 		this.setModal(true);
 		this.setTitle("Dimensión del cuadrado");
-		this.setLayout(new BorderLayout(20,20));
+		// this.setLayout(new BorderLayout(20,20));
 
 		Font fuente = new Font("Times New Roman", Font.ITALIC, 18);
 
-		JPanel panelPrincipal = new JPanel();
-
-		/**
-		 * Preparar panel informacion
-		 */
-		JPanel panelInfo = prepararPanelInfo(fuente);
-
-		/**
-		 * Preparar panel dimension
-		 */
-		JPanel panelDimension = prepararPanelDimension(fuente);
-
-		/**
-		 * Preparar panel botones
-		 */
-		JPanel panelBotones = prepararPanelBotones();
+		JPanel panelPrincipal = new JPanel(); // Panel Principal
+		JPanel panelInfo = prepararPanelInfo(fuente); // Preparar panel informacion
+		JPanel panelDimension = prepararPanelDimension(fuente); // Preparar panel dimension
+		JPanel panelBotones = prepararPanelBotones(); // Preparar panel botones
 
 		/**
 		 * Añadir paneles al dialogo
@@ -76,6 +64,7 @@ public class DialogoInicio extends JDialog implements ActionListener {
 		this.setLocation(458, 250);
 		this.setPreferredSize(new Dimension(450,220));
 		this.pack();
+		this.setResizable(false);
 		this.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
 		this.setVisible(true);
 	}
@@ -126,6 +115,9 @@ public class DialogoInicio extends JDialog implements ActionListener {
 		return panelInfo;
 	}
 
+	/**
+	 * Método de la interfaz ActionListener (Botones)
+	 */
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		if (e.getSource() == this.getbComenzar()) {

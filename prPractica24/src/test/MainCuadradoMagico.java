@@ -1,6 +1,7 @@
 package test;
 
 import javax.swing.*;
+import controlador.*;
 import vista.*;
 
 public class MainCuadradoMagico {
@@ -11,10 +12,10 @@ public class MainCuadradoMagico {
 		Vista miVista = new Vista();
 
 		// Crear un objeto de la Clase Controlador
-		//Controlador ctr = new Controlador(miVista);
+		Controlador ctr = new Controlador(miVista);
 
 		// Llamar al método que da control a los componentes
-		//miVista.control(ctr);
+		miVista.control(ctr);
 
 		// Crearemos un JFrame
 		JFrame ventana = new JFrame("Cuadrado mágico");

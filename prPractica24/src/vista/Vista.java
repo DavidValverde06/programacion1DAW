@@ -2,6 +2,7 @@ package vista;
 
 import java.awt.*;
 import javax.swing.*;
+import controlador.*;
 
 public class Vista extends JPanel {
 
@@ -12,7 +13,16 @@ public class Vista extends JPanel {
 	 */
 	private JLabel labelCuadradoMagico;
 	private JButton bValidar, bGenerar, bLimpiar;
-	private JTextField[][] cuadradoMagico;
+	private JTextField[][] tfCuadradoMagico;
+
+	/**
+	 * Métodos getter
+	 */
+	public JLabel getLabelCuadradoMagico() {return labelCuadradoMagico;}
+	public JButton getbValidar() {return bValidar;}
+	public JButton getbGenerar() {return bGenerar;}
+	public JButton getbLimpiar() {return bLimpiar;}
+	public JTextField[][] getTfCuadradoMagico() {return tfCuadradoMagico;}
 
 	/**
 	 * Constructor
@@ -25,11 +35,32 @@ public class Vista extends JPanel {
 		DialogoInicio dialogo = new DialogoInicio();
 
 		prepararPanelEtiqueta(dialogo); // Panel Etiqueta
-
-		JPanel panelCuadrado = new JPanel(); // Panel Cuadrado Mágico
-
+		prepararPanelCuadrado(dialogo); // Panel Cuadrado Mágico
 		prepararPanelBotones(); // Panel Botones
 
+	}
+
+	/**
+	 * Preparar Panel Cuadrado
+	 */
+	private void prepararPanelCuadrado(DialogoInicio dialogo) {
+		JPanel panelCentral = new JPanel();
+		JPanel panelCuadrado = new JPanel(new GridLayout(dialogo.getDimension(),dialogo.getDimension()));
+		Font fuente = new Font("Times New Roman", Font.BOLD, 12);
+		tfCuadradoMagico = new JTextField[dialogo.getDimension()][dialogo.getDimension()];
+
+		for (int cont1=0;cont1<tfCuadradoMagico.length;cont1++) {
+			for (int cont2=0;cont2<tfCuadradoMagico.length;cont2++) {
+				tfCuadradoMagico[cont1][cont2] = new JTextField(2);
+
+				tfCuadradoMagico[cont1][cont2].setFont(fuente);
+				tfCuadradoMagico[cont1][cont2].setHorizontalAlignment(SwingConstants.RIGHT);
+				panelCuadrado.add(tfCuadradoMagico[cont1][cont2]);
+			}
+		}
+
+		panelCentral.add(panelCuadrado);
+		this.add(panelCentral, BorderLayout.CENTER);
 	}
 
 	/**
@@ -61,5 +92,15 @@ public class Vista extends JPanel {
 		panelEtiqueta.add(labelCuadradoMagico);
 
 		this.add(panelEtiqueta, BorderLayout.NORTH);
+	}
+
+	/**
+	 * Método se encarga de añadir el control de los 
+	 * eventos a los componentes
+	 */
+	public void control(Controlador ctr) {
+		this.bGenerar.addActionListener(ctr);
+		this.bValidar.addActionListener(ctr);
+		this.bLimpiar.addActionListener(ctr);
 	}
 }
