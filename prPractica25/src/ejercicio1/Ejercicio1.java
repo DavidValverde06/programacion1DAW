@@ -1,6 +1,7 @@
 package ejercicio1;
 
-import java.io.BufferedOutputStream;
+import java.io.*;
+import java.util.*;
 
 /**
  * 1.- Desarrollar un programa que os permita escribir bytes en un fichero con la ayuda de un objeto
@@ -14,9 +15,38 @@ public class Ejercicio1 {
 
 	public static void main(String[] args) {
 
-		BufferedOutputStream bos = new BufferedOutputStream(null);
-		
-		byte[] arrayBytes = new byte[32];
+		// Definir el buffer para la escritura como un array de 32 kilobytes
+		byte[] buffer = new byte[1024*32];
+
+		BufferedOutputStream out = null;
+
+		// Rellenar el array con 1's
+		Arrays.fill(buffer, (byte)1);
+
+		try {
+			out = new BufferedOutputStream(
+					new FileOutputStream(
+							new File("./src/ejercicio1/buffered.dat")));
+
+			// Escribir los datos del array en el archivo
+			out.write(buffer);
+
+			System.out.println("El fichero ha sido creado correctamente");
+		}
+		catch (FileNotFoundException e) {
+			System.out.println("No se ha podido encontrar el archivo");
+		}
+		catch (IOException e) {
+			System.out.println("Problema al escribir en el archivo");
+		}
+		finally {
+			try {
+				if (out!=null) out.close();
+			}
+			catch (IOException e1) {
+				e1.printStackTrace();
+			}
+		}
 	}
 
 }
