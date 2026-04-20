@@ -1,4 +1,4 @@
-package ejercicio3;
+package recursos;
 
 /**
  * Clase con m�todos varios para trabajar con caracteres, valores ascii, y 
