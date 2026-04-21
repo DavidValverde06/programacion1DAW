@@ -1,22 +1,25 @@
-package ejercicio0;
+package ejercicio6;
 
 import java.io.*;
 
-public class Ejercicio0v4 {
+public class Ejercicio6v2 {
 
 	public static void main(String[] args) {
 
 		System.out.println("Inicio del programa");
 
 		try (BufferedReader flujoLectura = new BufferedReader(
-				new FileReader("./src/ejercicio0/Fichero.txt"))) {
+				new FileReader("./src/ejercicio6/Ejercicio6v2.java"))) {
 
-			String cadena;
+			int caracter;
 
 			System.out.println("Leyendo datos:\n");
 
-			cadena = flujoLectura.readAllAsString();
-			System.out.println((String)cadena);
+			caracter = flujoLectura.read();
+			while (caracter!=-1) {
+				System.out.print((char)caracter);
+				caracter = flujoLectura.read();
+			}
 
 			System.out.println("\nFin de programa");
 		}
@@ -24,7 +27,7 @@ public class Ejercicio0v4 {
 			System.out.println("Problema al abrir el archivo");
 		}
 		catch (IOException e) {
-			// e.printStackTrace();
+			System.out.println("Error de E/S");
 		}
 	}
 

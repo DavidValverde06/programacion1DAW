@@ -1,9 +1,7 @@
 package ejercicio3;
 
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.nio.charset.Charset;
+import java.io.*;
+import java.nio.charset.*;
 
 /**
  * 3.- En este ejercicio vamos a realizar un programa que nos permite escribir en un fichero de caracteres una
@@ -15,14 +13,9 @@ public class Ejercicio3 {
 
 	public static void main(String[] args) {
 
-		FileWriter fw = null;
-
 		String intro = "En un lugar de la Mancha, de cuyo nombre no quiero acordarme camión";
 
-		try {
-			// Apertura del flujo de escritura de caracteres
-			fw = new FileWriter(new File("./src/ejercicio3/introQuijote.txt"),Charset.defaultCharset(),true);
-
+		try (FileWriter fw = new FileWriter(new File("./src/ejercicio3/introQuijote.txt"),Charset.defaultCharset(),true);) {
 			// Escribir la cadena completa
 			fw.write(intro);
 			fw.write('\n');
@@ -32,19 +25,14 @@ public class Ejercicio3 {
 				fw.write(c);
 			}
 			fw.write('\n');
-			
+
 			System.out.println("Fichero creado");
 		}
-		catch (IOException e) {
-			e.printStackTrace();
+		catch (FileNotFoundException e) {
+			System.out.println("Fichero no encontrado");
 		}
-		finally {
-			try {
-				
-			}
-			catch (Exception e2) {
-
-			}
+		catch (IOException e) {
+			System.out.println("Error de E/S");
 		}
 	}
 

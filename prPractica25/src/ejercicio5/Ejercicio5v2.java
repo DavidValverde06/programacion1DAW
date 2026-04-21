@@ -25,10 +25,10 @@ public class Ejercicio5v2 {
 			}
 		}
 		catch (FileNotFoundException e) {
-
+			System.out.println("Error en la ruta del archivo");
 		}
 		catch (IOException e) {
-
+			System.out.println("Error de E/S");
 		}
 	}
 

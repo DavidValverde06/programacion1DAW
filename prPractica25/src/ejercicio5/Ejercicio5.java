@@ -14,9 +14,9 @@ public class Ejercicio5 {
 
 	public static void main(String[] args) {
 
-		final int TAMBUFFER = 1024*16;
+		final int TAMBUFFER = 1024 * 16;
 		BufferedInputStream bis = null;
-		BufferedOutputStream bos= null;
+		BufferedOutputStream bos = null;
 
 		File archivoOriginal = solicitudNombre();
 
@@ -24,7 +24,8 @@ public class Ejercicio5 {
 			bis = new BufferedInputStream(
 					new FileInputStream(archivoOriginal));
 
-			bos = new BufferedOutputStream(new FileOutputStream("./src/ejercicio5/copia" + archivoOriginal.getName()));
+			bos = new BufferedOutputStream(
+					new FileOutputStream("./src/ejercicio5/copia" + archivoOriginal.getName()));
 
 			int cantidadBytes = 0;
 			byte[] buffer = new byte[TAMBUFFER];
@@ -36,10 +37,10 @@ public class Ejercicio5 {
 			}
 		}
 		catch (FileNotFoundException e) {
-			
+			System.out.println("Error en la ruta del archivo");
 		}
 		catch (IOException e) {
-			
+			System.out.println("Error de E/S");
 		}
 	}
 

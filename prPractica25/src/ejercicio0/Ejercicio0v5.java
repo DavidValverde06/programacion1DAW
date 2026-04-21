@@ -9,14 +9,14 @@ public class Ejercicio0v5 {
 
 		System.out.println("Inicio del programa");
 
-		try (BufferedReader flujoEscritura = new BufferedReader(
+		try (BufferedReader flujoLectura = new BufferedReader(
 				new FileReader("./src/ejercicio0/Fichero.txt"))) {
 
 			List<String> cadena;
 
 			System.out.println("Leyendo datos:\n");
 
-			cadena = flujoEscritura.readAllLines();
+			cadena = flujoLectura.readAllLines();
 			for (String string : cadena) {
 				System.out.println(string);
 			}

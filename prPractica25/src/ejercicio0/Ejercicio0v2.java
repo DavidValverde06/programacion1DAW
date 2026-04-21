@@ -8,17 +8,17 @@ public class Ejercicio0v2 {
 
 		System.out.println("Inicio del programa");
 
-		try (BufferedReader flujoEscritura = new BufferedReader(
+		try (BufferedReader flujoLectura = new BufferedReader(
 				new FileReader("./src/ejercicio0/Fichero.txt"))) {
 
 			int caracter;
 
 			System.out.println("Leyendo datos:\n");
 
-			caracter = flujoEscritura.read();
+			caracter = flujoLectura.read();
 			while (caracter!=-1) {
 				System.out.print((char)caracter);
-				caracter = flujoEscritura.read();
+				caracter = flujoLectura.read();
 			}
 
 			System.out.println("\nFin de programa");

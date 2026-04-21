@@ -14,10 +14,10 @@ public class Ejercicio4 {
 
 		// Crear una colección de cadenas de caracteres
 		List<String> listaQuijote = Arrays.asList(new String[] {"En un lugar de la Mancha",
-				"de cuyo nombre no quiero acordarme",
-				"no ha mucho tiempo que vivía un hidalgo",
-				"de los lanza en astillero",
-		"adarga antigua, rocín falco y galgo corredor"});
+																"de cuyo nombre no quiero acordarme",
+																"no ha mucho tiempo que vivía un hidalgo",
+																"de los lanza en astillero",
+																"adarga antigua, rocín falco y galgo corredor"});
 
 		// Escribir la colección anterior en un archivo de texto
 		// con la ayuda de un "flujo (stream)" BufferedWriter
@@ -29,12 +29,15 @@ public class Ejercicio4 {
 				bw.write(elem);
 				bw.newLine();
 			}
-			
+
 			System.out.println("Fichero creado");
-			
+
+		}
+		catch (FileNotFoundException e) {
+			System.out.println("Ruta no válida");
 		}
 		catch (IOException e) {
-			e.printStackTrace();
+			System.out.println("Error de E/S");
 		}
 	}
 
