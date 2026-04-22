@@ -11,7 +11,7 @@ public class Ejercicio0 {
 		// Abrir flujo de escritura con un try con recursos para que se cierre de forma automatica
 		try (BufferedWriter flujoEscritura = new BufferedWriter(
 				new FileWriter(
-						new File("./src/ejercicioo0/Fichero.txt"), true))) {
+						new File("./src/ejercicio0/fichero.txt"), true))) {
 
 			System.out.println("Escribiendo datos");
 

@@ -9,7 +9,7 @@ public class Ejercicio0v4 {
 		System.out.println("Inicio del programa");
 
 		try (BufferedReader flujoLectura = new BufferedReader(
-				new FileReader("./src/ejercicio0/Fichero.txt"))) {
+				new FileReader("./src/ejercicio0/fichero.txt"))) {
 
 			String cadena;
 

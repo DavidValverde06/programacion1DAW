@@ -1,9 +1,0 @@
-Primera linea de escritura en el archivo	AX
-Otra linea
-Fin
-Primera linea de escritura en el archivo	AX
-Otra linea
-Fin
-Primera linea de escritura en el archivo	AX
-Otra linea
-Fin
