@@ -7,13 +7,14 @@ public class Ejercicio0 {
 	public static void main(String[] args) {
 
 		System.out.println("Inicio del programa");
-		
+
+		// Abrir flujo de escritura con un try con recursos para que se cierre de forma automatica
 		try (BufferedWriter flujoEscritura = new BufferedWriter(
 				new FileWriter(
 						new File("./src/ejercicioo0/Fichero.txt"), true))) {
 
 			System.out.println("Escribiendo datos");
-			
+
 			flujoEscritura.write("Primera linea de escritura en el archivo");
 			flujoEscritura.write(9);
 			flujoEscritura.write(65);
@@ -23,7 +24,7 @@ public class Ejercicio0 {
 			flujoEscritura.newLine(); // Preferible añadir asi las lineas en blanco
 			flujoEscritura.write("Fin");
 			flujoEscritura.newLine();
-			
+
 			System.out.println("Fin programa");
 
 		}
@@ -31,7 +32,7 @@ public class Ejercicio0 {
 			System.out.println("Problema al abrir el archivo");
 		}
 		catch (IOException e) {
-			// e.printStackTrace();
+			System.out.println("Error de E/S");
 		}
 	}
 

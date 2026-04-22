@@ -1,8 +1,7 @@
 package ejercicio2;
 
 import java.io.*;
-import java.nio.file.Files;
-import java.nio.file.Path;
+import java.nio.file.*;
 import java.util.Arrays;
 
 /**
@@ -16,14 +15,13 @@ public class Ejercicio2v2 {
 		System.out.println("Inicio de programa");
 
 		byte[] buffer = new byte[1024*32];
-		
+
 		try (InputStream bis = Files.newInputStream(Path.of("./src/ejercicio1/buffered.dat"))) {
 
 			System.out.println("Leyendo datos:\n");
 
 			buffer = bis.readAllBytes();
 			System.out.println("Datos leidos: " + Arrays.toString(buffer));
-
 
 			System.out.println("\nFin de programa");
 

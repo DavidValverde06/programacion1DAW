@@ -23,7 +23,6 @@ public class Ejercicio2 {
 				System.out.print(valorLeido);
 			}
 
-
 			System.out.println("\n\nFin de programa");
 
 		} 

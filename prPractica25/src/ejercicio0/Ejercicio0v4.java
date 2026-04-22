@@ -15,7 +15,7 @@ public class Ejercicio0v4 {
 
 			System.out.println("Leyendo datos:\n");
 
-			cadena = flujoLectura.readAllAsString();
+			cadena = flujoLectura.readAllAsString(); // Método nuevo de Java 25
 			System.out.println((String)cadena);
 
 			System.out.println("\nFin de programa");
@@ -24,7 +24,7 @@ public class Ejercicio0v4 {
 			System.out.println("Problema al abrir el archivo");
 		}
 		catch (IOException e) {
-			// e.printStackTrace();
+			System.out.println("Error de E/S");
 		}
 	}
 

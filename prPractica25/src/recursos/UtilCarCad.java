@@ -1,10 +1,10 @@
 package recursos;
 
 /**
- * Clase con m�todos varios para trabajar con caracteres, valores ascii, y 
+ * Clase con métodos varios para trabajar con caracteres, valores ascii, y 
  * encriptado/desencriptado tanto de cadenas como de caracteres
  * 
- * @author Profesora
+ * @author Rosi (Profesora)
  *
  */
 public class UtilCarCad {

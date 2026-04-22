@@ -21,13 +21,13 @@ public class Ejercicio4 {
 
 		// Escribir la colección anterior en un archivo de texto
 		// con la ayuda de un "flujo (stream)" BufferedWriter
-		try (BufferedWriter bw = new BufferedWriter(
+		try (BufferedWriter flujoEscritura = new BufferedWriter(
 				new FileWriter(
 						new File("./src/ejercicio4/quijote.txt"),true))){
 
 			for (String elem: listaQuijote) {
-				bw.write(elem);
-				bw.newLine();
+				flujoEscritura.write(elem);
+				flujoEscritura.newLine();
 			}
 
 			System.out.println("Fichero creado");

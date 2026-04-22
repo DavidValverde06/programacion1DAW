@@ -27,7 +27,7 @@ public class Ejercicio0v2 {
 			System.out.println("Problema al abrir el archivo");
 		}
 		catch (IOException e) {
-			// e.printStackTrace();
+			System.out.println("Error de E/S");
 		}
 	}
 

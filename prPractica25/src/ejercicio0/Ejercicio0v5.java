@@ -16,7 +16,7 @@ public class Ejercicio0v5 {
 
 			System.out.println("Leyendo datos:\n");
 
-			cadena = flujoLectura.readAllLines();
+			cadena = flujoLectura.readAllLines(); // Método nuevo de Java 25
 			for (String string : cadena) {
 				System.out.println(string);
 			}
@@ -27,7 +27,7 @@ public class Ejercicio0v5 {
 			System.out.println("Problema al abrir el archivo");
 		}
 		catch (IOException e) {
-			// e.printStackTrace();
+			System.out.println("Error de E/S");
 		}
 	}
 
