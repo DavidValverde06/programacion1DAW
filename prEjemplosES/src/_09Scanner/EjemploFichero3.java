@@ -16,35 +16,35 @@ import java.util.Scanner;
 public class EjemploFichero3 {
 
 	public static void main(String[] args) {
-		
+
 		System.out.println("---- Primera forma de hacerlo ----");
 		try {
 			Scanner sc = new Scanner(new File("./src/_09Scanner/datos1.txt"));
 			Scanner scDelimitador = sc.useDelimiter(",");
-			
+
 			while (scDelimitador.hasNext()) { // Mientras queden frases separadas por coma
-				
+
 				String palabra=scDelimitador.next();  // Leer una frase
-				
+
 				System.out.println(palabra);   // Mostrar la frase en consola
 			}
-			
+
 			sc.close();
 			scDelimitador.close();
 		} 
 		catch (FileNotFoundException e) {
 			System.out.println("Fichero no encontrado");
 		}
-		
-		
+
+
 		System.out.println("---- Segunda forma de hacerlo ----");  
 		try (Scanner sc = (new Scanner(
-				               new File("./src/_09Scanner/datos1.txt"))).useDelimiter(",")){
-				
+				new File("./src/_09Scanner/datos1.txt"))).useDelimiter(",")){
+
 			while (sc.hasNext()) { // Mientras queden frases separadas por coma
-				
+
 				String palabra=sc.next();  // Leer una frase
-				
+
 				System.out.println(palabra);   // Mostrar la frase en consola
 			}
 		} 
@@ -52,8 +52,8 @@ public class EjemploFichero3 {
 			System.out.println("Fichero no encontrado");
 		}
 	}
-	
-	
-	
+
+
+
 
 }

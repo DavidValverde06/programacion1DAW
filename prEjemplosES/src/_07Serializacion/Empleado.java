@@ -3,7 +3,7 @@ package _07Serializacion;
 import java.io.*;
 
 
-public class Empleado implements Serializable{
+public class Empleado implements Serializable {
 	
 	private static final long serialVersionUID = 1227025033699164264L;
 

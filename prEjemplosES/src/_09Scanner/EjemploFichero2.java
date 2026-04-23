@@ -16,21 +16,21 @@ import java.util.Scanner;
 public class EjemploFichero2 {
 
 	public static void main(String[] args) {
-		
+
 		Scanner sc = null;
 		try {
 			sc = new Scanner(new File("./src/_09Scanner/amigos.txt"));
-			
+
 			while (sc.hasNext()) { // Mientras queden palabras en el fichero
-				
+
 				String palabra=sc.next();  // Leer una palabra del fichero
-				
+
 				System.out.println(palabra);   // Mostrar la palabra en consola
 			}
 		} catch (FileNotFoundException e) {
 			System.out.println("Fichero no encontrado");
 		}
-		
+
 		if (sc!=null) sc.close();
 	}
 

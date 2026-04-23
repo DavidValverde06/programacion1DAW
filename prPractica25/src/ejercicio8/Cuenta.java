@@ -26,12 +26,12 @@ public class Cuenta {
 	private static int cuentaPalabras(File fichero) {
 		int contadorPalabras = 0;
 
-		try (Scanner lector = new Scanner(fichero)) {
+		try (Scanner sc = new Scanner(fichero)) {
 
-			lector.useDelimiter("[\\s.,;:_-]+"); // Delimitador (el guion se escribe al final porque se usa para rangos)
+			sc.useDelimiter("[\\s.,;:_-]+"); // Delimitador (el guion se escribe al final porque se usa para rangos)
 
-			while (lector.hasNext()) {
-				lector.next();
+			while (sc.hasNext()) {
+				sc.next();
 				contadorPalabras++;
 			}
 
