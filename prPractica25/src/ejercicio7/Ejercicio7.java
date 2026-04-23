@@ -1,7 +1,6 @@
 package ejercicio7;
 
 import java.io.*;
-import java.nio.charset.Charset;
 import java.util.*;
 import recursos.UtilCarCad;
 
@@ -24,8 +23,8 @@ public class Ejercicio7 {
 
 		System.out.println(); // Salto de línea en consola
 
-		try (BufferedReader flujoLectura = new BufferedReader(new FileReader(archivoOriginal, Charset.forName("ISO-8859-1")));
-				BufferedWriter flujoEscritura = new BufferedWriter(new FileWriter(archivoCopia, Charset.forName("ISO-8859-1")))) {
+		try (BufferedReader flujoLectura = new BufferedReader(new FileReader(archivoOriginal));
+				BufferedWriter flujoEscritura = new BufferedWriter(new FileWriter(archivoCopia))) {
 
 			realizarCopiaEncriptada(flujoLectura, flujoEscritura);
 
@@ -74,10 +73,10 @@ public class Ejercicio7 {
 		System.out.println("\nArchivo encriptado: ");
 
 		// Lectura del fichero encriptado
-		try (BufferedReader flujoLectura = new BufferedReader(new FileReader(archivoCopia, Charset.forName("ISO-8859-1")))) {
+		try (BufferedReader flujoLectura = new BufferedReader(new FileReader(archivoCopia))) {
 
 			cadena = flujoLectura.readAllAsString(); // Método nuevo de Java 25
-			System.out.println((String)cadena);
+			System.out.println(cadena);
 
 		}
 		catch (FileNotFoundException e) {
@@ -90,11 +89,11 @@ public class Ejercicio7 {
 		System.out.println("Archivo desencriptado:");
 
 		// Desencriptación del fichero
-		try (BufferedReader flujoLectura = new BufferedReader(new FileReader(archivoCopia, Charset.forName("ISO-8859-1")))) {
-
-			cadena = flujoLectura.readAllAsString(); // Método nuevo de Java 25
-			System.out.println((String)UtilCarCad.desencriptaCadena(cadena));
-
+		try (BufferedReader flujoLectura = new BufferedReader(new FileReader(archivoCopia))) {
+			while ((cadena = flujoLectura.readLine()) != null) {
+				String textoFinal = UtilCarCad.desencriptaCadena(cadena);
+				System.out.println(textoFinal);
+			}
 		}
 		catch (FileNotFoundException e) {
 			System.out.println("Error: No se encontró el archivo");
