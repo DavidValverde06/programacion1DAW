@@ -8,13 +8,10 @@ package _09Scanner;
  * 
  */
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.util.List;
-import java.util.Scanner;
+import java.io.*;
+import java.nio.charset.*;
+import java.nio.file.*;
+import java.util.*;
 
 public class EjemploFichero1 {
 
@@ -22,7 +19,9 @@ public class EjemploFichero1 {
 
 		Scanner sc = null;
 		try {
-			sc = new Scanner(new File("./src/_09Scanner/amigos.txt"));
+			sc = new Scanner(new File("./src/_09Scanner/amigos.txt"),
+					//Charset.forName("UTF-8"
+					StandardCharsets.UTF_8);
 
 			while (sc.hasNextLine()) { // Mientras queden lineas en el fichero
 
@@ -32,6 +31,9 @@ public class EjemploFichero1 {
 			}
 		} catch (FileNotFoundException e) {
 			System.out.println("Fichero no encontrado");
+		}
+		catch (Exception e) {
+			e.printStackTrace();
 		}
 
 		if (sc!=null) sc.close();
