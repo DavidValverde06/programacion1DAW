@@ -1,6 +1,7 @@
 package ejercicio9;
 
 import java.io.*;
+import java.nio.file.*;
 import java.util.*;
 
 /**
@@ -27,68 +28,40 @@ public class Censura {
 
 	public static void main(String[] args) {
 
-		Scanner sc = new Scanner(System.in);
+		Path ficheroOriginal = solicitudNombre();
 
-		RandomAccessFile fichero = null;
-		String palabra, cadena;
-		StringBuilder auxBuilder;
-		long pos = 0;
-		int indice;
+		System.out.println(); // Salto de línea
+
+		try (Scanner sc = new Scanner(ficheroOriginal.toFile())) {
+
+			Scanner scDelimitador = sc.useDelimiter(",");
+
+			while (scDelimitador.hasNext()) { // Mientras queden frases separadas por coma
+				String palabra = scDelimitador.next();  // Leer una frase
+				System.out.print(palabra);   // Mostrar la frase en consola
+			}
+
+		}
+		catch (FileNotFoundException e) {
+			System.out.println("Fichero no encontrado");
+		}
+
 
 		try {
-			// se abre el fichero para lectura/escritura
-			fichero = new RandomAccessFile("./src/ejercicio9/censura.txt", "rw");
-
-			// Se pide la palabra a buscar
-			System.out.print("Introduce palabra: ");
-			palabra = sc.nextLine();
-
-			// lectura del fichero
-			cadena = fichero.readLine(); // leemos la primera linea
-			while(cadena!=null){         // mientras no lleguemos al final del fichero
-				indice = cadena.indexOf(palabra); // buscamos la palabra en la linea leida
-				while(indice!=-1){ // mientras la linea contenga esa palabra (por si esta repetida)
-
-					// paso la linea a un StringBuilder para modificarlo
-					auxBuilder = new StringBuilder(cadena); 
-					auxBuilder.replace(indice, indice+palabra.length(), palabra.toUpperCase());
-					cadena = auxBuilder.toString();
-
-					// Nos posicionamos al principio de la linea actual y se sobrescribe la linea completa
-					// La posicion donde empieza la linea actual la estoy guardando en la variable pos
-					fichero.seek(pos);
-					fichero.writeBytes(cadena);
-
-					// compruebo si se repite la misma palabra en la linea
-					indice = cadena.indexOf(palabra);
-				}
-				pos = fichero.getFilePointer(); // posicion de la linea actual que voy a leer
-				cadena = fichero.readLine();    // lectura de la linea
-			}
-			System.out.println("Fichero actualizado");
-		} 
-		catch (FileNotFoundException ex) {
-			System.out.println(ex.getMessage());
-		} 
-		catch (IOException ex) {
-			System.out.println(ex.getMessage());
+			Files.copy(ficheroOriginal, Path.of("./src/ejercicio9/datos1.txt"),
+					StandardCopyOption.REPLACE_EXISTING);
 		}
-		finally {
-			try {
-				if (fichero != null) {
-					fichero.close();
-				}
-			} catch (IOException e) {
-				System.out.println(e.getMessage());
-			}
+		catch (IOException e) {
+			System.out.println("No se pudo copiar el archivo");
 		}
+
 	}
 
 	/**
 	 * Método que devuelve el fichero escrito por consola
 	 * @return
 	 */
-	public static File solicitudNombre() {
+	public static Path solicitudNombre() {
 		String nomArchivo;
 
 		try (Scanner sc = new Scanner(System.in)) {
@@ -96,9 +69,9 @@ public class Censura {
 			nomArchivo = sc.nextLine();
 		}
 
-		File archiFile = new File(nomArchivo);
+		Path archiFile = Path.of(nomArchivo);
 
-		if (!archiFile.exists()) {
+		if (!Files.exists(archiFile)) {
 			System.out.println("Archivo no encontrado");
 			System.exit(0);
 		}

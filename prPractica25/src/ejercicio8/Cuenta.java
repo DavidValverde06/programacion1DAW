@@ -14,8 +14,7 @@ public class Cuenta {
 
 	public static void main(String[] args) {
 
-		File fichero = solicitudNombre();
-		int contadorPalabras = cuentaPalabras(fichero);
+		int contadorPalabras = cuentaPalabras(solicitudNombre());
 		System.out.println("\nEl fichero cuenta con " + contadorPalabras + " palabras");
 	}
 
