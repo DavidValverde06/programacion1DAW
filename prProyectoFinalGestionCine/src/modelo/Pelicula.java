@@ -13,7 +13,7 @@ public class Pelicula {
 	private int anio;
 
 	/**
-	 * Constructor sobrecargado
+	 * Constructor
 	 */
 	public Pelicula(String titulo, EnumGenero genero, int duracion, EnumClasificacion clasificacion, String director, int anio) {
 		this.titulo = titulo;
