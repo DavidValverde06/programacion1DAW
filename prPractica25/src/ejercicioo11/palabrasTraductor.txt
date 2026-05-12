@@ -1,0 +1,11 @@
+perro-dog
+casa-house
+gato-cat
+pajaro-bird
+escarabajo-bettle
+aire-air
+hola-hello
+barco-boat
+pato-duck
+cola-tail
+traductor-translator

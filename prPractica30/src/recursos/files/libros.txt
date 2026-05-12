@@ -1,0 +1,12 @@
+0001*Don Quijote de la Mancha*Miguel de Cervantes Saavedra*Don Quijote de la Mancha, Sancho Panza, Dulcinea del Toboso, Rocinante
+0002*Los pilares de la Tierra*Ken Follet*Aliena, Jack Jackson, Regan Hamleigh
+0003*El tiempo entre costuras*María Dueñas*Sira Quiroga, Ramiro Arribas, Marcus Logan
+0004*El principito*Antoine de Saint-Exupéry*The Little Prince, El vanidoso, Le renard
+0005*El Señor de los Anillos*J.R.R. Tolkien*Gandalf, Aragorn, Frodo Bolsón, Legolas, Gollum
+0007*Cien Años de Soledad*Gabriel García Márquez*José Arcadio Buendía, Coronel Aureliano Buendía
+0008*El principito*Antoine de Saint-Exupéry*The Little Prince, El vanidoso, Le renard
+0009*Don Quijote de la Mancha*Miguel de Cervantes Saavedra*Don Quijote de la Mancha, Sancho Panza, Dulcinea del Toboso, Rocinante
+0010*Don Quijote de la Mancha*Miguel de Cervantes Saavedra*Don Quijote de la Mancha, Sancho Panza, Dulcinea del Toboso, Rocinante
+0020*El Señor de los Anillos*J.R.R. Tolkien*Gandalf, Aragorn, Frodo Bolsón, Legolas, Gollum
+0023*El código Da Vinci*Dan Brown*Manuel Aringarosa, Teniente Jérôme Collet,Bezu Fache, Silas, Rémy Legaludec, Sophie Neveu, Jacques Saunière
+0067*Fray Perico y su borrico*Juan Muñoz Martín*Fray Nicanor, Fray Olegario, Fray Bautista, Fray Balandrán, Fray Cucufate, Fray Pirulero

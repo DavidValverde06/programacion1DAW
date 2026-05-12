@@ -1,0 +1,16 @@
+Iván Samuel Tejera Santana
+nadiuska
+10000
+--------------------------
+Carmen López García
+carmen
+23000
+--------------------------
+Sebastián Moreno Fuentes
+tornado
+345000
+--------------------------
+María Sanchez Pérez
+violeta
+35000
+--------------------------

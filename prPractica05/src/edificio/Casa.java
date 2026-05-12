@@ -1,0 +1,72 @@
+package edificio;
+
+public class Casa extends Edificio {
+
+	//	Casa: contendrá la misma información que un edificio normal, 
+	//	además del número de dormitorios y el número de baños.
+
+	/**
+	 * Variables de instancia
+	 */
+	private int numDormitorios;
+	private int numBanios;
+
+	/*
+	 * Constructor
+	 */
+	public Casa(Direccion dirEdificio, int numHabitaciones, int numPlantas, float areaEdificio, int numDormitorios,
+			int numBanios) {
+		super(dirEdificio, numHabitaciones, numPlantas, areaEdificio);
+
+		this.numDormitorios = numDormitorios;
+		this.numBanios = numBanios;
+	}
+	
+	public Casa(String nomCalle, int numero, int codPostal,
+			int numHabitaciones, int numPlantas, float areaEdificio,
+			int numDormitorios, int numBanios) {
+		
+		this(new Direccion(nomCalle,numero,codPostal),
+				numHabitaciones,numPlantas,areaEdificio,
+				numDormitorios,numBanios);
+	}
+
+	/*
+	 * Getter's y setter's
+	 */
+	public int getNumDormitorios() {
+		return numDormitorios;
+	}
+
+	public void setNumDormitorios(int numDormitorios) {
+		this.numDormitorios = numDormitorios;
+	}
+
+	public int getNumBanios() {
+		return numBanios;
+	}
+
+	public void setNumBanios(int numBanios) {
+		this.numBanios = numBanios;
+	}
+
+	/**
+	 * Método calcula IBI redefinido
+	 * 
+	 * En el caso de las casas el IBI se ve incrementado en 10€ por cada baño.
+	 */
+	@Override
+	public float calculaIBI() {
+		return super.calculaIBI()+this.numBanios*10;
+	}
+
+	/*
+	 * toString
+	 */
+	@Override
+	public String toString() {
+		return super.toString() +
+				"\n\tNúmero de dormitorios: " + this.numDormitorios +
+				"\n\tNúmero de baños: " + this.numBanios;
+	}
+}
