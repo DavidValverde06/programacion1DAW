@@ -17,7 +17,7 @@ public class CargarTablasProyecto {
 
 		try (Connection conexion = DriverManager.getConnection(url, usuario, clave)) {
 
-			System.out.println("CONEXION A LA BASE DE DATOS ESTABLECIDA");
+			System.out.println("CONEXION A LA BASE DE DATOS ESTABLECIDA\n");
 
 			// Metodo que carga datos en la tabla pelicula a partir de un fichero
 			cargaTablaPeliculas(conexion);
@@ -184,7 +184,7 @@ public class CargarTablasProyecto {
 		Throwable t = ex.getCause();
 
 		while (t!=null) {
-			System.out.println("Cause: "+t);
+			System.out.println("Cause: " + t);
 			t = t.getCause();
 		}
 	}
