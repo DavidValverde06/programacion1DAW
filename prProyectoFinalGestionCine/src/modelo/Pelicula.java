@@ -5,6 +5,7 @@ public class Pelicula {
 	/**
 	 * Variables de instancia
 	 */
+	private int id_pelicula;
 	private String titulo;
 	private EnumGenero genero;
 	private int duracion; // En minutos
@@ -15,7 +16,9 @@ public class Pelicula {
 	/**
 	 * Constructor
 	 */
-	public Pelicula(String titulo, EnumGenero genero, int duracion, EnumClasificacion clasificacion, String director, int anio) {
+	public Pelicula(int codigo, String titulo, EnumGenero genero, int duracion,
+			EnumClasificacion clasificacion, String director, int anio) {
+		this.id_pelicula = codigo;
 		this.titulo = titulo;
 		this.genero = genero;
 		this.duracion = duracion;
@@ -28,6 +31,7 @@ public class Pelicula {
 	 * Métodos Getter's y Setter's
 	 */
 	// Getter's
+	public int getCodigo() {return id_pelicula;}
 	public String getTitulo() {return titulo;}
 	public EnumGenero getGenero() {return genero;}
 	public int getDuracion() {return duracion;}
@@ -36,6 +40,7 @@ public class Pelicula {
 	public int getAnio() {return anio;}
 
 	// Setter's
+	public void setCodigo(int codigo) {this.id_pelicula = codigo;}
 	public void setTitulo(String titulo) {this.titulo = titulo;}
 	public void setGenero(EnumGenero genero) {this.genero = genero;}
 	public void setDuracion(int duracion) {this.duracion = duracion;}
@@ -48,7 +53,7 @@ public class Pelicula {
 	 */
 	@Override
 	public String toString() {
-		return titulo + "\nGenero: " + genero + "\nDuracion en minutos: " + duracion + " minutos\nClasificación por edades: "
+		return "Código: " + id_pelicula + "\n" + titulo + "\nGenero: " + genero + "\nDuracion en minutos: " + duracion + " minutos\nClasificación por edades: "
 				+ clasificacion + "\nDirector: " + director + "\nAño de estreno: " + anio;
 	}
 }

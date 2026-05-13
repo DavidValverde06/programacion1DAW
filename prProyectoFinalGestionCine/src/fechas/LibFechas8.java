@@ -1,22 +1,13 @@
 package fechas;
 
-import java.text.DecimalFormat;
-import java.time.DateTimeException;
-import java.time.DayOfWeek;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
-import java.time.format.DateTimeParseException;
-import java.time.temporal.ChronoUnit;
-import java.time.temporal.TemporalAdjusters;
-import java.time.temporal.WeekFields;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Locale;
+import java.text.*;
+import java.time.*;
+import java.time.format.*;
+import java.time.temporal.*;
+import java.util.*;
 
 public class LibFechas8 {
 
-	
 	/**
 	 * Este método convierte una fecha en formato String a LocalDate
 	 * 
@@ -25,29 +16,28 @@ public class LibFechas8 {
 	 *         no era válido
 	 */
 	public static LocalDate convierteStringToLocalDate(String fechaString) {
-		
-		
+
 		try {
-		   String [] arrayFecha = fechaString.split("/"); // Extraigo el día, mes y año
-			
-		   LocalDate fecha = LocalDate.of(
-	  			    Integer.parseInt(arrayFecha[2]),  // Año
-	  			    Integer.parseInt(arrayFecha[1]),  // Mes 
-				 	Integer.parseInt(arrayFecha[0])); // Día 
-	  	  
-	  	   		 // Si la fecha no es válida el método of, lanzará una excepción (DateTimeException)
-	  	         // Si la fecha no tenía el formato dd/mm/yyyy, saltará la excepción
-	  	         // de array desbordado
-	  	   
-		   return fecha;
+			String [] arrayFecha = fechaString.split("/"); // Extraigo el día, mes y año
+
+			LocalDate fecha = LocalDate.of(
+					Integer.parseInt(arrayFecha[2]),  // Año
+					Integer.parseInt(arrayFecha[1]),  // Mes 
+					Integer.parseInt(arrayFecha[0])); // Día 
+
+			// Si la fecha no es válida el método of, lanzará una excepción (DateTimeException)
+			// Si la fecha no tenía el formato dd/mm/yyyy, saltará la excepción
+			// de array desbordado
+
+			return fecha;
 		}
 		catch (DateTimeException e) {
-//			System.out.println("Fecha incorrecta "+fechaString);
+			//System.out.println("Fecha incorrecta "+fechaString);
 			return null;
 			//return LocalDate.now();
 		}
 		catch (ArrayIndexOutOfBoundsException e) {
-			//	System.out.println("Menos datos de los esperados "+fechaString);
+			//System.out.println("Menos datos de los esperados "+fechaString);
 			return null;
 			//return LocalDate.now();
 		}
@@ -58,8 +48,7 @@ public class LibFechas8 {
 			return null;
 		}
 	}
-	
-	
+
 	/**
 	 * M�todo que comprueba si una fecha es correcta, consideraremos
 	 * fechas correctas las que tenga el formato dd/mm/yyyy
@@ -67,32 +56,32 @@ public class LibFechas8 {
 	 * @return
 	 */
 	public static boolean isFechaCorrecta(String fechaString) {
- 		
-		try{
+
+		try {
 			// El método convierteStringToLocalDate, es un método propio, que devuelve
 			// null, si la fecha no es válida, o no tiene el formato adecuado
 			if (convierteStringToLocalDate(fechaString)==null)
 				return false;
-			
+
 			LocalDate.parse(fechaString, DateTimeFormatter.ofPattern("d/M/yyyy")); 
-			  // Si el formato no es el esperado, el m�todo parse lanzará una excepcion (DateTimeParseExcepcion)
-			  // Lleva solo una d y una M, para que admita también 3/2/2022, sino esta fecha
-			  // no sería válida y sólo admitiría 03/02/2022
+			// Si el formato no es el esperado, el m�todo parse lanzará una excepcion (DateTimeParseExcepcion)
+			// Lleva solo una d y una M, para que admita también 3/2/2022, sino esta fecha
+			// no sería válida y sólo admitiría 03/02/2022
 		}
 
 		catch (DateTimeParseException e) {  // Esta saltará con fechas como "12/10/20" 
-		//	System.out.println("Formato incorrecto "+fechaString);
+			//	System.out.println("Formato incorrecto "+fechaString);
 			return false;
 		}
 
 		return true;
 	}
-	
+
 	/*
 	 * Esta versión no funciona bien, ya que si le paso, por ejemplo 31/09/2020
 	 * me da la fecha por valida, ya que me cambia el 31 por 30 ¿?
 	 * public static boolean isFechaCorrecta(String fechaString) {
-	 		
+
 		try {
 			LocalDate fecha = LocalDate.parse(fechaString, DateTimeFormatter.ofPattern("dd/MM/yyyy"));
 			System.out.println(fecha);
@@ -102,8 +91,8 @@ public class LibFechas8 {
 		}
 		return true;
 	}
-	*/
-	
+	 */
+
 	/**
 	 * Método que devuelve una fecha formateada en formato corto 
 	 * Ejemplo: 15/09/2008
@@ -114,9 +103,9 @@ public class LibFechas8 {
 	 * @return
 	 */
 	public static String getFechaShort(LocalDate fecha) {
-		
+
 		if (fecha == null) return "";
-	    return fecha.format(DateTimeFormatter.ofPattern("dd/MM/yyyy"));
+		return fecha.format(DateTimeFormatter.ofPattern("dd/MM/yyyy"));
 
 	}
 
@@ -130,24 +119,23 @@ public class LibFechas8 {
 	 * @return
 	 */
 	public static String getFechaFull(LocalDate fecha) {
-		
+
 		if (fecha == null) return "";
-	    return fecha.format(DateTimeFormatter.ofPattern("EEEE',' d 'de' MMMM 'de' yyyy"));
+		return fecha.format(DateTimeFormatter.ofPattern("EEEE',' d 'de' MMMM 'de' yyyy"));
 
 	}
-	
-	
+
 	/**
 	 * Metodo que calcula la edad de una persona
 	 * @param fechaNacimiento
 	 * @return
 	 */
 	public static int getEdad(LocalDate fechaNacimiento) {
-			
-	   return (int) ChronoUnit.YEARS.between(fechaNacimiento, LocalDate.now());
-	   
+
+		return (int) ChronoUnit.YEARS.between(fechaNacimiento, LocalDate.now());
+
 	}
-	
+
 	/**
 	 * Metodo que suma un numero de dias a una fecha que llega como par�metro
 	 * @param fechaInicio
@@ -157,8 +145,7 @@ public class LibFechas8 {
 	public static LocalDate sumaDias(LocalDate fechaInicio, int dias) {
 		return fechaInicio.plusDays(dias);
 	}
-	
-	
+
 	/**
 	 * Método que devuelve una colección con objetos de tipo LocalDate con 
 	 * los días de una semana de un determinado año
@@ -179,7 +166,7 @@ public class LibFechas8 {
 
 		return diasSemana;
 	}
-	
+
 	/**
 	 * Obtener el número de semana en el año, a partir de un objeto LocalDate
 	 * @param fecha
@@ -194,8 +181,7 @@ public class LibFechas8 {
 
 		return numeroSemana;
 	}
-	
-	
+
 	/**
 	 * Método que devuelve una cadena con el AñoMesDiaMinutoSegundo
 	 * @param fecha
@@ -203,13 +189,13 @@ public class LibFechas8 {
 	 */
 	public static String getFechaSinDelimitadores(LocalDateTime fecha) {
 		DecimalFormat patron = new DecimalFormat("00");
-		
+
 		return "" +
-		       fecha.getYear()+
-			   patron.format(fecha.getMonthValue()) +
-			   patron.format(fecha.getDayOfMonth()) +
-			   patron.format(fecha.getMinute()) +
-			   patron.format(fecha.getSecond());
+		fecha.getYear()+
+		patron.format(fecha.getMonthValue()) +
+		patron.format(fecha.getDayOfMonth()) +
+		patron.format(fecha.getMinute()) +
+		patron.format(fecha.getSecond());
 	}
 
 	/**
@@ -220,14 +206,12 @@ public class LibFechas8 {
 	 * @return --> dd/mm/aaaa
 	 */
 	public static String transformaFecha(String fecha) {
-		
+
 		String [] arrayFecha = fecha.split("-"); 
-		
+
 		String nuevaFecha = arrayFecha[2] + "/" + arrayFecha[1] + "/" + arrayFecha[0];
-	
+
 		return nuevaFecha;
 	}
-	
+
 }
-
-

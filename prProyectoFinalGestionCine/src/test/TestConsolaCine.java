@@ -1,18 +1,13 @@
 package test;
 
-import fechas.LibFechas8;
-import modelo.EnumClasificacion;
-import modelo.EnumGenero;
-import modelo.EnumTipoSala;
-import modelo.Pelicula;
-import modelo.Sala;
-import modelo.Sesion;
+import fechas.*;
+import modelo.*;
 
 public class TestConsolaCine {
 
 	public static void main(String[] args) {
 
-		Pelicula peliculaInterstellar = new Pelicula("Interstellar", EnumGenero.CIENCIA_FICCION,
+		Pelicula peliculaInterstellar = new Pelicula(1,"Interstellar", EnumGenero.CIENCIA_FICCION,
 				169, EnumClasificacion.CLASIFICACION_12, "Christopher Nolan", 2014);
 
 		Sala sala1 = new Sala(1, 50, EnumTipoSala.SALA_NORMAL);
