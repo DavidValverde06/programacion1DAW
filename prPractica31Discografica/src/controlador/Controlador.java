@@ -1,14 +1,12 @@
 package controlador;
+
 /**
  * Clase que va a programar los eventos
  * 
  */
-
 import java.awt.event.*;
 import java.sql.SQLException;
-
 import javax.swing.*;
-
 import fechas.LibFechas8;
 import modelo.*;
 import vista.*;

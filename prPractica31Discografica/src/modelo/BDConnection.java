@@ -38,7 +38,7 @@ public class BDConnection {
 			// Establecer la conexión
 			Properties props = new Properties();
 			props.put("user", "admin");
-			props.put("password", "1234");
+			props.put("password", "admin");
 			instance = DriverManager.getConnection(JDBC_URL, props);
 		}
 		

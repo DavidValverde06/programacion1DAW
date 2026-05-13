@@ -14,7 +14,7 @@ public class CreaCargaTablaDisco {
 
 		String url = "jdbc:mysql://localhost:3306/discografica";
 		String usuario = "admin";
-		String clave   = "1234";
+		String clave   = "admin";
 
 		try (Connection conexion = DriverManager.getConnection(url, usuario, clave)){
 				
