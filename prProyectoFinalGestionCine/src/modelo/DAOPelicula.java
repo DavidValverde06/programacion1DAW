@@ -5,7 +5,7 @@ import java.util.*;
 import javax.swing.table.*;
 
 /**
- * Esta clase implementa el patrón DAO con la tabla peliculas, este patrón ofrece 
+ * Esta clase implementa el patrón DAO con la tabla pelicula, este patrón ofrece 
  * operaciones para interactuar con la base de datos. 
  * 
  * Se encarga de realizar todas las operaciones CRUD es el acrónimo de 
@@ -82,7 +82,7 @@ public class DAOPelicula {
 	 */
 	public void crearConsulta() throws SQLException {
 
-		String sqlString = "SELECT * FROM cine";
+		String sqlString = "SELECT * FROM cine.pelicula";
 
 		this.rsNavegar = stmt.executeQuery(sqlString);
 	}

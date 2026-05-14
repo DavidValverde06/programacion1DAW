@@ -30,6 +30,7 @@ public class CargarTablasProyecto {
 
 			// Metodo que carga datos en la tabla cliente a partir de un fichero
 			cargaTablaClientes(conexion);
+			
 		}
 		catch (SQLException e) {
 			printSQLException(e);
@@ -48,7 +49,7 @@ public class CargarTablasProyecto {
 
 			while (sc.hasNextLine()) {
 
-				String [] arrayDatos = sc.nextLine().split("-");
+				String [] arrayDatos = sc.nextLine().split(";");
 
 				String sqlString = "INSERT INTO pelicula VALUES (?,?,?,?,?,?,?)";
 

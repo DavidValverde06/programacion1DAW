@@ -5,7 +5,7 @@ public class Pelicula {
 	/**
 	 * Variables de instancia
 	 */
-	private int id_pelicula;
+	private int id_pelicula; // PK
 	private String titulo;
 	private EnumGenero genero;
 	private int duracion; // En minutos
@@ -53,7 +53,7 @@ public class Pelicula {
 	 */
 	@Override
 	public String toString() {
-		return "Código: " + id_pelicula + "\n" + titulo + "\nGenero: " + genero + "\nDuracion en minutos: " + duracion + " minutos\nClasificación por edades: "
-				+ clasificacion + "\nDirector: " + director + "\nAño de estreno: " + anio;
+		return "Pelicula [id_pelicula=" + id_pelicula + ", titulo=" + titulo + ", genero=" + genero + ", duracion="
+				+ duracion + ", clasificacion=" + clasificacion + ", director=" + director + ", anio=" + anio + "]";
 	}
 }

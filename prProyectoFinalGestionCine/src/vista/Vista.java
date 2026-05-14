@@ -11,4 +11,5 @@ public class Vista extends JFrame{
 	 */
 	private JLabel lTituloPrograma;
 	
+	
 }

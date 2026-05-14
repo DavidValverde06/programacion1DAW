@@ -5,6 +5,7 @@ public class Sala {
 	/**
 	 * Variables de instancia
 	 */
+	private int id_sala; // PK
 	private int num_sala;
 	private int capacidad;
 	private EnumTipoSala tipo;
@@ -12,7 +13,8 @@ public class Sala {
 	/**
 	 * Constructor
 	 */
-	public Sala(int num_sala, int capacidad, EnumTipoSala tipo) {
+	public Sala(int codigo, int num_sala, int capacidad, EnumTipoSala tipo) {
+		this.id_sala = codigo;
 		this.num_sala = num_sala;
 		this.capacidad = capacidad;
 		this.tipo = tipo;
@@ -22,36 +24,23 @@ public class Sala {
 	 * Métodos Getter's y Setter's
 	 */
 	// Getter's
-	public int getNum_sala() {
-		return num_sala;
-	}
-
-	public int getCapacidad() {
-		return capacidad;
-	}
-
-	public EnumTipoSala getTipo() {
-		return tipo;
-	}
+	public int getCodigo() {return id_sala;}
+	public int getNum_sala() {return num_sala;}
+	public int getCapacidad() {return capacidad;}
+	public EnumTipoSala getTipo() {return tipo;}
 
 	// Setter's
-	public void setNum_sala(int num_sala) {
-		this.num_sala = num_sala;
-	}
-
-	public void setCapacidad(int capacidad) {
-		this.capacidad = capacidad;
-	}
-
-	public void setTipo(EnumTipoSala tipo) {
-		this.tipo = tipo;
-	}
+	public void setCodigo(int codigo) {this.id_sala = codigo;}
+	public void setNum_sala(int num_sala) {this.num_sala = num_sala;}
+	public void setCapacidad(int capacidad) {this.capacidad = capacidad;}
+	public void setTipo(EnumTipoSala tipo) {this.tipo = tipo;}
 
 	/**
 	 * toString redefinido
 	 */
 	@Override
 	public String toString() {
-		return "Sala número " + num_sala + "\n" + tipo +  "\nCapacidad: " + capacidad + " personas";
+		return "Sala [id_sala=" + id_sala + ", num_sala=" + num_sala + ", capacidad=" + capacidad + ", tipo=" + tipo
+				+ "]";
 	}
 }
