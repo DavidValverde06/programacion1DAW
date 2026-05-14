@@ -33,7 +33,7 @@ public class Ejer04 {
 		// Ruta del proyecto
 		String dir = System.getProperty("user.dir");
 		System.out.println(dir);
-		
+
 		JOptionPane.showMessageDialog(null,
 				"Hola, que tal estáis",
 				"Título mensaje",

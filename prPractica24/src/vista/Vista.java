@@ -14,15 +14,27 @@ public class Vista extends JPanel {
 	private JLabel labelCuadradoMagico;
 	private JButton bValidar, bGenerar, bLimpiar;
 	private JTextField[][] tfCuadradoMagico;
+	private int dimension;
 
 	/**
-	 * Métodos getter
+	 * Métodos Getter's
 	 */
 	public JLabel getLabelCuadradoMagico() {return labelCuadradoMagico;}
 	public JButton getbValidar() {return bValidar;}
 	public JButton getbGenerar() {return bGenerar;}
 	public JButton getbLimpiar() {return bLimpiar;}
 	public JTextField[][] getTfCuadradoMagico() {return tfCuadradoMagico;}
+	public int getDimension() {return dimension;}
+
+	/**
+	 * Métodos Setter's
+	 */
+	public void setLabelCuadradoMagico(JLabel labelCuadradoMagico) {this.labelCuadradoMagico = labelCuadradoMagico;}
+	public void setbValidar(JButton bValidar) {this.bValidar = bValidar;}
+	public void setbGenerar(JButton bGenerar) {this.bGenerar = bGenerar;}
+	public void setbLimpiar(JButton bLimpiar) {this.bLimpiar = bLimpiar;}
+	public void setTfCuadradoMagico(JTextField[][] tfCuadradoMagico) {this.tfCuadradoMagico = tfCuadradoMagico;}
+	public void setDimension(int dimension) {this.dimension = dimension;}
 
 	/**
 	 * Constructor
@@ -33,6 +45,7 @@ public class Vista extends JPanel {
 
 		// Crear un objeto de la clase DialogoInicio
 		DialogoInicio dialogo = new DialogoInicio();
+		dimension = dialogo.getDimension();
 
 		prepararPanelEtiqueta(dialogo); // Panel Etiqueta
 		prepararPanelCuadrado(dialogo); // Panel Cuadrado Mágico
