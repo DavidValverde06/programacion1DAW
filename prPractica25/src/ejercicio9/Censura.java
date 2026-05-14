@@ -1,5 +1,9 @@
 package ejercicio9;
 
+import java.io.*;
+import java.nio.file.Path;
+import java.util.*;
+
 /**
  * 9.- Se necesita crear una clase Censura con un método aplicaCensura(), que modifique ciertas palabras de
  * un fichero. El método toma un fichero de entrada y mediante un fichero de censura cerrará un fichero
@@ -21,11 +25,25 @@ package ejercicio9;
  * que vivía un noble de los de lanza en astillero, adarga antigua, rocín flaco y
  * galgo corredor...
  */
-public class Ejercicio9 {
+public class Censura {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 
+		Path ficheroEntrada = Path.of("./src/ejercicio9/datos.txt");
+
+		aplicaCensura(ficheroEntrada.toFile());
+
+	}
+
+	private static void aplicaCensura(File fichero) {
+
+		try (BufferedWriter flujoEscritura = new BufferedWriter(new FileWriter())) {
+
+
+		}
+		catch (Exception e) {
+
+		}
 	}
 
 }

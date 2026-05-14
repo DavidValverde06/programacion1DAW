@@ -1,5 +1,7 @@
 package modelo;
 
+import java.util.Objects;
+
 public class Pelicula {
 
 	/**
@@ -49,6 +51,28 @@ public class Pelicula {
 	public void setAnio(int anio) {this.anio = anio;}
 
 	/**
+	 * equals y hashCode
+	 */
+	@Override
+	public int hashCode() {
+		return Objects.hash(anio, clasificacion, director, duracion, genero, id_pelicula, titulo);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Pelicula other = (Pelicula) obj;
+		return anio == other.anio && clasificacion == other.clasificacion && Objects.equals(director, other.director)
+				&& duracion == other.duracion && genero == other.genero && id_pelicula == other.id_pelicula
+				&& Objects.equals(titulo, other.titulo);
+	}
+
+	/**
 	 * toString redefinido
 	 */
 	@Override
@@ -56,4 +80,5 @@ public class Pelicula {
 		return "Pelicula [id_pelicula=" + id_pelicula + ", titulo=" + titulo + ", genero=" + genero + ", duracion="
 				+ duracion + ", clasificacion=" + clasificacion + ", director=" + director + ", anio=" + anio + "]";
 	}
+
 }

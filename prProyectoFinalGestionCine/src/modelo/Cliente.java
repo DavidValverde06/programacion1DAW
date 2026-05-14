@@ -1,5 +1,7 @@
 package modelo;
 
+import java.util.Objects;
+
 public class Cliente {
 
 	/**
@@ -40,6 +42,28 @@ public class Cliente {
 	public void setEmail(String email) {this.email = email;}
 
 	/**
+	 * equals y hashCode
+	 */
+	@Override
+	public int hashCode() {
+		return Objects.hash(apellido, email, id_cliente, id_sesion, nombre);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Cliente other = (Cliente) obj;
+		return Objects.equals(apellido, other.apellido) && Objects.equals(email, other.email)
+				&& id_cliente == other.id_cliente && id_sesion == other.id_sesion
+				&& Objects.equals(nombre, other.nombre);
+	}
+	
+	/**
 	 * toString redefinido
 	 */
 	@Override
@@ -47,4 +71,5 @@ public class Cliente {
 		return "Cliente [id_cliente=" + id_cliente + ", id_sesion=" + id_sesion + ", nombre=" + nombre + ", apellido="
 				+ apellido + ", email=" + email + "]";
 	}
+	
 }

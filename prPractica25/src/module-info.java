@@ -1,9 +1,6 @@
 /**
  * 
  */
-/**
- * 
- */
-module prPractica25v2 {
+module prPractica25 {
 	requires java.desktop;
 }

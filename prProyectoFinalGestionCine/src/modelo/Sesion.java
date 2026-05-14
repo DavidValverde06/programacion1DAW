@@ -1,6 +1,8 @@
 package modelo;
 
 import java.time.*;
+import java.util.Objects;
+
 import fechas.*;
 
 public class Sesion {
@@ -53,6 +55,28 @@ public class Sesion {
 	public void setPrecio(double precio) {this.precio = precio;}
 
 	/**
+	 * equals y hashCode
+	 */
+	@Override
+	public int hashCode() {
+		return Objects.hash(fecha, hora, id_pelicula, id_sala, id_sesion, precio);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Sesion other = (Sesion) obj;
+		return Objects.equals(fecha, other.fecha) && hora == other.hora && id_pelicula == other.id_pelicula
+				&& id_sala == other.id_sala && id_sesion == other.id_sesion
+				&& Double.doubleToLongBits(precio) == Double.doubleToLongBits(other.precio);
+	}
+	
+	/**
 	 * toString redefinido
 	 */
 	@Override
@@ -60,4 +84,5 @@ public class Sesion {
 		return "Sesion [id_sesion=" + id_sesion + ", id_pelicula=" + id_pelicula + ", id_sala=" + id_sala + ", fecha="
 				+ fecha + ", hora=" + hora + ", precio=" + precio + "]";
 	}
+	
 }

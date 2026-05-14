@@ -1,5 +1,7 @@
 package modelo;
 
+import java.util.Objects;
+
 public class Sala {
 
 	/**
@@ -36,6 +38,27 @@ public class Sala {
 	public void setTipo(EnumTipoSala tipo) {this.tipo = tipo;}
 
 	/**
+	 * equals y hashCode
+	 */
+	@Override
+	public int hashCode() {
+		return Objects.hash(capacidad, id_sala, num_sala, tipo);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Sala other = (Sala) obj;
+		return capacidad == other.capacidad && id_sala == other.id_sala && num_sala == other.num_sala
+				&& tipo == other.tipo;
+	}
+	
+	/**
 	 * toString redefinido
 	 */
 	@Override
@@ -43,4 +66,5 @@ public class Sala {
 		return "Sala [id_sala=" + id_sala + ", num_sala=" + num_sala + ", capacidad=" + capacidad + ", tipo=" + tipo
 				+ "]";
 	}
+
 }
