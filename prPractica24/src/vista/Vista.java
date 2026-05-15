@@ -58,7 +58,7 @@ public class Vista extends JPanel {
 	 */
 	private void prepararPanelCuadrado(DialogoInicio dialogo) {
 		JPanel panelCentral = new JPanel();
-		JPanel panelCuadrado = new JPanel(new GridLayout(dialogo.getDimension(),dialogo.getDimension()));
+		JPanel panelCuadrado = new JPanel(new GridLayout(dimension,dimension));
 		Font fuente = new Font("Times New Roman", Font.BOLD, 12);
 		tfCuadradoMagico = new JTextField[dialogo.getDimension()][dialogo.getDimension()];
 
