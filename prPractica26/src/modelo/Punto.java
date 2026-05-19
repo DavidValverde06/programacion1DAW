@@ -19,13 +19,13 @@ public class Punto {
 	/**
 	 * Variables de instancia
 	 */
-	private int varX;
-	private int varY;
+	private float varX;
+	private float varY;
 
 	/**
 	 * Constructor sobrecargado
 	 */
-	public Punto(int varX, int varY) {
+	public Punto(float varX, float varY) {
 		this.varX = varX;
 		this.varY = varY;
 	}
@@ -38,15 +38,15 @@ public class Punto {
 	/**
 	 * Getter's
 	 */
-	public int getVarX() {return varX;}
-	public int getVarY() {return varY;}
+	public float getVarX() {return varX;}
+	public float getVarY() {return varY;}
 
 	/**
 	 * toString redefinido
 	 */
 	@Override
 	public String toString() {
-		return "(" + varX + "," + varY + ")";
+		return varX + ", " + varY;
 	}
 
 	/**

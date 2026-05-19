@@ -15,9 +15,9 @@ public class Vista extends JPanel {
 	 */
 	private JButton bCalcular,bCancelar,bVender;
 	private JTextField tfCoordenadaOrigenX,tfCoordenadaOrigenY,tfCoordenadaDestinoX,tfCoordenadaDestinoY;
-	private JComboBox<String> miComboDescuentos; // ¿String o EnumDescuentos?
+	private JComboBox<String> comboDescuentos;
 	private JCheckBox chBilleteFamiliar;
-	private JLabel lDistancia,lPrecioBillete,lDescuentoAplicar;
+	private JLabel labelNumeroDistancia,labelNumeroPrecioBillete,labelDescuentoBillete;
 
 	/**
 	 * Constructor
@@ -77,14 +77,14 @@ public class Vista extends JPanel {
 		JLabel lDistanciaTexto = new JLabel("Distancia: ");
 		lDistanciaTexto.setHorizontalAlignment(JTextField.RIGHT);
 
-		lDistancia = new JLabel("0.00");
+		labelNumeroDistancia = new JLabel("0.00");
 		lDistanciaTexto.setHorizontalAlignment(JTextField.LEFT);
 
 		JLabel lDistanciaKilometro = new JLabel("km");
 		lDistanciaKilometro.setHorizontalAlignment(JTextField.LEFT);
 
 		subpanelDistancia.add(lDistanciaTexto);
-		subpanelDistancia.add(lDistancia);
+		subpanelDistancia.add(labelNumeroDistancia);
 		subpanelDistancia.add(lDistanciaKilometro);
 
 		// Subpanel Precio
@@ -93,14 +93,14 @@ public class Vista extends JPanel {
 		JLabel lPrecioBilleteTexto = new JLabel("Precio Billete: ");
 		lPrecioBilleteTexto.setHorizontalAlignment(JTextField.RIGHT);
 
-		lPrecioBillete = new JLabel("0");
-		lPrecioBillete.setHorizontalAlignment(JTextField.LEFT);
+		labelNumeroPrecioBillete = new JLabel("0");
+		labelNumeroPrecioBillete.setHorizontalAlignment(JTextField.LEFT);
 
 		JLabel lPrecioBilleteEuro = new JLabel("€");
 		lPrecioBilleteEuro.setHorizontalAlignment(JTextField.LEFT);
 
 		subpanelPrecio.add(lPrecioBilleteTexto);
-		subpanelPrecio.add(lPrecioBillete);
+		subpanelPrecio.add(labelNumeroPrecioBillete);
 		subpanelPrecio.add(lPrecioBilleteEuro);
 
 		// Añadir todo al panel Distancia Precio Pagar;
@@ -125,18 +125,18 @@ public class Vista extends JPanel {
 			descuentos[cont] = EnumDescuentos.values()[cont].getDescripcion();
 		}
 
-		miComboDescuentos = new JComboBox<>(descuentos);
+		comboDescuentos = new JComboBox<>(descuentos);
 
 		chBilleteFamiliar = new JCheckBox("Billete familiar");
 		JLabel lDescuento = new JLabel("Descuento a aplicar: ");
-		lDescuentoAplicar = new JLabel("0");
+		labelDescuentoBillete = new JLabel("0");
 		JLabel lDescuentoPorcentaje = new JLabel("%");
 
 		panelPosiblesDescuentos.add(lTipoDescuento);
-		panelPosiblesDescuentos.add(miComboDescuentos);
+		panelPosiblesDescuentos.add(comboDescuentos);
 		panelPosiblesDescuentos.add(chBilleteFamiliar);
 		panelPosiblesDescuentos.add(lDescuento);
-		panelPosiblesDescuentos.add(lDescuentoAplicar);
+		panelPosiblesDescuentos.add(labelDescuentoBillete);
 		panelPosiblesDescuentos.add(lDescuentoPorcentaje);
 
 		panelPrincipal.add(panelPosiblesDescuentos);
@@ -223,20 +223,103 @@ public class Vista extends JPanel {
 	}
 
 	/**
-	 * Métodos Getter's
+	 * Métodos Getter's y Setter's
 	 */
-	public JButton getbCalcular() {return bCalcular;}
-	public JButton getbCancelar() {return bCancelar;}
-	public JButton getbVender() {return bVender;}
-	public JTextField getTfCoordenadaOrigenX() {return tfCoordenadaOrigenX;}
-	public JTextField getTfCoordenadaOrigenY() {return tfCoordenadaOrigenY;}
-	public JTextField getTfCoordenadaDestinoX() {return tfCoordenadaDestinoX;}
-	public JTextField getTfCoordenadaDestinoY() {return tfCoordenadaDestinoY;}
-	public JComboBox<String> getMiComboDescuentos() {return miComboDescuentos;}
-	public JCheckBox getChBilleteFamiliar() {return chBilleteFamiliar;}
-	public JLabel getlDistancia() {return lDistancia;}
-	public JLabel getlPrecioBillete() {return lPrecioBillete;}
-	public JLabel getlDescuentoAplicar() {return lDescuentoAplicar;}
+	public JButton getbCalcular() {
+		return bCalcular;
+	}
+
+	public JButton getbCancelar() {
+		return bCancelar;
+	}
+
+	public JButton getbVender() {
+		return bVender;
+	}
+
+	public JTextField getTfCoordenadaOrigenX() {
+		return tfCoordenadaOrigenX;
+	}
+
+	public JTextField getTfCoordenadaOrigenY() {
+		return tfCoordenadaOrigenY;
+	}
+
+	public JTextField getTfCoordenadaDestinoX() {
+		return tfCoordenadaDestinoX;
+	}
+
+	public JTextField getTfCoordenadaDestinoY() {
+		return tfCoordenadaDestinoY;
+	}
+
+	public JComboBox<String> getComboDescuentos() {
+		return comboDescuentos;
+	}
+
+	public JCheckBox getChBilleteFamiliar() {
+		return chBilleteFamiliar;
+	}
+
+	public JLabel getLabelNumeroDistancia() {
+		return labelNumeroDistancia;
+	}
+
+	public JLabel getLabelNumeroPrecioBillete() {
+		return labelNumeroPrecioBillete;
+	}
+
+	public JLabel getLabelDescuentoBillete() {
+		return labelDescuentoBillete;
+	}
+
+	public void setbCalcular(JButton bCalcular) {
+		this.bCalcular = bCalcular;
+	}
+
+	public void setbCancelar(JButton bCancelar) {
+		this.bCancelar = bCancelar;
+	}
+
+	public void setbVender(JButton bVender) {
+		this.bVender = bVender;
+	}
+
+	public void setTfCoordenadaOrigenX(JTextField tfCoordenadaOrigenX) {
+		this.tfCoordenadaOrigenX = tfCoordenadaOrigenX;
+	}
+
+	public void setTfCoordenadaOrigenY(JTextField tfCoordenadaOrigenY) {
+		this.tfCoordenadaOrigenY = tfCoordenadaOrigenY;
+	}
+
+	public void setTfCoordenadaDestinoX(JTextField tfCoordenadaDestinoX) {
+		this.tfCoordenadaDestinoX = tfCoordenadaDestinoX;
+	}
+
+	public void setTfCoordenadaDestinoY(JTextField tfCoordenadaDestinoY) {
+		this.tfCoordenadaDestinoY = tfCoordenadaDestinoY;
+	}
+
+	public void setComboDescuentos(JComboBox<String> comboDescuentos) {
+		this.comboDescuentos = comboDescuentos;
+	}
+
+	public void setChBilleteFamiliar(JCheckBox chBilleteFamiliar) {
+		this.chBilleteFamiliar = chBilleteFamiliar;
+	}
+
+	public void setLabelNumeroDistancia(JLabel labelNumeroDistancia) {
+		this.labelNumeroDistancia = labelNumeroDistancia;
+	}
+
+	public void setLabelNumeroPrecioBillete(JLabel labelNumeroPrecioBillete) {
+		this.labelNumeroPrecioBillete = labelNumeroPrecioBillete;
+	}
+
+	public void setLabelDescuentoBillete(JLabel labelDescuentoBillete) {
+		this.labelDescuentoBillete = labelDescuentoBillete;
+	}
 
 	/**
 	 * Método se encarga de añadir el control de los 
@@ -247,6 +330,12 @@ public class Vista extends JPanel {
 		bCalcular.addActionListener(ctr);
 		bCancelar.addActionListener(ctr);
 		bVender.addActionListener(ctr);
+
+		// CheckBox
+		chBilleteFamiliar.addActionListener(ctr);
+		
+		// ComboBox
+		comboDescuentos.addItemListener(ctr);
 	}
 
 }

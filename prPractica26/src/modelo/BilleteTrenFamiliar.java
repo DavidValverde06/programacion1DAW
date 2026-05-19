@@ -10,7 +10,7 @@ public class BilleteTrenFamiliar extends BilleteTren {
 	/**
 	 * Variable de clase
 	 */
-	private static float PORCENTAJE_DESCUENTO = 0.25f;
+	private static int PORCENTAJE_DESCUENTO = 25;
 
 	/**
 	 * Variables de instancia
@@ -35,13 +35,14 @@ public class BilleteTrenFamiliar extends BilleteTren {
 	 */
 	@Override
 	public String toString() {
-		return "BilleteTrenFamiliar [nombreViajero=" + nombreViajero + "]";
+		return super.toString() +
+				"\n\tDescuento extra por familia: " + PORCENTAJE_DESCUENTO + "%" +
+				"\n\tFamiliar: " + nombreViajero;
 	}
-
 
 	@Override
 	public float calculaPrecio() {
-		return super.calculaPrecio() - (super.calculaPrecio() * PORCENTAJE_DESCUENTO);
+		return super.calculaPrecio() - (super.calculaPrecio() * (PORCENTAJE_DESCUENTO / 100));
 	}
 
 }

@@ -27,9 +27,9 @@ public class BilleteTren {
 	/**
 	 * Variables de clase
 	 */
-	final static float CENTS_KM_1_20 = 0.20f; // 20 céntimos por km
-	final static float CENTS_KM_21_50 = 0.18f; // 18 céntimos por km
-	final static float CENTS_KM_50 = 0.16f; // 16 céntimos por km
+	final static float CENTS_KM_1_20 = 0.20f; 	// 20 céntimos por km
+	final static float CENTS_KM_21_50 = 0.18f; 	// 18 céntimos por km
+	final static float CENTS_KM_50 = 0.16f; 	// 16 céntimos por km
 
 	/**
 	 * Variables de instancia
@@ -64,8 +64,12 @@ public class BilleteTren {
 	 */
 	@Override
 	public String toString() {
-		return "BilleteTren [coordenadaOrigen=" + coordenadaOrigen + ", coordenadaDestino=" + coordenadaDestino
-				+ ", tipoDescuento=" + tipoDescuento + ", distancia=" + distancia + ", precio=" + precio + "]";
+		return this.getClass().getSimpleName() +
+				"\n\tOrigen: " + coordenadaOrigen +
+				"\n\tDestino: " + coordenadaDestino +
+				"\n\tDescuento aplicado: " + tipoDescuento.getDescuento() + "% (" + tipoDescuento.getDescripcion() + ")" +
+				"\n\tDistancia: " + distancia +
+				"\n\tCoste del billete: " + getPrecioString();
 	}
 
 	/**
@@ -89,7 +93,7 @@ public class BilleteTren {
 			precioBase = distancia * CENTS_KM_1_20; // 20 céntimos por km
 		}
 
-		return precioBase - precioBase * descuento;
+		return precioBase - precioBase * (descuento / 100);
 	}
 
 	/**
