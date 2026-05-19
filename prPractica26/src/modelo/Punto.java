@@ -38,13 +38,8 @@ public class Punto {
 	/**
 	 * Getter's
 	 */
-	public int getVarX() {
-		return varX;
-	}
-
-	public int getVarY() {
-		return varY;
-	}
+	public int getVarX() {return varX;}
+	public int getVarY() {return varY;}
 
 	/**
 	 * toString redefinido
@@ -61,7 +56,11 @@ public class Punto {
 	 * 
 	 * 		d(p,q) = √(x2 – x1)2 + (y2 – y1 )2
 	 */
-	public double distancia(int varX1, int varY1, int varX2, int varY2) {
-		return Math.sqrt(Math.sqrt((varX2-varX1)) + Math.sqrt((varY2-varY1)));
+	public float distancia(Punto punto2) {
+		return (float)Math.sqrt( (Math.pow(punto2.getVarX()-varX, 2)) + (Math.pow(punto2.getVarY()-varY, 2)) );
+	}
+
+	public float distancia(int varX2, int varY2) {
+		return (float)Math.sqrt( (Math.pow(varX2 - varX, 2)) + (Math.pow(varY2 - varY, 2)) );
 	}
 }
