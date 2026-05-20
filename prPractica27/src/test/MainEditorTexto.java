@@ -17,8 +17,10 @@ public class MainEditorTexto {
 //		miVista.control(ctr);
 
 		// Crearemos un JFrame
-		JFrame ventana = new JFrame("Venta de billetes de tren");
+		JFrame ventana = new JFrame("Editor de texto");
 
+		ventana.setJMenuBar(miVista.getMbBarraMenu());
+		
 		ventana.setContentPane(miVista);
 		ventana.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		ventana.pack();
@@ -26,5 +28,5 @@ public class MainEditorTexto {
 		ventana.setLocationRelativeTo(null);
 		ventana.setVisible(true);
 	}
-	
+
 }

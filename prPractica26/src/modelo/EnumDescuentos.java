@@ -36,4 +36,12 @@ public enum EnumDescuentos {
 	public String getDescripcion() {return this.descripcion;}
 	public int getDescuento() {return this.descuento;}
 
+	/**
+	 * toString
+	 */
+	@Override
+	public String toString() {
+		return this.descripcion;
+	}
+
 }

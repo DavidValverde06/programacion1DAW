@@ -1,0 +1,8 @@
+BilleteTrenFamiliar
+	Origen: 100.0, 100.0
+	Destino: 200.0, 200.0
+	Descuento aplicado: 40% (Universitario)
+	Distancia: 141.42136
+	Coste del billete: 10 € y 18 céntimos
+	Descuento extra por familia: 25%
+	Familiar: David

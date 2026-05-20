@@ -1,0 +1,6 @@
+BilleteTren
+	Origen: 120.0, 200.0
+	Destino: 120.0, 220.0
+	Descuento aplicado: 50% (Menor de 12 años)
+	Distancia: 20.0
+	Coste del billete: 2 € y 0 céntimos

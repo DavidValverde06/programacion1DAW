@@ -26,9 +26,10 @@ public class BilleteTrenFamiliar extends BilleteTren {
 	}
 
 	/**
-	 * Getter's
+	 * Getter's y Setter's
 	 */
 	public String getNombreViajero() {return nombreViajero;}
+	public void setNombreViajero(String nombreViajero) {this.nombreViajero = nombreViajero;}
 
 	/**
 	 * toString 
@@ -42,7 +43,7 @@ public class BilleteTrenFamiliar extends BilleteTren {
 
 	@Override
 	public float calculaPrecio() {
-		return super.calculaPrecio() - (super.calculaPrecio() * (PORCENTAJE_DESCUENTO / 100));
+		return super.calculaPrecio() * (1 - PORCENTAJE_DESCUENTO / 100f);
 	}
 
 }

@@ -15,7 +15,7 @@ public class Vista extends JPanel {
 	 */
 	private JButton bCalcular,bCancelar,bVender;
 	private JTextField tfCoordenadaOrigenX,tfCoordenadaOrigenY,tfCoordenadaDestinoX,tfCoordenadaDestinoY;
-	private JComboBox<String> comboDescuentos;
+	private JComboBox<EnumDescuentos> comboDescuentos;
 	private JCheckBox chBilleteFamiliar;
 	private JLabel labelNumeroDistancia,labelNumeroPrecioBillete,labelDescuentoBillete;
 
@@ -77,7 +77,7 @@ public class Vista extends JPanel {
 		JLabel lDistanciaTexto = new JLabel("Distancia: ");
 		lDistanciaTexto.setHorizontalAlignment(JTextField.RIGHT);
 
-		labelNumeroDistancia = new JLabel("0.00");
+		labelNumeroDistancia = new JLabel("0.0");
 		lDistanciaTexto.setHorizontalAlignment(JTextField.LEFT);
 
 		JLabel lDistanciaKilometro = new JLabel("km");
@@ -93,15 +93,11 @@ public class Vista extends JPanel {
 		JLabel lPrecioBilleteTexto = new JLabel("Precio Billete: ");
 		lPrecioBilleteTexto.setHorizontalAlignment(JTextField.RIGHT);
 
-		labelNumeroPrecioBillete = new JLabel("0");
+		labelNumeroPrecioBillete = new JLabel("0 € y 0 céntimos");
 		labelNumeroPrecioBillete.setHorizontalAlignment(JTextField.LEFT);
-
-		JLabel lPrecioBilleteEuro = new JLabel("€");
-		lPrecioBilleteEuro.setHorizontalAlignment(JTextField.LEFT);
 
 		subpanelPrecio.add(lPrecioBilleteTexto);
 		subpanelPrecio.add(labelNumeroPrecioBillete);
-		subpanelPrecio.add(lPrecioBilleteEuro);
 
 		// Añadir todo al panel Distancia Precio Pagar;
 		panelDistanciaPrecioPagar.add(subpanelDistancia);
@@ -118,15 +114,7 @@ public class Vista extends JPanel {
 		ponerBordePanel(panelPosiblesDescuentos, "Posibles descuentos");
 
 		JLabel lTipoDescuento = new JLabel("Tipo descuento");
-
-		String[] descuentos = new String[EnumDescuentos.values().length];
-
-		for (int cont=0;cont<EnumDescuentos.values().length;cont++) {
-			descuentos[cont] = EnumDescuentos.values()[cont].getDescripcion();
-		}
-
-		comboDescuentos = new JComboBox<>(descuentos);
-
+		comboDescuentos = new JComboBox<>(EnumDescuentos.values());
 		chBilleteFamiliar = new JCheckBox("Billete familiar");
 		JLabel lDescuento = new JLabel("Descuento a aplicar: ");
 		labelDescuentoBillete = new JLabel("0");
@@ -253,7 +241,7 @@ public class Vista extends JPanel {
 		return tfCoordenadaDestinoY;
 	}
 
-	public JComboBox<String> getComboDescuentos() {
+	public JComboBox<EnumDescuentos> getComboDescuentos() {
 		return comboDescuentos;
 	}
 
@@ -301,7 +289,7 @@ public class Vista extends JPanel {
 		this.tfCoordenadaDestinoY = tfCoordenadaDestinoY;
 	}
 
-	public void setComboDescuentos(JComboBox<String> comboDescuentos) {
+	public void setComboDescuentos(JComboBox<EnumDescuentos> comboDescuentos) {
 		this.comboDescuentos = comboDescuentos;
 	}
 
@@ -333,7 +321,7 @@ public class Vista extends JPanel {
 
 		// CheckBox
 		chBilleteFamiliar.addActionListener(ctr);
-		
+
 		// ComboBox
 		comboDescuentos.addItemListener(ctr);
 	}

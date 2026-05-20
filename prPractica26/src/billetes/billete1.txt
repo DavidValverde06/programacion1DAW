@@ -1,0 +1,6 @@
+BilleteTren
+	Origen: 0.0, 0.0
+	Destino: 0.0, 0.0
+	Descuento aplicado: 0% (Sin descuento)
+	Distancia: 0.0
+	Coste del billete: 0 € y 0 céntimos
