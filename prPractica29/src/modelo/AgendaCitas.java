@@ -29,8 +29,8 @@ public class AgendaCitas {
 	/**
 	 * Constructor
 	 */
-	public AgendaCitas(List<CitaMedica> listaCitas) {
-		this.listaCitas = listaCitas;
+	public AgendaCitas() {
+		this.listaCitas = new ArrayList<>();
 	}
 
 	/**

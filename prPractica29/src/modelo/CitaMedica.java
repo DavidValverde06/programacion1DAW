@@ -42,17 +42,17 @@ public class CitaMedica {
 	 * Variables de instancia
 	 */
 	private int prioridadCita;
-	private int numSeguridadSocial;
+	private String numSeguridadSocial;
 	private String nombrePaciente;
-	private SortedSet<String> coleccionMotivos;
+	private ArrayList<String> coleccionMotivos;
 	private String especialista;
 	private Calendar horaVisita;
 
 	/**
 	 * Constructor sobrecargado
 	 */
-	public CitaMedica(int prioridadCita, int numSeguridadSocial, String nombrePaciente,
-			SortedSet<String> coleccionMotivos, String especialista, String horaVisita) {
+	public CitaMedica(int prioridadCita, String numSeguridadSocial, String nombrePaciente,
+			ArrayList<String> coleccionMotivos, String especialista, String horaVisita) {
 		this.prioridadCita = prioridadCita;
 		this.numSeguridadSocial = numSeguridadSocial;
 		this.nombrePaciente = nombrePaciente;
@@ -61,8 +61,8 @@ public class CitaMedica {
 		this.horaVisita = convierteHoraStringACalendar(horaVisita);
 	}
 
-	public CitaMedica(int numSeguridadSocial, String nombrePaciente,
-			SortedSet<String> coleccionMotivos, String especialista, String horaVisita) {
+	public CitaMedica(String numSeguridadSocial, String nombrePaciente,
+			ArrayList<String> coleccionMotivos, String especialista, String horaVisita) {
 		this.prioridadCita = 0;
 		this.numSeguridadSocial = numSeguridadSocial;
 		this.nombrePaciente = nombrePaciente;
@@ -75,9 +75,9 @@ public class CitaMedica {
 	 * Getter's
 	 */
 	public int getPrioridadCita() {return prioridadCita;}
-	public int getNumSeguridadSocial() {return numSeguridadSocial;}
+	public String getNumSeguridadSocial() {return numSeguridadSocial;}
 	public String getNombrePaciente() {return nombrePaciente;}
-	public SortedSet<String> getColeccionMotivos() {return coleccionMotivos;}
+	public ArrayList<String> getColeccionMotivos() {return coleccionMotivos;}
 	public String getEspecialista() {return especialista;}
 	public Calendar getHoraVisita() {return horaVisita;}
 
@@ -93,12 +93,13 @@ public class CitaMedica {
 	 * 150).
 	 */
 	public float devuelvePrecioCita() {
-		float precio=0;
+		float precio=100;
 		if (!this.especialista.equalsIgnoreCase("Medicina General")) {
 			precio+=30;
 		}
 
 		switch (this.prioridadCita) {
+		case 0 -> precio+=0;
 		case 1 -> precio+=50;
 		case 2 -> precio+=100;
 		case 3 -> precio+=150;

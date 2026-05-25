@@ -1,10 +1,10 @@
 package vista;
 
 import java.awt.*;
+import java.text.*;
 import javax.swing.*;
 import javax.swing.border.*;
-
-import controlador.Controlador;
+import controlador.*;
 
 public class Vista extends JPanel {
 
@@ -114,6 +114,7 @@ public class Vista extends JPanel {
 
 		JLabel labelTipoCita = new JLabel("Tipo de cita: ",JLabel.RIGHT);
 		rbNormal = new JRadioButton("Normal");
+		rbNormal.setSelected(true);
 		rbUrgente = new JRadioButton("Urgente");
 		JPanel panelBotones = new JPanel();
 		ButtonGroup grupoBotones = new ButtonGroup();
@@ -124,7 +125,9 @@ public class Vista extends JPanel {
 
 		JLabel labelPrioridad = new JLabel("Prioridad: ",JLabel.RIGHT);
 		JPanel panelPrioridad = new JPanel(new FlowLayout(FlowLayout.LEFT));
-		cbPrioridad = new JComboBox<Integer>();
+		Integer[] numPrioridad = {1,2,3,4};
+		cbPrioridad = new JComboBox<Integer>(numPrioridad);
+		cbPrioridad.setEnabled(false);
 		panelPrioridad.add(cbPrioridad);
 
 		JLabel labelEspecialidad = new JLabel("Especialidad: ",JLabel.RIGHT);
@@ -139,6 +142,13 @@ public class Vista extends JPanel {
 		JLabel labelHoraVisita = new JLabel("Hora visita: ",JLabel.RIGHT);
 		JPanel panelHora = new JPanel(new FlowLayout(FlowLayout.LEFT));
 		cbHoraVisita = new JComboBox<String>();
+
+		DecimalFormat formateador = new DecimalFormat("00");
+		for (int hora=8;hora<20;hora++) {
+			for (int min=0;min<=50;min+=10) {
+				cbHoraVisita.addItem(formateador.format(hora) + ":" + formateador.format(min));
+			}
+		}
 		panelHora.add(cbHoraVisita);
 
 		datosCita.add(labelTipoCita);

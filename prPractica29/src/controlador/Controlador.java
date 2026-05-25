@@ -1,7 +1,15 @@
 package controlador;
 
+import java.awt.*;
+import java.util.List;
 import java.awt.event.*;
-import vista.Vista;
+import java.io.*;
+import java.nio.file.Path;
+import java.util.*;
+import javax.swing.*;
+import javax.swing.table.*;
+import modelo.*;
+import vista.*;
 
 /**
  * C) Una vez que tenemos el modelo (clases anteriores) definido y probado (probar en consola el
@@ -35,18 +43,29 @@ import vista.Vista;
  * continuación las citas (podéis usar el formato de toString
  * para guardar las citas, cada cita en una fila nueva).
  */
-public class Controlador implements ActionListener, ItemListener{
+public class Controlador implements ActionListener, ItemListener {
 
 	/**
 	 * Variables de instancia
 	 */
 	private Vista miVista;
+	private JFrame f;
+	private CitaMedica miCita;
+	private AgendaCitas miAgenda;
 
 	/**
 	 * Constructor
 	 */
-	public Controlador(Vista miVista) {
+	public Controlador(Vista miVista, JFrame f) {
 		this.miVista = miVista;
+		this.f = f;
+		this.miAgenda = new AgendaCitas();
+		miVista.getCbEspecialidad().setModel(new DefaultComboBoxModel<>(cargarEspecialidades()));
+		DefaultListModel<String> modeloMotivos = new DefaultListModel<>();
+		for (String motivo : cargarMotivosConsulta()) {
+			modeloMotivos.addElement(motivo);
+		}
+		miVista.getListMotivoCita().setModel(modeloMotivos);
 	}
 
 	@Override
@@ -57,14 +76,178 @@ public class Controlador implements ActionListener, ItemListener{
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
+		/**
+		 * a. Si pulsamos sobre el radio de Tipo de cita y seleccionamos Urgente, se habilitará el ComboBox de
+		 * Prioridades, en caso de cita Normal, dicho combo estará deshabilitado.
+		 */
+		if (e.getSource()==miVista.getRbUrgente()) {
+			miVista.getCbPrioridad().setEnabled(true);
+		}
+		else if (e.getSource()==miVista.getRbNormal()) {
+			miVista.getCbPrioridad().setEnabled(false);
+		}
+
+		/**
+		 * b. Si se pulsa el botón “Añadir cita”, se recogerán los datos del
+		 * paciente y se añadirá a nuestra agenda. Tras lo cual nos
+		 * mostrará un pequeño mensaje como el que se muestra en la
+		 * imagen.
+		 */
+		else if (e.getSource()==miVista.getbAnadirCita()) {
+
+			List<String> motivos = miVista.getListMotivoCita().getSelectedValuesList();
+
+			if (miVista.getRbNormal().isSelected()) {
+				miCita = new CitaMedica(
+						miVista.getTfSeguridadSocial().getText(),
+						miVista.getTfNombrePaciente().getText(),
+						(ArrayList<String>) motivos,
+						miVista.getCbEspecialidad().getSelectedItem().toString(),
+						miVista.getCbHoraVisita().getSelectedItem().toString() + ":00");
+
+				miAgenda.añadirCita(miCita);
+			}
+			else {
+				//miCita = new CitaMedica(0, 0, null, null, null, null);
+			}
+
+			if (miCita instanceof CitaMedica) {
+				JOptionPane.showMessageDialog(miVista, "Cita creada", "Información", 1);
+			}
+			else {
+				JOptionPane.showMessageDialog(miVista, "Rellena los datos", "Error", 0);
+			}
+		}
 
 		/**
 		 * c. Si se pulsa el botón “Cancelar”, se limpiará todo el formulario
 		 * y se dejará como al principio.
 		 */
-		if (e.getSource()==miVista.getbCancelar()) {
-			System.out.println("Cancelar");
+		else if (e.getSource()==miVista.getbCancelar()) {
+			cancelar();
 		}
+
+		/**
+		 * d. Si se pulsa el botón “Ver lista citas”, nos mostrará todos las citas de nuestra agenda en un
+		 * formato similar al que se muestra en la imagen 2 que tenéis un poco más abajo. Se facilita el
+		 * método que proporciona el JTable con todos los datos de las citas recogidas en vuestra colección
+		 * (puede que tengáis que ajustar los nombres de algún método a los de vuestro modelo).
+		 */
+		else if (e.getSource()==miVista.getbListaCitas()) {
+			listar();
+		}
+	}
+
+	private void cancelar() {
+		miVista.getRbNormal().setSelected(true);
+		miVista.getCbPrioridad().setSelectedIndex(0);
+		miVista.getCbPrioridad().setEnabled(false);
+		miVista.getCbEspecialidad().setSelectedIndex(0);
+		miVista.getTfSeguridadSocial().setText("");
+		miVista.getTfNombrePaciente().setText("");
+		miVista.getCbHoraVisita().setSelectedIndex(0);
+		miVista.getListMotivoCita().setSelectedIndex(0);
+		miVista.getListMotivoCita().ensureIndexIsVisible(0);
+	}
+
+	private void listar() {
+		// Usar la lista ORDENADA que devuelve el método
+		List<CitaMedica> listaOrdenada = miAgenda.ordenarAgendaMedica();
+
+		if (listaOrdenada.isEmpty()) {
+			JOptionPane.showMessageDialog(miVista, "No hay citas que mostrar", "Aviso", JOptionPane.WARNING_MESSAGE);
+			return;
+		}
+
+		JDialog d = new JDialog(f, "Listado de citas", true);
+		d.setLayout(new FlowLayout());
+
+		String[] nombreColumnas = {"Prioridad", "Hora", "Num SS", "Nombre", "Motivos consulta", "Especialista", "Precio"};
+
+		String[][] datos2 = new String[listaOrdenada.size()][7];
+		for (int i = 0; i < listaOrdenada.size(); i++) {
+			CitaMedica cita = listaOrdenada.get(i);
+			datos2[i][0] = Byte.toString((byte) cita.getPrioridadCita());
+			datos2[i][1] = LibreriaFechas.toStringHora(cita.getHoraVisita());
+			datos2[i][2] = String.valueOf(cita.getNumSeguridadSocial());
+			datos2[i][3] = cita.getNombrePaciente();
+			datos2[i][4] = cita.getColeccionMotivos().toString();
+			datos2[i][5] = cita.getEspecialista();
+			datos2[i][6] = Integer.toString((int) cita.devuelvePrecioCita());
+		}
+
+		// Creaci�n de un JTable
+		JTable tablaResultados = new JTable(datos2,nombreColumnas);
+
+		// Obtener el modelo asociado a las columnas
+		TableColumnModel columnModel = tablaResultados.getColumnModel();
+
+		// Centrar algunas columnas en la tabla de resultados
+		DefaultTableCellRenderer tcr = new DefaultTableCellRenderer();
+		tcr.setHorizontalAlignment(DefaultTableCellRenderer.CENTER);
+		columnModel.getColumn(0).setCellRenderer(tcr);
+		columnModel.getColumn(1).setCellRenderer(tcr);
+		columnModel.getColumn(6).setCellRenderer(tcr);
+
+		// Establecer diferententes tama�os para las columnas
+		columnModel.getColumn(0).setPreferredWidth(70);
+		columnModel.getColumn(1).setPreferredWidth(70);
+		columnModel.getColumn(2).setPreferredWidth(90);
+		columnModel.getColumn(3).setPreferredWidth(150);
+		columnModel.getColumn(4).setPreferredWidth(220);
+		columnModel.getColumn(5).setPreferredWidth(130);
+		columnModel.getColumn(6).setPreferredWidth(70);
+
+		// Colocar el JTable en un scrollPane
+		JScrollPane sp = new JScrollPane(tablaResultados);
+		sp.setPreferredSize(new Dimension(800,200));
+
+		d.add(sp);
+
+		d.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
+		d.pack();  
+		d.setVisible(true);   // Para mostrar el dialogo
+		d.setResizable(false);
+	}
+
+	/**
+	 * Método para cargar las especialidades desde un fichero
+	 */
+	public String[] cargarEspecialidades() {
+		String especialidad;
+		List<String> coleccionEspecialidades = new ArrayList<String>();
+		try (BufferedReader flujoLectura = new BufferedReader(new FileReader(Path.of("./src/recursos/especialidades").toFile()))) {
+			while ((especialidad = flujoLectura.readLine()) != null) {
+				coleccionEspecialidades.add(especialidad);
+			}
+		}
+		catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
+		catch (IOException e) {
+			e.printStackTrace();
+		}
+		return coleccionEspecialidades.toArray(new String[0]);
+	}
+
+	/**
+	 * Método para cargar los motivos de consulta desde un fichero
+	 */
+	public String[] cargarMotivosConsulta() {
+		String motivo;
+		List<String> coleccionMotivos = new ArrayList<String>();
+		try (BufferedReader flujoLectura = new BufferedReader(new FileReader(Path.of("./src/recursos/MotivosConsulta").toFile()))) {
+			while ((motivo = flujoLectura.readLine()) != null) {
+				coleccionMotivos.add(motivo);
+			}
+		}
+		catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
+		catch (IOException e) {
+			e.printStackTrace();
+		}
+		return coleccionMotivos.toArray(new String[0]);
 	}
 
 }

@@ -10,14 +10,14 @@ public class MainAgendaMedica {
 		// Crear un objeto de la clase Vista
 		Vista miVista = new Vista();
 
+		// Crearemos un JFrame
+		JFrame ventana = new JFrame("Consulta médica");
+
 		// Crear un objeto de la Clase Controlador
-		Controlador ctr = new Controlador(miVista);
+		Controlador ctr = new Controlador(miVista, ventana);
 
 		// Llamar al método que da control a los componentes
 		miVista.control(ctr);
-
-		// Crearemos un JFrame
-		JFrame ventana = new JFrame("Consulta médica");
 
 		ventana.setContentPane(miVista);
 		ventana.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
