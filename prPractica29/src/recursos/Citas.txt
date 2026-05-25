@@ -1,11 +1,11 @@
 lunes 13 de mayo de 2019
 1 - 16:20:00 - 1212234234 - Francisco Fuentes - [Protocolo infarto, Protocolo peritonitis] - Medicina General - 150
-0 - 16:30:00 - 122211122 - Luis Mora Aguilera - [Dolor agudo estomacal] - NeurologÌa - 130
+0 - 16:30:00 - 122211122 - Luis Mora Aguilera - [Dolor agudo estomacal] - Neurolog√≠a - 130
 lunes 13 de mayo de 2019
-2 - 17:10:00 - 89797979 - Francisco GarcÌa - [Sin especificar, Insuficiencia respiratoria, DesorientaciÛn] - Medicina General - 200
+2 - 17:10:00 - 89797979 - Francisco Garc√≠a - [Sin especificar, Insuficiencia respiratoria, Desorientaci√≥n] - Medicina General - 200
 lunes 13 de mayo de 2019
 2 - 16:00:00 - 787676868 - Pepe Morgado - [Sin especificar] - Medicina General - 200
 0 - 20:20:00 - 436356757 - Jorge Porras - [Protocolo peritonitis] - Medicina General - 100
 lunes 13 de mayo de 2019
-0 - 16:00:00 - 7876543534 - Juan Alv·rez - [Posible fractura hueso] - TraumatologÌa - 130
+0 - 16:00:00 - 7876543534 - Juan Alv√°rez - [Posible fractura hueso] - Traumatolog√≠a - 130
 0 - 16:00:00 -  -  - [Sin especificar] - Medicina General - 100

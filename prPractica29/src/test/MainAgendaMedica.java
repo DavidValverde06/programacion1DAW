@@ -1,13 +1,12 @@
 package test;
 
-import javax.swing.*;
-import controlador.*;
-import vista.*;
+import javax.swing.JFrame;
+import controlador.Controlador;
+import vista.Vista;
 
-public class MainEditorTexto {
+public class MainAgendaMedica {
 
 	public static void main(String[] args) {
-
 		// Crear un objeto de la clase Vista
 		Vista miVista = new Vista();
 
@@ -18,14 +17,12 @@ public class MainEditorTexto {
 		miVista.control(ctr);
 
 		// Crearemos un JFrame
-		JFrame ventana = new JFrame("Editor de texto");
+		JFrame ventana = new JFrame("Consulta médica");
 
-		ventana.setJMenuBar(miVista.getMbBarraMenu());
 		ventana.setContentPane(miVista);
 		ventana.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		ventana.pack();
-		ventana.setSize(1000,500);
-		// ventana.setExtendedState(Frame.MAXIMIZED_BOTH);
+		// ventana.setSize(250,230);
 		ventana.setLocationRelativeTo(null);
 		ventana.setVisible(true);
 	}
