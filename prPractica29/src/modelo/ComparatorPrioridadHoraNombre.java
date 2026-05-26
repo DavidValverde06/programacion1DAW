@@ -6,7 +6,7 @@ public class ComparatorPrioridadHoraNombre implements Comparator<CitaMedica>{
 
 	@Override
 	public int compare(CitaMedica o1, CitaMedica o2) {
-		int compara = Integer.compare(o1.getPrioridadCita(), o2.getPrioridadCita());
+		int compara = Integer.compare(o2.getPrioridadCita(), o1.getPrioridadCita());
 		if (compara!=0) {
 			return compara;
 		}

@@ -5,6 +5,7 @@ import java.util.List;
 import java.awt.event.*;
 import java.io.*;
 import java.nio.file.Path;
+import java.text.SimpleDateFormat;
 import java.util.*;
 import javax.swing.*;
 import javax.swing.table.*;
@@ -43,7 +44,7 @@ import vista.*;
  * continuación las citas (podéis usar el formato de toString
  * para guardar las citas, cada cita en una fila nueva).
  */
-public class Controlador implements ActionListener, ItemListener {
+public class Controlador implements ActionListener {
 
 	/**
 	 * Variables de instancia
@@ -60,18 +61,14 @@ public class Controlador implements ActionListener, ItemListener {
 		this.miVista = miVista;
 		this.f = f;
 		this.miAgenda = new AgendaCitas();
+
 		miVista.getCbEspecialidad().setModel(new DefaultComboBoxModel<>(cargarEspecialidades()));
+
 		DefaultListModel<String> modeloMotivos = new DefaultListModel<>();
 		for (String motivo : cargarMotivosConsulta()) {
 			modeloMotivos.addElement(motivo);
 		}
 		miVista.getListMotivoCita().setModel(modeloMotivos);
-	}
-
-	@Override
-	public void itemStateChanged(ItemEvent e) {
-		// TODO Auto-generated method stub
-
 	}
 
 	@Override
@@ -95,28 +92,38 @@ public class Controlador implements ActionListener, ItemListener {
 		 */
 		else if (e.getSource()==miVista.getbAnadirCita()) {
 
+			if (miVista.getTfNombrePaciente().getText().isEmpty() || miVista.getTfSeguridadSocial().getText().isEmpty()) {
+				JOptionPane.showMessageDialog(miVista, "Rellena los datos", "Error", 0);
+				return;
+			}
+
 			List<String> motivos = miVista.getListMotivoCita().getSelectedValuesList();
+			ArrayList<String> motivosLista = new ArrayList<>(motivos);
 
 			if (miVista.getRbNormal().isSelected()) {
 				miCita = new CitaMedica(
 						miVista.getTfSeguridadSocial().getText(),
 						miVista.getTfNombrePaciente().getText(),
-						(ArrayList<String>) motivos,
+						motivosLista,
 						miVista.getCbEspecialidad().getSelectedItem().toString(),
 						miVista.getCbHoraVisita().getSelectedItem().toString() + ":00");
 
 				miAgenda.añadirCita(miCita);
-			}
-			else {
-				//miCita = new CitaMedica(0, 0, null, null, null, null);
-			}
-
-			if (miCita instanceof CitaMedica) {
 				JOptionPane.showMessageDialog(miVista, "Cita creada", "Información", 1);
 			}
 			else {
-				JOptionPane.showMessageDialog(miVista, "Rellena los datos", "Error", 0);
+				miCita = new CitaMedica(
+						Integer.valueOf(miVista.getCbPrioridad().getSelectedItem().toString()),
+						miVista.getTfSeguridadSocial().getText(),
+						miVista.getTfNombrePaciente().getText(),
+						motivosLista,
+						miVista.getCbEspecialidad().getSelectedItem().toString(),
+						miVista.getCbHoraVisita().getSelectedItem().toString() + ":00");
+
+				miAgenda.añadirCita(miCita);
+				JOptionPane.showMessageDialog(miVista, "Cita creada", "Información", 1);
 			}
+
 		}
 
 		/**
@@ -136,6 +143,7 @@ public class Controlador implements ActionListener, ItemListener {
 		else if (e.getSource()==miVista.getbListaCitas()) {
 			listar();
 		}
+
 	}
 
 	private void cancelar() {
@@ -151,7 +159,6 @@ public class Controlador implements ActionListener, ItemListener {
 	}
 
 	private void listar() {
-		// Usar la lista ORDENADA que devuelve el método
 		List<CitaMedica> listaOrdenada = miAgenda.ordenarAgendaMedica();
 
 		if (listaOrdenada.isEmpty()) {
@@ -176,7 +183,7 @@ public class Controlador implements ActionListener, ItemListener {
 			datos2[i][6] = Integer.toString((int) cita.devuelvePrecioCita());
 		}
 
-		// Creaci�n de un JTable
+		// Creación de un JTable
 		JTable tablaResultados = new JTable(datos2,nombreColumnas);
 
 		// Obtener el modelo asociado a las columnas
@@ -248,6 +255,52 @@ public class Controlador implements ActionListener, ItemListener {
 			e.printStackTrace();
 		}
 		return coleccionMotivos.toArray(new String[0]);
+	}
+
+	/**
+	 * e. Por último al pulsar el botón de cierre de nuestra
+	 * aplicación, debemos preguntar si desea volcar los datos
+	 * que actualmente se encuentran en la colección a un
+	 * fichero. En caso afirmativo los iremos añadiendo al
+	 * fichero Citas.txt, primero se añadirá la fecha actual y a
+	 * continuación las citas (podéis usar el formato de toString
+	 * para guardar las citas, cada cita en una fila nueva).
+	 */
+	public void cerrarVentana() {
+		f.addWindowListener(new WindowAdapter() {
+			@Override
+			public void windowClosing(WindowEvent e) {
+				int opcion = JOptionPane.showConfirmDialog(miVista,"¿Desea volcar las citas en un archivo?",
+						"Volcado datos",JOptionPane.YES_NO_OPTION);
+
+				if (opcion == JOptionPane.YES_OPTION) {
+					guardarCitas();
+				}
+				f.dispose();
+				System.exit(0);
+			}
+		});
+	}
+
+	private void guardarCitas() {
+		if (miAgenda.getListaCitas().isEmpty()) {
+			JOptionPane.showMessageDialog(miVista, "No hay citas que guardar", "Aviso", JOptionPane.WARNING_MESSAGE);
+			return;
+		}
+
+		try (BufferedWriter bw = new BufferedWriter(new FileWriter("./src/recursos/Citas.txt", true))) {
+			SimpleDateFormat sdf = new SimpleDateFormat("EEEE d 'de' MMMM 'de' yyyy", Locale.of("es", "ES"));
+			bw.write(sdf.format(new Date()));
+			bw.newLine();
+
+			for (CitaMedica cita : miAgenda.getListaCitas()) {
+				bw.write(cita.toString());
+				bw.newLine();
+			}
+		}
+		catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
 
 }

@@ -18,9 +18,10 @@ public class MainAgendaMedica {
 
 		// Llamar al método que da control a los componentes
 		miVista.control(ctr);
+		ctr.cerrarVentana();
 
 		ventana.setContentPane(miVista);
-		ventana.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		ventana.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
 		ventana.pack();
 		// ventana.setSize(250,230);
 		ventana.setLocationRelativeTo(null);

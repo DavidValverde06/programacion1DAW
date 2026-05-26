@@ -125,7 +125,7 @@ public class Vista extends JPanel {
 
 		JLabel labelPrioridad = new JLabel("Prioridad: ",JLabel.RIGHT);
 		JPanel panelPrioridad = new JPanel(new FlowLayout(FlowLayout.LEFT));
-		Integer[] numPrioridad = {1,2,3,4};
+		Integer[] numPrioridad = {1,2,3};
 		cbPrioridad = new JComboBox<Integer>(numPrioridad);
 		cbPrioridad.setEnabled(false);
 		panelPrioridad.add(cbPrioridad);
@@ -182,14 +182,13 @@ public class Vista extends JPanel {
 
 	/**
 	 * Método para dar control a los componentes de la interfaz
-	 * @param ctr
 	 */
 	public void control(Controlador ctr) {
 		rbNormal.addActionListener(ctr);
 		rbUrgente.addActionListener(ctr);
-		cbPrioridad.addItemListener(ctr);
-		cbEspecialidad.addItemListener(ctr);
-		cbHoraVisita.addItemListener(ctr);
+		cbPrioridad.addActionListener(ctr);
+		cbEspecialidad.addActionListener(ctr);
+		cbHoraVisita.addActionListener(ctr);
 		bAnadirCita.addActionListener(ctr);
 		bCancelar.addActionListener(ctr);
 		bListaCitas.addActionListener(ctr);
