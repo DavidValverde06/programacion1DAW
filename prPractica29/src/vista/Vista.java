@@ -99,7 +99,7 @@ public class Vista extends JPanel {
 		JScrollPane scrollLista = new JScrollPane(listMotivoCita);
 		scrollLista.setPreferredSize(new Dimension(220, 80));
 		motivosCita.add(scrollLista);
-
+		
 		panelPrincipal.add(motivosCita);
 	}
 

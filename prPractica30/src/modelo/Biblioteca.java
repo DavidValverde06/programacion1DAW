@@ -39,23 +39,24 @@ public class Biblioteca implements InterfazBiblioteca {
 	 * - Tómense como ejemplo los ficheros clientes.txt y libros.txt proporcionados.
 	 */
 	public Biblioteca(String nombreFicheroClientes, String nombreFicheroLibros) {
+		this.usuariosBiblioteca = new HashSet<>();
+		this.librosDisponibles = new TreeSet<>();
+
 		try (BufferedReader flujoLecturaClientes = new BufferedReader(
-				new FileReader(Path.of("./src/recursos.files/" + nombreFicheroClientes).toFile()))) {
+				new FileReader(Path.of("./src/recursos/files/" + nombreFicheroClientes).toFile()))) {
 
 			String cadena;
 			while ((cadena = flujoLecturaClientes.readLine()) != null) {
 				this.usuariosBiblioteca.add(new Usuario(cadena));
 			}
 
-		}
-		catch (FileNotFoundException e) {
+		} catch (FileNotFoundException e) {
 			e.printStackTrace();
-		}
-		catch (IOException e) {
+		} catch (IOException e) {
 			e.printStackTrace();
 		}
 
-		try (Scanner sc = new Scanner(Path.of("./src/recursos.files/" + nombreFicheroLibros).toFile())) {
+		try (Scanner sc = new Scanner(Path.of("./src/recursos/files/" + nombreFicheroLibros).toFile())) {
 
 			while (sc.hasNextLine()) {
 				String linea = sc.nextLine().trim();
@@ -68,8 +69,7 @@ public class Biblioteca implements InterfazBiblioteca {
 				}
 			}
 
-		}
-		catch (FileNotFoundException e) {
+		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		}
 	}

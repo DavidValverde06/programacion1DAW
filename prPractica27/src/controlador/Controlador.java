@@ -75,7 +75,8 @@ public class Controlador implements ActionListener, ItemListener {
 
 
 		case "Salir":
-			int opcion = JOptionPane.showConfirmDialog(miVista, "¿Quieres salir del programa?");
+			int opcion = JOptionPane.showConfirmDialog(miVista,"¿Quieres salir del programa?",
+					"Salir",JOptionPane.YES_NO_OPTION);
 			if (opcion == JOptionPane.YES_OPTION) {
 				System.exit(0);
 			}

@@ -69,6 +69,7 @@ public class Controlador implements ActionListener {
 			modeloMotivos.addElement(motivo);
 		}
 		miVista.getListMotivoCita().setModel(modeloMotivos);
+		miVista.getListMotivoCita().setSelectedIndex(0);
 	}
 
 	@Override
