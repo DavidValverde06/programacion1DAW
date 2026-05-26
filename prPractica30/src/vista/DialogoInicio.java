@@ -22,19 +22,8 @@ public class DialogoInicio extends JDialog implements ActionListener {
 	 */
 	public DialogoInicio() {
 
-		this.setModal(true);
-		this.setTitle("Creación Biblioteca");
-		// this.setLayout(new BorderLayout(20,20));
-
-		/**
-		 * Panel Principal
-		 */
 		JPanel panelPrincipal = new JPanel();
 		panelPrincipal.setLayout(new BoxLayout(panelPrincipal, BoxLayout.Y_AXIS));
-
-		/**
-		 * Métodos para preparar el resto de paneles
-		 */
 		prepararPanelNorte(panelPrincipal);
 		prepararPanelSur(panelPrincipal);
 		control();
@@ -42,9 +31,11 @@ public class DialogoInicio extends JDialog implements ActionListener {
 		/**
 		 * Establecer tamaño, pack, ...
 		 */
+		this.setModal(true);
+		this.setTitle("Creación Biblioteca");
 		// this.setLocationRelativeTo(null);
 		this.setLocation(458, 220);
-		this.setPreferredSize(new Dimension(400,300));
+		// this.setPreferredSize(new Dimension(400,300));
 		this.pack();
 		this.setResizable(false);
 		this.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
@@ -55,25 +46,11 @@ public class DialogoInicio extends JDialog implements ActionListener {
 	/**
 	 * Getter's y Setter's
 	 */
-	public JTextField getTfFicheroLibros() {
-		return tfFicheroLibros;
-	}
-
-	public JTextField getTfFicheroClientes() {
-		return tfFicheroClientes;
-	}
-
-	public JButton getbCrearBibliotecaDatos() {
-		return bCrearBibliotecaDatos;
-	}
-
-	public JButton getbCrearBibliotecaSinDatos() {
-		return bCrearBibliotecaSinDatos;
-	}
-
-	public Biblioteca getMiBiblio() {
-		return miBiblio;
-	}
+	public JTextField getTfFicheroLibros() {return tfFicheroLibros;}
+	public JTextField getTfFicheroClientes() {return tfFicheroClientes;}
+	public JButton getbCrearBibliotecaDatos() {return bCrearBibliotecaDatos;}
+	public JButton getbCrearBibliotecaSinDatos() {return bCrearBibliotecaSinDatos;}
+	public Biblioteca getMiBiblio() {return miBiblio;}
 
 	/**
 	 * Método para Preparar el Panel Sur
@@ -89,24 +66,24 @@ public class DialogoInicio extends JDialog implements ActionListener {
 		panelPrincipal.add(panelSur);
 
 		this.add(panelPrincipal);
-
-		// Panel Vacio
-		JPanel panelVacio = new JPanel();
-		panelPrincipal.add(panelVacio);
 	}
 
 	/**
 	 * Método para Preparar el Panel Norte
 	 */
 	private void prepararPanelNorte(JPanel panelPrincipal) {
-		JPanel panelNorte = new JPanel();
+		JPanel panelNorte = new JPanel(new BorderLayout());
 		ponerBordePanel(panelNorte, "Creación Biblioteca a partir datos existentes");
+
 		JPanel panelGrid = new JPanel(new GridLayout(2,2,5,5));
 
 		JLabel labelLibros = new JLabel("Nombre fichero libros", JLabel.RIGHT);
-		tfFicheroLibros = new JTextField(17);
+		tfFicheroLibros = new JTextField(15);
 		JLabel labelClientes = new JLabel("Nombre fichero clientes", JLabel.RIGHT);
-		tfFicheroClientes = new JTextField(17);
+		tfFicheroClientes = new JTextField(15);
+
+		JPanel panelBoton = new JPanel();
+
 		bCrearBibliotecaDatos = new JButton("Crear Biblioteca");
 
 		/**
@@ -119,8 +96,11 @@ public class DialogoInicio extends JDialog implements ActionListener {
 		panelGrid.add(tfFicheroLibros);
 		panelGrid.add(labelClientes);
 		panelGrid.add(tfFicheroClientes);
+
+		panelBoton.add(bCrearBibliotecaDatos);
+
 		panelNorte.add(panelGrid);
-		panelNorte.add(bCrearBibliotecaDatos);
+		panelNorte.add(panelBoton, BorderLayout.SOUTH);
 
 		panelPrincipal.add(panelNorte);
 	}
@@ -159,7 +139,6 @@ public class DialogoInicio extends JDialog implements ActionListener {
 			}
 		}
 		else if (e.getSource()==bCrearBibliotecaSinDatos) {
-			// miBiblio = new Biblioteca(null, null);
 			JOptionPane.showMessageDialog(this, "Se ha creado una nueva Biblioteca vacía");
 			this.setVisible(false);
 		}
