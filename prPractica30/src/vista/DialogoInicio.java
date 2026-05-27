@@ -2,6 +2,9 @@ package vista;
 
 import java.awt.*;
 import java.awt.event.*;
+import java.util.HashSet;
+import java.util.TreeSet;
+
 import javax.swing.*;
 import javax.swing.border.*;
 import modelo.*;
@@ -44,7 +47,7 @@ public class DialogoInicio extends JDialog implements ActionListener {
 	}
 
 	/**
-	 * Getter's y Setter's
+	 * Getter's
 	 */
 	public JTextField getTfFicheroLibros() {return tfFicheroLibros;}
 	public JTextField getTfFicheroClientes() {return tfFicheroClientes;}
@@ -139,6 +142,7 @@ public class DialogoInicio extends JDialog implements ActionListener {
 			}
 		}
 		else if (e.getSource()==bCrearBibliotecaSinDatos) {
+			miBiblio = new Biblioteca(new HashSet<>(), new TreeSet<>());
 			JOptionPane.showMessageDialog(this, "Se ha creado una nueva Biblioteca vacía");
 			this.setVisible(false);
 		}

@@ -25,7 +25,7 @@ public class MainBiblioteca {
 		ventana.setContentPane(miVista);
 		ventana.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		ventana.pack();
-		// ventana.setSize(1000,500);
+		ventana.setSize(820,350);
 		// ventana.setExtendedState(Frame.MAXIMIZED_BOTH);
 		ventana.setLocationRelativeTo(null);
 		ventana.setVisible(true);

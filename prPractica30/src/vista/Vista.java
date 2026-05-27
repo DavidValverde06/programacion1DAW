@@ -3,8 +3,7 @@ package vista;
 import java.awt.*;
 import javax.swing.*;
 import javax.swing.border.*;
-
-import controlador.Controlador;
+import controlador.*;
 
 public class Vista extends JPanel {
 
@@ -13,6 +12,8 @@ public class Vista extends JPanel {
 	/**
 	 * Variables de instancia
 	 */
+	// Dialogo Inicio
+	private DialogoInicio dialogo;
 	// Pestañas
 	private JTabbedPane tabbedPane;
 	// Añadir Libros
@@ -38,7 +39,7 @@ public class Vista extends JPanel {
 	public Vista() {
 
 		// Crear un objeto de la clase DialogoInicio
-		DialogoInicio dialogo = new DialogoInicio();
+		dialogo = new DialogoInicio();
 
 		// Crear un TabbedPane (pestañas)
 		tabbedPane = new JTabbedPane();
@@ -50,23 +51,28 @@ public class Vista extends JPanel {
 
 		// Las pestañas empiezan a numerarse desde 0, 1, 2, ...
 
+		// Añadir Libros
 		tabbedPane.addTab("Añadir libros", preparaPanelAnadirLibros());
 		tabbedPane.setToolTipTextAt(0, "Permite añadir libros a la Biblioteca");
 		tabbedPane.setIconAt(0, new ImageIcon("./src/recursos/imagenes/IconoLibros.png"));
 		// Lo anterior lo repetiremos por cada pestaña
 
+		// Añadir Clientes
 		tabbedPane.addTab("Añadir clientes", preparaPanelAnadirClientes());
 		tabbedPane.setToolTipTextAt(1, "Permite añadir clientes a la Biblioteca");
 		tabbedPane.setIconAt(1, new ImageIcon("./src/recursos/imagenes/IconoClientes.png"));
 
+		// Libros Disponibles
 		tabbedPane.addTab("Libros disponibles", preparaPanelLibros());
 		tabbedPane.setToolTipTextAt(2, "Permite ver que libros hay en la Biblioteca");
 		tabbedPane.setIconAt(2, new ImageIcon("./src/recursos/imagenes/MontonLibros2.png"));
 
+		// Prestar Libros
 		tabbedPane.addTab("Préstamo de libros", preparaPanelPrestarLibros());
 		tabbedPane.setToolTipTextAt(3, "Permite sacar libros de la Biblioteca");
 		tabbedPane.setIconAt(3, new ImageIcon("./src/recursos/imagenes/Lector4.png"));
 
+		// Devolver Libros
 		tabbedPane.addTab("Devolución de libross", preparaPanelDevolverLibros());
 		tabbedPane.setToolTipTextAt(4, "Permite devolver libros a la Biblioteca");
 		tabbedPane.setIconAt(4, new ImageIcon("./src/recursos/imagenes/MontonLibros4.png"));
@@ -79,6 +85,93 @@ public class Vista extends JPanel {
 
 		// tabbedPane.setTabPlacement(JTabbedPane.LEFT); // Poner las pestañas en vertical
 
+	}
+
+	/**
+	 * Getter's
+	 */
+	public DialogoInicio getDialogo() {
+		return dialogo;
+	}
+
+	public JTabbedPane getTabbedPane() {
+		return tabbedPane;
+	}
+
+	public JTextField getTfCodigo() {
+		return tfCodigo;
+	}
+
+	public JTextField getTfTitulo() {
+		return tfTitulo;
+	}
+
+	public JTextField getTfEscritor() {
+		return tfEscritor;
+	}
+
+	public JTextArea getTaAreaPersonajes() {
+		return taAreaPersonajes;
+	}
+
+	public JButton getbAnadirLibro() {
+		return bAnadirLibro;
+	}
+
+	public JButton getbCancelarLibro() {
+		return bCancelarLibro;
+	}
+
+	public JTextField getTfNombreCliente() {
+		return tfNombreCliente;
+	}
+
+	public JButton getbAnadirCliente() {
+		return bAnadirCliente;
+	}
+
+	public JButton getbCancelarCliente() {
+		return bCancelarCliente;
+	}
+
+	public JTextArea getTaAreaLibros() {
+		return taAreaLibros;
+	}
+
+	public JButton getbActualizarLista() {
+		return bActualizarLista;
+	}
+
+	public JComboBox<String> getCbListadoClientesPrestar() {
+		return cbListadoClientesPrestar;
+	}
+
+	public JComboBox<String> getCbListadoLibrosPrestar() {
+		return cbListadoLibrosPrestar;
+	}
+
+	public JButton getbPrestar() {
+		return bPrestar;
+	}
+
+	public JButton getbCancelarPrestar() {
+		return bCancelarPrestar;
+	}
+
+	public JComboBox<String> getCbListadoClientesDevolver() {
+		return cbListadoClientesDevolver;
+	}
+
+	public JComboBox<String> getCbListadoLibrosDevolver() {
+		return cbListadoLibrosDevolver;
+	}
+
+	public JButton getbDevolver() {
+		return bDevolver;
+	}
+
+	public JButton getbCancelarDevolver() {
+		return bCancelarDevolver;
 	}
 
 	/**
@@ -129,7 +222,7 @@ public class Vista extends JPanel {
 		etiquetaImagen.setBackground(Color.white);
 		panelImagen.add(etiquetaImagen);
 
-		taAreaPersonajes = new JTextArea("<Nombre personajes separados por linea>");
+		taAreaPersonajes = new JTextArea("<Nombre personajes separados\npor líneas>");
 		taAreaPersonajes.setBackground(Color.white);
 		taAreaPersonajes.setBorder(new CompoundBorder(
 				new EmptyBorder(5,5,5,5),
@@ -221,6 +314,7 @@ public class Vista extends JPanel {
 
 		JLabel labelListadoClientes = new JLabel("Listado de clientes",JLabel.RIGHT);
 		cbListadoClientesPrestar = new JComboBox<String>();
+
 		JLabel labelListadoLibros = new JLabel("Listado de libros",JLabel.RIGHT);
 		cbListadoLibrosPrestar = new JComboBox<String>();
 
@@ -298,23 +392,25 @@ public class Vista extends JPanel {
 	 */
 	public void control(Controlador ctr) {
 		// Añadir libros
-	    bAnadirLibro.addActionListener(ctr);
-	    bCancelarLibro.addActionListener(ctr);
-	    // Añadir clientes
-	    bAnadirCliente.addActionListener(ctr);
-	    bCancelarCliente.addActionListener(ctr);
-	    // Libros disponibles
-	    bActualizarLista.addActionListener(ctr);
-	    // Préstamo de libros
-	    cbListadoClientesPrestar.addActionListener(ctr);
-	    cbListadoLibrosPrestar.addActionListener(ctr);
-	    bPrestar.addActionListener(ctr);
-	    bCancelarPrestar.addActionListener(ctr);
-	    // Devolución de libros
-	    cbListadoClientesDevolver.addActionListener(ctr);
-	    cbListadoLibrosDevolver.addActionListener(ctr);
-	    bDevolver.addActionListener(ctr);
-	    bCancelarDevolver.addActionListener(ctr);
+		bAnadirLibro.addActionListener(ctr);
+		bCancelarLibro.addActionListener(ctr);
+		// Añadir clientes
+		bAnadirCliente.addActionListener(ctr);
+		bCancelarCliente.addActionListener(ctr);
+		// Libros disponibles
+		bActualizarLista.addActionListener(ctr);
+		// Préstamo de libros
+		cbListadoClientesPrestar.addActionListener(ctr);
+		cbListadoLibrosPrestar.addActionListener(ctr);
+		bPrestar.addActionListener(ctr);
+		bCancelarPrestar.addActionListener(ctr);
+		// Devolución de libros
+		cbListadoClientesDevolver.addActionListener(ctr);
+		cbListadoLibrosDevolver.addActionListener(ctr);
+		bDevolver.addActionListener(ctr);
+		bCancelarDevolver.addActionListener(ctr);
+		// FocusListener
+		taAreaPersonajes.addFocusListener(ctr);
 	}
-	
+
 }
