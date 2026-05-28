@@ -32,7 +32,6 @@ public class DAOPelicula {
 	 * @throws ClassNotFoundException 
 	 */
 	public DAOPelicula() throws ClassNotFoundException, SQLException {
-
 		estableceConexion(); 	// Dar valor a la variable con (Connection)
 		crearStatement();  		// Dar valor a la variable stmt (Statement)
 		crearConsulta();  		// Dar valor a la variable rsNavegar (ResultSet)
@@ -46,7 +45,6 @@ public class DAOPelicula {
 	 * @throws ClassNotFoundException 
 	 */
 	public void estableceConexion() throws ClassNotFoundException, SQLException {
-
 		this.con = ConexionBaseDatos.getConnection();
 		System.out.println("CONEXIÓN ESTABLECIDA");
 	}
@@ -81,12 +79,10 @@ public class DAOPelicula {
 	 * @throws SQLException 
 	 */
 	public void crearConsulta() throws SQLException {
-
 		String sqlString = "SELECT * FROM cine.pelicula";
 
 		this.rsNavegar = stmt.executeQuery(sqlString);
 	}
-
 
 	/**
 	 * Método que cierra la conexión
@@ -239,7 +235,7 @@ public class DAOPelicula {
 	}
 
 	/**
-	 * Metodo que devuelve una coleccion con todos las peliculas que hay en la tabla pelicula
+	 * Metodo que devuelve una coleccion con todas las peliculas que hay en la tabla pelicula
 	 * 
 	 * @throws SQLException
 	 * @throws MiExcepcion
@@ -357,13 +353,15 @@ public class DAOPelicula {
 	public void printSQLException(SQLException ex) {
 
 		ex.printStackTrace(System.err);
-		System.err.println("SQLState: "+ex.getSQLState());
-		System.err.println("Error code: "+ex.getErrorCode());
-		System.err.println("Message: "+ex.getMessage());
+		System.err.println("SQLState: " + ex.getSQLState());
+		System.err.println("Error code: " + ex.getErrorCode());
+		System.err.println("Message: " + ex.getMessage());
 		Throwable t = ex.getCause();
+
 		while (t!=null) {
 			System.out.println("Cause: "+t);
 			t = t.getCause();
 		}
 	}
+
 }

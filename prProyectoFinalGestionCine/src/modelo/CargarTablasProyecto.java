@@ -30,21 +30,23 @@ public class CargarTablasProyecto {
 
 			// Metodo que carga datos en la tabla cliente a partir de un fichero
 			cargaTablaClientes(conexion);
-			
+
 		}
 		catch (SQLException e) {
+			System.out.println("Excepción SQL");
 			printSQLException(e);
 		}
 		catch (Exception e) {
+			System.out.println("Excepción");
 			e.printStackTrace();
 		}
+
 	}
 
 	/**
 	 * Añade datos desde un fichero a la tabla peliculas
 	 */
 	public static void cargaTablaPeliculas(Connection con) throws SQLException {
-
 		try (Scanner sc = new Scanner(Path.of("./files/peliculas.txt"),StandardCharsets.UTF_8)){
 
 			while (sc.hasNextLine()) {
@@ -78,7 +80,6 @@ public class CargarTablasProyecto {
 	 * Añade datos desde un fichero a la tabla salas
 	 */
 	public static void cargaTablaSalas(Connection con) throws SQLException {
-
 		try (Scanner sc = new Scanner(Path.of("./files/salas.txt"), StandardCharsets.UTF_8)) {
 
 			while (sc.hasNextLine()) {
@@ -109,7 +110,6 @@ public class CargarTablasProyecto {
 	 * Añade datos desde un fichero a la tabla sesiones
 	 */
 	public static void cargaTablaSesiones(Connection con) throws SQLException {
-
 		try (Scanner sc = new Scanner(Path.of("./files/sesiones.txt"), StandardCharsets.UTF_8)) {
 
 			while (sc.hasNextLine()) {
@@ -142,7 +142,6 @@ public class CargarTablasProyecto {
 	 * Añade datos desde un fichero a la tabla clientes
 	 */
 	public static void cargaTablaClientes(Connection con) throws SQLException {
-
 		try (Scanner sc = new Scanner(Path.of("./files/clientes.txt"), StandardCharsets.UTF_8)) {
 
 			while (sc.hasNextLine()) {
@@ -177,7 +176,6 @@ public class CargarTablasProyecto {
 	 * @param ex -- Excepcion SQL generada
 	 */
 	public static void printSQLException(SQLException ex) {
-
 		ex.printStackTrace(System.err);
 		System.err.println("SQLState: " + ex.getSQLState());
 		System.err.println("Error code: " + ex.getErrorCode());

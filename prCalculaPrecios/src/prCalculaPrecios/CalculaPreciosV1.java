@@ -334,11 +334,11 @@ public class CalculaPreciosV1 extends JFrame {
 		 * @param num
 		 * @return
 		 */
-		private double redondea(double num, int numDecimales) {
-			double aux1=Math.round(num*Math.pow(10,numDecimales));
-			double aux2=aux1/Math.pow(10,numDecimales);
-			return aux2;
-		}
+//		private double redondea(double num, int numDecimales) {
+//			double aux1=Math.round(num*Math.pow(10,numDecimales));
+//			double aux2=aux1/Math.pow(10,numDecimales);
+//			return aux2;
+//		}
 
 
 		/**
