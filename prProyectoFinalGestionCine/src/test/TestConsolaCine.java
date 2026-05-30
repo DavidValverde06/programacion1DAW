@@ -18,6 +18,16 @@ public class TestConsolaCine {
 	public static void main(String[] args) {
 
 		try {
+			// Pedir credenciales al inicio
+			System.out.print("Usuario: ");
+			String usuario = sc.nextLine();
+			System.out.print("Contraseña: ");
+			String password = sc.nextLine();
+
+			// Establecer conexión con las credenciales introducidas
+			ConexionBaseDatos.getConnection(usuario, password);
+			System.out.println("Sesión iniciada correctamente");
+
 			daoPeli = new DAOPelicula();
 			daoSesion = new DAOSesion();
 
@@ -113,18 +123,20 @@ public class TestConsolaCine {
 
 		do {
 			System.out.println("\n--- GESTIÓN CONSULTAS ---");
-			System.out.println("1. Sesiones de una pelicula");
-			System.out.println("2. Sesiones de hoy");
-			System.out.println("3. Sesiones por tipo de sala");
+			System.out.println("1. Todas las sesiones");
+			System.out.println("2. Sesiones de una pelicula");
+			System.out.println("3. Sesiones de hoy");
+			System.out.println("4. Sesiones por tipo de sala");
 			System.out.println("0. Volver atrás\n");
 
 			System.out.print("Elige una opcion: ");
 			opcion = sc.nextInt();
 
 			switch (opcion) {
-			case 1 -> consultaSesionesPelicula();
-			case 2 -> consultaSesionesHoy();
-			case 3 -> consultaSesionesSala();
+			case 1 -> consultaTodasSesiones();
+			case 2 -> consultaSesionesPelicula();
+			case 3 -> consultaSesionesHoy();
+			case 4 -> consultaSesionesSala();
 			case 0 -> System.out.println("Volviendo al menu principal...");
 			default -> System.out.println("Opcion no valida");
 			}
@@ -371,6 +383,13 @@ public class TestConsolaCine {
 	// =========
 	// Consultas
 	// =========
+
+	/**
+	 * Método para consultar todas las sesiones
+	 */
+	private static void consultaTodasSesiones() throws SQLException {
+		imprimirTabla(daoSesion.todasLasSesiones());
+	}
 
 	/**
 	 * Método para consultar todas las sesiones de una pelicula buscando por ID

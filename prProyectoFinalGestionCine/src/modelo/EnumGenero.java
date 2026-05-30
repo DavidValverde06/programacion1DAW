@@ -3,7 +3,7 @@ package modelo;
 public enum EnumGenero {
 
 	DRAMA("Drama"),
-	COMEDIA("Ciencia"),
+	COMEDIA("Comedia"),
 	ACCION("Accion"),
 	TERROR("Terror"),
 	CIENCIA_FICCION("Ciencia ficción"),

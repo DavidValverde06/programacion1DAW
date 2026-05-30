@@ -2,8 +2,11 @@ package vista;
 
 import java.awt.*;
 import java.awt.event.*;
+import java.sql.*;
 import javax.swing.*;
 import javax.swing.border.*;
+
+import modelo.ConexionBaseDatos;
 
 public class DialogoInicial extends JDialog implements ActionListener {
 
@@ -12,11 +15,17 @@ public class DialogoInicial extends JDialog implements ActionListener {
 	/**
 	 * Variables de instancia
 	 */
+	private JFrame framePrincipal;
 	private JButton bIniciarSesion,bSalir;
 	private JTextField tfUsuario,tfPassword;
 	private JCheckBox chRecordarme;
 
-	public DialogoInicial() {
+	/**
+	 * Constructor
+	 */
+	public DialogoInicial(JFrame frame) {
+
+		this.framePrincipal = frame;
 
 		JPanel panelPrincipal = new JPanel(new GridLayout(1,2));
 
@@ -40,8 +49,9 @@ public class DialogoInicial extends JDialog implements ActionListener {
 	}
 
 	/**
-	 * Getter's
+	 * Métodos Getter
 	 */
+	public JFrame getFramePrincipal() {return framePrincipal;}
 	public JButton getbIniciarSesion() {return bIniciarSesion;}
 	public JButton getbSalir() {return bSalir;}
 	public JTextField getTfUsuario() {return tfUsuario;}
@@ -57,6 +67,7 @@ public class DialogoInicial extends JDialog implements ActionListener {
 
 		JPanel panelCentral = new JPanel(new BorderLayout());
 
+		// Panel Acceso
 		JPanel panelAcceso = new JPanel(new GridLayout(2,2,5,5));
 		ponerBordePanel(panelAcceso, "Acceso");
 
@@ -65,6 +76,7 @@ public class DialogoInicial extends JDialog implements ActionListener {
 		JLabel etiquetaPassword = new JLabel("Contraseña: ",JLabel.RIGHT);
 		tfPassword = new JTextField(10);
 
+		// Panel Recuerdame
 		JPanel panelRecuerdame = new JPanel(new FlowLayout(FlowLayout.LEFT));
 		chRecordarme = new JCheckBox("Recuérdame");
 
@@ -78,6 +90,7 @@ public class DialogoInicial extends JDialog implements ActionListener {
 		panelCentral.add(panelAcceso,BorderLayout.NORTH);
 		panelCentral.add(panelRecuerdame,BorderLayout.SOUTH);
 
+		// Panel Botones
 		JPanel panelBotones = new JPanel();
 		bIniciarSesion = new JButton("Iniciar sesión");
 		bSalir = new JButton("Salir");
@@ -131,21 +144,36 @@ public class DialogoInicial extends JDialog implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		if (e.getSource()==bSalir) {
-			System.exit(0);
+			System.exit(0); // Cierra el programa
 		}
 		else if (e.getSource()==bIniciarSesion) {
-			if (tfUsuario.getText().equals("admin") && tfPassword.getText().equals("admin")) {
-				JOptionPane.showMessageDialog(this, "Bienvenid@ " + tfUsuario.getText(), "Inicio de sesión", 1);
-				if (!chRecordarme.isSelected()) {
-					this.dispose();
-				}
-				else {
-					this.setVisible(false);
-				}
+			iniciaSesion();
+		}
+	}
+
+	/**
+	 * Método que comprueba Usuario y Contraseña e inicia sesión en el programa,
+	 * si se marca el JCheckBox guardara en memoria los datos introducidos en los
+	 * JTextFields
+	 */
+	private void iniciaSesion() {
+		String usuario = tfUsuario.getText();
+		String password = tfPassword.getText();
+
+		try {
+			ConexionBaseDatos.getConnection(usuario, password);
+
+			JOptionPane.showMessageDialog(this, "Bienvenid@ " + usuario, "Inicio de sesión", 1);
+			framePrincipal.setVisible(true);
+
+			if (!chRecordarme.isSelected()) {
+				this.dispose();
+			} else {
+				this.setVisible(false);
 			}
-			else {
-				JOptionPane.showMessageDialog(this, "Credenciales incorrectas", "Error inicio sesión", 0);
-			}
+		}
+		catch (SQLException | ClassNotFoundException e) {
+			JOptionPane.showMessageDialog(this, "Credenciales incorrectas", "Error inicio sesión", 0);
 		}
 	}
 

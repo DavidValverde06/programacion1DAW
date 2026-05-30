@@ -24,12 +24,31 @@ public class ConexionBaseDatos {
 	 * Método que devuelve una referencia a la conexión, si es la primera vez
 	 * que se llama a este método la crea, y si ya se ha llamado previamente,
 	 * como la conexión ya existe, simplemente la devuelve
+	 * @param password 
+	 * @param usuario 
 	 * 
 	 * @return
 	 * @throws ClassNotFoundException 
 	 * @throws SQLException 
 	 */
 	public static Connection getConnection() throws ClassNotFoundException, SQLException {
+
+		if (instance == null) {
+			// Registrar la conexion / Levantar el JDBC (Opcional)
+			Class.forName(DRIVER_NAME);
+			System.out.println("CONEXION CON LA BASE DE DATOS REGISTRADA");
+
+			// Establecer la conexión
+			Properties props = new Properties();
+			props.put("user", "admin");
+			props.put("password", "admin");
+			instance = DriverManager.getConnection(JDBC_URL, props);
+		}
+
+		return instance;
+	}
+	
+	public static Connection getConnection(String usuario, String password) throws ClassNotFoundException, SQLException {
 
 		if (instance == null) {
 			// Registrar la conexion / Levantar el JDBC (Opcional)
