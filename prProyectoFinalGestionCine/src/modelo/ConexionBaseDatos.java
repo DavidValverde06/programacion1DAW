@@ -47,7 +47,7 @@ public class ConexionBaseDatos {
 
 		return instance;
 	}
-	
+
 	public static Connection getConnection(String usuario, String password) throws ClassNotFoundException, SQLException {
 
 		if (instance == null) {
@@ -57,8 +57,8 @@ public class ConexionBaseDatos {
 
 			// Establecer la conexión
 			Properties props = new Properties();
-			props.put("user", "admin");
-			props.put("password", "admin");
+			props.put("user", usuario);
+			props.put("password", password);
 			instance = DriverManager.getConnection(JDBC_URL, props);
 		}
 

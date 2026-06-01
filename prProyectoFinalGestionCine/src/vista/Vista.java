@@ -268,6 +268,7 @@ public class Vista extends JPanel {
 		ImageIcon cartelOriginal = new ImageIcon("./img/michael_cartelera.jpg");
 
 		etiquetaCartelPeli = new JLabel("Poner imagen",JLabel.CENTER);
+		// etiquetaCartelPeli = new JLabel(cartelOriginal,JLabel.CENTER);
 
 		panelCartelPeli.add(etiquetaCartelPeli);
 		return panelCartelPeli;

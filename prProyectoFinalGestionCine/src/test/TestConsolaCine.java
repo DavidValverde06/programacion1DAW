@@ -14,15 +14,17 @@ public class TestConsolaCine {
 	private static Scanner sc = new Scanner(System.in);
 	private static DAOPelicula daoPeli;
 	private static DAOSesion daoSesion;
+	private static String usuario;
+	private static String password;
 
 	public static void main(String[] args) {
 
 		try {
 			// Pedir credenciales al inicio
 			System.out.print("Usuario: ");
-			String usuario = sc.nextLine();
+			usuario = sc.nextLine();
 			System.out.print("Contraseña: ");
-			String password = sc.nextLine();
+			password = sc.nextLine();
 
 			// Establecer conexión con las credenciales introducidas
 			ConexionBaseDatos.getConnection(usuario, password);
@@ -53,7 +55,8 @@ public class TestConsolaCine {
 			e.printStackTrace();
 		}
 		catch (SQLException e) {
-			e.printStackTrace();
+			System.out.println("ERROR\nCredenciales incorrectas o no se puede conectar a la base de datos");
+			System.exit(0);
 		}
 		catch (MiExcepcion e) {
 			e.printStackTrace();
@@ -454,7 +457,7 @@ public class TestConsolaCine {
 	private static void cargarDatosIniciales() {
 
 		try {
-			Connection con = ConexionBaseDatos.getConnection();
+			Connection con = ConexionBaseDatos.getConnection(usuario, password);
 
 			Statement stmt = con.createStatement();
 			ResultSet rs = stmt.executeQuery("SELECT COUNT(*) FROM cine.pelicula");

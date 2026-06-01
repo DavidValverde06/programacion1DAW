@@ -5,8 +5,7 @@ import java.awt.event.*;
 import java.sql.*;
 import javax.swing.*;
 import javax.swing.border.*;
-
-import modelo.ConexionBaseDatos;
+import modelo.*;
 
 public class DialogoInicial extends JDialog implements ActionListener {
 
@@ -17,8 +16,14 @@ public class DialogoInicial extends JDialog implements ActionListener {
 	 */
 	private JFrame framePrincipal;
 	private JButton bIniciarSesion,bSalir;
-	private JTextField tfUsuario,tfPassword;
+	private JTextField tfUsuario;
+	private JPasswordField tfPassword;
 	private JCheckBox chRecordarme;
+
+	/**
+	 * Variables de clase
+	 */
+	private static Color FONDO_COLOR = new Color(241, 226, 209);
 
 	/**
 	 * Constructor
@@ -49,14 +54,20 @@ public class DialogoInicial extends JDialog implements ActionListener {
 	}
 
 	/**
-	 * Métodos Getter
+	 * Métodos Getter y Setter
 	 */
 	public JFrame getFramePrincipal() {return framePrincipal;}
+	public void setFramePrincipal(JFrame framePrincipal) {this.framePrincipal = framePrincipal;}
 	public JButton getbIniciarSesion() {return bIniciarSesion;}
+	public void setbIniciarSesion(JButton bIniciarSesion) {this.bIniciarSesion = bIniciarSesion;}
 	public JButton getbSalir() {return bSalir;}
+	public void setbSalir(JButton bSalir) {this.bSalir = bSalir;}
 	public JTextField getTfUsuario() {return tfUsuario;}
-	public JTextField getTfPassword() {return tfPassword;}
+	public void setTfUsuario(JTextField tfUsuario) {this.tfUsuario = tfUsuario;}
+	public JPasswordField getTfPassword() {return tfPassword;}
+	public void setTfPassword(JPasswordField tfPassword) {this.tfPassword = tfPassword;}
 	public JCheckBox getChRecordarme() {return chRecordarme;}
+	public void setChRecordarme(JCheckBox chRecordarme) {this.chRecordarme = chRecordarme;}
 
 	/**
 	 * Método Panel Derecho
@@ -69,16 +80,19 @@ public class DialogoInicial extends JDialog implements ActionListener {
 
 		// Panel Acceso
 		JPanel panelAcceso = new JPanel(new GridLayout(2,2,5,5));
+		panelAcceso.setBackground(FONDO_COLOR);
 		ponerBordePanel(panelAcceso, "Acceso");
 
 		JLabel etiquetaUsuario = new JLabel("Usuario:  ",JLabel.RIGHT);
 		tfUsuario = new JTextField(10);
 		JLabel etiquetaPassword = new JLabel("Contraseña: ",JLabel.RIGHT);
-		tfPassword = new JTextField(10);
+		tfPassword = new JPasswordField(10);
 
 		// Panel Recuerdame
 		JPanel panelRecuerdame = new JPanel(new FlowLayout(FlowLayout.LEFT));
+		panelRecuerdame.setBackground(FONDO_COLOR);
 		chRecordarme = new JCheckBox("Recuérdame");
+		chRecordarme.setBackground(FONDO_COLOR);
 
 		panelAcceso.add(etiquetaUsuario);
 		panelAcceso.add(tfUsuario);
@@ -92,6 +106,7 @@ public class DialogoInicial extends JDialog implements ActionListener {
 
 		// Panel Botones
 		JPanel panelBotones = new JPanel();
+		panelBotones.setBackground(FONDO_COLOR);
 		bIniciarSesion = new JButton("Iniciar sesión");
 		bSalir = new JButton("Salir");
 
@@ -113,6 +128,7 @@ public class DialogoInicial extends JDialog implements ActionListener {
 
 		// Panel Imagen
 		JPanel panelImagen = new JPanel(new BorderLayout());
+		panelImagen.setBackground(FONDO_COLOR);
 		ImageIcon icono = new ImageIcon("./img/iconoCine2.png");
 		JLabel etiquetaImagen = new JLabel(icono, JLabel.CENTER);
 		panelImagen.add(etiquetaImagen);
@@ -144,7 +160,12 @@ public class DialogoInicial extends JDialog implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		if (e.getSource()==bSalir) {
-			System.exit(0); // Cierra el programa
+			int opcion = JOptionPane.showConfirmDialog(this,"¿Quieres salir del programa?",
+					"Salir",JOptionPane.YES_NO_OPTION);
+
+			if (opcion == JOptionPane.YES_OPTION) {
+				System.exit(0); // Cierra el programa
+			}
 		}
 		else if (e.getSource()==bIniciarSesion) {
 			iniciaSesion();
@@ -158,8 +179,7 @@ public class DialogoInicial extends JDialog implements ActionListener {
 	 */
 	private void iniciaSesion() {
 		String usuario = tfUsuario.getText();
-		String password = tfPassword.getText();
-
+		String password = new String(tfPassword.getPassword());
 		try {
 			ConexionBaseDatos.getConnection(usuario, password);
 
