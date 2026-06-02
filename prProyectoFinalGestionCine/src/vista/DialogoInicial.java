@@ -51,23 +51,59 @@ public class DialogoInicial extends JDialog implements ActionListener {
 		this.setResizable(false);
 		this.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
 		this.setVisible(true);
+
 	}
 
 	/**
 	 * Métodos Getter y Setter
 	 */
-	public JFrame getFramePrincipal() {return framePrincipal;}
-	public void setFramePrincipal(JFrame framePrincipal) {this.framePrincipal = framePrincipal;}
-	public JButton getbIniciarSesion() {return bIniciarSesion;}
-	public void setbIniciarSesion(JButton bIniciarSesion) {this.bIniciarSesion = bIniciarSesion;}
-	public JButton getbSalir() {return bSalir;}
-	public void setbSalir(JButton bSalir) {this.bSalir = bSalir;}
-	public JTextField getTfUsuario() {return tfUsuario;}
-	public void setTfUsuario(JTextField tfUsuario) {this.tfUsuario = tfUsuario;}
-	public JPasswordField getTfPassword() {return tfPassword;}
-	public void setTfPassword(JPasswordField tfPassword) {this.tfPassword = tfPassword;}
-	public JCheckBox getChRecordarme() {return chRecordarme;}
-	public void setChRecordarme(JCheckBox chRecordarme) {this.chRecordarme = chRecordarme;}
+	public JFrame getFramePrincipal() {
+		return framePrincipal;
+	}
+
+	public void setFramePrincipal(JFrame framePrincipal) {
+		this.framePrincipal = framePrincipal;
+	}
+
+	public JButton getbIniciarSesion() {
+		return bIniciarSesion;
+	}
+
+	public void setbIniciarSesion(JButton bIniciarSesion) {
+		this.bIniciarSesion = bIniciarSesion;
+	}
+
+	public JButton getbSalir() {
+		return bSalir;
+	}
+
+	public void setbSalir(JButton bSalir) {
+		this.bSalir = bSalir;
+	}
+
+	public JTextField getTfUsuario() {
+		return tfUsuario;
+	}
+
+	public void setTfUsuario(JTextField tfUsuario) {
+		this.tfUsuario = tfUsuario;
+	}
+
+	public JPasswordField getTfPassword() {
+		return tfPassword;
+	}
+
+	public void setTfPassword(JPasswordField tfPassword) {
+		this.tfPassword = tfPassword;
+	}
+
+	public JCheckBox getChRecordarme() {
+		return chRecordarme;
+	}
+
+	public void setChRecordarme(JCheckBox chRecordarme) {
+		this.chRecordarme = chRecordarme;
+	}
 
 	/**
 	 * Método Panel Derecho
@@ -178,23 +214,16 @@ public class DialogoInicial extends JDialog implements ActionListener {
 	 * JTextFields
 	 */
 	private void iniciaSesion() {
-		String usuario = tfUsuario.getText();
-		String password = new String(tfPassword.getPassword());
-		try {
-			ConexionBaseDatos.getConnection(usuario, password);
+	    String usuario = tfUsuario.getText();
+	    String password = new String(tfPassword.getPassword());
 
-			JOptionPane.showMessageDialog(this, "Bienvenid@ " + usuario, "Inicio de sesión", 1);
-			framePrincipal.setVisible(true);
-
-			if (!chRecordarme.isSelected()) {
-				this.dispose();
-			} else {
-				this.setVisible(false);
-			}
-		}
-		catch (SQLException | ClassNotFoundException e) {
-			JOptionPane.showMessageDialog(this, "Credenciales incorrectas", "Error inicio sesión", 0);
-		}
+	    if (usuario.equals("admin") && password.equals("admin")) {
+	        JOptionPane.showMessageDialog(this, "Bienvenid@ " + usuario, "Inicio de sesión", 1);
+	        framePrincipal.setVisible(true);
+	        this.setVisible(false);
+	    } else {
+	        JOptionPane.showMessageDialog(this, "Credenciales incorrectas", "Error inicio sesión", 0);
+	    }
 	}
 
 }

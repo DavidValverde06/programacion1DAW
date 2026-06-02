@@ -5,6 +5,7 @@ import javax.swing.*;
 import javax.swing.border.*;
 import javax.swing.table.*;
 import controlador.*;
+import modelo.*;
 
 public class Vista extends JPanel {
 
@@ -23,11 +24,13 @@ public class Vista extends JPanel {
 
 	// Pelis
 	private JLabel etiquetaCartelPeli;
-	private JTextField tfIdPeli,tfTitulo,tfDuracion,tfClasificacion,tfDirector,tfAnio;
-	private JButton bNueva,bModificar,bEliminar,bPrimero,bUltimo,bAnterior,bSiguiente;
+	private JTextField tfIdPeli,tfTitulo,tfDuracion,tfDirector,tfAnio;
+	private JButton bNueva,bModificar,bEliminar,bPrimero,bUltimo,bAnterior,bSiguiente,bVerTodasPelis,bBuscarPeliId;
+	private JComboBox<EnumClasificacion> cbClasificacion;
+	private JComboBox<EnumGenero> cbGenero;
 
 	// Sesiones
-	private JButton bTodasSesiones,bHoySesiones,bBuscarSesion;
+	private JButton bTodasSesiones,bHoySesiones,bBuscarSesion,bSesionesDeUnaPeli;
 	private JTextField tfIdSesion;
 	private JComboBox<String> cbTipoSala;
 	private JTable tablaSesiones;
@@ -74,10 +77,12 @@ public class Vista extends JPanel {
 	public void setTfIdPeli(JTextField tfIdPeli) {this.tfIdPeli = tfIdPeli;}
 	public JTextField getTfTitulo() {return tfTitulo;}
 	public void setTfTitulo(JTextField tfTitulo) {this.tfTitulo = tfTitulo;}
+	public JComboBox<EnumGenero> getCbGenero() {return cbGenero;}
+	public void setCbGenero(JComboBox<EnumGenero> cbGenero) {this.cbGenero = cbGenero;}
 	public JTextField getTfDuracion() {return tfDuracion;}
 	public void setTfDuracion(JTextField tfDuracion) {this.tfDuracion = tfDuracion;}
-	public JTextField getTfClasificacion() {return tfClasificacion;}
-	public void setTfClasificacion(JTextField tfClasificacion) {this.tfClasificacion = tfClasificacion;}
+	public JComboBox<EnumClasificacion> getCbClasificacion() {return cbClasificacion;}
+	public void setCbClasificacion(JComboBox<EnumClasificacion> cbClasificacion) {this.cbClasificacion = cbClasificacion;}
 	public JTextField getTfDirector() {return tfDirector;}
 	public void setTfDirector(JTextField tfDirector) {this.tfDirector = tfDirector;}
 	public JTextField getTfAnio() {return tfAnio;}
@@ -96,10 +101,16 @@ public class Vista extends JPanel {
 	public void setbAnterior(JButton bAnterior) {this.bAnterior = bAnterior;}
 	public JButton getbSiguiente() {return bSiguiente;}
 	public void setbSiguiente(JButton bSiguiente) {this.bSiguiente = bSiguiente;}
+	public JButton getbVerTodasPelis() {return bVerTodasPelis;}
+	public void setbVerTodasPelis(JButton bVerTodasPelis) {this.bVerTodasPelis = bVerTodasPelis;}
+	public JButton getbBuscarPeliId() {return bBuscarPeliId;}
+	public void setbBuscarPeliId(JButton bBuscarPeliId) {this.bBuscarPeliId = bBuscarPeliId;}
 	public JButton getbTodasSesiones() {return bTodasSesiones;}
 	public void setbTodasSesiones(JButton bTodasSesiones) {this.bTodasSesiones = bTodasSesiones;}
 	public JButton getbHoySesiones() {return bHoySesiones;}
 	public void setbHoySesiones(JButton bHoySesiones) {this.bHoySesiones = bHoySesiones;}
+	public JButton getbSesionesDeUnaPeli() {return bSesionesDeUnaPeli;}
+	public void setbSesionesDeUnaPeli(JButton bSesionesDeUnaPeli) {this.bSesionesDeUnaPeli = bSesionesDeUnaPeli;}
 	public JButton getbBuscarSesion() {return bBuscarSesion;}
 	public void setbBuscarSesion(JButton bBuscarSesion) {this.bBuscarSesion = bBuscarSesion;}
 	public JTextField getTfIdSesion() {return tfIdSesion;}
@@ -120,6 +131,7 @@ public class Vista extends JPanel {
 	public void setbCancelarCompra(JButton bCancelarCompra) {this.bCancelarCompra = bCancelarCompra;}
 	public JTable getTablaSesionesEntradas() {return tablaSesionesEntradas;}
 	public void setTablaSesionesEntradas(JTable tablaSesionesEntradas) {this.tablaSesionesEntradas = tablaSesionesEntradas;}
+
 
 	// ======== //
 	// CABECERA //
@@ -237,26 +249,42 @@ public class Vista extends JPanel {
 		// Botones Navegación
 		JPanel panelBotonesNav = new JPanel();
 		bPrimero = new JButton("|<");
+		bPrimero.setToolTipText("Ir a la primera película");
 		bAnterior = new JButton("<<");
+		bAnterior.setToolTipText("Moverse a la película anterior");
 		bSiguiente = new JButton(">>");
+		bSiguiente.setToolTipText("Moverse a la película siguiente");
 		bUltimo = new JButton(">|");
+		bUltimo.setToolTipText("Ir a la última película");
 
 		panelBotonesNav.add(bPrimero);
 		panelBotonesNav.add(bAnterior);
 		panelBotonesNav.add(bSiguiente);
 		panelBotonesNav.add(bUltimo);
 
+		// Panel Botones Centro
+		JPanel panelBotonesCentro = new JPanel();
+		bVerTodasPelis = new JButton("Ver todas");
+		bBuscarPeliId = new JButton("Buscar");
+
+		panelBotonesCentro.add(bVerTodasPelis);
+		panelBotonesCentro.add(bBuscarPeliId);
+
 		// Botones CRUD
 		JPanel panelBotonesCRUD = new JPanel();
 		bNueva = new JButton("Nueva");
+		bNueva.setToolTipText("Añadir una nueva película");
 		bModificar = new JButton("Modificar");
+		bModificar.setToolTipText("Modificar la película seleccionada");
 		bEliminar = new JButton("Eliminar");
+		bEliminar.setToolTipText("Eliminar la película seleccionada");
 
 		panelBotonesCRUD.add(bNueva);
 		panelBotonesCRUD.add(bModificar);
 		panelBotonesCRUD.add(bEliminar);
 
 		panelSur.add(panelBotonesNav,BorderLayout.WEST);
+		panelSur.add(panelBotonesCentro,BorderLayout.CENTER);
 		panelSur.add(panelBotonesCRUD,BorderLayout.EAST);
 		return panelSur;
 	}
@@ -265,40 +293,45 @@ public class Vista extends JPanel {
 		JPanel panelCartelPeli = new JPanel(new BorderLayout());
 		ponerBordePanel(panelCartelPeli, "Cartel película");
 
-		ImageIcon cartelOriginal = new ImageIcon("./img/michael_cartelera.jpg");
-
-		etiquetaCartelPeli = new JLabel("Poner imagen",JLabel.CENTER);
-		// etiquetaCartelPeli = new JLabel(cartelOriginal,JLabel.CENTER);
+		etiquetaCartelPeli = new JLabel("",JLabel.CENTER);
 
 		panelCartelPeli.add(etiquetaCartelPeli);
 		return panelCartelPeli;
 	}
 
 	private JPanel panelDatosGenerales() {
-		JPanel panelDatosGenerales = new JPanel(new GridLayout(6,2,5,5));
+		JPanel panelDatosGenerales = new JPanel(new GridLayout(7,2,5,5));
 		ponerBordePanel(panelDatosGenerales, "Datos generales");
 
 		JLabel etiquetaIdPeli = new JLabel("ID: ");
-		tfIdPeli = new JTextField(10);
+		tfIdPeli = new JTextField(12);
 
 		JLabel etiquetaTituloPeli = new JLabel("Titulo: ");
-		tfTitulo = new JTextField(10);
+		tfTitulo = new JTextField(12);
+
+		JLabel etiquetaGenero = new JLabel("Genero: ");
+		cbGenero = new JComboBox<EnumGenero>(EnumGenero.values());
+		cbGenero.setBackground(Color.WHITE);
+		cbGenero.setEnabled(false);
 
 		JLabel etiquetaDuracionPeli = new JLabel("Duración (minutos): ");
-		tfDuracion = new JTextField(10);
+		tfDuracion = new JTextField(12);
 
 		JLabel etiquetaClasificacionPeli = new JLabel("Clasificación: ");
-		tfClasificacion = new JTextField(10);
+		cbClasificacion = new JComboBox<EnumClasificacion>(EnumClasificacion.values());
+		cbClasificacion.setBackground(Color.WHITE);
+		cbClasificacion.setEnabled(false);
 
 		JLabel etiquetaDirectorPeli = new JLabel("Director: ");
-		tfDirector = new JTextField(10);
+		tfDirector = new JTextField(12);
 
 		JLabel etiquetaAnioPeli = new JLabel("Año: ");
-		tfAnio = new JTextField(10);
+		tfAnio = new JTextField(12);
 
-		JTextField[] arrayJTextFields = {tfIdPeli,tfTitulo,tfDuracion,tfClasificacion,tfDirector,tfAnio};
+		JTextField[] arrayJTextFields = {tfIdPeli,tfTitulo,tfDuracion,tfDirector,tfAnio};
 		for (JTextField textfield : arrayJTextFields) {
-			textfield.setEnabled(false);
+			textfield.setEditable(false);
+			textfield.setBackground(Color.WHITE);
 		}
 
 		panelDatosGenerales.add(etiquetaIdPeli);
@@ -307,11 +340,14 @@ public class Vista extends JPanel {
 		panelDatosGenerales.add(etiquetaTituloPeli);
 		panelDatosGenerales.add(tfTitulo);
 
+		panelDatosGenerales.add(etiquetaGenero);
+		panelDatosGenerales.add(cbGenero);
+
 		panelDatosGenerales.add(etiquetaDuracionPeli);
 		panelDatosGenerales.add(tfDuracion);
 
 		panelDatosGenerales.add(etiquetaClasificacionPeli);
-		panelDatosGenerales.add(tfClasificacion);
+		panelDatosGenerales.add(cbClasificacion);
 
 		panelDatosGenerales.add(etiquetaDirectorPeli);
 		panelDatosGenerales.add(tfDirector);
@@ -338,23 +374,30 @@ public class Vista extends JPanel {
 		JPanel panelBotonesIzquierda = new JPanel();
 
 		bTodasSesiones = new JButton("Todas las sesiones");
-		bHoySesiones = new JButton("Sesiones de hoy");
+		bHoySesiones = new JButton("Hoy");
+		bSesionesDeUnaPeli = new JButton("Sesiones película");
 
 		panelBotonesIzquierda.add(bTodasSesiones);
 		panelBotonesIzquierda.add(bHoySesiones);
+		panelBotonesIzquierda.add(bSesionesDeUnaPeli);
 
 		JPanel panelBotonesDerecha = new JPanel();
 
-		JLabel etiquetaIdSesion = new JLabel("ID de la sesión: ",JLabel.RIGHT);
-		tfIdSesion = new JTextField(3);
-		JLabel etiquetaTipoSala = new JLabel("Tipo de sala: ");
-		cbTipoSala = new JComboBox<String>();
+		JLabel etiquetaIdSesion = new JLabel("ID sesión: ",JLabel.RIGHT);
+		tfIdSesion = new JTextField(2);
+		JLabel etiquetaTipoSala = new JLabel("Tipo sala: ");
+		EnumTipoSala[] valoresEnum = EnumTipoSala.values();
+		String[] arrayTipoSalas = new String[valoresEnum.length];
+		for (int cont=0;cont<valoresEnum.length;cont++) {
+			arrayTipoSalas[cont] = valoresEnum[cont].getGenero();
+		}
+		cbTipoSala = new JComboBox<String>(arrayTipoSalas);
 		bBuscarSesion = new JButton("Buscar");
 
-		panelBotonesDerecha.add(etiquetaIdSesion);
-		panelBotonesDerecha.add(tfIdSesion);
 		panelBotonesDerecha.add(etiquetaTipoSala);
 		panelBotonesDerecha.add(cbTipoSala);
+		panelBotonesDerecha.add(etiquetaIdSesion);
+		panelBotonesDerecha.add(tfIdSesion);
 		panelBotonesDerecha.add(bBuscarSesion);
 
 		panelSur.add(panelBotonesIzquierda,BorderLayout.WEST);
@@ -494,11 +537,14 @@ public class Vista extends JPanel {
 		bAnterior.addActionListener(ctr);
 		bSiguiente.addActionListener(ctr);
 		bUltimo.addActionListener(ctr);
+		bVerTodasPelis.addActionListener(ctr);
+		bBuscarPeliId.addActionListener(ctr);
 		bNueva.addActionListener(ctr);
 		bModificar.addActionListener(ctr);
 		bEliminar.addActionListener(ctr);
 		bTodasSesiones.addActionListener(ctr);
 		bHoySesiones.addActionListener(ctr);
+		bSesionesDeUnaPeli.addActionListener(ctr);
 		cbTipoSala.addActionListener(ctr);
 		bBuscarSesion.addActionListener(ctr);
 		bComprarEntrada.addActionListener(ctr);

@@ -27,4 +27,11 @@ public enum EnumClasificacion {
 		return descripcion;
 	}
 
+	/**
+	 * toString
+	 */
+	@Override
+	public String toString() {
+		return this.descripcion;
+	}
 }

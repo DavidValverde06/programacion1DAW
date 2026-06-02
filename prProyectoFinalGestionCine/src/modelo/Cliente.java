@@ -27,6 +27,7 @@ public class Cliente {
 	/**
 	 * Métodos Getter's y Setter's
 	 */
+
 	// Getter's
 	public int getCodigo() {return id_cliente;}
 	public int getId_sesion() {return id_sesion;}
@@ -62,7 +63,7 @@ public class Cliente {
 				&& id_cliente == other.id_cliente && id_sesion == other.id_sesion
 				&& Objects.equals(nombre, other.nombre);
 	}
-	
+
 	/**
 	 * toString redefinido
 	 */
@@ -71,5 +72,5 @@ public class Cliente {
 		return "Cliente [id_cliente=" + id_cliente + ", id_sesion=" + id_sesion + ", nombre=" + nombre + ", apellido="
 				+ apellido + ", email=" + email + "]";
 	}
-	
+
 }

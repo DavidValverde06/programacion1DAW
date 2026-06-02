@@ -258,8 +258,6 @@ public class DAOPelicula {
 	/**
 	 * Método que busca una pelicula cuyo codigo coincida con el indicado
 	 * 
-	 * @param cod
-	 * @return
 	 * @throws SQLException
 	 * @throws MiExcepcion
 	 */
@@ -290,36 +288,30 @@ public class DAOPelicula {
 		return peliculaBuscada;
 	}
 
-	// -- Forma 1 --
-	public String[][] datosConsulta1(String genero) throws SQLException {
+	/**
+	 * Método que busca un id_pelicula mediante el titulo de la misma
+	 */
+	public int getIdPorTitulo(String titulo) throws SQLException {
 
-		String consulta = "SELECT * FROM cine.pelicula WHERE genero = '" + genero + "'";
+		String sql = "SELECT id_pelicula FROM pelicula WHERE titulo = ?";
 
-		ResultSet rsConsulta = this.stmt.executeQuery(consulta);
+		PreparedStatement ps = con.prepareStatement(sql);
 
-		rsConsulta.last();
-		int numFilas = rsConsulta.getRow();
-		rsConsulta.first();
+		ps.setString(1, titulo);
+		ResultSet rs = ps.executeQuery();
 
-		String[][] datos = new String[numFilas][7];
-
-		for (int fila = 0; fila < numFilas; fila++) {
-			datos[fila][0] = Integer.toString(rsConsulta.getInt("id_pelicula"));
-			datos[fila][1] = rsConsulta.getString("titulo");
-			datos[fila][2] = rsConsulta.getString("genero");
-			datos[fila][3] = Integer.toString(rsConsulta.getInt("duracion"));
-			datos[fila][4] = rsConsulta.getString("clasificacion");
-			datos[fila][5] = rsConsulta.getString("director");
-			datos[fila][6] = Integer.toString(rsConsulta.getInt("anio"));
-			rsConsulta.next();
+		if (rs.next()) {
+			return rs.getInt("id_pelicula");
 		}
-
-		this.crearConsulta();
-		return datos;
+		else {
+			throw new SQLException("No se encontró ninguna película con ese título.");
+		}
 	}
 
-	// -- Forma 2 --
-	public DefaultTableModel datosConsulta2(String genero) throws SQLException {
+	/**
+	 * Peliculas por género
+	 */
+	public DefaultTableModel datosConsulta(String genero) throws SQLException {
 
 		String consulta = "SELECT * FROM cine.pelicula WHERE genero = '" + genero + "'";
 

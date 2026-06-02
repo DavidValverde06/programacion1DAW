@@ -3,7 +3,7 @@ package test;
 import java.io.*;
 import java.sql.*;
 import java.util.*;
-
+import javax.swing.table.*;
 import modelo.*;
 
 public class TestConsolaCine {
@@ -11,23 +11,32 @@ public class TestConsolaCine {
 	/**
 	 * Variables de clase
 	 */
-	private static Scanner sc = new Scanner(System.in);
 	private static DAOPelicula daoPeli;
 	private static DAOSesion daoSesion;
 	private static String usuario;
 	private static String password;
+	private static Scanner sc = new Scanner(System.in);
 
+	/**
+	 * Main
+	 */
 	public static void main(String[] args) {
 
 		try {
-			// Pedir credenciales al inicio
-			System.out.print("Usuario: ");
-			usuario = sc.nextLine();
-			System.out.print("Contraseña: ");
-			password = sc.nextLine();
+			do {
+				System.out.print("Usuario: ");
+				usuario = sc.nextLine();
+				System.out.print("Contraseña: ");
+				password = sc.nextLine();
 
-			// Establecer conexión con las credenciales introducidas
-			ConexionBaseDatos.getConnection(usuario, password);
+				if (!usuario.equals("admin") || !password.equals("admin")) {
+					System.out.println("\nCredenciales incorrectas\n");
+				}
+
+			}
+			while (!usuario.equals("admin") || !password.equals("admin"));
+
+			ConexionBaseDatos.getConnection();
 			System.out.println("Sesión iniciada correctamente");
 
 			daoPeli = new DAOPelicula();
@@ -55,7 +64,7 @@ public class TestConsolaCine {
 			e.printStackTrace();
 		}
 		catch (SQLException e) {
-			System.out.println("ERROR\nCredenciales incorrectas o no se puede conectar a la base de datos");
+			System.out.println("Error, no se puede conectar a la base de datos");
 			System.exit(0);
 		}
 		catch (MiExcepcion e) {
@@ -276,7 +285,7 @@ public class TestConsolaCine {
 		peli.setAnio(anio);
 
 		daoPeli.modificaPelicula(peli);
-		System.out.println("Pelicula modificada correctamente.");
+		System.out.println("Pelicula modificada correctamente");
 	}
 
 	/**
@@ -339,10 +348,10 @@ public class TestConsolaCine {
 		int idSesion = Integer.parseInt(sc.nextLine());
 
 		// Obtener datos completos de esa sesion
-		var modeloSesion = daoSesion.getDatosSesion(idSesion);
+		DefaultTableModel modeloSesion = daoSesion.getDatosSesion(idSesion);
 
 		if (modeloSesion.getRowCount() == 0) {
-			System.out.println("No se encontro la sesion con ID " + idSesion);
+			System.out.println("No se encontro la sesion con ID: " + idSesion);
 			return;
 		}
 
@@ -365,7 +374,7 @@ public class TestConsolaCine {
 						"Fecha: " + fecha + "\n" +
 						"Hora: " + hora + ":00h\n" +
 						"Sala: " + sala + " (" + tipoSala + ")\n" +
-						"Precio: " + precio + " EUR\n\n" +
+						"Precio: " + precio + " EUROS\n\n" +
 						"¡Disfrute de la pelicula!";
 
 		// Guardar en fichero
@@ -433,11 +442,12 @@ public class TestConsolaCine {
 	/**
 	 * Método que imprime una tabla por consola
 	 */
-	private static void imprimirTabla(javax.swing.table.DefaultTableModel modelo) {
+	private static void imprimirTabla(DefaultTableModel modelo) {
 		if (modelo.getRowCount() == 0) {
 			System.out.println("No se encontraron resultados.");
 			return;
 		}
+
 		for (int i = 0; i < modelo.getColumnCount(); i++)
 			System.out.printf("%-20s", modelo.getColumnName(i));
 		System.out.println();
@@ -457,7 +467,7 @@ public class TestConsolaCine {
 	private static void cargarDatosIniciales() {
 
 		try {
-			Connection con = ConexionBaseDatos.getConnection(usuario, password);
+			Connection con = ConexionBaseDatos.getConnection();
 
 			Statement stmt = con.createStatement();
 			ResultSet rs = stmt.executeQuery("SELECT COUNT(*) FROM cine.pelicula");

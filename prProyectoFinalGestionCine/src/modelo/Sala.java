@@ -57,7 +57,7 @@ public class Sala {
 		return capacidad == other.capacidad && id_sala == other.id_sala && num_sala == other.num_sala
 				&& tipo == other.tipo;
 	}
-	
+
 	/**
 	 * toString redefinido
 	 */

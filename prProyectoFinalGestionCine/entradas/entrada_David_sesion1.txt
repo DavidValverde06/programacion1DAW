@@ -2,10 +2,10 @@
 Cliente : David Valverde
 Email: david@gmail.com
 
-Pelicula: Michael
-Fecha: 2026-06-10
-Hora: 18:00h
-Sala: 1 (SALA_NORMAL)
-Precio: 7.5 EUR
+Pelicula: 1
+Fecha: Michael
+Hora: 2026-06-10:00h
+Sala: 18 (1)
+Precio: SALA_NORMAL EUR
 
 ¡Disfrute de la pelicula!

@@ -75,7 +75,7 @@ public class Sesion {
 				&& id_sala == other.id_sala && id_sesion == other.id_sesion
 				&& Double.doubleToLongBits(precio) == Double.doubleToLongBits(other.precio);
 	}
-	
+
 	/**
 	 * toString redefinido
 	 */
@@ -84,5 +84,5 @@ public class Sesion {
 		return "Sesion [id_sesion=" + id_sesion + ", id_pelicula=" + id_pelicula + ", id_sala=" + id_sala + ", fecha="
 				+ fecha + ", hora=" + hora + ", precio=" + precio + "]";
 	}
-	
+
 }

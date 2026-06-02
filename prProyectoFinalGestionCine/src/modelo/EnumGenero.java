@@ -31,4 +31,12 @@ public enum EnumGenero {
 	public String getGenero() {
 		return genero;
 	}
+
+	/**
+	 * toString
+	 */
+	@Override
+	public String toString() {
+		return this.genero;
+	}
 }

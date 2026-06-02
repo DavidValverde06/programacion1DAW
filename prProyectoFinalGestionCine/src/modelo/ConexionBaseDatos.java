@@ -48,20 +48,4 @@ public class ConexionBaseDatos {
 		return instance;
 	}
 
-	public static Connection getConnection(String usuario, String password) throws ClassNotFoundException, SQLException {
-
-		if (instance == null) {
-			// Registrar la conexion / Levantar el JDBC (Opcional)
-			Class.forName(DRIVER_NAME);
-			System.out.println("CONEXION CON LA BASE DE DATOS REGISTRADA");
-
-			// Establecer la conexión
-			Properties props = new Properties();
-			props.put("user", usuario);
-			props.put("password", password);
-			instance = DriverManager.getConnection(JDBC_URL, props);
-		}
-
-		return instance;
-	}
 }
