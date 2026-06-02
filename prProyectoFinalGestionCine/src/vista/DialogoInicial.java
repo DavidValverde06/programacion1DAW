@@ -2,10 +2,8 @@ package vista;
 
 import java.awt.*;
 import java.awt.event.*;
-import java.sql.*;
 import javax.swing.*;
 import javax.swing.border.*;
-import modelo.*;
 
 public class DialogoInicial extends JDialog implements ActionListener {
 
@@ -214,16 +212,16 @@ public class DialogoInicial extends JDialog implements ActionListener {
 	 * JTextFields
 	 */
 	private void iniciaSesion() {
-	    String usuario = tfUsuario.getText();
-	    String password = new String(tfPassword.getPassword());
+		String usuario = tfUsuario.getText();
+		String password = new String(tfPassword.getPassword());
 
-	    if (usuario.equals("admin") && password.equals("admin")) {
-	        JOptionPane.showMessageDialog(this, "Bienvenid@ " + usuario, "Inicio de sesión", 1);
-	        framePrincipal.setVisible(true);
-	        this.setVisible(false);
-	    } else {
-	        JOptionPane.showMessageDialog(this, "Credenciales incorrectas", "Error inicio sesión", 0);
-	    }
+		if (usuario.equals("admin") && password.equals("admin")) {
+			JOptionPane.showMessageDialog(this, "Bienvenid@ " + usuario, "Inicio de sesión", 1);
+			framePrincipal.setVisible(true);
+			this.setVisible(false);
+		} else {
+			JOptionPane.showMessageDialog(this, "Credenciales incorrectas", "Error inicio sesión", 0);
+		}
 	}
 
 }
