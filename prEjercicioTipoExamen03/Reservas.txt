@@ -1,0 +1,41 @@
+--- Reservas guardadas el miércoles, 3 de junio de 2026 ---
+Datos alquiler:
+	Alojamiento: Casa El Roble
+	Fecha inicio: 2026-06-03
+	Fecha fin: 2026-06-06
+	Número de noches: 3
+	Cliente: David
+	DNI: 
+	Teléfono contacto: 643691341
+	Precio final: 360.0€ (Temporada Media)
+
+Datos alquiler:
+	Alojamiento: Casa Mar y Monte
+	Fecha inicio: 2026-07-07
+	Fecha fin: 2026-07-15
+	Número de noches: 8
+	Cliente: Paco
+	DNI: 82726262L
+	Teléfono contacto: 938625172
+	Precio final: 912.0€ (Temporada Alta)
+
+Datos alquiler:
+	Alojamiento: Casa Mar y Monte
+	Fecha inicio: 2027-09-08
+	Fecha fin: 2027-09-15
+	Número de noches: 7
+	Cliente: Pedro
+	DNI: 
+	Teléfono contacto: 17654782
+	Precio final: 598.5€ (Temporada Media)
+
+Datos alquiler:
+	Alojamiento: Casa Pepa y Pepe
+	Fecha inicio: 2026-07-04
+	Fecha fin: 2026-07-05
+	Número de noches: 1
+	Cliente: Noe
+	DNI: 51278654B
+	Teléfono contacto: 123457681
+	Precio final: 120.0€ (Temporada Alta)
+

@@ -202,12 +202,19 @@ public class Vista extends JPanel {
 		// METODO A COMPLETAR POR EL ALUMNO
 		// Completar el método control, para añadir el control de
 		// eventos a los componentes que estiméis adecuados.
+		
+		// ActionListener
 		cbUbicaciones.addActionListener(ctr);
 		cbAlojamiento.addActionListener(ctr);
 		bDetalles.addActionListener(ctr);
 		cbNoches.addActionListener(ctr);
 		bReservar.addActionListener(ctr);
 		bLimpiar.addActionListener(ctr);
+		
+		// FocusListener
+		tfFechaIni.addFocusListener(ctr);
+		cbNoches.addFocusListener(ctr);
+		cbAlojamiento.addFocusListener(ctr);
 	}
 
 	/**

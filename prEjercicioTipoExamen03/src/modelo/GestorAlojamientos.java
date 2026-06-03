@@ -40,7 +40,7 @@ public class GestorAlojamientos {
 	 * Variables de instancia
 	 */
 	private List<Alojamiento> alojamientosDisponibles;
-	private SortedSet<Reserva> reservasRealizadas; // Ordenada por Alojamiento, y si este se repite por Fecha de Inicio
+	private SortedSet<Reserva> reservasRealizadas;
 
 	/**
 	 * Constructor sobrecargado
@@ -55,12 +55,12 @@ public class GestorAlojamientos {
 
 	public GestorAlojamientos() {
 		this.alojamientosDisponibles = new ArrayList<>();
-		this.reservasRealizadas = new TreeSet<>();
+		this.reservasRealizadas = new TreeSet<>(new ComparatorNombreFechaInicio());
 	}
 
 	public GestorAlojamientos(String nombreFichero) {
 		this.alojamientosDisponibles = new ArrayList<>();
-		this.reservasRealizadas = new TreeSet<>();
+		this.reservasRealizadas = new TreeSet<>(new ComparatorNombreFechaInicio());
 
 		try (BufferedReader flujoLecturaAlojamientos = new BufferedReader(
 				new FileReader(Path.of("./src/files/" + nombreFichero).toFile()))) {
@@ -116,9 +116,9 @@ public class GestorAlojamientos {
 	 * reserva si su fecha de inicio es anterior a la fecha actual, así como si se solapa con alguno de los días
 	 * (aunque sea de salida) de otra reserva previa.
 	 */
-	public boolean añadirReserva(Reserva reserva) {
+	public boolean añadirReserva(Reserva reserva) throws MiExcepcion {
 		if (reserva.getFechaInicio().isBefore(LocalDate.now())) {
-			return false;
+			throw new MiExcepcion("La fecha de reserva no puede ser anterior a la fecha actual");
 		}
 
 		for (Reserva existente : reservasRealizadas) {

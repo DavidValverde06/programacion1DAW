@@ -66,18 +66,15 @@ public class Reserva {
 		if (LibFechas8.isFechaCorrecta(fechaInicio) == false) {
 			throw new MiExcepcion("Fecha no válida");
 		}
-
+		if (dni.matches("[0-9]{9}[A-Z]{1}")) {
+			throw new MiExcepcion("DNI no válido");
+		}
 		this.alojamientoReservado = alojamientoReservado;
 		this.fechaInicio = LibFechas8.convierteStringToLocalDate(fechaInicio);
 		this.fechaFin = LibFechas8.sumaDias(this.fechaInicio, numNoches);
 		this.numNoches = numNoches;
 		this.nombre = nombre;
-		if (this.dni.matches("[0-9]{8}[A-Z]{1}")) {
-			this.dni = dni; // FALTA LA VALIDACIÓN DEL DNI
-		}
-		else {
-			throw new MiExcepcion("DNI no válido");
-		}
+		this.dni = dni;
 		this.telefono = telefono;
 	}
 

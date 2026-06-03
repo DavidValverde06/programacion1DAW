@@ -19,7 +19,7 @@ public class TestExamenConsola {
 		CasaRural casaConchita = new CasaRural("Casa Conchita", EnumUbicaciones.GRANADA, 300, 6);
 
 		try {
-			Reserva reserva1 = new Reserva(casaConchita, "15/08/2026", 6, "Manuel Campos", "31171876E", "600200800");
+			Reserva reserva1 = new Reserva(casaConchita, "15/08/2026", 6, "Manuel Campos", "65598524V", "600200800");
 
 			System.out.println(reserva1);
 		}
@@ -27,9 +27,9 @@ public class TestExamenConsola {
 			System.out.println(e.getMessage());
 		}
 
-		GestorAlojamientos gestor = new GestorAlojamientos("Alojamientos.txt");
-		
-		System.out.println(gestor.getAlojamientosDisponibles());
+//		GestorAlojamientos gestor = new GestorAlojamientos("Alojamientos.txt");
+//		
+//		System.out.println(gestor.getAlojamientosDisponibles());
 	}
 
 }
