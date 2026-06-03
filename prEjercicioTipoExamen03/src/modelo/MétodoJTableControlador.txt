@@ -1,0 +1,15 @@
+	/**
+	 * Método que añade una nueva fila al JTable
+	 */
+	private void añadeFilaTabla(Reserva obReserva) {
+		String[] fila = new String[7];
+		fila[0] = obReserva.getAlojamiento().getNombre();
+		fila[1] = LibFechas8.getFechaShort(obReserva.getFechaInicio());
+		fila[2] = LibFechas8.getFechaShort(obReserva.getFechaFin());
+		fila[3] = Integer.toString(obReserva.getNumNoches());
+		fila[4] = obReserva.getNombreCliente();
+		fila[5] = obReserva.getDNI();
+		fila[6] = obReserva.getTelefono();
+
+		miVista.getDatos().addRow(fila); // Añado la fila al DefaultTableModel
+	}

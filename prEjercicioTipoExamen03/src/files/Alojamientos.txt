@@ -1,0 +1,18 @@
+Casa El Roble, ALMERÍA, 80, 3
+Casa La Encina, CÁDIZ, 100, 2
+Casa El Monte, CÁDIZ, 120, 4
+Cortijo El Pinar, CÁDIZ, 200, 6
+Carmen San Matías, GRANADA, 150, 10
+Carmen Doña Juana, GRANADA, 200, 8
+Casa Mar y Monte, MÁLAGA, 60, 2
+Casa Conchita, MÁLAGA, 60, 2
+Casa Pepa y Pepe, MÁLAGA, 60, 2
+Casa Los Manantiales, MÁLAGA, 60, 3
+Cortijo Los Pedroches, SUBBÉTICA_CORDOBESA, 120, 5
+Cortijo Los Olivos, JAÉN, 190, 6
+Apartamento Soles de Cádiz, CÁDIZ, 150, true, true
+Apartamento Miramar, CÁDIZ, 120, false, true
+Apartamento Guaro, MÁLAGA, 100, false, true
+Apartamento Doña Mencía, SUBBÉTICA_CORDOBESA, 80, false, false
+Apartamento Trevélez, LA_ALPUJARRA, 100, true, false
+Apartamento Pampaneira, LA_ALPUJARRA, 80, true, true

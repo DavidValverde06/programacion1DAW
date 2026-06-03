@@ -1,0 +1,45 @@
+RESERVAS REALIZADAS EL DÍA: lunes, 12 de mayo de 2025
+--------------------------------------------------------
+Datos alquiler: 
+	Alojamiento: Carmen Doña Juana
+	Fecha inicio: 16/07/2025
+	Fecha fin: 22/07/2025
+	Número de noches: 6
+	Cliente: Ana María Moreno Montilla
+	DNI: 15756415N
+	Telefono contaco: 600999222
+	Precio final: 2280.0€ (Temporada Alta)
+	
+Datos alquiler: 
+	Alojamiento: Casa El Roble
+	Fecha inicio: 10/06/2025
+	Fecha fin: 12/06/2025
+	Número de noches: 2
+	Cliente: Rafael García Medina
+	DNI: 49402121F
+	Telefono contaco: 601123321
+	Precio final: 240.0€ (Temporada Media)
+	
+
+RESERVAS REALIZADAS EL DÍA: martes, 13 de mayo de 2025
+--------------------------------------------------------
+Datos alquiler: 
+	Alojamiento: Casa Conchita
+	Fecha inicio: 12/09/2025
+	Fecha fin: 17/09/2025
+	Número de noches: 5
+	Cliente: Pepe García García
+	DNI: 
+	Telefono contaco: 952432234
+	Precio final: 450.0€ (Temporada Media)
+
+Datos alquiler: 
+	Alojamiento: Apartamento Soles de Cádiz
+	Fecha inicio: 12/08/2025
+	Fecha fin: 15/08/2025
+	Número de noches: 3
+	Cliente: Pepe García García
+	DNI: 
+	Telefono contaco: 952432234
+	Precio final: 1020.0€ (Temporada Alta)
+	

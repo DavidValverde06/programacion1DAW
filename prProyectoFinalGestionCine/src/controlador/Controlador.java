@@ -189,7 +189,7 @@ public class Controlador implements ActionListener {
 				}
 			}
 			else {
-				// Código se queda inhabilitado
+				// Código se queda inhabilitado para no poder modificarlo
 				miVista.getTfIdPeli().setEditable(false);
 
 				// Y los demas campos se activan para modificar la película
@@ -235,7 +235,6 @@ public class Controlador implements ActionListener {
 
 					cancelarPelicula();
 				}
-
 			}
 		}
 
@@ -301,7 +300,7 @@ public class Controlador implements ActionListener {
 			}
 
 			String contenidoEntrada =
-					"--- ENTRADA CINE ---\n" +
+							"--- ENTRADA CINE ---\n" +
 							"Cliente : " + nombre + " " + apellidos + "\n" +
 							"Email: " + email + "\n\n" +
 							"Pelicula: " + titulo + "\n" +
