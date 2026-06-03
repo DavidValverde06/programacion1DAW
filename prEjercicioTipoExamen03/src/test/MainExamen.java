@@ -1,7 +1,8 @@
 package test;
 
-import javax.swing.JFrame;
-import vista.Vista;
+import javax.swing.*;
+import controlador.*;
+import vista.*;
 
 public class MainExamen {
 
@@ -9,14 +10,14 @@ public class MainExamen {
 		// Crear un objeto de la clase Vista
 		Vista miVista = new Vista();
 
-//		// Crear un objeto de la Clase Controlador
-//		Controlador ctr = new Controlador(miVista);
-//
-//		// Llamar al método que da control a los componentes
-//		miVista.control(ctr);
+		// Crear un objeto de la Clase Controlador
+		Controlador ctr = new Controlador(miVista);
+
+		// Llamar al método que da control a los componentes
+		miVista.control(ctr);
 
 		// Crearemos un JFrame
-		JFrame ventana = new JFrame("Venta de billetes de tren");
+		JFrame ventana = new JFrame("Gestión de alojamientos");
 
 		ventana.setContentPane(miVista);
 		ventana.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
