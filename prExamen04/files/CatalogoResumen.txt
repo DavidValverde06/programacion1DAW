@@ -1,0 +1,30 @@
+=== CATÁLOGO DEL VIVERO ===
+BON001 - Olmo Chino - (Stock: 5) - P. Base: 45.0€ - Precio de venta: 165,00€
+BON002 - Pino Blanco Japones - (Stock: 2) - P. Base: 280.0€ - Precio de venta: 655,00€
+BON003 - Arce Palmatum Deshojo - (Stock: 3) - P. Base: 165.0€ - Precio de venta: 345,00€
+BON004 - Junipero San Jose - (Stock: 1) - P. Base: 390.0€ - Precio de venta: 840,00€
+BON005 - Ficus Retusa - (Stock: 14) - P. Base: 35.0€ - Precio de venta: 125,00€
+BON006 - Azalea Satsuki - (Stock: 4) - P. Base: 85.0€ - Precio de venta: 220,00€
+BON007 - Manzano Silvestre - (Stock: 3) - P. Base: 110.0€ - Precio de venta: 275,00€
+BON008 - Tejo Comun - (Stock: 1) - P. Base: 550.0€ - Precio de venta: 1225,00€
+BON009 - Acebuche Olivo Silvestre - (Stock: 2) - P. Base: 195.0€ - Precio de venta: 465,00€
+BON010 - Buganvilla Espectacular - (Stock: 6) - P. Base: 68.0€ - Precio de venta: 173,00€
+BON011 - Higuera Autoctona - (Stock: 4) - P. Base: 55.0€ - Precio de venta: 175,00€
+BON012 - Granado Enano - (Stock: 2) - P. Base: 140.0€ - Precio de venta: 350,00€
+BON013 - Haya Europea - (Stock: 8) - P. Base: 38.0€ - Precio de venta: 45,60€
+BON014 - Glicinia Wisteria - (Stock: 3) - P. Base: 72.0€ - Precio de venta: 86,40€
+BON015 - Serissa Phoetida - (Stock: 15) - P. Base: 24.5€ - Precio de venta: 29,40€
+EST001 - Monstera Deliciosa - (Stock: 12) - P. Base: 28.5€ - Precio de venta: 34,20€
+EST002 - Sansevieria Trifasciata - (Stock: 25) - P. Base: 16.0€ - Precio de venta: 19,20€
+EST003 - Poto Dorado - (Stock: 18) - P. Base: 10.5€ - Precio de venta: 12,60€
+EST004 - Ficus Benjamina - (Stock: 8) - P. Base: 32.0€ - Precio de venta: 38,40€
+EST005 - Helecho de Boston - (Stock: 15) - P. Base: 14.9€ - Precio de venta: 17,88€
+EST006 - Anturio Rojo - (Stock: 6) - P. Base: 22.0€ - Precio de venta: 26,40€
+EST007 - Planta del Dinero - (Stock: 20) - P. Base: 8.5€ - Precio de venta: 10,20€
+EST008 - Lavanda Aromatica - (Stock: 30) - P. Base: 7.2€ - Precio de venta: 8,64€
+EST009 - Rosal Arbustivo - (Stock: 10) - P. Base: 18.5€ - Precio de venta: 22,20€
+EST010 - Geranio Comun - (Stock: 40) - P. Base: 5.5€ - Precio de venta: 6,60€
+EST011 - Hortensia Azul - (Stock: 7) - P. Base: 21.0€ - Precio de venta: 25,20€
+EST012 - Cactus Asiento de Suegra - (Stock: 5) - P. Base: 35.0€ - Precio de venta: 42,00€
+EST013 - Romero Saborizado - (Stock: 22) - P. Base: 6.8€ - Precio de venta: 8,16€
+EST014 - Olivo Joven en Maceta - (Stock: 4) - P. Base: 55.0€ - Precio de venta: 66,00€

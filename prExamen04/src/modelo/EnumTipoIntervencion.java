@@ -1,0 +1,5 @@
+package modelo;
+
+public enum EnumTipoIntervencion {
+	ALAMBRADO, INJERTO, PODA_DE_FORMACION, TECNICA_DE_MADERA_MUERTA, TRASPLANTE, TRATAMIENTO;
+}

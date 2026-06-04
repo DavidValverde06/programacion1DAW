@@ -1,0 +1,14 @@
+EST001,Monstera Deliciosa,28.50,12,Interior,false
+EST002,Sansevieria Trifasciata,16.00,25,Interior,true
+EST003,Poto Dorado,10.50,18,Interior,false
+EST004,Ficus Benjamina,32.00,8,Interior,false
+EST005,Helecho de Boston,14.90,15,Interior,false
+EST006,Anturio Rojo,22.00,6,Interior,false
+EST007,Planta del Dinero,8.50,20,Interior,false
+EST008,Lavanda Aromatica,7.20,30,Exterior,true
+EST009,Rosal Arbustivo,18.50,10,Exterior,true
+EST010,Geranio Comun,5.50,40,Exterior,true
+EST011,Hortensia Azul,21.00,7,Exterior,false
+EST012,Cactus Asiento de Suegra,35.00,5,Exterior,true
+EST013,Romero Saborizado,6.80,22,Exterior,true
+EST014,Olivo Joven en Maceta,55.00,4,Exterior,true

@@ -16,6 +16,7 @@ import java.util.Locale;
 
 public class LibFechas8 {
 
+
 	/**
 	 * Este método convierte una fecha en formato String a LocalDate
 	 * 
@@ -87,6 +88,21 @@ public class LibFechas8 {
 		return true;
 	}
 
+	/*
+	 * Esta versión no funciona bien, ya que si le paso, por ejemplo 31/09/2020
+	 * me da la fecha por valida, ya que me cambia el 31 por 30 ¿?
+	 * public static boolean isFechaCorrecta(String fechaString) {
+
+		try {
+			LocalDate fecha = LocalDate.parse(fechaString, DateTimeFormatter.ofPattern("dd/MM/yyyy"));
+			System.out.println(fecha);
+		}
+		catch (DateTimeParseException e) {
+			return false;
+		}
+		return true;
+	}
+	 */
 
 	/**
 	 * Método que devuelve una fecha formateada en formato corto 

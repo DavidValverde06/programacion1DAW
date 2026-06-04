@@ -1,0 +1,249 @@
+FECHA DE VOLCADO: miércoles, 27 de mayo de 2026
+BON001 - Olmo Chino (Stock: 5) - P. Base: 45.0€ - Precio de venta: 190.0€
+	---> Cuidados: Bonsái Estilo: MOYOGI(Vertical Informal (en forma de S)) | Edad: 8 años.
+	Historial de intervenciones: 
+		15/02/2026 - TRASPLANTE (Cambio completo a sustrato akadama)
+		10/03/2025 - PODA_DE_FORMACION (Recorte de brotes vigorosos)
+
+BON002 - Pino Blanco Japones (Stock: 2) - P. Base: 280.0€ - Precio de venta: 665.0€
+	---> Cuidados: Bonsái Estilo: CHOKKAN(Vertical Formal (totalmente recto)) | Edad: 25 años.
+	Historial de intervenciones: 
+		12/10/2025 - PODA_DE_FORMACION (Limpieza de agujas viejas)
+		05/04/2024 - ALAMBRADO (Diseño de ramas principales)
+
+BON003 - Arce Palmatum Deshojo (Stock: 3) - P. Base: 165.0€ - Precio de venta: 390.0€
+	---> Cuidados: Bonsái Estilo: SHAKAN(Inclinado (como si el viento lo empujase)) | Edad: 12 años.
+	Historial de intervenciones: 
+		08/03/2026 - TRASPLANTE (Poda de raíces en maceta nueva)
+		22/05/2025 - INJERTO (Pinzado para reducir tamaño de hoja)
+
+BON004 - Junipero San Jose (Stock: 1) - P. Base: 390.0€ - Precio de venta: 940.0€
+	---> Cuidados: Bonsái Estilo: KENGAI(Cascada (el tronco cae hacia abajo)) | Edad: 30 años.
+	Historial de intervenciones: 
+		20/11/2025 - TRATAMIENTO (Aplicacion de polisulfuro en madera muerta)
+		14/09/2024 - ALAMBRADO (Modelado de la gran cascada)
+
+BON005 - Ficus Retusa (Stock: 14) - P. Base: 35.0€ - Precio de venta: 150.0€
+	---> Cuidados: Bonsái Estilo: MOYOGI(Vertical Informal (en forma de S)) | Edad: 6 años.
+	Historial de intervenciones: 
+		01/06/2025 - PODA_DE_FORMACION (Defoliado parcial de verano para aumentar ramificación)
+
+BON006 - Azalea Satsuki (Stock: 4) - P. Base: 85.0€ - Precio de venta: 265.0€
+	---> Cuidados: Bonsái Estilo: SHAKAN(Inclinado (como si el viento lo empujase)) | Edad: 9 años.
+	Historial de intervenciones: 
+		05/03/2026 - TECNICA_DE_MADERA_MUERTA (Aporte de quelatos de hierro para suelo acido)
+		10/06/2025 - PODA_DE_FORMACION (Eliminacion de flores marchitas)
+
+BON007 - Manzano Silvestre (Stock: 3) - P. Base: 110.0€ - Precio de venta: 300.0€
+	---> Cuidados: Bonsái Estilo: MOYOGI(Vertical Informal (en forma de S)) | Edad: 11 años.
+	Historial de intervenciones: 
+		20/10/2025 - PODA_DE_FORMACION (Aclarado de ramas tras la caída del fruto)
+		15/04/2025 - TRATAMIENTO (Fungicida preventivo de primavera)
+
+BON008 - Tejo Comun (Stock: 1) - P. Base: 550.0€ - Precio de venta: 1235.0€
+	---> Cuidados: Bonsái Estilo: CHOKKAN(Vertical Formal (totalmente recto)) | Edad: 45 años.
+	Historial de intervenciones: 
+		02/09/2025 - ALAMBRADO (Tensado y corrección de la primera rama)
+		18/03/2024 - TRASPLANTE (Sustrato Kiryuzuna puro de alta calidad)
+
+BON009 - Acebuche Olivo Silvestre (Stock: 2) - P. Base: 195.0€ - Precio de venta: 510.0€
+	---> Cuidados: Bonsái Estilo: SHAKAN(Inclinado (como si el viento lo empujase)) | Edad: 18 años.
+	Historial de intervenciones: 
+		12/04/2026 - TRASPLANTE (Cambio a maceta de exposición plana)
+		30/05/2025 - PODA_DE_FORMACION (Poda drástica de estructura y rebaje de tocones)
+
+BON010 - Buganvilla Espectacular (Stock: 6) - P. Base: 68.0€ - Precio de venta: 273.0€
+	---> Cuidados: Bonsái Estilo: KENGAI(Cascada (el tronco cae hacia abajo)) | Edad: 7 años.
+	Historial de intervenciones: 
+		22/07/2025 - PODA_DE_FORMACION (Pinzado severo para estimular la siguiente brotación de flor)
+
+BON011 - Higuera Autoctona (Stock: 4) - P. Base: 55.0€ - Precio de venta: 200.0€
+	---> Cuidados: Bonsái Estilo: MOYOGI(Vertical Informal (en forma de S)) | Edad: 8 años.
+	Historial de intervenciones: 
+		05/05/2025 - TECNICA_DE_MADERA_MUERTA (Corte manual de hojas grandes para equilibrar la fuerza)
+
+BON012 - Granado Enano (Stock: 2) - P. Base: 140.0€ - Precio de venta: 360.0€
+	---> Cuidados: Bonsái Estilo: CHOKKAN(Vertical Formal (totalmente recto)) | Edad: 14 años.
+	Historial de intervenciones: 
+		18/06/2025 - ALAMBRADO (Correccion estética del ápice superior)
+		10/03/2025 - TRASPLANTE (Mezcla drenante de akadama y puzolana)
+
+BON013 - Haya Europea (Stock: 8) - P. Base: 38.0€ - Precio de venta: 123.0€
+	---> Cuidados: Bonsái Estilo: CHOKKAN(Vertical Formal (totalmente recto)) | Edad: 5 años.
+	Historial de intervenciones: [Sin registros de mantenimiento previos]
+
+BON014 - Glicinia Wisteria (Stock: 3) - P. Base: 72.0€ - Precio de venta: 277.0€
+	---> Cuidados: Bonsái Estilo: KENGAI(Cascada (el tronco cae hacia abajo)) | Edad: 7 años.
+	Historial de intervenciones: [Sin registros de mantenimiento previos]
+
+BON015 - Serissa Phoetida (Stock: 15) - P. Base: 24.5€ - Precio de venta: 109.5€
+	---> Cuidados: Bonsái Estilo: MOYOGI(Vertical Informal (en forma de S)) | Edad: 4 años.
+	Historial de intervenciones: [Sin registros de mantenimiento previos]
+
+EST001 - Monstera Deliciosa (Stock: 12) - P. Base: 28.5€ - Precio de venta: 34.2€
+	---> Cuidados: Planta de Interior. Mantener en sombra/semisombra.
+
+EST002 - Sansevieria Trifasciata (Stock: 25) - P. Base: 16.0€ - Precio de venta: 19.2€
+	---> Cuidados: Planta de Interior. Requiere sol directo.
+
+EST003 - Poto Dorado (Stock: 18) - P. Base: 10.5€ - Precio de venta: 12.6€
+	---> Cuidados: Planta de Interior. Mantener en sombra/semisombra.
+
+EST004 - Ficus Benjamina (Stock: 8) - P. Base: 32.0€ - Precio de venta: 38.4€
+	---> Cuidados: Planta de Interior. Mantener en sombra/semisombra.
+
+EST005 - Helecho de Boston (Stock: 15) - P. Base: 14.9€ - Precio de venta: 17.88€
+	---> Cuidados: Planta de Interior. Mantener en sombra/semisombra.
+
+EST006 - Anturio Rojo (Stock: 6) - P. Base: 22.0€ - Precio de venta: 26.4€
+	---> Cuidados: Planta de Interior. Mantener en sombra/semisombra.
+
+EST007 - Planta del Dinero (Stock: 20) - P. Base: 8.5€ - Precio de venta: 10.2€
+	---> Cuidados: Planta de Interior. Mantener en sombra/semisombra.
+
+EST008 - Lavanda Aromatica (Stock: 30) - P. Base: 7.2€ - Precio de venta: 8.64€
+	---> Cuidados: Planta de Exterior. Requiere sol directo.
+
+EST009 - Rosal Arbustivo (Stock: 10) - P. Base: 18.5€ - Precio de venta: 22.2€
+	---> Cuidados: Planta de Exterior. Requiere sol directo.
+
+EST010 - Geranio Comun (Stock: 40) - P. Base: 5.5€ - Precio de venta: 6.6€
+	---> Cuidados: Planta de Exterior. Requiere sol directo.
+
+EST011 - Hortensia Azul (Stock: 7) - P. Base: 21.0€ - Precio de venta: 25.2€
+	---> Cuidados: Planta de Exterior. Mantener en sombra/semisombra.
+
+EST012 - Cactus Asiento de Suegra (Stock: 5) - P. Base: 35.0€ - Precio de venta: 42.0€
+	---> Cuidados: Planta de Exterior. Requiere sol directo.
+
+EST013 - Romero Saborizado (Stock: 22) - P. Base: 6.8€ - Precio de venta: 8.16€
+	---> Cuidados: Planta de Exterior. Requiere sol directo.
+
+EST014 - Olivo Joven en Maceta (Stock: 4) - P. Base: 55.0€ - Precio de venta: 66.0€
+	---> Cuidados: Planta de Exterior. Requiere sol directo.
+
+
+FECHA DE VOLCADO: jueves, 28 de mayo de 2026
+BON001 - Olmo Chino (Stock: 5) - P. Base: 45.0€ - Precio de venta: 190.0€
+	---> Cuidados: Bonsái Estilo: MOYOGI(Vertical Informal (en forma de S)) | Edad: 8 años.
+	Historial de intervenciones: 
+		15/02/2026 - TRASPLANTE (Cambio completo a sustrato akadama)
+		10/03/2025 - PODA_DE_FORMACION (Recorte de brotes vigorosos)
+
+BON002 - Pino Blanco Japones (Stock: 2) - P. Base: 280.0€ - Precio de venta: 665.0€
+	---> Cuidados: Bonsái Estilo: CHOKKAN(Vertical Formal (totalmente recto)) | Edad: 25 años.
+	Historial de intervenciones: 
+		12/10/2025 - PODA_DE_FORMACION (Limpieza de agujas viejas)
+		05/04/2024 - ALAMBRADO (Diseño de ramas principales)
+
+BON003 - Arce Palmatum Deshojo (Stock: 3) - P. Base: 165.0€ - Precio de venta: 390.0€
+	---> Cuidados: Bonsái Estilo: SHAKAN(Inclinado (como si el viento lo empujase)) | Edad: 12 años.
+	Historial de intervenciones: 
+		08/03/2026 - TRASPLANTE (Poda de raíces en maceta nueva)
+		22/05/2025 - INJERTO (Pinzado para reducir tamaño de hoja)
+
+BON004 - Junipero San Jose (Stock: 0) - P. Base: 390.0€ - Precio de venta: 940.0€
+	---> Cuidados: Bonsái Estilo: KENGAI(Cascada (el tronco cae hacia abajo)) | Edad: 30 años.
+	Historial de intervenciones: 
+		20/11/2025 - TRATAMIENTO (Aplicacion de polisulfuro en madera muerta)
+		14/09/2024 - ALAMBRADO (Modelado de la gran cascada)
+
+BON005 - Ficus Retusa (Stock: 14) - P. Base: 35.0€ - Precio de venta: 150.0€
+	---> Cuidados: Bonsái Estilo: MOYOGI(Vertical Informal (en forma de S)) | Edad: 6 años.
+	Historial de intervenciones: 
+		01/06/2025 - PODA_DE_FORMACION (Defoliado parcial de verano para aumentar ramificación)
+
+BON006 - Azalea Satsuki (Stock: 4) - P. Base: 85.0€ - Precio de venta: 265.0€
+	---> Cuidados: Bonsái Estilo: SHAKAN(Inclinado (como si el viento lo empujase)) | Edad: 9 años.
+	Historial de intervenciones: 
+		05/03/2026 - TECNICA_DE_MADERA_MUERTA (Aporte de quelatos de hierro para suelo acido)
+		10/06/2025 - PODA_DE_FORMACION (Eliminacion de flores marchitas)
+
+BON007 - Manzano Silvestre (Stock: 3) - P. Base: 110.0€ - Precio de venta: 300.0€
+	---> Cuidados: Bonsái Estilo: MOYOGI(Vertical Informal (en forma de S)) | Edad: 11 años.
+	Historial de intervenciones: 
+		20/10/2025 - PODA_DE_FORMACION (Aclarado de ramas tras la caída del fruto)
+		15/04/2025 - TRATAMIENTO (Fungicida preventivo de primavera)
+
+BON008 - Tejo Comun (Stock: 1) - P. Base: 550.0€ - Precio de venta: 1235.0€
+	---> Cuidados: Bonsái Estilo: CHOKKAN(Vertical Formal (totalmente recto)) | Edad: 45 años.
+	Historial de intervenciones: 
+		02/09/2025 - ALAMBRADO (Tensado y corrección de la primera rama)
+		18/03/2024 - TRASPLANTE (Sustrato Kiryuzuna puro de alta calidad)
+
+BON009 - Acebuche Olivo Silvestre (Stock: 2) - P. Base: 195.0€ - Precio de venta: 510.0€
+	---> Cuidados: Bonsái Estilo: SHAKAN(Inclinado (como si el viento lo empujase)) | Edad: 18 años.
+	Historial de intervenciones: 
+		12/04/2026 - TRASPLANTE (Cambio a maceta de exposición plana)
+		30/05/2025 - PODA_DE_FORMACION (Poda drástica de estructura y rebaje de tocones)
+
+BON010 - Buganvilla Espectacular (Stock: 6) - P. Base: 68.0€ - Precio de venta: 273.0€
+	---> Cuidados: Bonsái Estilo: KENGAI(Cascada (el tronco cae hacia abajo)) | Edad: 7 años.
+	Historial de intervenciones: 
+		22/07/2025 - PODA_DE_FORMACION (Pinzado severo para estimular la siguiente brotación de flor)
+
+BON011 - Higuera Autoctona (Stock: 4) - P. Base: 55.0€ - Precio de venta: 200.0€
+	---> Cuidados: Bonsái Estilo: MOYOGI(Vertical Informal (en forma de S)) | Edad: 8 años.
+	Historial de intervenciones: 
+		05/05/2025 - TECNICA_DE_MADERA_MUERTA (Corte manual de hojas grandes para equilibrar la fuerza)
+
+BON012 - Granado Enano (Stock: 2) - P. Base: 140.0€ - Precio de venta: 360.0€
+	---> Cuidados: Bonsái Estilo: CHOKKAN(Vertical Formal (totalmente recto)) | Edad: 14 años.
+	Historial de intervenciones: 
+		18/06/2025 - ALAMBRADO (Correccion estética del ápice superior)
+		10/03/2025 - TRASPLANTE (Mezcla drenante de akadama y puzolana)
+
+BON013 - Haya Europea (Stock: 8) - P. Base: 38.0€ - Precio de venta: 123.0€
+	---> Cuidados: Bonsái Estilo: CHOKKAN(Vertical Formal (totalmente recto)) | Edad: 5 años.
+	Historial de intervenciones: [Sin registros de mantenimiento previos]
+
+BON014 - Glicinia Wisteria (Stock: 3) - P. Base: 72.0€ - Precio de venta: 277.0€
+	---> Cuidados: Bonsái Estilo: KENGAI(Cascada (el tronco cae hacia abajo)) | Edad: 7 años.
+	Historial de intervenciones: [Sin registros de mantenimiento previos]
+
+BON015 - Serissa Phoetida (Stock: 15) - P. Base: 24.5€ - Precio de venta: 109.5€
+	---> Cuidados: Bonsái Estilo: MOYOGI(Vertical Informal (en forma de S)) | Edad: 4 años.
+	Historial de intervenciones: [Sin registros de mantenimiento previos]
+
+EST001 - Monstera Deliciosa (Stock: 12) - P. Base: 28.5€ - Precio de venta: 34.2€
+	---> Cuidados: Planta de Interior. Mantener en sombra/semisombra.
+
+EST002 - Sansevieria Trifasciata (Stock: 25) - P. Base: 16.0€ - Precio de venta: 19.2€
+	---> Cuidados: Planta de Interior. Requiere sol directo.
+
+EST003 - Poto Dorado (Stock: 18) - P. Base: 10.5€ - Precio de venta: 12.6€
+	---> Cuidados: Planta de Interior. Mantener en sombra/semisombra.
+
+EST004 - Ficus Benjamina (Stock: 8) - P. Base: 32.0€ - Precio de venta: 38.4€
+	---> Cuidados: Planta de Interior. Mantener en sombra/semisombra.
+
+EST005 - Helecho de Boston (Stock: 15) - P. Base: 14.9€ - Precio de venta: 17.88€
+	---> Cuidados: Planta de Interior. Mantener en sombra/semisombra.
+
+EST006 - Anturio Rojo (Stock: 6) - P. Base: 22.0€ - Precio de venta: 26.4€
+	---> Cuidados: Planta de Interior. Mantener en sombra/semisombra.
+
+EST007 - Planta del Dinero (Stock: 20) - P. Base: 8.5€ - Precio de venta: 10.2€
+	---> Cuidados: Planta de Interior. Mantener en sombra/semisombra.
+
+EST008 - Lavanda Aromatica (Stock: 30) - P. Base: 7.2€ - Precio de venta: 8.64€
+	---> Cuidados: Planta de Exterior. Requiere sol directo.
+
+EST009 - Rosal Arbustivo (Stock: 10) - P. Base: 18.5€ - Precio de venta: 22.2€
+	---> Cuidados: Planta de Exterior. Requiere sol directo.
+
+EST010 - Geranio Comun (Stock: 40) - P. Base: 5.5€ - Precio de venta: 6.6€
+	---> Cuidados: Planta de Exterior. Requiere sol directo.
+
+EST011 - Hortensia Azul (Stock: 7) - P. Base: 21.0€ - Precio de venta: 25.2€
+	---> Cuidados: Planta de Exterior. Mantener en sombra/semisombra.
+
+EST012 - Cactus Asiento de Suegra (Stock: 5) - P. Base: 35.0€ - Precio de venta: 42.0€
+	---> Cuidados: Planta de Exterior. Requiere sol directo.
+
+EST013 - Romero Saborizado (Stock: 22) - P. Base: 6.8€ - Precio de venta: 8.16€
+	---> Cuidados: Planta de Exterior. Requiere sol directo.
+
+EST014 - Olivo Joven en Maceta (Stock: 4) - P. Base: 55.0€ - Precio de venta: 66.0€
+	---> Cuidados: Planta de Exterior. Requiere sol directo.
+

@@ -1,0 +1,29 @@
+EST001,Monstera Deliciosa,28.50,12,Interior,false
+EST002,Sansevieria Trifasciata,16.00,25,Interior,true
+EST003,Poto Dorado,10.50,18,Interior,false
+EST004,Ficus Benjamina,32.00,8,Interior,false
+EST005,Helecho de Boston,14.90,15,Interior,false
+EST006,Anturio Rojo,22.00,6,Interior,false
+EST007,Planta del Dinero,8.50,20,Interior,false
+BON001,Olmo Chino,45.00,5,8,MOYOGI,10/03/2025-PODA_DE_FORMACION-Recorte de brotes vigorosos#15/02/2026-TRASPLANTE-Cambio completo a sustrato akadama
+BON002,Pino Blanco Japones,280.00,2,25,CHOKKAN,05/04/2024-ALAMBRADO-Diseño de ramas principales#12/10/2025-PODA_DE_FORMACION-Limpieza de agujas viejas
+EST008,Lavanda Aromatica,7.20,30,Exterior,true
+BON013,Haya Europea,38.00,8,5,CHOKKAN
+EST009,Rosal Arbustivo,18.50,10,Exterior,true
+BON003,Arce Palmatum Deshojo,165.00,3,12,SHAKAN,22/05/2025-INJERTO-Pinzado para reducir tamaño de hoja#08/03/2026-TRASPLANTE-Poda de raíces en maceta nueva
+BON004,Junipero San Jose,390.00,1,30,KENGAI,14/09/2024-ALAMBRADO-Modelado de la gran cascada#20/11/2025-TRATAMIENTO-Aplicacion de polisulfuro en madera muerta
+BON005,Ficus Retusa,35.00,14,6,MOYOGI,01/06/2025-PODA_DE_FORMACION-Defoliado parcial de verano para aumentar ramificación
+EST010,Geranio Comun,5.50,40,Exterior,true
+EST011,Hortensia Azul,21.00,7,Exterior,false
+EST013,Romero Saborizado,6.80,22,Exterior,true
+EST014,Olivo Joven en Maceta,55.00,4,Exterior,true
+BON006,Azalea Satsuki,85.00,4,9,SHAKAN,10/06/2025-PODA_DE_FORMACION-Eliminacion de flores marchitas#05/03/2026-TECNICA_DE_MADERA_MUERTA-Aporte de quelatos de hierro para suelo acido
+BON007,Manzano Silvestre,110.00,3,11,MOYOGI,15/04/2025-TRATAMIENTO-Fungicida preventivo de primavera#20/10/2025-PODA_DE_FORMACION-Aclarado de ramas tras la caída del fruto
+BON008,Tejo Comun,550.00,1,45,CHOKKAN,18/03/2024-TRASPLANTE-Sustrato Kiryuzuna puro de alta calidad#02/09/2025-ALAMBRADO-Tensado y corrección de la primera rama
+EST012,Cactus Asiento de Suegra,35.00,5,Exterior,true
+BON009,Acebuche Olivo Silvestre,195.00,2,18,SHAKAN,30/05/2025-PODA_DE_FORMACION-Poda drástica de estructura y rebaje de tocones#12/04/2026-TRASPLANTE-Cambio a maceta de exposición plana
+BON014,Glicinia Wisteria,72.00,3,7,KENGAI
+BON010,Buganvilla Espectacular,68.00,6,7,KENGAI,22/07/2025-PODA_DE_FORMACION-Pinzado severo para estimular la siguiente brotación de flor
+BON015,Serissa Phoetida,24.50,15,4,MOYOGI
+BON011,Higuera Autoctona,55.00,4,8,MOYOGI,05/05/2025-TECNICA_DE_MADERA_MUERTA-Corte manual de hojas grandes para equilibrar la fuerza
+BON012,Granado Enano,140.00,2,14,CHOKKAN,10/03/2025-TRASPLANTE-Mezcla drenante de akadama y puzolana#18/06/2025-ALAMBRADO-Correccion estética del ápice superior
