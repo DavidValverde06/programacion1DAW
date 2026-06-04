@@ -28,3 +28,4 @@ EST011 - Hortensia Azul - (Stock: 7) - P. Base: 21.0€ - Precio de venta: 25,20
 EST012 - Cactus Asiento de Suegra - (Stock: 5) - P. Base: 35.0€ - Precio de venta: 42,00€
 EST013 - Romero Saborizado - (Stock: 22) - P. Base: 6.8€ - Precio de venta: 8,16€
 EST014 - Olivo Joven en Maceta - (Stock: 4) - P. Base: 55.0€ - Precio de venta: 66,00€
+EST015 - Amapola Común - (Stock: 1) - P. Base: 5.5€ - Precio de venta: 6,60€
