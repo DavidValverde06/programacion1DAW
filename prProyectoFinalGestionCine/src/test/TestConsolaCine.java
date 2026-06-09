@@ -84,6 +84,7 @@ public class TestConsolaCine {
 	 */
 	private static int menuPrincipal() {
 		int opcion;
+
 		System.out.println("\n--- GESTIÓN CINE ---");
 		System.out.println("1. Gestion de Peliculas");
 		System.out.println("2. Consultas");
@@ -435,9 +436,9 @@ public class TestConsolaCine {
 		imprimirTabla(daoSesion.sesionesPorTipoSala(tipoSala));
 	}
 
-	// =====================================
+	// ==========================
 	// Imprimir DefaultTableModel
-	// =====================================
+	// ==========================
 
 	/**
 	 * Método que imprime una tabla por consola

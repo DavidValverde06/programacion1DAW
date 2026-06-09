@@ -3,7 +3,7 @@ Cliente : David Valverde Barea
 Email: david@gmail.com
 
 Pelicula: Interstellar
-Fecha: 2026-06-03
+Fecha: 2026-06-10
 Hora: 21:00h
 Sala: 3 (SALA_3D)
 Precio: 8.5 EUROS

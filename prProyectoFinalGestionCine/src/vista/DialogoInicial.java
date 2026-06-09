@@ -219,7 +219,8 @@ public class DialogoInicial extends JDialog implements ActionListener {
 			JOptionPane.showMessageDialog(this, "Bienvenid@ " + usuario, "Inicio de sesión", 1);
 			framePrincipal.setVisible(true);
 			this.setVisible(false);
-		} else {
+		}
+		else {
 			JOptionPane.showMessageDialog(this, "Credenciales incorrectas", "Error inicio sesión", 0);
 		}
 	}

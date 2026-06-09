@@ -32,6 +32,7 @@ public class Controlador implements ActionListener {
 		try {
 			this.miDaoPeli = new DAOPelicula();
 			this.miDaoSesion = new DAOSesion();
+
 			cargarPelicula(miDaoPeli.getPrimero());
 			cargarTablaSesiones();
 		}
@@ -283,12 +284,12 @@ public class Controlador implements ActionListener {
 
 			JTable tabla = miVista.getTablaSesionesEntradas();
 			String idSesion = tabla.getValueAt(filaSeleccionada, 0).toString();
-			String titulo   = tabla.getValueAt(filaSeleccionada, 1).toString();
-			String fecha    = tabla.getValueAt(filaSeleccionada, 2).toString();
-			String hora     = tabla.getValueAt(filaSeleccionada, 3).toString();
-			String sala     = tabla.getValueAt(filaSeleccionada, 4).toString();
+			String titulo = tabla.getValueAt(filaSeleccionada, 1).toString();
+			String fecha = tabla.getValueAt(filaSeleccionada, 2).toString();
+			String hora = tabla.getValueAt(filaSeleccionada, 3).toString();
+			String sala = tabla.getValueAt(filaSeleccionada, 4).toString();
 			String tipoSala = tabla.getValueAt(filaSeleccionada, 5).toString();
-			String precio   = tabla.getValueAt(filaSeleccionada, 6).toString();
+			String precio = tabla.getValueAt(filaSeleccionada, 6).toString();
 
 			String nombre = miVista.getTfNombreCliente().getText();
 			String apellidos = miVista.getTfApellidosCliente().getText();
@@ -300,7 +301,7 @@ public class Controlador implements ActionListener {
 			}
 
 			String contenidoEntrada =
-							"--- ENTRADA CINE ---\n" +
+					"--- ENTRADA CINE ---\n" +
 							"Cliente : " + nombre + " " + apellidos + "\n" +
 							"Email: " + email + "\n\n" +
 							"Pelicula: " + titulo + "\n" +
@@ -521,7 +522,8 @@ public class Controlador implements ActionListener {
 		try {
 			miVista.getTablaSesiones().setModel(miDaoSesion.todasLasSesiones());
 			miVista.getTablaSesionesEntradas().setModel(miDaoSesion.todasLasSesiones());
-		} catch (SQLException e) {
+		}
+		catch (SQLException e) {
 			JOptionPane.showMessageDialog(null, "Error al cargar sesiones: " + e.getMessage());
 		}
 	}
@@ -537,8 +539,9 @@ public class Controlador implements ActionListener {
 			JLabel etiqueta = new JLabel("Filtrar por género: ");
 			JComboBox<String> cbGenero = new JComboBox<>();
 			cbGenero.addItem("Todos");
-			for (EnumGenero g : EnumGenero.values())
-				cbGenero.addItem(g.name());
+			for (EnumGenero genero : EnumGenero.values()) {
+				cbGenero.addItem(genero.name());
+			}
 			panelFiltro.add(etiqueta);
 			panelFiltro.add(cbGenero);
 
@@ -563,10 +566,11 @@ public class Controlador implements ActionListener {
 						String seleccion = (String) cbGenero.getSelectedItem();
 						if (seleccion.equals("Todos")) {
 							DefaultTableModel m = new DefaultTableModel(cols, 0);
-							for (Pelicula p : miDaoPeli.getAll())
-								m.addRow(new Object[]{p.getCodigo(), p.getTitulo(), p.getGenero(), p.getDuracion(), p.getClasificacion(), p.getDirector(), p.getAnio()});
+							for (Pelicula peli : miDaoPeli.getAll())
+								m.addRow(new Object[]{peli.getCodigo(), peli.getTitulo(), peli.getGenero(), peli.getDuracion(), peli.getClasificacion(), peli.getDirector(), peli.getAnio()});
 							tablaResultados.setModel(m);
-						} else {
+						}
+						else {
 							tablaResultados.setModel(miDaoPeli.datosConsulta(seleccion));
 						}
 					}

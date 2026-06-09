@@ -21,7 +21,6 @@ public class MainCine {
 		ventana.setResizable(false);
 		ventana.setSize(820,420); // Tamaño ventana
 		ventana.setLocationRelativeTo(null); // Centrar ventana
-
 		ventana.setVisible(false);
 
 		DialogoInicial dialogo = new DialogoInicial(ventana);

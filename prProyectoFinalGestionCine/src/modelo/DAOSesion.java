@@ -55,7 +55,7 @@ public class DAOSesion {
 
 	/**
 	 * Consulta 1 - Sesiones de una pelicula concreta
-	 * JOIN entre sesion y pelicula
+	 * JOIN entre sesion, pelicula y sala
 	 */
 	public DefaultTableModel sesionesDeUnaPelicula(int idPelicula) throws SQLException {
 		String consulta =

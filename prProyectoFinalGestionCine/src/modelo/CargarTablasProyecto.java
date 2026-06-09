@@ -47,7 +47,7 @@ public class CargarTablasProyecto {
 	 * Añade datos desde un fichero a la tabla peliculas
 	 */
 	public static void cargaTablaPeliculas(Connection con) throws SQLException {
-		try (Scanner sc = new Scanner(Path.of("./files/peliculas.txt"),StandardCharsets.UTF_8)){
+		try (Scanner sc = new Scanner(Path.of("./files/peliculas.txt"), StandardCharsets.UTF_8)){
 
 			while (sc.hasNextLine()) {
 

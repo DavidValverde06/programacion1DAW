@@ -188,7 +188,7 @@ public class DAOPelicula {
 		ps.executeUpdate();
 		ps.close();
 
-		this.crearConsulta();  // Actualizar el resultSet de navegación con el nuevo disco
+		this.crearConsulta();  // Actualizar el resultSet de navegación con la nueva peli
 	}
 
 	/**
@@ -242,7 +242,7 @@ public class DAOPelicula {
 	 */
 	public List<Pelicula> getAll() throws SQLException, MiExcepcion {
 
-		rsNavegar.beforeFirst(); // Para posicionar la consulta al principio
+		rsNavegar.beforeFirst(); // Para posicionar la consulta al principio (en la primera peli)
 
 		List<Pelicula> listaPeliculas = new ArrayList<>();
 
@@ -321,13 +321,13 @@ public class DAOPelicula {
 
 		DefaultTableModel datos = new DefaultTableModel();
 
-		for (int i = 1; i <= numColumnas; i++)
-			datos.addColumn(rsmd.getColumnLabel(i));
+		for (int cont = 1; cont <= numColumnas; cont++)
+			datos.addColumn(rsmd.getColumnLabel(cont));
 
 		while (rsConsulta.next()) {
 			Object[] tupla = new Object[numColumnas];
-			for (int i = 0; i < numColumnas; i++) {
-				tupla[i] = rsConsulta.getObject(i + 1);
+			for (int cont = 0; cont < numColumnas; cont++) {
+				tupla[cont] = rsConsulta.getObject(cont + 1);
 			}
 			datos.addRow(tupla);
 		}
