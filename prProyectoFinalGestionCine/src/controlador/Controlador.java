@@ -508,7 +508,9 @@ public class Controlador implements ActionListener {
 		miVista.getCbClasificacion().setSelectedItem(peli.getClasificacion());
 		miVista.getTfDirector().setText(peli.getDirector());
 		miVista.getTfAnio().setText(String.valueOf(peli.getAnio()));
-
+		miVista.getCbGenero().setEnabled(false);
+	    miVista.getCbClasificacion().setEnabled(false);
+		
 		ImageIcon cartel = new ImageIcon("./img/" + peli.getTitulo() + ".jpg");
 
 		if (cartel.getIconWidth() == -1) {
