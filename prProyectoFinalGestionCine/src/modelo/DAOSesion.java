@@ -112,13 +112,13 @@ public class DAOSesion {
 
 		DefaultTableModel datos = new DefaultTableModel();
 
-		for (int i = 1; i <= numColumnas; i++)
-			datos.addColumn(rsmd.getColumnLabel(i));
+		for (int cont = 1; cont <= numColumnas; cont++)
+			datos.addColumn(rsmd.getColumnLabel(cont));
 
 		while (rs.next()) {
 			Object[] tupla = new Object[numColumnas];
-			for (int i = 0; i < numColumnas; i++)
-				tupla[i] = rs.getObject(i + 1);
+			for (int cont = 0; cont < numColumnas; cont++)
+				tupla[cont] = rs.getObject(cont + 1);
 			datos.addRow(tupla);
 		}
 

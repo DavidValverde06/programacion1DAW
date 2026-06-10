@@ -1,0 +1,11 @@
+--- ENTRADA CINE ---
+Cliente : David Valverde Barea
+Email: david@gmail.com
+
+Pelicula: Interstellar
+Fecha: 2026-06-09
+Hora: 18:00h
+Sala: 2 (SALA_VIP)
+Precio: 9.0 EUROS
+
+¡Disfrute de la pelicula!

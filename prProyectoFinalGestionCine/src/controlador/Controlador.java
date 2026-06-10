@@ -21,6 +21,11 @@ public class Controlador implements ActionListener {
 	private DAOSesion miDaoSesion;
 
 	/**
+	 * Variables de clase
+	 */
+	private static Color FONDO_COLOR = new Color(241, 226, 209);
+
+	/**
 	 * Constructor
 	 */
 	public Controlador(Vista miVista, JFrame miFrame) {
@@ -509,8 +514,8 @@ public class Controlador implements ActionListener {
 		miVista.getTfDirector().setText(peli.getDirector());
 		miVista.getTfAnio().setText(String.valueOf(peli.getAnio()));
 		miVista.getCbGenero().setEnabled(false);
-	    miVista.getCbClasificacion().setEnabled(false);
-		
+		miVista.getCbClasificacion().setEnabled(false);
+
 		ImageIcon cartel = new ImageIcon("./img/" + peli.getTitulo() + ".jpg");
 
 		if (cartel.getIconWidth() == -1) {
@@ -538,6 +543,7 @@ public class Controlador implements ActionListener {
 
 			// ComboBox
 			JPanel panelFiltro = new JPanel();
+			panelFiltro.setBackground(FONDO_COLOR);
 			JLabel etiqueta = new JLabel("Filtrar por género: ");
 			JComboBox<String> cbGenero = new JComboBox<>();
 			cbGenero.addItem("Todos");
@@ -549,7 +555,10 @@ public class Controlador implements ActionListener {
 
 			// Tabla
 			JTable tablaResultados = new JTable();
+			JPanel panelTabla = new JPanel();
+			panelTabla.setBackground(FONDO_COLOR);
 			JScrollPane panelScroll = new JScrollPane(tablaResultados);
+			panelTabla.add(panelScroll);
 			panelScroll.setPreferredSize(new Dimension(600, 200));
 
 			// Cargar todas al inicio
@@ -586,7 +595,7 @@ public class Controlador implements ActionListener {
 			});
 
 			dialogoTablaPelis.add(panelFiltro, BorderLayout.NORTH);
-			dialogoTablaPelis.add(panelScroll, BorderLayout.CENTER);
+			dialogoTablaPelis.add(panelTabla, BorderLayout.CENTER);
 
 			dialogoTablaPelis.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
 			dialogoTablaPelis.pack();
